@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 225356784}
   - component: {fileID: 225356783}
   - component: {fileID: 225356787}
+  - component: {fileID: 225356788}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -337,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225356782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.81}
+  m_LocalPosition: {x: 0, y: 0, z: -5.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -384,6 +385,21 @@ MonoBehaviour:
   rotationLerpTime: 0.199
   invertY: 0
   lockMouseMouvement: 1
+--- !u!114 &225356788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225356782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filepath: C:\Users\Gamgie\Documents\Gamgie\Projets\Oxipital\Unity\Screen Capture
+  filename: Oxipital
+  supersize: 5
 --- !u!1 &498367024
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,13 +606,13 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 1.5
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
         m_Name: drag
         m_Overridden: 1
-      - m_Value: 0.62
+      - m_Value: 0.95
         m_Name: Alpha
         m_Overridden: 1
       - m_Value: 1.96
@@ -605,10 +621,10 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 5.22
+      - m_Value: 4.42
         m_Name: Vortex Radius
         m_Overridden: 1
-      - m_Value: 5.89
+      - m_Value: 1.82
         m_Name: Vortex Force
         m_Overridden: 1
       - m_Value: 0
@@ -632,24 +648,24 @@ VisualEffect:
       - m_Value: 0
         m_Name: Attractor Intensity
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 3.21
         m_Name: Attractor Radius
         m_Overridden: 1
       - m_Value: 0
         m_Name: Repulsor Intensity
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 1.23
         m_Name: Repulsor Radius
         m_Overridden: 1
       - m_Value: 0
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 8.33
+      - m_Value: 1.36
         m_Name: Linear Drag
         m_Overridden: 1
-      - m_Value: 0.01
+      - m_Value: 0.67
         m_Name: Velocity Drag
-        m_Overridden: 1
+        m_Overridden: 0
       - m_Value: 0
         m_Name: Vortex Force Random
         m_Overridden: 1
@@ -675,10 +691,10 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Axis
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 0}
+      - m_Value: {x: 0.27, y: 0, z: 0}
         m_Name: Vortex Target Position
         m_Overridden: 1
-      - m_Value: {x: 0, y: -1, z: 0}
+      - m_Value: {x: 1.5, y: 0.2, z: 0}
         m_Name: Gravity Axis
         m_Overridden: 1
     m_Vector4f:
@@ -764,31 +780,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  aliveParticleCount: 294008
+  aliveParticleCount: 144896
   rate: 4038
   life: 91
   color: {r: 1, g: 1, b: 1, a: 0}
-  alpha: 0.62
-  size: 0.2
-  drag: 8.33
+  alpha: 0.95
+  size: 1.5
+  drag: 1.36
   attractorTargetPosition: {x: 0, y: 0, z: 0}
   attractorIntensity: 0
-  attractorRadius: 2
+  attractorRadius: 3.21
   repulsorTargetPosition: {x: 0, y: 0, z: 0}
   repulsorIntensity: 0
-  repulsorRadius: 2
+  repulsorRadius: 1.23
   turbIntensity: 0
   turbFrequency: 0.15
   turbOctave: 1
   turbroughness: 0.5
   turbLacunarity: 2
-  vortexIntensity: 5.89
+  vortexIntensity: 1.82
   vortexIntensityRandom: 0
-  vortexRadius: 5.22
+  vortexRadius: 4.42
   vortexAxis: {x: 0, y: 1, z: 0}
-  vortexTargetPosition: {x: 0, y: 0, z: 0}
+  vortexTargetPosition: {x: 0.27, y: 0, z: 0}
   zalemGravity: 0
-  gravityAxis: {x: 0, y: -1, z: 0}
+  gravityAxis: {x: 1.5, y: 0.2, z: 0}
 --- !u!114 &663945660
 MonoBehaviour:
   m_ObjectHideFlags: 0
