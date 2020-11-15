@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using System;
 
 [ExecuteInEditMode]
 public class VFXController : MonoBehaviour
@@ -11,9 +12,6 @@ public class VFXController : MonoBehaviour
     public int id;
 
     [Header("PS Parameters")]
-
-    public int aliveParticleCount;
-
     [Range(0,20000)]
     public float rate;
 
@@ -58,6 +56,9 @@ public class VFXController : MonoBehaviour
     public float zalemGravity;
     public Vector3 gravityAxis;
 
+    [Header("Emitter Parameters")]
+    public float sphereSize;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -69,14 +70,12 @@ public class VFXController : MonoBehaviour
     void Update()
     {
         UpdateVisualEffect();
-
-        aliveParticleCount = visualEffect.aliveParticleCount;
     }
 
     void UpdateVisualEffect()
     {
         // Ps parameters update
-        visualEffect.SetFloat("Rate", rate);
+        visualEffect.SetInt("Rate", Convert.ToInt32(rate));
         visualEffect.SetFloat("LifeTime", life);
         visualEffect.SetVector4("Color", new Vector3(color.r, color.g, color.b));
         visualEffect.SetFloat("Alpha", alpha);
@@ -110,6 +109,9 @@ public class VFXController : MonoBehaviour
         // Gravity parameter update
         visualEffect.SetFloat("Gravity", zalemGravity);
         visualEffect.SetVector3("Gravity Axis", gravityAxis);
+
+        // Emitter Parameters
+        visualEffect.SetFloat("Sphere Size", sphereSize);
     }
 
 }
