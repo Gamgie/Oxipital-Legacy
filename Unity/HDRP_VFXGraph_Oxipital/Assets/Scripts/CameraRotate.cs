@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
 {
-    public float rotateSpeed;
+    public float rotateYSpeed;
+    public float rotateXSpeed;
     public float rotateRadius;
+    public Vector3 rotationCenter;
     public Transform lookAtTarget;
     public Camera camera;
     public Transform cameraPositionTarget; // Camera follow this object. Allow me to smoothly move camera behind this target.
@@ -14,8 +16,10 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = rotationCenter;
+
         // Rotate this transform. This give the rotation to camera target
-        transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+        transform.Rotate(rotateXSpeed * Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
 
         // Update position of target in Z. It is rotation's radius.
         cameraPositionTarget.transform.localPosition = new Vector3(0, 0, rotateRadius);
@@ -29,6 +33,7 @@ public class CameraRotate : MonoBehaviour
     public void ResetPosition()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
-        rotateSpeed = 0;
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
     }
 }

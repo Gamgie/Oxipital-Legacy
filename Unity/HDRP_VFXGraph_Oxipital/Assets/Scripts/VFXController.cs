@@ -7,23 +7,7 @@ using System;
 [ExecuteInEditMode]
 public class VFXController : MonoBehaviour
 {
-    private VisualEffect visualEffect;
-
-    public int id;
-
-    [Header("PS Parameters")]
-    [Range(0,20000)]
-    public float rate;
-
-    [Range(0, 200)]
-    public float life;
-    public Color color;
-    [Range(0,1)]
-    public float alpha;
-    [Range(0,5)]
-    public float size;
-    //[Range(0, 10)]
-    public float drag;
+    private VisualEffect[] orbsVisualEffect;
 
     [Header("Attractor")]
     public Vector3 attractorTargetPosition;
@@ -43,6 +27,8 @@ public class VFXController : MonoBehaviour
     [Range(0,1f)]
     public float turbroughness;
     public float turbLacunarity;
+    public float turbScale;
+    public float turbXPosition;
 
     [Header("Vortex 1")]
     public float vortexIntensity;
@@ -56,14 +42,10 @@ public class VFXController : MonoBehaviour
     public float zalemGravity;
     public Vector3 gravityAxis;
 
-    [Header("Emitter Parameters")]
-    public float sphereSize;
-
     // Start is called before the first frame update
     void OnEnable()
     {
-        visualEffect = GetComponent<VisualEffect>();
-        UpdateVisualEffect();
+        orbsVisualEffect = GetComponentsInChildren<VisualEffect>();
     }
 
     // Update is called once per frame
@@ -74,44 +56,40 @@ public class VFXController : MonoBehaviour
 
     void UpdateVisualEffect()
     {
-        // Ps parameters update
-        visualEffect.SetInt("Rate", Convert.ToInt32(rate));
-        visualEffect.SetFloat("LifeTime", life);
-        visualEffect.SetVector4("Color", new Vector3(color.r, color.g, color.b));
-        visualEffect.SetFloat("Alpha", alpha);
-        visualEffect.SetFloat("Size", size);
-        visualEffect.SetFloat("Linear Drag", drag);
 
-        // Attractor update
-        visualEffect.SetVector3("Attractor Target Position", attractorTargetPosition);
-        visualEffect.SetFloat("Attractor Intensity", attractorIntensity);
-        visualEffect.SetFloat("Attractor Radius", attractorRadius);
+        foreach(VisualEffect visualEffect in orbsVisualEffect)
+        {
+            
 
-        // Repulsor update
-        visualEffect.SetVector3("Repulsor Target Position", attractorTargetPosition);
-        visualEffect.SetFloat("Repulsor Intensity", repulsorIntensity);
-        visualEffect.SetFloat("Repulsor Radius", repulsorRadius);
+            // Attractor update
+            visualEffect.SetVector3("Attractor Target Position", attractorTargetPosition);
+            visualEffect.SetFloat("Attractor Intensity", attractorIntensity);
+            visualEffect.SetFloat("Attractor Radius", attractorRadius);
 
-        // Turb parameter update
-        visualEffect.SetFloat("Turb Intensity", turbIntensity);
-        visualEffect.SetFloat("Turb Frequency", turbFrequency);
-        visualEffect.SetInt("Octave", turbOctave);
-        visualEffect.SetFloat("Roughness", turbroughness);
-        visualEffect.SetFloat("Lacunarity", turbLacunarity);
+            // Repulsor update
+            visualEffect.SetVector3("Repulsor Target Position", attractorTargetPosition);
+            visualEffect.SetFloat("Repulsor Intensity", repulsorIntensity);
+            visualEffect.SetFloat("Repulsor Radius", repulsorRadius);
 
-        // Vortex 1 parameter update
-        visualEffect.SetFloat("Vortex Force", vortexIntensity);
-        visualEffect.SetFloat("Vortex Force Random", vortexIntensityRandom);
-        visualEffect.SetFloat("Vortex Radius", vortexRadius);
-        visualEffect.SetVector3("Vortex Axis", vortexAxis);
-        visualEffect.SetVector3("Vortex Target Position", vortexTargetPosition);
+            // Turb parameter update
+            visualEffect.SetFloat("Turb Intensity", turbIntensity);
+            visualEffect.SetFloat("Turb Frequency", turbFrequency);
+            visualEffect.SetInt("Octave", turbOctave);
+            visualEffect.SetFloat("Roughness", turbroughness);
+            visualEffect.SetFloat("Lacunarity", turbLacunarity);
+            visualEffect.SetFloat("Turb Scale", turbScale);
+            visualEffect.SetFloat("Turb X Position", turbXPosition);
 
-        // Gravity parameter update
-        visualEffect.SetFloat("Gravity", zalemGravity);
-        visualEffect.SetVector3("Gravity Axis", gravityAxis);
+            // Vortex 1 parameter update
+            visualEffect.SetFloat("Vortex Force", vortexIntensity);
+            visualEffect.SetFloat("Vortex Force Random", vortexIntensityRandom);
+            visualEffect.SetFloat("Vortex Radius", vortexRadius);
+            visualEffect.SetVector3("Vortex Axis", vortexAxis);
+            visualEffect.SetVector3("Vortex Target Position", vortexTargetPosition);
 
-        // Emitter Parameters
-        visualEffect.SetFloat("Sphere Size", sphereSize);
+            // Gravity parameter update
+            visualEffect.SetFloat("Gravity", zalemGravity);
+            visualEffect.SetVector3("Gravity Axis", gravityAxis); 
+        }
     }
-
 }
