@@ -42,6 +42,17 @@ public class VFXController : MonoBehaviour
     public float zalemGravity;
     public Vector3 gravityAxis;
 
+    [Header("Swirl")]
+    public float swirlIntensity;
+    public Vector3 swirlAxis;
+    public Vector3 swirlOrigin;
+    public float swirlRadius;
+
+    [Header("Axxial Force")]
+    public float axialIntensity;
+    public Vector3 axialAxis;
+    public float axialIntensityVariance;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -59,8 +70,6 @@ public class VFXController : MonoBehaviour
 
         foreach(VisualEffect visualEffect in orbsVisualEffect)
         {
-            
-
             // Attractor update
             visualEffect.SetVector3("Attractor Target Position", attractorTargetPosition);
             visualEffect.SetFloat("Attractor Intensity", attractorIntensity);
@@ -89,7 +98,18 @@ public class VFXController : MonoBehaviour
 
             // Gravity parameter update
             visualEffect.SetFloat("Gravity", zalemGravity);
-            visualEffect.SetVector3("Gravity Axis", gravityAxis); 
+            visualEffect.SetVector3("Gravity Axis", gravityAxis);
+
+            // Swirl parameter update
+            visualEffect.SetFloat("Swirl Intensity", swirlIntensity);
+            visualEffect.SetVector3("Swirl Axis", swirlAxis);
+            visualEffect.SetVector3("Swirl Origin", swirlOrigin);
+            visualEffect.SetFloat("Swirl Radius", swirlRadius);
+
+            // Axial parameter update
+            visualEffect.SetFloat("Axial Intensity", axialIntensity);
+            visualEffect.SetVector3("Axial Axis", axialAxis);
+            visualEffect.SetFloat("Axial Intensity Variance", axialIntensityVariance);
         }
     }
 }

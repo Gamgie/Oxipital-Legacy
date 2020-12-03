@@ -367,6 +367,18 @@ VisualEffect:
       - m_Value: 0
         m_Name: Turb X Position
         m_Overridden: 1
+      - m_Value: 3
+        m_Name: Axial Intensity Variance
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Swirl Intensity
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Swirl Radius
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Axial Intensity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -394,6 +406,15 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: {x: 1.5, y: 0.2, z: 0}
         m_Name: Gravity Axis
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 0, z: 0}
+        m_Name: Axial Axis
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Swirl Axis
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Swirl Origin
         m_Overridden: 1
     m_Vector4f:
       m_Array:
@@ -868,6 +889,13 @@ MonoBehaviour:
   vortexTargetPosition: {x: 0, y: 0, z: 0}
   zalemGravity: 0
   gravityAxis: {x: 1.5, y: 0.2, z: 0}
+  swirlIntensity: 0
+  swirlAxis: {x: 0, y: 0, z: 0}
+  swirlOrigin: {x: 0, y: 0, z: 0}
+  swirlRadius: 0
+  axialIntensity: 0
+  axialAxis: {x: 1, y: 0, z: 0}
+  axialIntensityVariance: 3
 --- !u!1 &498367024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1157,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 1.49
+      - m_Value: 0.5
         m_Name: Linear Drag
         m_Overridden: 1
       - m_Value: 0
@@ -1150,17 +1178,20 @@ VisualEffect:
       - m_Value: 0
         m_Name: Swirl Intensity
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 0
         m_Name: Swirl Radius
         m_Overridden: 1
-      - m_Value: 1.36
+      - m_Value: 1.69
         m_Name: Axial intensity
         m_Overridden: 1
       - m_Value: 5
         m_Name: Axial Intensity Random
         m_Overridden: 1
-      - m_Value: 4.93
+      - m_Value: 3
         m_Name: Axial Intensity Variance
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Axial Intensity
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -1190,13 +1221,13 @@ VisualEffect:
       - m_Value: {x: 1.5, y: 0.2, z: 0}
         m_Name: Gravity Axis
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 1}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Swirl Axis
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Swirl Origin
         m_Overridden: 1
-      - m_Value: {x: 0, y: 1, z: 0}
+      - m_Value: {x: 1, y: 0, z: 0}
         m_Name: Axial Axis
         m_Overridden: 1
     m_Vector4f:
@@ -1290,7 +1321,7 @@ MonoBehaviour:
   colorIntensity: 2
   alpha: 0.442
   size: 0.45
-  drag: 1.49
+  drag: 0.5
   velocityDrag: 0
   sphereSize: 2
 --- !u!114 &663945659
@@ -1305,7 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0b53e9885c8341b1773c57337de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveParticleCount: 120783
+  aliveParticleCount: 120673
 --- !u!114 &663945660
 MonoBehaviour:
   m_ObjectHideFlags: 0
