@@ -109,7 +109,8 @@ public class VFXController : MonoBehaviour
             // Axial parameter update
             visualEffect.SetFloat("Axial Intensity", axialIntensity);
             visualEffect.SetVector3("Axial Axis", axialAxis);
-            visualEffect.SetFloat("Axial Intensity Variance", axialIntensityVariance);
+            visualEffect.SetFloat("Axial Intensity Variance" +
+                "", axialIntensityVariance);
         }
     }
 }
