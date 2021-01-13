@@ -53,6 +53,11 @@ public class VFXController : MonoBehaviour
     public Vector3 axialAxis;
     public float axialIntensityVariance;
 
+    [Header("Orbita Force")]
+    public float orbitaIntensity;
+    public Vector3 orbitaAxis;
+    public Vector3 orbitaOrigin;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -111,6 +116,11 @@ public class VFXController : MonoBehaviour
             visualEffect.SetVector3("Axial Axis", axialAxis);
             visualEffect.SetFloat("Axial Intensity Variance" +
                 "", axialIntensityVariance);
+
+            // Orbita parameter update
+            visualEffect.SetFloat("Orbita Intensity", orbitaIntensity);
+            visualEffect.SetVector3("Orbita Axis", orbitaAxis);
+            visualEffect.SetVector3("Orbita Origin", orbitaOrigin);
         }
     }
 }

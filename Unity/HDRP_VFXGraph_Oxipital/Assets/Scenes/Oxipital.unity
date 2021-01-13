@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: Attractor Target Position
-  Target: {fileID: 1072401778}
+  Target: {fileID: 0}
 --- !u!114 &15800910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 1.25
+      - m_Value: 3.81
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -331,13 +331,13 @@ VisualEffect:
       - m_Value: 2
         m_Name: Lacunarity
         m_Overridden: 1
-      - m_Value: 1.09
+      - m_Value: 0
         m_Name: Turb Intensity
         m_Overridden: 1
       - m_Value: 0
         m_Name: Attractor Intensity
         m_Overridden: 1
-      - m_Value: 3.88
+      - m_Value: 3.65
         m_Name: Attractor Radius
         m_Overridden: 1
       - m_Value: 0
@@ -379,6 +379,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Axial Intensity
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: Orbita Intensity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -416,6 +419,12 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Swirl Origin
         m_Overridden: 1
+      - m_Value: {x: 0, y: 1, z: 0}
+        m_Name: Orbita Axis
+        m_Overridden: 1
+      - m_Value: {x: 1.45, y: 0, z: 0}
+        m_Name: Orbita Origin
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
       - m_Value: {x: 0, y: 0, z: 0, w: 0}
@@ -431,7 +440,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 1165778944
+      - m_Value: 0
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -855,7 +864,7 @@ Transform:
   - {fileID: 663945657}
   - {fileID: 15800907}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &360151758
 MonoBehaviour:
@@ -871,11 +880,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attractorTargetPosition: {x: 0, y: 0, z: 0}
   attractorIntensity: 0
-  attractorRadius: 3.88
+  attractorRadius: 3.65
   repulsorTargetPosition: {x: 0, y: 0, z: 0}
   repulsorIntensity: 0
   repulsorRadius: 5.16
-  turbIntensity: 1.09
+  turbIntensity: 0
   turbFrequency: 0.68
   turbOctave: 1
   turbroughness: 0.5
@@ -884,7 +893,7 @@ MonoBehaviour:
   turbXPosition: 0
   vortexIntensity: 0
   vortexIntensityRandom: 0
-  vortexRadius: 1.25
+  vortexRadius: 3.81
   vortexAxis: {x: 0, y: 1, z: 0}
   vortexTargetPosition: {x: 0, y: 0, z: 0}
   zalemGravity: 0
@@ -896,6 +905,9 @@ MonoBehaviour:
   axialIntensity: 0
   axialAxis: {x: 1, y: 0, z: 0}
   axialIntensityVariance: 3
+  orbitaIntensity: 0
+  orbitaAxis: {x: 0, y: 1, z: 0}
+  orbitaOrigin: {x: 1.45, y: 0, z: 0}
 --- !u!1 &498367024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1130,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 1.25
+      - m_Value: 3.81
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -1139,13 +1151,13 @@ VisualEffect:
       - m_Value: 2
         m_Name: Lacunarity
         m_Overridden: 1
-      - m_Value: 1.09
+      - m_Value: 0
         m_Name: Turb Intensity
         m_Overridden: 1
       - m_Value: 0
         m_Name: Attractor Intensity
         m_Overridden: 1
-      - m_Value: 3.88
+      - m_Value: 3.65
         m_Name: Attractor Radius
         m_Overridden: 1
       - m_Value: 0
@@ -1193,6 +1205,9 @@ VisualEffect:
       - m_Value: 0
         m_Name: Axial Intensity
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: Orbita Intensity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1230,6 +1245,12 @@ VisualEffect:
       - m_Value: {x: 1, y: 0, z: 0}
         m_Name: Axial Axis
         m_Overridden: 1
+      - m_Value: {x: 0, y: 1, z: 0}
+        m_Name: Orbita Axis
+        m_Overridden: 1
+      - m_Value: {x: 1.45, y: 0, z: 0}
+        m_Name: Orbita Origin
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
       - m_Value: {x: 0.72156864, y: 1.4336604, z: 2.9960785, w: 0}
@@ -1245,7 +1266,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 1165778944
+      - m_Value: 8389
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -1336,7 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0b53e9885c8341b1773c57337de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveParticleCount: 120624
+  aliveParticleCount: 120618
 --- !u!114 &663945660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1367,7 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: Attractor Target Position
-  Target: {fileID: 1072401778}
+  Target: {fileID: 0}
 --- !u!1 &686339398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1422,7 @@ MonoBehaviour:
   rotateXSpeed: 0
   rotateRadius: 5
   rotationCenter: {x: 0, y: 0, z: 0}
-  lookAtTarget: {fileID: 1072401778}
+  lookAtTarget: {fileID: 0}
   camera: {fileID: 225356785}
   cameraPositionTarget: {fileID: 207812640}
 --- !u!4 &686339400
@@ -1600,36 +1621,6 @@ Transform:
   m_Father: {fileID: 2083420221}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1072401777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1072401778}
-  m_Layer: 0
-  m_Name: AttractOrigin
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1072401778
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072401777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077173994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1735649446
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1771,7 +1762,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783646955
 GameObject:
@@ -1850,5 +1841,5 @@ Transform:
   - {fileID: 225356786}
   - {fileID: 686339400}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
