@@ -310,7 +310,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 3.81
+      - m_Value: 1.62
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -404,7 +404,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Axis
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 0}
+      - m_Value: {x: 2.33, y: 0, z: 0}
         m_Name: Vortex Target Position
         m_Overridden: 1
       - m_Value: {x: 0, y: 1, z: 0}
@@ -440,7 +440,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 1165778944
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -858,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360151756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.078, y: -1.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 663945657}
@@ -893,9 +893,9 @@ MonoBehaviour:
   turbXPosition: 0
   vortexIntensity: 0
   vortexIntensityRandom: 0
-  vortexRadius: 3.81
+  vortexRadius: 1.62
   vortexAxis: {x: 0, y: 1, z: 0}
-  vortexTargetPosition: {x: 0, y: 0, z: 0}
+  vortexTargetPosition: {x: 2.33, y: 0, z: 0}
   zalemGravity: 0
   gravityAxis: {x: 0, y: 1, z: 0}
   swirlIntensity: 0
@@ -1033,8 +1033,6 @@ GameObject:
   - component: {fileID: 663945657}
   - component: {fileID: 663945656}
   - component: {fileID: 663945655}
-  - component: {fileID: 663945660}
-  - component: {fileID: 663945661}
   - component: {fileID: 663945659}
   - component: {fileID: 663945658}
   m_Layer: 0
@@ -1130,7 +1128,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 3.81
+      - m_Value: 1.62
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -1230,7 +1228,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Axis
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 0}
+      - m_Value: {x: 2.33, y: 0, z: 0}
         m_Name: Vortex Target Position
         m_Overridden: 1
       - m_Value: {x: 0, y: 1, z: 0}
@@ -1266,7 +1264,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 8389
+      - m_Value: 1165778944
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -1318,7 +1316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663945654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 360151757}
@@ -1357,38 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0b53e9885c8341b1773c57337de7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveParticleCount: 120618
---- !u!114 &663945660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663945654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 663945661}
-  m_VisualEffect: {fileID: 663945656}
---- !u!114 &663945661
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663945654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c3070554d0a8944a95ff8f018c2c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Attractor Target Position
-  Target: {fileID: 0}
+  aliveParticleCount: 369827
 --- !u!1 &686339398
 GameObject:
   m_ObjectHideFlags: 0
