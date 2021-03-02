@@ -9,6 +9,7 @@ public class Screenshot : MonoBehaviour
     public string filepath;
     public string filename;
     public int supersize;
+    public KeyCode takeScreenshotKeyCode;
 
     private int fileIndex = 0;
 
@@ -19,7 +20,7 @@ public class Screenshot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Return))
+        if (Input.GetKeyUp(takeScreenshotKeyCode))
         {
             TakeScreenshot();
         }
