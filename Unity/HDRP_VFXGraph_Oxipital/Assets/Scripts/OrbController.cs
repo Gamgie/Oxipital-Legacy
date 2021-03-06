@@ -54,17 +54,30 @@ public class OrbController : MonoBehaviour
 
 
         // Ps parameters update
-        _visualEffect.SetInt("Rate", Convert.ToInt32(rate));
-        _visualEffect.SetFloat("LifeTime", life);
-        _visualEffect.SetFloat("Alpha", alpha);
-        _visualEffect.SetFloat("Size", size);
-        _visualEffect.SetFloat("Linear Drag", drag);
-        _visualEffect.SetFloat("Velocity Drag", velocityDrag);
+        if (_visualEffect.HasInt("Rate") == true)
+            _visualEffect.SetInt("Rate", Convert.ToInt32(rate));
+
+        if (_visualEffect.HasFloat("LifeTime") == true)
+            _visualEffect.SetFloat("LifeTime", life);
+
+        if (_visualEffect.HasFloat("Alpha") == true)
+            _visualEffect.SetFloat("Alpha", alpha);
+
+        if (_visualEffect.HasFloat("Size") == true)
+            _visualEffect.SetFloat("Size", size);
+
+        if (_visualEffect.HasFloat("Linear Drag") == true)
+            _visualEffect.SetFloat("Linear Drag", drag);
+
+        if (_visualEffect.HasFloat("Velocity Drag") == true)
+            _visualEffect.SetFloat("Velocity Drag", velocityDrag);
 
         float factor = Mathf.Pow(2, colorIntensity);
-        _visualEffect.SetVector4("Color", new Vector3(color.r* factor, color.g* factor, color.b* factor));
+        if(_visualEffect.HasVector4("Color") == true)
+            _visualEffect.SetVector4("Color", new Vector3(color.r* factor, color.g* factor, color.b* factor));
 
         // Emitter Parameters
-        _visualEffect.SetFloat("Sphere Size", sphereSize);
+        if (_visualEffect.HasFloat("Sphere Size") == true)
+            _visualEffect.SetFloat("Sphere Size", sphereSize);
     }
 }
