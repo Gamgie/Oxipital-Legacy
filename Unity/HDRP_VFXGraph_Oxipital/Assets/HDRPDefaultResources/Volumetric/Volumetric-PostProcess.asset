@@ -240,102 +240,6 @@ MonoBehaviour:
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
---- !u!114 &-5384917994482376145
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
-  m_Name: AmbientOcclusion
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  quality:
-    m_OverrideState: 0
-    m_Value: 1
-  rayTracing:
-    m_OverrideState: 0
-    m_Value: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 1.5
-    min: 0
-    max: 4
-  directLightingStrength:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  radius:
-    m_OverrideState: 0
-    m_Value: 2
-    min: 0.25
-    max: 5
-  spatialBilateralAggressiveness:
-    m_OverrideState: 0
-    m_Value: 0.15
-    min: 0
-    max: 1
-  temporalAccumulation:
-    m_OverrideState: 0
-    m_Value: 1
-  ghostingReduction:
-    m_OverrideState: 0
-    m_Value: 0.5
-    min: 0
-    max: 1
-  blurSharpness:
-    m_OverrideState: 0
-    m_Value: 0.1
-    min: 0
-    max: 1
-  layerMask:
-    m_OverrideState: 0
-    m_Value:
-      serializedVersion: 2
-      m_Bits: 4294967295
-  m_StepCount:
-    m_OverrideState: 0
-    m_Value: 6
-    min: 2
-    max: 32
-  m_FullResolution:
-    m_OverrideState: 0
-    m_Value: 0
-  m_MaximumRadiusInPixels:
-    m_OverrideState: 0
-    m_Value: 40
-    min: 16
-    max: 256
-  m_BilateralUpsample:
-    m_OverrideState: 0
-    m_Value: 1
-  m_DirectionCount:
-    m_OverrideState: 0
-    m_Value: 2
-    min: 1
-    max: 6
-  m_RayLength:
-    m_OverrideState: 0
-    m_Value: 3
-    min: 0
-  m_SampleCount:
-    m_OverrideState: 0
-    m_Value: 2
-    min: 1
-    max: 64
-  m_Denoise:
-    m_OverrideState: 0
-    m_Value: 1
-  m_DenoiserRadius:
-    m_OverrideState: 0
-    m_Value: 0.5
-    min: 0.001
-    max: 1
 --- !u!114 &-2418351232701596165
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -420,7 +324,6 @@ MonoBehaviour:
   components:
   - {fileID: -6958855728281335876}
   - {fileID: -8318837148586389046}
-  - {fileID: -5384917994482376145}
   - {fileID: 11782479920561992}
   - {fileID: -6358234146770234167}
   - {fileID: -2418351232701596165}
@@ -546,23 +449,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   quality:
-    m_OverrideState: 0
-    m_Value: 3
-  intensity:
     m_OverrideState: 1
-    m_Value: 2.5
+    m_Value: 2
+  intensity:
+    m_OverrideState: 0
+    m_Value: 182.26
     min: 0
   maximumVelocity:
-    m_OverrideState: 0
-    m_Value: 200
+    m_OverrideState: 1
+    m_Value: 116
     min: 0
     max: 1500
   minimumVelocity:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 0.9
     min: 0
     max: 64
   cameraMotionBlur:
@@ -593,5 +496,5 @@ MonoBehaviour:
     max: 20
   m_SampleCount:
     m_OverrideState: 1
-    m_Value: 16
+    m_Value: 12
     min: 2
