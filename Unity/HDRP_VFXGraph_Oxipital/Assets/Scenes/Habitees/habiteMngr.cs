@@ -9,13 +9,29 @@ public class habiteMngr : MonoBehaviour
     public GameObject waterPrefab;
     public GameObject talePrefab;
     public float sceneTransitionDuration;
+    public int defaultScene;
+
+    [Header("Air Parameters")]
+    public float temperatureAmount;
+    public float densityBuoyancy;
+    public float densityWeight;
+    public float emitterRadius;
+
+    [Header("Corpse Parameters")]
+    public float leftSwirl;
+    public float rightSwirl;
+    public float orbita;
+    public float noiseIntensity;
+    public float noiseFrequency;
+    public float turbIntensity;
+    public float turbFrequency;
 
     private GameObject actualPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        LoadScene(0);
+        LoadScene(defaultScene);
     }
 
 
@@ -23,10 +39,17 @@ public class habiteMngr : MonoBehaviour
     {
         if(actualPrefab)
         {
-            actualPrefab.GetComponent<HabitePrefab>().transitionDuration = sceneTransitionDuration;
-            actualPrefab.GetComponent<HabitePrefab>().ToBeDestroy();
+            // Check if we are not trying to load the already loaded prefab.
+            if(actualPrefab.GetComponent<HabitePrefab>().id != sceneid)
+            {
+                actualPrefab.GetComponent<HabitePrefab>().transitionDuration = sceneTransitionDuration;
+                actualPrefab.GetComponent<HabitePrefab>().ToBeDestroy();
+            }
+            else
+            {
+                return;
+            }
         }
-            
 
         if(sceneid == 0) // Air Scene
         {
@@ -45,7 +68,9 @@ public class habiteMngr : MonoBehaviour
             actualPrefab = Instantiate(talePrefab);
         }
 
+        // Set transition time and init the instancianted prefab.
         actualPrefab.GetComponent<HabitePrefab>().transitionDuration = sceneTransitionDuration;
+        actualPrefab.GetComponent<HabitePrefab>().Init(this);
     }
 
     public void LoadAir()
@@ -66,6 +91,18 @@ public class habiteMngr : MonoBehaviour
     public void LoadTale()
     {
         LoadScene(3);
+    }
+
+    private void Update()
+    {
+        if(actualPrefab != null )
+        {
+            actualPrefab.GetComponent<HabitePrefab>().UpdatePrefab();
+        }
+        else
+        {
+            Debug.LogError("actual prefab is null.");
+        }
     }
 
 }

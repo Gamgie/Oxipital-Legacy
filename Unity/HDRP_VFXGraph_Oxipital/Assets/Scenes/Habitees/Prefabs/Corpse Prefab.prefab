@@ -1,5 +1,100 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &828153991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828153992}
+  - component: {fileID: 828153995}
+  - component: {fileID: 828153994}
+  - component: {fileID: 828153993}
+  m_Layer: 10
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &828153992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6412666, y: 0.6412666, z: 0.6412666}
+  m_Children: []
+  m_Father: {fileID: 4284615537107942926}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &828153995
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153991}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &828153994
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153991}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &828153993
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828153991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1708952322
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,8 +107,7 @@ GameObject:
   - component: {fileID: 1708952326}
   - component: {fileID: 1708952325}
   - component: {fileID: 1708952324}
-  - component: {fileID: 1708952323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spout Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -65,7 +159,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1024
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 8faea7111c5179b4ca75fcad32220e41, type: 2}
   m_TargetDisplay: 0
@@ -141,7 +235,7 @@ MonoBehaviour:
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 2
   SMAAQuality: 2
@@ -232,22 +326,6 @@ MonoBehaviour:
   rotationLerpTime: 0.199
   invertY: 0
   lockMouseMouvement: 1
---- !u!114 &1708952323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708952322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filepath: C:\Users\Gamgie\Documents\Gamgie\Projets\Oxipital\Unity\Screen Capture
-  filename: Oxipital
-  supersize: 5
-  takeScreenshotKeyCode: 0
 --- !u!1 &4284615535887551111
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +338,7 @@ GameObject:
   - component: {fileID: 4284615535887551106}
   - component: {fileID: 4284615535887551105}
   - component: {fileID: 4284615535887551107}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4284615535981201275}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ligths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4284615536807299318}
   - component: {fileID: 4284615536807299317}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Render Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4284615537107942926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PS_Corpse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,10 +671,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4284615537107942924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.83}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4284615537211927058}
+  - {fileID: 828153992}
   m_Father: {fileID: 4284615537255515041}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -612,7 +691,7 @@ GameObject:
   - component: {fileID: 4284615537211927069}
   - component: {fileID: 4284615537211927068}
   - component: {fileID: 7062163110426343657}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: orb_habitees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,10 +768,10 @@ VisualEffect:
       - m_Value: 0
         m_Name: Vortex Radial Force
         m_Overridden: 1
-      - m_Value: 0.37
+      - m_Value: 0
         m_Name: Turb Intensity
         m_Overridden: 1
-      - m_Value: 0.26
+      - m_Value: 0.15
         m_Name: Turb Frequency
         m_Overridden: 1
       - m_Value: 0.5
@@ -728,19 +807,19 @@ VisualEffect:
       - m_Value: 0
         m_Name: Orbita Intensity
         m_Overridden: 1
-      - m_Value: 0.23
+      - m_Value: 0.9
         m_Name: Noise Frequency
         m_Overridden: 1
-      - m_Value: 0.88
+      - m_Value: 0
         m_Name: Noise Intensity
         m_Overridden: 1
-      - m_Value: 0.72
+      - m_Value: 0.69
         m_Name: Left Swirl
         m_Overridden: 1
-      - m_Value: 0.12
+      - m_Value: 0.8
         m_Name: Right Swirl
         m_Overridden: 1
-      - m_Value: 0.21
+      - m_Value: 0.74
         m_Name: Orbita
         m_Overridden: 1
     m_Vector2f:
@@ -889,7 +968,7 @@ MonoBehaviour:
   life: 34
   color: {r: 0, g: 0, b: 0, a: 0}
   colorIntensity: 0
-  alpha: 0
+  alpha: 0.547
   size: 0.164
   drag: 2.1
   velocityDrag: 0.06
@@ -904,7 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4284615537255515041}
   - component: {fileID: -5059930124664853525}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Corpse Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4284615537255515040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4284615536807299318}
@@ -943,7 +1022,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionDuration: 0
+  id: 0
   lightRoot: {fileID: 4284615535981201274}
+  vfx: {fileID: 4284615537211927069}
 --- !u!1 &4284615537297076069
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +1037,7 @@ GameObject:
   - component: {fileID: 4284615537297076064}
   - component: {fileID: 4284615537297076071}
   - component: {fileID: 4284615537297076065}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1277,7 @@ GameObject:
   - component: {fileID: 4284615537373676329}
   - component: {fileID: 4284615537373676328}
   - component: {fileID: 4284615537373676330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4284615537419676712}
   - component: {fileID: 4284615537419676719}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Post Processing Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
