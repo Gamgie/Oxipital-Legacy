@@ -1,0 +1,51 @@
+
+#pragma kernel CSMain
+#define NUM_THREADS 8
+
+float4 _Resolution;
+
+RWStructuredBuffer<float> _Write;
+
+[numthreads(NUM_THREADS,NUM_THREADS,NUM_THREADS)]
+void CSMain (int3 id : SV_DispatchThreadID)
+{
+
+    int idx = id.x + id.y*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+    
+    float obstacle = 0;
+    
+    //Box
+    if(id.x-1 < 0) obstacle = 1;
+    if(id.x+1 > (int)_Resolution.x-1) obstacle = 1;
+    
+    if(id.y-1 < 0) obstacle = 1;
+    if(id.y+1 > (int)_Resolution.y-1) obstacle = 1;
+    
+    if(id.z-1 < 0) obstacle = 1;
+    if(id.z+1 > (int)_Resolution.z-1) obstacle = 1;
+    
+    //Sphere
+    //if(length(id - _Resolution.xyz * 0.5) > _Resolution.x * 0.5) obstacle = 1;
+
+    _Write[idx] = obstacle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
