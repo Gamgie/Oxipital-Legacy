@@ -10,7 +10,7 @@ public class OrbController : MonoBehaviour
     public enum EmitterShape { Sphere, Plane, Torus, Cube}
 
     [Header("PS Parameters")]
-    [Range(0, 20000)]
+    [Range(0, 40000)]
     public float rate;
 
     [Range(0, 200)]
