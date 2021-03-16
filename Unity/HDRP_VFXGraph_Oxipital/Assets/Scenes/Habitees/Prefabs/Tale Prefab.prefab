@@ -53,7 +53,7 @@ VisualEffect:
       - m_Value: 0.56
         m_Name: Alpha
         m_Overridden: 1
-      - m_Value: 13.2
+      - m_Value: 19
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 0.95
@@ -107,7 +107,7 @@ VisualEffect:
       - m_Value: 0.87
         m_Name: Turb Frequency
         m_Overridden: 1
-      - m_Value: 1.11
+      - m_Value: 1.62
         m_Name: Turb Intensity
         m_Overridden: 1
       - m_Value: 1.16
@@ -122,7 +122,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Vortex Force Random
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 16.38
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 20
@@ -161,6 +161,12 @@ VisualEffect:
       - m_Value: 0.3
         m_Name: CTS Stick Distance 1
         m_Overridden: 1
+      - m_Value: 0
+        m_Name: Vortex Intensity Random
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Vortex Intensity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -189,7 +195,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Swirl Origin
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 0}
+      - m_Value: {x: 0, y: 1, z: 0}
         m_Name: Vortex Axis
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
@@ -200,6 +206,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: {x: 10, y: 0.68, z: 0}
         m_Name: CTS Center 1
+        m_Overridden: 1
+      - m_Value: {x: 10, y: 0, z: 0}
+        m_Name: Vortex Position
         m_Overridden: 1
     m_Vector4f:
       m_Array:
@@ -310,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rate: 36693
-  life: 13.2
+  life: 19
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 1
   alpha: 0.56
@@ -318,6 +327,51 @@ MonoBehaviour:
   drag: 0.95
   velocityDrag: 0.051
   sphereSize: 1
+--- !u!1 &1484419981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484419982}
+  - component: {fileID: 1484419983}
+  m_Layer: 0
+  m_Name: Spout Habite Tale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484419982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484419981}
+  m_LocalRotation: {x: 0.10148793, y: -0, z: -0, w: 0.99483687}
+  m_LocalPosition: {x: -10.032255, y: -0.05822873, z: 5.93865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3826923897221282345}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484419983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484419981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceTexture: {fileID: 8400000, guid: 4be787cd7b77dd845ac49a4e2ecb099a, type: 2}
+  _alphaSupport: 0
 --- !u!1 &1765517171
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,8 +593,6 @@ GameObject:
   - component: {fileID: 3826923897221282345}
   - component: {fileID: 3826923897221282357}
   - component: {fileID: 3826923897221282356}
-  - component: {fileID: 3826923897221282359}
-  - component: {fileID: 3826923897221282358}
   m_Layer: 13
   m_Name: Spout Camera
   m_TagString: MainCamera
@@ -555,13 +607,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3826923897221282344}
-  m_LocalRotation: {x: -0.070775785, y: -0, z: -0, w: 0.99749225}
-  m_LocalPosition: {x: 0, y: -1.52, z: -6.8}
+  m_LocalRotation: {x: -0.10148793, y: -0, z: -0, w: 0.99483687}
+  m_LocalPosition: {x: 0, y: -1.52, z: -5.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1484419982}
   m_Father: {fileID: 8988818799728190831}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -8.117, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.65, y: 0, z: 0}
 --- !u!20 &3826923897221282357
 Camera:
   m_ObjectHideFlags: 0
@@ -719,63 +772,6 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
---- !u!114 &3826923897221282359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826923897221282344}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a636f62116c0a40bbfefdf876d4608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boost: 0.61
-  positionLerpTime: 0.439
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.199
-  invertY: 0
-  lockMouseMouvement: 1
---- !u!114 &3826923897221282358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826923897221282344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filepath: C:\Users\Gamgie\Documents\Gamgie\Projets\Oxipital\Unity\Screen Capture
-  filename: Oxipital
-  supersize: 5
-  takeScreenshotKeyCode: 0
 --- !u!1 &8988818799728190830
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +785,7 @@ GameObject:
   - component: {fileID: 8946818928083644956}
   - component: {fileID: 8946818928083644955}
   - component: {fileID: 5201794010252603223}
+  - component: {fileID: 8087090179360088352}
   m_Layer: 13
   m_Name: Tale Prefab
   m_TagString: Untagged
@@ -846,17 +843,12 @@ MonoBehaviour:
   repulsorTargetPosition: {x: 0, y: 0, z: 0}
   repulsorIntensity: 0
   repulsorRadius: 0
-  turbIntensity: 1.11
+  turbIntensity: 1.62
   turbFrequency: 0.87
   turbOctave: 1
   turbroughness: 1
   turbLacunarity: 2
   turbScale: 1.16
-  vortexIntensity: 0
-  vortexIntensityRandom: 0
-  vortexRadius: 0
-  vortexAxis: {x: 0, y: 0, z: 0}
-  vortexTargetPosition: {x: 0, y: 0, z: 0}
   zalemGravity: 0.61
   gravityAxis: {x: 0, y: 1, z: 0}
   swirlIntensity: 0
@@ -907,3 +899,23 @@ MonoBehaviour:
   attractionForce: 0
   stickDistance: 0.3
   stickForce: 16.94
+--- !u!114 &8087090179360088352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8988818799728190830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9a10472bfa80940b87180b60987ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  intensity: 0
+  intensityRandom: 0
+  radius: 16.38
+  axis: {x: 0, y: 1, z: 0}
+  targetObject: {fileID: 0}
+  useVector3: 1
+  targetVector3: {x: 10, y: 0, z: 0}

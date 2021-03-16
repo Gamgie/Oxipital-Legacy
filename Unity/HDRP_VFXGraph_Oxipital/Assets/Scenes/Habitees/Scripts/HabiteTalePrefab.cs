@@ -1,33 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class HabiteTalePrefab : HabitePrefab
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    VFXController m_vfxCtrlr;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public override void ToBeDestroy()
     {
+        DOTween.To(() => transform.GetComponentInChildren<OrbController>().rate,
+                    x => transform.GetComponentInChildren<OrbController>().rate = x,
+                    0,
+                    transitionDuration / 10);
 
+        DOTween.To(() => transform.GetComponentInChildren<OrbController>().size,
+                    x => transform.GetComponentInChildren<OrbController>().size = x,
+                    0,
+                    transitionDuration / 2).SetDelay(transitionDuration / 2);
+
+        Destroy(this.gameObject, transitionDuration * 2.2f);
     }
 
     public override void Init(habiteMngr m)
     {
         m_mngr = m;
+
+        // Set id to tale prefab
+        id = 2;
+
+        // Start emitting smoothly.
+        DOTween.To(() => transform.GetComponentInChildren<OrbController>().rate,
+                    x => transform.GetComponentInChildren<OrbController>().rate = x,
+                    0,
+                    transitionDuration*2).From();
+
+        m_vfxCtrlr = GetComponent<VFXController>();
     }
 
     public override void UpdatePrefab()
     {
+        if (m_vfxCtrlr == null)
+        {
+            m_vfxCtrlr = GetComponent<VFXController>();
+            return;
+        }
+
+        m_vfxCtrlr.turbIntensity = m_mngr.taleTurbence;
 
     }
 }

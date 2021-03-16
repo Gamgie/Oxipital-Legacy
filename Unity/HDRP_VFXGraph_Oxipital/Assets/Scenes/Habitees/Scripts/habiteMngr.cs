@@ -25,6 +25,9 @@ public class habiteMngr : MonoBehaviour
     public float turbIntensity;
     public float turbFrequency;
 
+    [Header("Tale Parameters")]
+    public float taleTurbence;
+
     private GameObject actualPrefab;
 
     // Start is called before the first frame update
@@ -78,14 +81,24 @@ public class habiteMngr : MonoBehaviour
         LoadScene(1);
     }
 
-    public void LoadWater()
+    public void LoadTale()
     {
         LoadScene(2);
     }
 
-    public void LoadTale()
+    public void LoadWater()
     {
-        LoadScene(3);
+        UnloadAllScene();
+    }
+
+    public void UnloadAllScene()
+    {
+        if (actualPrefab != null)
+        {
+            actualPrefab.GetComponent<HabitePrefab>().transitionDuration = sceneTransitionDuration;
+            actualPrefab.GetComponent<HabitePrefab>().ToBeDestroy();
+            actualPrefab = null;
+        }
     }
 
     private void Update()

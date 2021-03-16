@@ -22,8 +22,7 @@ public class HabiteCorpsePrefab : HabitePrefab
         // Turn on lights
         foreach (Light l in lights)
         {
-            l.DOIntensity(0, transitionDuration).From();
-            Debug.Log(l.gameObject.name);
+            l.DOIntensity(0, transitionDuration*2).From();
         }
 
         // Start emitting smoothly.
