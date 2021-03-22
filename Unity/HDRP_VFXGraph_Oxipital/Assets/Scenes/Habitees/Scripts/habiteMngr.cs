@@ -33,7 +33,14 @@ public class habiteMngr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadScene(defaultScene);
+        if(Application.isEditor)
+        {
+            LoadScene(defaultScene);
+        }
+        else
+        {
+            LoadScene(-1);
+        }
     }
 
 
