@@ -6,6 +6,8 @@ using DG.Tweening;
 public class HabiteTalePrefab : HabitePrefab
 {
     VFXController m_vfxCtrlr;
+    public VortexController vortex0;
+    public VortexController vortex1;
 
 
     public override void ToBeDestroy()
@@ -48,6 +50,8 @@ public class HabiteTalePrefab : HabitePrefab
         }
 
         m_vfxCtrlr.turbIntensity = m_mngr.taleTurbence;
+        vortex0.intensity = m_mngr.vortex0Intensity;
+        vortex1.intensity = m_mngr.vortex1Intensity;
 
     }
 }

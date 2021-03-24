@@ -27,6 +27,8 @@ public class habiteMngr : MonoBehaviour
 
     [Header("Tale Parameters")]
     public float taleTurbence;
+    public float vortex0Intensity;
+    public float vortex1Intensity;
 
     private GameObject actualPrefab;
 
