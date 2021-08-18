@@ -7,19 +7,21 @@ using UnityEngine.VFX;
 public class VFXParticleCount : MonoBehaviour
 {
 
-    private VisualEffect visualEffect;
+    public VisualEffect[] visualEffect;
     public int aliveParticleCount;
-
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        visualEffect = GetComponent<VisualEffect>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(visualEffect != null)
-            aliveParticleCount = visualEffect.aliveParticleCount;
+        int totalCount = 0;
+        if (visualEffect.Length != 0)
+        {
+            foreach(VisualEffect vfx in visualEffect)
+            {
+                if(vfx != null)
+                    totalCount += vfx.aliveParticleCount;
+            }
+        }
+            aliveParticleCount = totalCount;
     }
 }
