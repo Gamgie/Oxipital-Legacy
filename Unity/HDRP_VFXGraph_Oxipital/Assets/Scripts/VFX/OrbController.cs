@@ -28,7 +28,11 @@ public class OrbController : MonoBehaviour
     public float velocityDrag;
 
     [Header("Emitter Parameters")]
+    public EmitterShape emitterShape;
+    public Vector3 emitterPosition;
     public float sphereSize;
+    public Vector3 planeOrientation;
+    public float planeSize;
 
     private VisualEffect _visualEffect;
 
