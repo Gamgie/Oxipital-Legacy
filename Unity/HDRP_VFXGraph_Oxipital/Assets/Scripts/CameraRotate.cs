@@ -14,28 +14,31 @@ public class CameraRotate : MonoBehaviour
     public float resetDuration;
     public float moveDuration;
     public Vector3 positionTarget;
+    public OrbitalDragon orbitalDragon;
 
     private CinemachineVirtualCamera virtualCamera;
-    private Cinemachine3rdPersonFollow thirdPerson;
+    private CinemachineTransposer transposer;
 
     private void OnEnable()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        thirdPerson = virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+        transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Rotate target transform.
-        lookAtTarget.Rotate(rotateXSpeed*Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
-        if(thirdPerson != null)
+        // We cannot follow orbital dragon and rotate around center at the same time.
+        // Here I disable rotation around center while following dragon.
+        if (orbitalDragon.IsActive == false)
         {
-            //thirdPerson.CameraDistance = Mathf.Lerp(thirdPerson.CameraDistance, radius, 0.3f);
-            thirdPerson.CameraDistance = radius;
+            // Rotate target transform.
+            lookAtTarget.Rotate(rotateXSpeed * Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
+            if (transposer != null)
+            {
+                transposer.m_FollowOffset = new Vector3(0,0, -radius);
+            }
         }
-
-        //lookAtTarget.transform.position = positionTarget;
     }
 
     public void ResetCameraPosition()
@@ -74,4 +77,13 @@ public class CameraRotate : MonoBehaviour
         lookAtTarget.transform.DORotate(new Vector3(0, -90, 0), moveDuration);
     }
 
+    public void StartDragon()
+    {
+        orbitalDragon.Init();
+    }
+
+    public void StopDragon()
+    {
+        orbitalDragon.Stop();
+    }
 }
