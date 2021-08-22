@@ -2,49 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Cinemachine;
 
 public class CameraRotate : MonoBehaviour
 {
     public float rotateYSpeed;
     public float rotateXSpeed;
-    public float rotateRadius;
-    public Vector3 rotationCenter;
     public Transform lookAtTarget;
     public Camera camera;
-    public Transform cameraPositionTarget; // Camera follow this object. Allow me to smoothly move camera behind this target.
+    public float radius;
     public float resetDuration;
-    public float XRotationValue;
+    public float moveDuration;
+    public Vector3 positionTarget;
 
+    private CinemachineVirtualCamera virtualCamera;
+    private Cinemachine3rdPersonFollow thirdPerson;
+
+    private void OnEnable()
+    {
+        virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        thirdPerson = virtualCamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = rotationCenter;
-
-        // Rotate this transform. This give the rotation to camera target
-        //transform.Rotate(XRotationValue, rotateYSpeed * Time.deltaTime, 0);
-        //transform.rotation.eulerAngles.x = XRotationValue;
-        transform.rotation = Quaternion.Euler(XRotationValue, 0, 0);
-
-        // Update position of target in Z. It is rotation's radius.
-        cameraPositionTarget.transform.localPosition = new Vector3(0, 0, rotateRadius);
-
-        // Update camera position smoothly
-        Debug.Log(transform.localEulerAngles.x);
-
-        if(XRotationValue < 90 && XRotationValue > -90)
+        // Rotate target transform.
+        lookAtTarget.Rotate(rotateXSpeed*Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
+        if(thirdPerson != null)
         {
-            camera.transform.LookAt(lookAtTarget, Vector3.up);
-            Debug.Log("up");
+            //thirdPerson.CameraDistance = Mathf.Lerp(thirdPerson.CameraDistance, radius, 0.3f);
+            thirdPerson.CameraDistance = radius;
         }
-        else
-        {
-            camera.transform.LookAt(lookAtTarget, Vector3.down);
-            Debug.Log("down");
-        }
-        //camera.transform.LookAt(lookAtTarget);
-        //camera.transform.rotation = Quaternion.LookRotation(lookAtTarget.position - camera.transform.position);
-        camera.transform.position = cameraPositionTarget.position;
 
+        //lookAtTarget.transform.position = positionTarget;
     }
+
+    public void ResetCameraPosition()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DOMove(Vector3.zero,resetDuration);
+        lookAtTarget.transform.DORotate(Vector3.zero, resetDuration);
+    }
+
+    public void TopView()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DORotate(new Vector3(90,0,0), moveDuration);
+    }
+
+    public void DownView()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DORotate(new Vector3(-90, 0, 0), moveDuration);
+    }
+
+    public void LeftView()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DORotate(new Vector3(0, 90, 0), moveDuration);
+    }
+
+    public void RightView()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DORotate(new Vector3(0, -90, 0), moveDuration);
+    }
+
 }
