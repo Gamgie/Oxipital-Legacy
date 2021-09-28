@@ -28,11 +28,16 @@ public class OrbController : MonoBehaviour
     public float velocityDrag;
 
     [Header("Emitter Parameters")]
+    public bool useCustomEmitterShape;
     public EmitterShape emitterShape;
+    public GameObject emitterGO;
     public Vector3 emitterPosition;
-    public float sphereSize;
-    public Vector3 planeOrientation;
-    public float planeSize;
+    public Vector3 emitterOrientation;
+    public float emitterSize;
+    public Mesh[] meshArray;
+    private SkinnedMeshRenderer skinMesh;
+
+
 
     private VisualEffect _visualEffect;
 
@@ -45,7 +50,10 @@ public class OrbController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateVisualEffect();
+        if (useCustomEmitterShape)
+            UpdateEmitter();
+        
+        UpdateVisualEffect();        
     }
 
     void UpdateVisualEffect()
@@ -79,9 +87,38 @@ public class OrbController : MonoBehaviour
         float factor = Mathf.Pow(2, colorIntensity);
         if(_visualEffect.HasVector4("Color") == true)
             _visualEffect.SetVector4("Color", new Vector3(color.r* factor, color.g* factor, color.b* factor));
+        
+        if(!useCustomEmitterShape)
+        {
+            if (_visualEffect.HasFloat("Emitter Size") == true)
+                _visualEffect.SetFloat("Emitter Size", emitterSize);
+        }
+    }
 
-        // Emitter Parameters
-        if (_visualEffect.HasFloat("Sphere Size") == true)
-            _visualEffect.SetFloat("Sphere Size", sphereSize);
+    void UpdateEmitter()
+    {
+        if (emitterGO == null)
+            return;
+
+
+        emitterGO.transform.position = emitterPosition;
+        emitterGO.transform.eulerAngles= emitterOrientation;
+        emitterGO.transform.localScale= new Vector3(emitterSize, emitterSize, emitterSize);
+
+        switch(emitterShape)
+        {
+            case EmitterShape.Plane:
+                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[1];
+                break;
+            case EmitterShape.Sphere:
+                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[0];
+                break;
+            case EmitterShape.Cube:
+                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[2];
+                break;
+            case EmitterShape.Torus:
+                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[3];
+                break;
+        }
     }
 }
