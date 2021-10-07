@@ -10,6 +10,7 @@ public class CameraRotate : MonoBehaviour
     public float rotateXSpeed;
     public Transform lookAtTarget;
     public Camera camera;
+    public int fov;
     public float radius;
     public float resetDuration;
     public float moveDuration;
@@ -18,11 +19,13 @@ public class CameraRotate : MonoBehaviour
 
     private CinemachineVirtualCamera virtualCamera;
     private CinemachineTransposer transposer;
+    private Camera _cameraFeedback;
 
     private void OnEnable()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        _cameraFeedback = camera.transform.GetChild(0).GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,17 @@ public class CameraRotate : MonoBehaviour
             {
                 transposer.m_FollowOffset = new Vector3(0,0, -radius);
             }
+        }
+
+        if(virtualCamera != null)
+        {
+            virtualCamera.m_Lens.FieldOfView = fov;
+        }
+
+        if(_cameraFeedback != null)
+        {
+            _cameraFeedback.fieldOfView = fov;
+            Debug.Log("update");
         }
     }
 

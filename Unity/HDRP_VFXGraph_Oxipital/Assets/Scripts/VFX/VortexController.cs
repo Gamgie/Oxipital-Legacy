@@ -11,12 +11,7 @@ public class VortexController : ForceController
     public float intensityRandom;
     public float radius;
 
-    [HideInInspector]
     public Vector3 axis;
-    // If I want to control axis from chataigne, I have to separate each axis. I know it's not beautiful
-    public float xAxis;
-    public float yAxis;
-    public float zAxis;
 
 
     public Transform targetObject;
@@ -27,8 +22,6 @@ public class VortexController : ForceController
     void Update()
     {
         string vortex = "Vortex";
-
-        axis = new Vector3(xAxis, yAxis, zAxis);
 
         foreach (VisualEffect visualEffect in m_vfxs)
         {
