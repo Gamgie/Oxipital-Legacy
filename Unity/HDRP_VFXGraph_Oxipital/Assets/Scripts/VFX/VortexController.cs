@@ -7,10 +7,18 @@ using UnityEngine.VFX;
 public class VortexController : ForceController
 {
     public float intensity;
-    [Range(0,1)]
+    [Range(0, 1)]
     public float intensityRandom;
     public float radius;
+
+    [HideInInspector]
     public Vector3 axis;
+    // If I want to control axis from chataigne, I have to separate each axis. I know it's not beautiful
+    public float xAxis;
+    public float yAxis;
+    public float zAxis;
+
+
     public Transform targetObject;
     public bool useVector3;
     public Vector3 targetVector3;
@@ -19,6 +27,8 @@ public class VortexController : ForceController
     void Update()
     {
         string vortex = "Vortex";
+
+        axis = new Vector3(xAxis, yAxis, zAxis);
 
         foreach (VisualEffect visualEffect in m_vfxs)
         {
@@ -40,22 +50,18 @@ public class VortexController : ForceController
 
             // Target
             Vector3 target = Vector3.zero;
-            if(useVector3)
+            if (useVector3)
             {
                 target = targetVector3;
             }
             else
             {
-                if(targetObject != null)
+                if (targetObject != null)
                     target = targetObject.position;
             }
             if (visualEffect.HasVector3(vortex + " Position" + suffix))
                 visualEffect.SetVector3(vortex + " Position" + suffix, target);
-            
 
-            /*VFXFloatElement fElem = floatList[0];
-            if (visualEffect.HasFloat(fElem.name))
-                visualEffect.SetFloat(fElem.name, fElem.value);*/
         }
     }
 }
