@@ -10,7 +10,7 @@ public class CameraRotate : MonoBehaviour
     public float rotateXSpeed;
     public Transform lookAtTarget;
     public Camera camera;
-    public int fov;
+    public float fov;
     public float radius;
     public float resetDuration;
     public float moveDuration;
