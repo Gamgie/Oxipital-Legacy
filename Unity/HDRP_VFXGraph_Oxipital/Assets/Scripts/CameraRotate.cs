@@ -51,7 +51,6 @@ public class CameraRotate : MonoBehaviour
         if(_cameraFeedback != null)
         {
             _cameraFeedback.fieldOfView = fov;
-            Debug.Log("update");
         }
     }
 

@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 15800912}
   - component: {fileID: 15800911}
   - component: {fileID: 15800909}
-  - component: {fileID: 15800908}
   - component: {fileID: 15800914}
   m_Layer: 0
   m_Name: Orb3
@@ -160,21 +159,6 @@ Transform:
   m_Father: {fileID: 360151757}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &15800908
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15800906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Emitter Transform
-  Target: {fileID: 1065284760}
 --- !u!114 &15800909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,14 +166,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15800906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 15800908}
   - {fileID: 15800914}
   m_VisualEffect: {fileID: 15800913}
 --- !u!114 &15800911
@@ -212,11 +195,11 @@ MonoBehaviour:
   size: 0.96
   drag: 1.45
   velocityDrag: 0
-  useCustomEmitterShape: 1
+  useCustomEmitterShape: 0
   emitterShape: 0
   emitterGO: {fileID: 1065284758}
-  emitterPosition: {x: 0, y: 0.009, z: -0.03}
-  emitterOrientation: {x: 0, y: 180, z: 0}
+  emitterPosition: {x: 0, y: 0, z: -0.03}
+  emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 0.71
   meshArray:
   - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
@@ -470,13 +453,13 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Repulsor Position 2
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.009, z: -0.03}
+      - m_Value: {x: 0, y: 0.0028, z: -0.025}
         m_Name: Emitter Transform_position
         m_Overridden: 1
       - m_Value: {x: 0, y: 180, z: 0}
         m_Name: Emitter Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 0.71, y: 0.71, z: 0.71}
+      - m_Value: {x: 0.65, y: 0.65, z: 0.65}
         m_Name: Emitter Transform_scale
         m_Overridden: 1
       - m_Value: {x: 0.07, y: 0, z: 0}
@@ -928,7 +911,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 174.00035
+  m_FocalLength: 174.22975
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -937,7 +920,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 7.8903565
+  field of view: 7.8800006
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -945,7 +928,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 6c7228c30ec121a4ea5a7bf0e0ca03cf, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1295,7 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property:
     m_Name: Emitter Transform
-  Target: {fileID: 1724576011}
+  Target: {fileID: 1065284760}
 --- !u!114 &270305657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,8 +1317,8 @@ MonoBehaviour:
   velocityDrag: 0
   useCustomEmitterShape: 1
   emitterShape: 0
-  emitterGO: {fileID: 1724576010}
-  emitterPosition: {x: 0, y: 0.49, z: 0}
+  emitterGO: {fileID: 1065284758}
+  emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 1
   meshArray:
@@ -1578,7 +1561,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Repulsor Position 2
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.49, z: 0}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Emitter Transform_position
         m_Overridden: 1
       - m_Value: {x: -0, y: 0, z: 0}
@@ -1688,7 +1671,7 @@ VisualEffect:
         m_Overridden: 1
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 1724576012}
+      - m_Value: {fileID: 1065284759}
         m_Name: Emitter Mesh
         m_Overridden: 1
     m_Bool:
@@ -1778,7 +1761,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270305660}
   - {fileID: 1776848024}
-  aliveParticleCount: 449789
+  aliveParticleCount: 2674
 --- !u!1 &498367024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,9 +1942,10 @@ MonoBehaviour:
   - {fileID: 663945654}
   - {fileID: 15800906}
   - {fileID: 1776848020}
-  - {fileID: 0}
+  - {fileID: 270305654}
   - {fileID: 135452449}
   - {fileID: 594180641}
+  - {fileID: 1716416278}
   componentFilterMode: 2
   filteredComponentNames:
   - MeshRenderer
@@ -2484,7 +2468,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 135452450}
   m_Follow: {fileID: 135452450}
   m_Lens:
-    FieldOfView: 7.890357
+    FieldOfView: 7.88
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -2775,7 +2759,7 @@ PrefabInstance:
     - target: {fileID: 4880100527042663880, guid: bebacf996e4fb194d8066602042675f3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5013215151357986486, guid: bebacf996e4fb194d8066602042675f3,
         type: 3}
@@ -2960,9 +2944,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065284758}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0, y: 0.009, z: -0.03}
-  m_LocalScale: {x: 0.71, y: 0.71, z: 0.71}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1292866246}
@@ -3284,7 +3268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724576010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3403,7 +3387,7 @@ MonoBehaviour:
   useCustomEmitterShape: 1
   emitterShape: 0
   emitterGO: {fileID: 1724576010}
-  emitterPosition: {x: 0, y: 0.49, z: 0}
+  emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 1
   meshArray:
@@ -3646,7 +3630,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Repulsor Position 2
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.49, z: 0}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Emitter Transform_position
         m_Overridden: 1
       - m_Value: {x: -0, y: 0, z: 0}
@@ -3937,7 +3921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c41ac9245b87c4192012080077d830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damping: 5
+  m_Damping: 0
 --- !u!114 &1917567319
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3964,12 +3948,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 2
   m_FollowOffset: {x: 0, y: 0, z: -14.35}
-  m_XDamping: 1.1
+  m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
-  m_PitchDamping: 3
-  m_YawDamping: 3
+  m_PitchDamping: 1
+  m_YawDamping: 0.5
   m_RollDamping: 0
   m_AngularDamping: 0
   m_HideOffsetInInspector: 0
