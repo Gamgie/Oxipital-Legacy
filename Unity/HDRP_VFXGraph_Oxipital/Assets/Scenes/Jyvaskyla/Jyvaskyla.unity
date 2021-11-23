@@ -166,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15800906}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
   m_Name: 
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 40000
+  rate: 0
   life: 14
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 4
@@ -389,7 +389,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: SDF Attraction Speed
         m_Overridden: 1
-      - m_Value: 0.1
+      - m_Value: 0.01
         m_Name: SDF Stick Distance
         m_Overridden: 1
       - m_Value: 50
@@ -471,13 +471,13 @@ VisualEffect:
       - m_Value: {x: 0.8, y: 0.8, z: 0.8}
         m_Name: SDF_Transform_scale
         m_Overridden: 1
-      - m_Value: {x: -0.269, y: 0.066, z: 0.092}
+      - m_Value: {x: 0, y: -0.149, z: -0.163}
         m_Name: SDF Transform_position
         m_Overridden: 1
-      - m_Value: {x: 307.2598, y: 130.7894, z: 79.108864}
+      - m_Value: {x: 27.644337, y: -0, z: -0}
         m_Name: SDF Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 1, y: 1, z: 1}
+      - m_Value: {x: 0.87922555, y: 0.87922555, z: 0.5496889}
         m_Name: SDF Transform_scale
         m_Overridden: 1
     m_Vector4f:
@@ -495,7 +495,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 40000
+      - m_Value: 0
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -594,7 +594,7 @@ VisualEffect:
       - m_Value: {fileID: 11700000, guid: e3947031457de294ab3ccebb83ffbf93, type: 2}
         m_Name: SDF_Texture
         m_Overridden: 1
-      - m_Value: {fileID: 11700000, guid: e3947031457de294ab3ccebb83ffbf93, type: 2}
+      - m_Value: {fileID: 11700000, guid: 70b79641d0644254191f9e2382ed4a21, type: 2}
         m_Name: SDF Texture
         m_Overridden: 1
     m_Bool:
@@ -928,7 +928,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 6c7228c30ec121a4ea5a7bf0e0ca03cf, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -946,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225356782}
   m_LocalRotation: {x: -0.017975932, y: -0, z: 0, w: 0.9998385}
-  m_LocalPosition: {x: 0, y: -0.50583255, z: -14.341086}
+  m_LocalPosition: {x: 0, y: -0.50403523, z: -14.291118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270305660}
   - {fileID: 1776848024}
-  aliveParticleCount: 2674
+  aliveParticleCount: 142
 --- !u!1 &498367024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1946,7 @@ MonoBehaviour:
   - {fileID: 135452449}
   - {fileID: 594180641}
   - {fileID: 1716416278}
+  - {fileID: 1427688174}
   componentFilterMode: 2
   filteredComponentNames:
   - MeshRenderer
@@ -1953,6 +1954,7 @@ MonoBehaviour:
   - BoxCollider
   - MeshCollider
   - Transform
+  - VisualEffect
   excludeInternalUnityParams: 1
 --- !u!4 &596922098
 Transform:
@@ -2439,7 +2441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686339398}
   m_LocalRotation: {x: -0.017975932, y: -0, z: -0, w: 0.9998385}
-  m_LocalPosition: {x: 0, y: -0.50583255, z: -14.341086}
+  m_LocalPosition: {x: 0, y: -0.50403523, z: -14.291118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3040,6 +3042,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1427688174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427688176}
+  - component: {fileID: 1427688175}
+  m_Layer: 0
+  m_Name: Jyvaskyla
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1427688175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427688174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebc0249668a1c547a9a91db56e6ab5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 60
+  framerate: 50
+  startTime: -20
+  framecount: 0
+  showTimeCode: 1
+  showFrameNumber: 1
+--- !u!4 &1427688176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427688174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1542100264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,14 +3265,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716416278}
-  m_LocalRotation: {x: -0.37615055, y: -0.74583423, z: -0.5489214, w: -0.03045368}
-  m_LocalPosition: {x: -0.269, y: 0.066, z: 0.092}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.23890917, y: -0, z: -0, w: 0.971042}
+  m_LocalPosition: {x: 0, y: -0.149, z: -0.163}
+  m_LocalScale: {x: 0.87922555, y: 0.87922555, z: 0.5496889}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 918722355}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -52.74, y: 490.789, z: 79.109}
+  m_LocalEulerAnglesHint: {x: 27.644, y: 0, z: 0}
 --- !u!114 &1716416280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,13 +3287,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceID: 0
   vfxObjectParent: {fileID: 360151756}
-  texture: {fileID: 11700000, guid: e3947031457de294ab3ccebb83ffbf93, type: 2}
+  texture: {fileID: 11700000, guid: 70b79641d0644254191f9e2382ed4a21, type: 2}
   attractionSpeed: 0
   attractionForce: 3.58
-  stickDistance: 0.1
+  stickDistance: 0.01
   stickForce: 50
   textureAvailable:
-  - {fileID: 11700000, guid: e3947031457de294ab3ccebb83ffbf93, type: 2}
+  - {fileID: 11700000, guid: 70b79641d0644254191f9e2382ed4a21, type: 2}
   - {fileID: 11700000, guid: 2a8e6d9ca587c384d97ff019a2292b05, type: 2}
 --- !u!1 &1724576010
 GameObject:
@@ -3792,7 +3844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1783646956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3947,13 +3999,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0, z: -14.35}
+  m_FollowOffset: {x: 0, y: 0, z: -14.3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
-  m_PitchDamping: 1
-  m_YawDamping: 0.5
+  m_PitchDamping: 0.3
+  m_YawDamping: 0.3
   m_RollDamping: 0
   m_AngularDamping: 0
   m_HideOffsetInInspector: 0
