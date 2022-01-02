@@ -41,6 +41,7 @@ public class CameraRotate : MonoBehaviour
             {
                 transposer.m_FollowOffset = new Vector3(0,0, -radius);
             }
+            lookAtTarget.transform.position = positionTarget;
         }
 
         if(virtualCamera != null)
