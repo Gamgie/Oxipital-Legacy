@@ -8,6 +8,7 @@ public class OrbitalDragon : MonoBehaviour
     
     public float radius;
     public float velocity;
+    public float pitch;
     public float dampSmoothTime = 0.3f;
     public bool showDebugSphere;
     public GameObject debugSphere;
@@ -18,6 +19,7 @@ public class OrbitalDragon : MonoBehaviour
     private Vector3 _dampVelocity = Vector3.zero;
     private float _dampedRadiusVelocity;
     private float _smoothRadius;
+    private Vector3 _rotationCenter;
 
     public bool IsActive { get => _isActive; set => _isActive = value; }
 
@@ -51,33 +53,41 @@ public class OrbitalDragon : MonoBehaviour
         _velocityDirection = Vector3.SmoothDamp(_velocityDirection, actualDirection, ref _dampVelocity, dampSmoothTime);
 
         // rotate accordingly
-        transform.rotation = Quaternion.LookRotation(_velocityDirection, Vector3.up);
+        if(_velocityDirection != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(_velocityDirection, Vector3.up);
     }
 
     public void Init()
     {
         if(!IsActive)
         {
-            transform.position = new Vector3(0.1f, 0, 0);
+            transform.position = new Vector3(0.1f, transform.position.y, 0);
+            _rotationCenter = transform.position;
+            DOTween.Kill(this);
             IsActive = true;
         }
     }
 
     public void Stop()
     {
-        transform.DOMove(Vector3.zero, 5.0f);
-        IsActive = false;
+        transform.DOMove(new Vector3(0, transform.position.y, 0), 5.0f).OnComplete(StopComplete);
     }
 
     void FollowOrbital()
     {
         // Compute position according to radius    
-        transform.position = _smoothRadius * Vector3.Normalize(this.transform.position - Vector3.zero);
+        Vector3 positionTarget = Vector3.Lerp(transform.position, _smoothRadius * Vector3.Normalize(this.transform.position - new Vector3(0,transform.position.y,0)),0.01f);
+        transform.position = new Vector3(positionTarget.x, transform.position.y, positionTarget.z);
 
-        // Rotate around center
-        transform.RotateAround(Vector3.zero, Vector3.down, velocity * Time.deltaTime);
+        //Update height if needed 
+
+        // Rotate around center 
+        transform.RotateAround(_rotationCenter, Vector3.down, velocity * Time.deltaTime);
 
         OrientAlongVelocity();
+
+        //pitch rotation
+        transform.eulerAngles = new Vector3(pitch, transform.eulerAngles.y, transform.eulerAngles.z);
 
         //update old position
         _oldPosition = transform.position;
@@ -98,5 +108,10 @@ public class OrbitalDragon : MonoBehaviour
         }
         
         IsActive = true;
+    }
+
+    private void StopComplete()
+    {
+        IsActive = false;
     }
 }
