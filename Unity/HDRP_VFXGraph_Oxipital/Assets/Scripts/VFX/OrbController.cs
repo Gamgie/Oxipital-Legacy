@@ -7,7 +7,7 @@ using System;
 [ExecuteInEditMode]
 public class OrbController : MonoBehaviour
 {
-    public enum EmitterShape { Sphere, Plane, Torus, Cube}
+    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe }
 
     [Header("PS Parameters")]
     [Range(0, 40000)]
@@ -35,7 +35,7 @@ public class OrbController : MonoBehaviour
     public Vector3 emitterOrientation;
     public float emitterSize;
     public Mesh[] meshArray;
-    private SkinnedMeshRenderer skinMesh;
+    private Mesh mesh;
 
 
 
@@ -105,19 +105,37 @@ public class OrbController : MonoBehaviour
         emitterGO.transform.eulerAngles= emitterOrientation;
         emitterGO.transform.localScale= new Vector3(emitterSize, emitterSize, emitterSize);
 
-        switch(emitterShape)
+        switch (emitterShape)
         {
             case EmitterShape.Plane:
-                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[1];
+                emitterGO.GetComponent<MeshFilter>().mesh = meshArray[1];
+
+                if (_visualEffect.HasMesh("Emitter Mesh") == true)
+                    _visualEffect.SetMesh("Emitter Mesh", meshArray[1]);
                 break;
             case EmitterShape.Sphere:
-                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[0];
+                emitterGO.GetComponent<MeshFilter>().mesh = meshArray[0];
+
+                if (_visualEffect.HasMesh("Emitter Mesh") == true)
+                    _visualEffect.SetMesh("Emitter Mesh", meshArray[0]);
                 break;
             case EmitterShape.Cube:
-                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[2];
+                emitterGO.GetComponent<MeshFilter>().mesh = meshArray[2];
+
+                if (_visualEffect.HasMesh("Emitter Mesh") == true)
+                    _visualEffect.SetMesh("Emitter Mesh", meshArray[2]);
                 break;
             case EmitterShape.Torus:
-                emitterGO.GetComponent<SkinnedMeshRenderer>().sharedMesh = meshArray[3];
+                emitterGO.GetComponent<MeshFilter>().mesh = meshArray[3];
+
+                if (_visualEffect.HasMesh("Emitter Mesh") == true)
+                    _visualEffect.SetMesh("Emitter Mesh", meshArray[3]);
+                break;
+            case EmitterShape.Pipe:
+                emitterGO.GetComponent<MeshFilter>().mesh = meshArray[4];
+
+                if (_visualEffect.HasMesh("Emitter Mesh") == true)
+                    _visualEffect.SetMesh("Emitter Mesh", meshArray[4]);
                 break;
         }
     }
