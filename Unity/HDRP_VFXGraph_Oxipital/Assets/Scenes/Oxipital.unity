@@ -202,26 +202,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 17546
-  life: 1
+  rate: 3245
+  life: 14.27
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 4
   alpha: 1
-  size: 3.97
-  drag: 1.45
-  velocityDrag: 0
+  size: 2.93
+  drag: 3.78
+  velocityDrag: 0.383
   useCustomEmitterShape: 1
-  emitterShape: 0
+  emitterShape: 1
+  emitterPlacementMode: 0
   emitterGO: {fileID: 1065284758}
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
-  emitterSize: 1
+  emitterSize: 0.33
   meshArray:
   - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: -5495902117074765545, guid: 4d573aa56255cf34184761a3370834df, type: 3}
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: 2534964839176971238, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
+  emitFromInside: 0
 --- !u!73398921 &15800912
 VFXRenderer:
   serializedVersion: 1
@@ -288,13 +290,13 @@ VisualEffect:
       - m_Value: 5.88
         m_Name: AttractiveDrag
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 14.27
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 3.97
+      - m_Value: 2.93
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -309,7 +311,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 4.58
+      - m_Value: 1
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -342,16 +344,16 @@ VisualEffect:
       - m_Value: 0
         m_Name: Repulsor Intensity
         m_Overridden: 1
-      - m_Value: 2.48
+      - m_Value: 1
         m_Name: Repulsor Radius
         m_Overridden: 1
       - m_Value: 0
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 1.45
+      - m_Value: 3.78
         m_Name: Linear Drag
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 0.383
         m_Name: Velocity Drag
         m_Overridden: 1
       - m_Value: 0
@@ -398,6 +400,15 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 1.13
         m_Name: Repulsor Radius 2
+        m_Overridden: 1
+      - m_Value: 1.22
+        m_Name: Spiral Intensity
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Spiral Radius
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Spiral Frequency
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -463,8 +474,14 @@ VisualEffect:
       - m_Value: {x: -0, y: 0, z: 0}
         m_Name: Emitter Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 1, y: 1, z: 1}
+      - m_Value: {x: 0.33, y: 0.33, z: 0.33}
         m_Name: Emitter Transform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Spiral Position
+        m_Overridden: 1
+      - m_Value: {x: 0, y: -1, z: 0}
+        m_Name: Spiral Axis
         m_Overridden: 1
     m_Vector4f:
       m_Array:
@@ -481,8 +498,11 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 17546
+      - m_Value: 3245
         m_Name: Rate
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Emitter Placement Mode
         m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
@@ -573,13 +593,16 @@ VisualEffect:
       - m_Value: {fileID: 121376914}
         m_Name: New SkinnedMeshRenderer
         m_Overridden: 1
-      - m_Value: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+      - m_Value: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
         m_Name: Emitter Mesh
         m_Overridden: 1
     m_Bool:
       m_Array:
       - m_Value: 0
         m_Name: Is Emitter Sphere
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Emit From Inside
         m_Overridden: 1
 --- !u!1 &121376912
 GameObject:
@@ -765,7 +788,7 @@ MonoBehaviour:
   vfxObjectParent: {fileID: 360151756}
   intensity: 0
   radialType: 1
-  radius: 2.48
+  radius: 1
   targetObject: {fileID: 212291003}
   useVector3: 1
   targetVector3: {x: 0, y: 0, z: 0}
@@ -981,7 +1004,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: e75d18b74b59af544aca0a9a8fdbd7ec, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: c6dc7005450bb3841acf3e41373bd7a3, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1337,11 +1360,13 @@ MonoBehaviour:
   velocityDrag: 0
   useCustomEmitterShape: 0
   emitterShape: 0
+  emitterPlacementMode: 0
   emitterGO: {fileID: 0}
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 0
   meshArray: []
+  emitFromInside: 0
 --- !u!73398921 &270486483
 VFXRenderer:
   serializedVersion: 1
@@ -1777,7 +1802,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270486484}
   - {fileID: 1776848024}
-  aliveParticleCount: 0
+  aliveParticleCount: 102972
 --- !u!1 &393338850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,11 +2717,13 @@ MonoBehaviour:
   velocityDrag: 0
   useCustomEmitterShape: 0
   emitterShape: 0
+  emitterPlacementMode: 1
   emitterGO: {fileID: 0}
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 35
   meshArray: []
+  emitFromInside: 0
 --- !u!1 &672780991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,6 +2832,7 @@ GameObject:
   - component: {fileID: 686339400}
   - component: {fileID: 686339399}
   - component: {fileID: 686339401}
+  - component: {fileID: 686339402}
   m_Layer: 0
   m_Name: Camera Controller
   m_TagString: Untagged
@@ -2873,7 +2901,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 135452450}
   m_Follow: {fileID: 135452450}
   m_Lens:
-    FieldOfView: 33.08
+    FieldOfView: 75
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -2881,7 +2909,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 6.1285715, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -2897,6 +2925,27 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1917567317}
+--- !u!114 &686339402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686339398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba11dbc1cea22c41a93225c8115853e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spoutSender: {fileID: 1783646956}
+  mainCamera: {fileID: 225356785}
+  renderTextureList:
+  - {fileID: 8400000, guid: 46b61d0684e5f7b42b6b3fc9a730f153, type: 2}
+  - {fileID: 8400000, guid: c6dc7005450bb3841acf3e41373bd7a3, type: 2}
+  - {fileID: 8400000, guid: e75d18b74b59af544aca0a9a8fdbd7ec, type: 2}
+  - {fileID: 8400000, guid: 83a70663b47e0e9408454a471aeff6e4, type: 2}
+  - {fileID: 8400000, guid: 4f5f25e2ac4464945a0c7a1759f15bc1, type: 2}
+  spoutTextureResolution: 1
 --- !u!1 &918722354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +2979,7 @@ Transform:
   - {fileID: 212291003}
   - {fileID: 554839596}
   - {fileID: 1542100265}
+  - {fileID: 1188738510}
   m_Father: {fileID: 360151757}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3011,7 +3061,7 @@ Transform:
   m_GameObject: {fileID: 1065284758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1292866246}
@@ -3024,7 +3074,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065284758}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1077173994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,6 +3124,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1188738509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188738510}
+  - component: {fileID: 1188738511}
+  m_Layer: 0
+  m_Name: Spiral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188738510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188738509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918722355}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188738511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188738509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd1a94a8464373439b540e06aeca65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  vfxObjectParent: {fileID: 360151756}
+  intensity: 1.22
+  axis: {x: 0, y: -1, z: 0}
+  radius: 1
+  frequency: 1
+  targetObject: {fileID: 0}
+  useVector3: 0
+  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &1292866245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3501,104 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724576010}
-  m_Mesh: {fileID: 2534964839176971238, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1753447258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753447262}
+  - component: {fileID: 1753447261}
+  - component: {fileID: 1753447260}
+  - component: {fileID: 1753447259}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1753447259
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753447258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1753447260
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753447258}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1753447261
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753447258}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1753447262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753447258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.706, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776848020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,16 +3647,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 0
-  life: 1
+  rate: 4129
+  life: 20
   color: {r: 1, g: 0, b: 0, a: 0}
   colorIntensity: 4
   alpha: 1
   size: 4.94
-  drag: 0.44
+  drag: 1.91
   velocityDrag: 0
   useCustomEmitterShape: 1
-  emitterShape: 4
+  emitterShape: 0
+  emitterPlacementMode: 0
   emitterGO: {fileID: 1724576010}
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
@@ -3467,6 +3668,7 @@ MonoBehaviour:
   - {fileID: -5495902117074765545, guid: 4d573aa56255cf34184761a3370834df, type: 3}
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: 2534964839176971238, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
+  emitFromInside: 0
 --- !u!73398921 &1776848023
 VFXRenderer:
   serializedVersion: 1
@@ -3533,7 +3735,7 @@ VisualEffect:
       - m_Value: 5.88
         m_Name: AttractiveDrag
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 20
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 1
@@ -3554,7 +3756,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 4.58
+      - m_Value: 1
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -3587,13 +3789,13 @@ VisualEffect:
       - m_Value: 0
         m_Name: Repulsor Intensity
         m_Overridden: 1
-      - m_Value: 2.48
+      - m_Value: 1
         m_Name: Repulsor Radius
         m_Overridden: 1
       - m_Value: 0
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 0.44
+      - m_Value: 1.91
         m_Name: Linear Drag
         m_Overridden: 1
       - m_Value: 0
@@ -3643,6 +3845,15 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 1.13
         m_Name: Repulsor Radius 2
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Spiral Frequency
+        m_Overridden: 1
+      - m_Value: 1.22
+        m_Name: Spiral Intensity
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Spiral Radius
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -3711,6 +3922,12 @@ VisualEffect:
       - m_Value: {x: 1, y: 1, z: 1}
         m_Name: Emitter Transform_scale
         m_Overridden: 1
+      - m_Value: {x: 0, y: -1, z: 0}
+        m_Name: Spiral Axis
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Spiral Position
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
       - m_Value: {x: 16, y: 0, z: 0, w: 0}
@@ -3726,8 +3943,11 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 4129
         m_Name: Rate
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Emitter Placement Mode
         m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
@@ -3812,12 +4032,14 @@ VisualEffect:
         m_Overridden: 1
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2534964839176971238, guid: 4db93dad8293a5344a9633174fe8749a,
-          type: 3}
+      - m_Value: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
         m_Name: Emitter Mesh
         m_Overridden: 1
     m_Bool:
-      m_Array: []
+      m_Array:
+      - m_Value: 0
+        m_Name: Emit From Inside
+        m_Overridden: 1
 --- !u!114 &1776848025
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3878,7 +4100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sourceTexture: {fileID: 8400000, guid: e75d18b74b59af544aca0a9a8fdbd7ec, type: 2}
+  _sourceTexture: {fileID: 8400000, guid: c6dc7005450bb3841acf3e41373bd7a3, type: 2}
   _alphaSupport: 0
 --- !u!4 &1783646957
 Transform:
@@ -3943,7 +4165,7 @@ MonoBehaviour:
   vfxObjectParent: {fileID: 360151756}
   intensity: 0
   intensityRandom: 0
-  radius: 4.58
+  radius: 1
   axis: {x: 0, y: 1, z: 0}
   targetObject: {fileID: 1831299749}
   useVector3: 1
@@ -4038,7 +4260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0, z: -13.07487}
+  m_FollowOffset: {x: 0, y: 0, z: -4}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
