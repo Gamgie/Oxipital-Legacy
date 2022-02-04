@@ -10,6 +10,7 @@ public class OrbitalDragon : MonoBehaviour
     public float velocity;
     public float pitch;
     public float dampSmoothTime = 0.3f;
+    public float stopDuration = 5.0f;
     public bool showDebugSphere;
     public GameObject debugSphere;
 
@@ -21,7 +22,7 @@ public class OrbitalDragon : MonoBehaviour
     private float _smoothRadius;
     private Vector3 _rotationCenter;
 
-    public bool IsActive { get => _isActive; set => _isActive = value; }
+    public bool IsActive { get => _isActive; }
 
 
     // Start is called before the first frame update
@@ -64,13 +65,19 @@ public class OrbitalDragon : MonoBehaviour
             transform.position = new Vector3(0.1f, transform.position.y, 0);
             _rotationCenter = transform.position;
             DOTween.Kill(this);
-            IsActive = true;
+            _isActive = true;
+
+            Debug.Log("Start Dragon");
         }
     }
 
     public void Stop()
     {
-        transform.DOMove(new Vector3(0, transform.position.y, 0), 5.0f).OnComplete(StopComplete);
+        if(_isActive)
+        {
+            transform.DOMove(new Vector3(0, transform.position.y, 0), stopDuration).OnComplete(StopComplete);
+            Debug.Log("Stop Dragon");
+        }
     }
 
     void FollowOrbital()
@@ -107,11 +114,11 @@ public class OrbitalDragon : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         
-        IsActive = true;
+        _isActive = true;
     }
 
     private void StopComplete()
     {
-        IsActive = false;
+        _isActive = false;
     }
 }
