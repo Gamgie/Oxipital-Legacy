@@ -8,6 +8,7 @@ public class CameraRotate : MonoBehaviour
 {
     public float rotateYSpeed;
     public float rotateXSpeed;
+    public bool controlRotateWithAngle = false;
     public float rotateYAngle;
     public float rotateXAngle;
     public Transform lookAtTarget;
@@ -30,6 +31,7 @@ public class CameraRotate : MonoBehaviour
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
         _cameraFeedback = camera.transform.GetChild(0).GetComponent<Camera>();
+        StopDragon();
     }
 
     // Update is called once per frame
@@ -40,14 +42,13 @@ public class CameraRotate : MonoBehaviour
         if (orbitalDragon.IsActive == false)
         {
             // Rotate target transform according to speed
-            // So check if rotation speed is != 0
-            if(rotateYSpeed != 0 || rotateXSpeed != 0)
+            if(controlRotateWithAngle == false)
             {
                 lookAtTarget.Rotate(rotateXSpeed * Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
                 rotateXAngle = lookAtTarget.eulerAngles.x;
                 rotateYAngle = lookAtTarget.eulerAngles.y;
             }
-            else // If it is 0. We can control camera rotation by angle directly.
+            else // We want to control rotation with angle directly
             {
                 lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, 0);
             }
@@ -82,8 +83,8 @@ public class CameraRotate : MonoBehaviour
     {
         rotateYSpeed = 0;
         rotateXSpeed = 0;
-        rotateXAngle = 0;
-        rotateYAngle = 0;
+        //rotateXAngle = 0;
+        //rotateYAngle = 0;
         lookAtTarget.transform.DOMove(Vector3.zero,resetDuration);
         lookAtTarget.transform.DORotate(Vector3.zero, resetDuration);
         StopDragon();
@@ -125,5 +126,6 @@ public class CameraRotate : MonoBehaviour
     public void StopDragon()
     {
         orbitalDragon.Stop();
+        
     }
 }

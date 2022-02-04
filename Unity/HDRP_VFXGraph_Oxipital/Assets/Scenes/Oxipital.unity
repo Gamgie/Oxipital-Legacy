@@ -380,7 +380,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Axial Intensity
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 0.5
         m_Name: Orbita Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -401,7 +401,7 @@ VisualEffect:
       - m_Value: 1.13
         m_Name: Repulsor Radius 2
         m_Overridden: 1
-      - m_Value: 0.41
+      - m_Value: 0
         m_Name: Spiral Intensity
         m_Overridden: 1
       - m_Value: 1
@@ -738,6 +738,7 @@ MonoBehaviour:
   velocity: 10
   pitch: 0
   dampSmoothTime: 0.5
+  stopDuration: 5
   showDebugSphere: 0
   debugSphere: {fileID: 1611934613}
 --- !u!1 &212291002
@@ -996,7 +997,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 155.48
+  field of view: 33.08
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1782,7 +1783,7 @@ MonoBehaviour:
   axialIntensity: 0
   axialAxis: {x: 1, y: 0, z: 0}
   axialIntensityVariance: 3
-  orbitaIntensity: 0
+  orbitaIntensity: 0.5
   orbitaAxis: {x: 0, y: 1, z: 0}
   orbitaOrigin: {x: 0, y: 0, z: 0}
 --- !u!114 &360151759
@@ -1802,7 +1803,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270486484}
   - {fileID: 1776848024}
-  aliveParticleCount: 9954
+  aliveParticleCount: 491
 --- !u!1 &393338850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,7 +2902,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 135452450}
   m_Follow: {fileID: 135452450}
   m_Lens:
-    FieldOfView: 155.48
+    FieldOfView: 33.08
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -3170,7 +3171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceID: 0
   vfxObjectParent: {fileID: 360151756}
-  intensity: 0.41
+  intensity: 0
   axis: {x: 0, y: -1, z: 0}
   radius: 1
   frequency: 1
@@ -3502,103 +3503,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724576010}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1753447258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1753447262}
-  - component: {fileID: 1753447261}
-  - component: {fileID: 1753447260}
-  - component: {fileID: 1753447259}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &1753447259
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753447258}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1753447260
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753447258}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1753447261
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753447258}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1753447262
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753447258}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.706, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776848020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3825,7 +3729,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Axial Intensity
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 0.5
         m_Name: Orbita Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -3849,7 +3753,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Spiral Frequency
         m_Overridden: 1
-      - m_Value: 0.41
+      - m_Value: 0
         m_Name: Spiral Intensity
         m_Overridden: 1
       - m_Value: 1
@@ -4245,7 +4149,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 1
-  m_FrequencyGain: 0.4
+  m_FrequencyGain: 0.6
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1917567321
 MonoBehaviour:
