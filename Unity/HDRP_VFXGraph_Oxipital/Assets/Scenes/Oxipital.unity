@@ -202,12 +202,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 3245
+  rate: 231
   life: 14.27
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 4
   alpha: 1
-  size: 2.93
+  size: 40
   drag: 3.78
   velocityDrag: 0.383
   useCustomEmitterShape: 1
@@ -296,7 +296,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 2.93
+      - m_Value: 40
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -498,7 +498,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 3245
+      - m_Value: 231
         m_Name: Rate
         m_Overridden: 1
       - m_Value: 0
@@ -805,7 +805,6 @@ GameObject:
   - component: {fileID: 225356785}
   - component: {fileID: 225356783}
   - component: {fileID: 225356787}
-  - component: {fileID: 225356788}
   - component: {fileID: 225356784}
   m_Layer: 0
   m_Name: Main Spout Camera
@@ -997,7 +996,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 33.08
+  field of view: 58.8
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1023,7 +1022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225356782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.724332}
+  m_LocalPosition: {x: 0, y: 0, z: -3.724332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1072,22 +1071,6 @@ MonoBehaviour:
   rotationLerpTime: 0.199
   invertY: 0
   lockMouseMouvement: 1
---- !u!114 &225356788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225356782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filepath: C:\Users\Gamgie\Documents\Gamgie\Projets\Oxipital\Unity\Screen Capture
-  filename: Oxipital
-  supersize: 5
-  takeScreenshotKeyCode: 0
 --- !u!1 &248981329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,7 +1786,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270486484}
   - {fileID: 1776848024}
-  aliveParticleCount: 491
+  aliveParticleCount: 15
 --- !u!1 &393338850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2067,7 @@ MonoBehaviour:
   - {fileID: 270486477}
   - {fileID: 135452449}
   - {fileID: 594180641}
+  - {fileID: 1188738509}
   componentFilterMode: 2
   filteredComponentNames:
   - MeshRenderer
@@ -2091,6 +2075,7 @@ MonoBehaviour:
   - BoxCollider
   - MeshCollider
   - Transform
+  - VisualEffect
   excludeInternalUnityParams: 1
 --- !u!4 &596922098
 Transform:
@@ -2855,6 +2840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateYSpeed: 0
   rotateXSpeed: 0
+  controlRotateWithAngle: 0
   rotateYAngle: 0
   rotateXAngle: 0
   lookAtTarget: {fileID: 135452450}
@@ -2873,7 +2859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686339398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.724332}
+  m_LocalPosition: {x: 0, y: 0, z: -3.724332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2902,7 +2888,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 135452450}
   m_Follow: {fileID: 135452450}
   m_Lens:
-    FieldOfView: 33.08
+    FieldOfView: 58.8
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -3551,7 +3537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 4129
+  rate: 0
   life: 20
   color: {r: 1, g: 0, b: 0, a: 0}
   colorIntensity: 4
@@ -3847,7 +3833,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 4129
+      - m_Value: 0
         m_Name: Rate
         m_Overridden: 1
       - m_Value: 0
@@ -4148,8 +4134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1
-  m_FrequencyGain: 0.6
+  m_AmplitudeGain: 0.1
+  m_FrequencyGain: 0.5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1917567321
 MonoBehaviour:
@@ -4164,7 +4150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0, z: -4.724332}
+  m_FollowOffset: {x: 0, y: 0, z: -3.724332}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0

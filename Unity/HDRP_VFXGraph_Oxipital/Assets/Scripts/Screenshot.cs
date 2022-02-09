@@ -51,9 +51,20 @@ public class Screenshot : MonoBehaviour
         {
             string actualFileNumber = file.Substring(screenCaptureFileName.Length);
             actualFileNumber = actualFileNumber.Remove(actualFileNumber.Length - 4);
-            int actualFileIndex = Convert.ToInt32(actualFileNumber);
-            if (actualFileIndex > fileIndex)
-                fileIndex = actualFileIndex + 1;
+            try
+            {
+                int actualFileIndex = Convert.ToInt32(actualFileNumber);
+                if (actualFileIndex > fileIndex)
+                    fileIndex = actualFileIndex + 1;
+            }
+            catch(OverflowException)
+            {
+                Debug.LogError(" \" " + actualFileNumber + " \" is outside the range of the Int32 type.");
+            }
+            catch(FormatException)
+            {
+                Debug.LogError(" \" " + actualFileNumber + " \" is not in a recognizable format.");
+            }
         }
     }
 }
