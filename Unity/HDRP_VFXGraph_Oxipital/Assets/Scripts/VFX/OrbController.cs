@@ -25,7 +25,7 @@ public class OrbController : MonoBehaviour
     public int colorIntensity;
     [Range(0, 1)]
     public float alpha;
-    [Range(0, 15)]
+    [Range(0, 100)]
     public float size;
     //[Range(0, 10)]
     public float drag;
