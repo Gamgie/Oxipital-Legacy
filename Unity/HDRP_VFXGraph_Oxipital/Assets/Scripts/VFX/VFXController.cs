@@ -57,34 +57,62 @@ public class VFXController : MonoBehaviour
         foreach(VisualEffect visualEffect in m_orbsVisualEffect)
         {
             // Turb parameter update
-            visualEffect.SetFloat("Turb Intensity", turbIntensity);
-            visualEffect.SetFloat("Turb Frequency", turbFrequency);
-            visualEffect.SetInt("Octave", turbOctave);
-            visualEffect.SetFloat("Roughness", turbroughness);
-            visualEffect.SetFloat("Lacunarity", turbLacunarity);
-            visualEffect.SetFloat("Turb Scale", turbScale);
+            if (visualEffect.HasFloat("Turb Intensity") == true)
+                visualEffect.SetFloat("Turb Intensity", turbIntensity);
+
+            if (visualEffect.HasFloat("Turb Frequency") == true)
+                visualEffect.SetFloat("Turb Frequency", turbFrequency);
+
+            if (visualEffect.HasInt("Octave") == true)
+                visualEffect.SetInt("Octave", turbOctave);
+
+            if (visualEffect.HasFloat("Roughness") == true)
+                visualEffect.SetFloat("Roughness", turbroughness);
+
+            if (visualEffect.HasFloat("Lacunarity") == true)
+                visualEffect.SetFloat("Lacunarity", turbLacunarity);
+
+            if (visualEffect.HasFloat("Turb Scale") == true)
+                visualEffect.SetFloat("Turb Scale", turbScale);
 
             // Gravity parameter update
-            visualEffect.SetFloat("Gravity", zalemGravity);
-            visualEffect.SetVector3("Gravity Axis", gravityAxis);
+            if (visualEffect.HasFloat("Gravity") == true)
+                visualEffect.SetFloat("Gravity", zalemGravity);
+
+            if(visualEffect.HasVector3("Gravity Axis"))
+                visualEffect.SetVector3("Gravity Axis", gravityAxis);
+
 
             // Swirl parameter update
-            visualEffect.SetFloat("Swirl Intensity", swirlIntensity);
-            visualEffect.SetVector3("Swirl Axis", swirlAxis);
-            visualEffect.SetVector3("Swirl Origin", swirlOrigin);
+            if (visualEffect.HasFloat("Swirl Intensity") == true)
+                visualEffect.SetFloat("Swirl Intensity", swirlIntensity);
+
+            if (visualEffect.HasVector3("Swirl Axis"))
+                visualEffect.SetVector3("Swirl Axis", swirlAxis);
+
+            if (visualEffect.HasVector3("Swirl Origin"))
+                visualEffect.SetVector3("Swirl Origin", swirlOrigin);
+
+            if (visualEffect.HasFloat("Swirl Radius") == true)
                 visualEffect.SetFloat("Swirl Radius", swirlRadius);
 
 
             // Axial parameter update
-            visualEffect.SetFloat("Axial Intensity", axialIntensity);
-            visualEffect.SetVector3("Axial Axis", axialAxis);
-            visualEffect.SetFloat("Axial Intensity Variance" +
-                "", axialIntensityVariance);
+            if (visualEffect.HasFloat("Axial Intensity") == true)
+                visualEffect.SetFloat("Axial Intensity", axialIntensity);
+
+            if (visualEffect.HasVector3("Axial Axis"))
+                visualEffect.SetVector3("Axial Axis", axialAxis);
 
             // Orbita parameter update
-            visualEffect.SetFloat("Orbita Intensity", orbitaIntensity);
-            visualEffect.SetVector3("Orbita Axis", orbitaAxis);
-            visualEffect.SetVector3("Orbita Origin", orbitaOrigin);
+            if (visualEffect.HasFloat("Orbita Intensity") == true)
+                visualEffect.SetFloat("Orbita Intensity", orbitaIntensity);
+
+            if (visualEffect.HasVector3("Orbita Origin"))
+                visualEffect.SetVector3("Orbita Origin", orbitaAxis);
+
+            if (visualEffect.HasVector3("Orbita Origin"))
+                visualEffect.SetVector3("Orbita Origin", orbitaOrigin);
         }
     }
 

@@ -177,7 +177,7 @@ MonoBehaviour:
   - name: Vortex TD Force
     collapsed: 1
   - name: Turbulence
-    collapsed: 1
+    collapsed: 0
   - name: Zalem Gravity
     collapsed: 1
   - name: Emitter Parameter
@@ -3500,7 +3500,7 @@ MonoBehaviour:
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
-  boundsSettingMode: 1
+  boundsMode: 1
   m_Space: 1
 --- !u!114 &8926484042661614972
 MonoBehaviour:
@@ -4184,7 +4184,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -7717,7 +7717,7 @@ MonoBehaviour:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661618120}
-      inputSlot: {fileID: 8926484042661618746}
+      inputSlot: {fileID: 0}
     position: {x: -373, y: 1531}
     expandedSlots: []
     expanded: 0
@@ -7754,8 +7754,7 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
-  m_LinkedSlots:
-  - {fileID: 8926484042661618746}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661618129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8278,7 +8277,6 @@ MonoBehaviour:
   - {fileID: 8926484042661618737}
   - {fileID: 8926484042661618741}
   - {fileID: 8926484042661618742}
-  - {fileID: 8926484042661618746}
   - {fileID: 8926484042661618752}
   - {fileID: 8926484042661618753}
   - {fileID: 8926484042661618757}
@@ -9009,41 +9007,6 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661618746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661618746}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661618707}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
-    m_Space: 2147483647
-  m_Property:
-    name: Axial Intensity Variance
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-  m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661618120}
 --- !u!114 &8926484042661618747
 MonoBehaviour:
   m_ObjectHideFlags: 0
