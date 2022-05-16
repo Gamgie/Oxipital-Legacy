@@ -32,7 +32,6 @@ public class VFXController : MonoBehaviour
     [Header("Axial Force")]
     public float axialIntensity;
     public Vector3 axialAxis;
-    public float axialIntensityVariance;
 
     [Header("Orbita Force")]
     public float orbitaIntensity;
