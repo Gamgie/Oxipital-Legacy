@@ -107,8 +107,8 @@ public class VFXController : MonoBehaviour
             if (visualEffect.HasFloat("Orbita Intensity") == true)
                 visualEffect.SetFloat("Orbita Intensity", orbitaIntensity);
 
-            if (visualEffect.HasVector3("Orbita Origin"))
-                visualEffect.SetVector3("Orbita Origin", orbitaAxis);
+            if (visualEffect.HasVector3("Orbita Axis"))
+                visualEffect.SetVector3("Orbita Axis", orbitaAxis);
 
             if (visualEffect.HasVector3("Orbita Origin"))
                 visualEffect.SetVector3("Orbita Origin", orbitaOrigin);
