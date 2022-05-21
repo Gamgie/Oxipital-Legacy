@@ -3275,6 +3275,20 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
+                  "value": [
+                    0.2745098173618317,
+                    1.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
                   "value": false,
                   "controlAddress": "/showParentName",
                   "enabled": true
@@ -3308,6 +3322,20 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
                   "value": false,
                   "controlAddress": "/showParentName",
                   "enabled": true
@@ -3339,6 +3367,20 @@
                     20.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
                 },
                 {
                   "value": false,
@@ -3452,6 +3494,20 @@
                     20.0
                   ],
                   "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": [
+                    0.2745098173618317,
+                    1.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
                 },
                 {
                   "value": false,
@@ -4567,14 +4623,38 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/customVariables/chataigneVariable/variables/forceType2ndLine/forceType2ndLine",
               "controllable": "/customVariables/chataigneVariable/variables/forceType2ndLine/forceType2ndLine"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -530.0,
+                    300.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    25.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                }
+              ],
+              "niceName": "Item 86",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/frequency",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/frequency"
             }
           ],
           "viewOffset": [
-            -478,
-            48
+            464,
+            -506
           ],
           "viewZoom": 1.53125
-        }
+        },
+        "editing": true
       },
       {
         "niceName": "Orb Emitter",
@@ -5300,38 +5380,6 @@
                 {
                   "value": [
                     -70.58823394775391,
-                    -220.9459838867188
-                  ],
-                  "controlAddress": "/viewUIPosition"
-                },
-                {
-                  "value": [
-                    200.0,
-                    40.0
-                  ],
-                  "controlAddress": "/viewUISize"
-                },
-                {
-                  "value": "sqvsvedg",
-                  "controlAddress": "/customText",
-                  "enabled": false
-                },
-                {
-                  "value": "",
-                  "controlAddress": "/toggleImage"
-                }
-              ],
-              "niceName": "Dashboard Item 10",
-              "hideInEditor": true,
-              "type": "DashboardParameterItem",
-              "ghostAddress": "/states/ps2Size/processors/sizePulseModifier/inputs/input/inputValue",
-              "controllable": "/states/ps2Size/processors/sizePulseModifier/inputs/input/inputValue"
-            },
-            {
-              "parameters": [
-                {
-                  "value": [
-                    -70.58823394775391,
                     -290.8235473632812
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -5517,37 +5565,6 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/customVariables/orbPS1/variables/size/size",
               "controllable": "/customVariables/orbPS1/variables/size/size"
-            },
-            {
-              "parameters": [
-                {
-                  "value": [
-                    -280.4115905761719,
-                    -220.9517669677734
-                  ],
-                  "controlAddress": "/viewUIPosition"
-                },
-                {
-                  "value": [
-                    200.0,
-                    40.0
-                  ],
-                  "controlAddress": "/viewUISize"
-                },
-                {
-                  "value": true,
-                  "controlAddress": "/showValue"
-                },
-                {
-                  "value": "",
-                  "controlAddress": "/toggleImage"
-                }
-              ],
-              "niceName": "Item 3",
-              "hideInEditor": true,
-              "type": "DashboardParameterItem",
-              "ghostAddress": "/states/ps2BirthRate/processors/birthRate/inputs/input/inputValue",
-              "controllable": "/states/ps2BirthRate/processors/birthRate/inputs/input/inputValue"
             },
             {
               "parameters": [
@@ -7042,11 +7059,88 @@
               "niceName": "Shared Texture",
               "hideInEditor": true,
               "type": "Shared Texture"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -280.0,
+                    -220.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showFullAddress",
+                  "enabled": false
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showParentName",
+                  "enabled": true
+                },
+                {
+                  "value": 1,
+                  "hexMode": false,
+                  "controlAddress": "/parentLabelLevel",
+                  "enabled": true
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLearnButton",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 41",
+              "hideInEditor": true,
+              "type": "DashboardTargetParameterItem",
+              "ghostAddress": "/states/ps2BirthRate/processors/birthRate/inputs/input/inputValue",
+              "controllable": "/states/ps2BirthRate/processors/birthRate/inputs/input/inputValue"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -70.0,
+                    -220.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showParentName",
+                  "enabled": true
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLearnButton",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 3",
+              "hideInEditor": true,
+              "type": "DashboardTargetParameterItem",
+              "ghostAddress": "/states/ps2Size/processors/sizePulseModifier/inputs/input/inputValue",
+              "controllable": "/states/ps2Size/processors/sizePulseModifier/inputs/input/inputValue"
             }
           ],
           "viewOffset": [
-            266,
-            39
+            155,
+            23
           ],
           "viewZoom": 1.296875
         }
@@ -8017,15 +8111,122 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery_Unity/values/Cameras/Camera-Controller/CameraSpoutMngr/spoutTextureResolution",
               "controllable": "/modules/oSCQuery_Unity/values/Cameras/Camera-Controller/CameraSpoutMngr/spoutTextureResolution"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -440.0,
+                    160.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    260.0,
+                    50.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Show Duration",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.3725490272045135,
+                    0.5058823823928833,
+                    0.4313725531101227,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.1137254908680916,
+                    0.1529411822557449,
+                    0.1294117718935013,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 86",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/customVariables/chataigneVariable/variables/showDurationMinute/showDurationMinute",
+              "controllable": "/customVariables/chataigneVariable/variables/showDurationMinute/showDurationMinute"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -440.0,
+                    210.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    130.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Start Timer",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 21",
+              "hideInEditor": true,
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/states/chronometer/processors/start/trigger",
+              "controllable": "/states/chronometer/processors/start/trigger"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -310.0,
+                    210.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    130.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Stop Timer",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 22",
+              "hideInEditor": true,
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/states/chronometer/processors/stop/trigger",
+              "controllable": "/states/chronometer/processors/stop/trigger"
             }
           ],
           "viewOffset": [
-            533,
-            96
+            519,
+            55
           ],
           "viewZoom": 1.53125
-        },
-        "editing": true
+        }
       },
       {
         "niceName": "Post Process",
@@ -9026,8 +9227,8 @@
             }
           ],
           "viewOffset": [
-            30,
-            25
+            -561,
+            114
           ],
           "viewZoom": 1.44140625
         }
@@ -9055,17 +9256,17 @@
         "niceName": "Live Recording",
         "type": "Parrot",
         "targets": [
-          "/modules/stellarDrift/values/_hihat",
-          "/modules/stellarDrift/values/_kick",
-          "/modules/stellarDrift/values/_record",
-          "/modules/stellarDrift/values/_snare",
-          "/modules/stellarDrift/values/_stellar_kick",
+          "",
+          "",
+          "",
+          "",
+          "",
           "/modules/stellarDrift/values/_stellar_SDHigh",
           "/modules/stellarDrift/values/_stellar_SDLow",
           "/modules/stellarDrift/values/_stellar_SDMid",
-          "/modules/stellarDrift/values/_stellar_snare",
+          "",
           "/modules/stellarDrift/values/_stellar_Voice",
-          "/modules/stellarDrift/values/_Voice",
+          "",
           "/modules/midiLaunchControlXL/values/_1_F3",
           "/modules/midiLaunchControlXL/values/_1_F#3",
           "/modules/midiLaunchControlXL/values/_1_G3",
@@ -12550,14 +12751,14 @@
           "shifters": [
             {
               "type": 1,
-              "width": 577,
+              "width": 515,
               "height": 989,
               "direction": 2,
               "shifters": [
                 {
                   "type": 0,
-                  "width": 577,
-                  "height": 531,
+                  "width": 515,
+                  "height": 659,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -12567,9 +12768,9 @@
                 },
                 {
                   "type": 0,
-                  "width": 577,
-                  "height": 452,
-                  "currentContent": "Modules",
+                  "width": 515,
+                  "height": 324,
+                  "currentContent": "Custom Variables",
                   "tabs": [
                     {
                       "name": "Custom Variables"
@@ -12586,7 +12787,7 @@
             },
             {
               "type": 0,
-              "width": 596,
+              "width": 579,
               "height": 989,
               "currentContent": "State Machine",
               "tabs": [
@@ -12597,7 +12798,7 @@
             },
             {
               "type": 0,
-              "width": 735,
+              "width": 814,
               "height": 989,
               "currentContent": "Dashboard",
               "tabs": [
@@ -12693,7 +12894,6 @@
         "values": {
           "containers": {
             "Orbs": {
-              "editorIsCollapsed": true,
               "containers": {
                 "Orb1": {
                   "editorIsCollapsed": true,
@@ -12706,11 +12906,11 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 108.0000076293945,
+                          "value": 8.0,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 36.21000289916992,
+                          "value": 97.00000762939453,
                           "controlAddress": "/life"
                         },
                         {
@@ -12728,11 +12928,11 @@
                           "controlAddress": "/colorIntensity"
                         },
                         {
-                          "value": 1.0,
+                          "value": 0.01499999314546585,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 0.3899999856948853,
+                          "value": 1.079999923706055,
                           "controlAddress": "/size"
                         },
                         {
@@ -12775,18 +12975,18 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 1660.002685546875,
+                          "value": 3.247947692871094,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 61.99999237060547,
+                          "value": 0.5652197003364563,
                           "controlAddress": "/life"
                         },
                         {
                           "value": [
                             1.0,
-                            0.0,
-                            0.0,
+                            1.0,
+                            1.0,
                             1.0
                           ],
                           "controlAddress": "/color"
@@ -12797,15 +12997,15 @@
                           "controlAddress": "/colorIntensity"
                         },
                         {
-                          "value": 0.04724409431219101,
+                          "value": 1.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 3.549987316131592,
+                          "value": 18.98550796508789,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 2.519685029983521,
+                          "value": 1.0,
                           "controlAddress": "/drag"
                         },
                         {
@@ -12813,7 +13013,7 @@
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": "Torus",
+                          "value": "Sphere",
                           "controlAddress": "/emitterShape"
                         },
                         {
@@ -12829,7 +13029,7 @@
                           "controlAddress": "/emitterPosition"
                         },
                         {
-                          "value": 1.023621797561646,
+                          "value": 2.0,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -12866,11 +13066,11 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 1660.002685546875,
+                          "value": 3.247947692871094,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 62.0,
+                          "value": 0.0,
                           "controlAddress": "/life"
                         },
                         {
@@ -12888,15 +13088,15 @@
                           "controlAddress": "/colorIntensity"
                         },
                         {
-                          "value": 0.04724409431219101,
+                          "value": 1.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 3.549987316131592,
+                          "value": 18.98550796508789,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 1.968503952026367,
+                          "value": 1.0,
                           "controlAddress": "/drag"
                         },
                         {
@@ -12904,7 +13104,7 @@
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": "Torus",
+                          "value": "Sphere",
                           "controlAddress": "/emitterShape"
                         },
                         {
@@ -12920,7 +13120,7 @@
                           "controlAddress": "/emitterPosition"
                         },
                         {
-                          "value": 0.8661414980888367,
+                          "value": 2.0,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -12957,7 +13157,7 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 10000.0,
+                          "value": 5249.99951171875,
                           "controlAddress": "/rate"
                         },
                         {
@@ -13032,7 +13232,6 @@
                   "niceName": "Orb3"
                 },
                 "Forces": {
-                  "editorIsCollapsed": true,
                   "containers": {
                     "Vortex": {
                       "editorIsCollapsed": true,
@@ -13048,14 +13247,14 @@
                               "controlAddress": "/intensityRandom"
                             },
                             {
-                              "value": 2.952755928039551,
+                              "value": 6.732283592224121,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
                                 0.0,
-                                1.0,
-                                0.0
+                                0.0,
+                                1.0
                               ],
                               "controlAddress": "/axis"
                             },
@@ -13086,7 +13285,7 @@
                         "RadialController": {
                           "parameters": [
                             {
-                              "value": 0.0,
+                              "value": 0.00002381369995418936,
                               "controlAddress": "/intensity"
                             },
                             {
@@ -13094,7 +13293,7 @@
                               "controlAddress": "/radialType"
                             },
                             {
-                              "value": 3.070866107940674,
+                              "value": 3.188976287841797,
                               "controlAddress": "/radius"
                             },
                             {
@@ -13132,7 +13331,7 @@
                               "controlAddress": "/radialType"
                             },
                             {
-                              "value": 2.480314970016479,
+                              "value": 1.889763832092285,
                               "controlAddress": "/radius"
                             },
                             {
@@ -13209,12 +13408,11 @@
                       "niceName": "Repulsor-2"
                     },
                     "Spiral": {
-                      "editorIsCollapsed": true,
                       "containers": {
                         "SpiralController": {
                           "parameters": [
                             {
-                              "value": 0.0,
+                              "value": 0.00012632914877031,
                               "controlAddress": "/intensity"
                             },
                             {
@@ -13230,7 +13428,7 @@
                               "controlAddress": "/radius"
                             },
                             {
-                              "value": 1.174999952316284,
+                              "value": 0.4749997854232788,
                               "controlAddress": "/frequency"
                             },
                             {
@@ -13246,7 +13444,6 @@
                               "controlAddress": "/targetVector3"
                             }
                           ],
-                          "editorIsCollapsed": true,
                           "owned": true,
                           "niceName": "SpiralController"
                         }
@@ -13261,11 +13458,11 @@
                 "VFXController": {
                   "parameters": [
                     {
-                      "value": 0.0008192569948732853,
+                      "value": 0.00006308333831839263,
                       "controlAddress": "/turbIntensity"
                     },
                     {
-                      "value": 0.2791000008583069,
+                      "value": 1.577684879302979,
                       "controlAddress": "/turbFrequency"
                     },
                     {
@@ -13274,7 +13471,7 @@
                       "controlAddress": "/turbOctave"
                     },
                     {
-                      "value": 0.5,
+                      "value": 1.0,
                       "controlAddress": "/turbroughness"
                     },
                     {
@@ -13282,7 +13479,7 @@
                       "controlAddress": "/turbLacunarity"
                     },
                     {
-                      "value": 0.5300000905990601,
+                      "value": 0.7802572250366211,
                       "controlAddress": "/turbScale"
                     },
                     {
@@ -13298,14 +13495,14 @@
                       "controlAddress": "/gravityAxis"
                     },
                     {
-                      "value": 0.00008467619773000479,
+                      "value": 0.0,
                       "controlAddress": "/swirlIntensity"
                     },
                     {
                       "value": [
                         0.0,
-                        0.0,
-                        1.0
+                        1.0,
+                        0.0
                       ],
                       "controlAddress": "/swirlAxis"
                     },
@@ -13318,7 +13515,7 @@
                       "controlAddress": "/swirlOrigin"
                     },
                     {
-                      "value": 2.480314970016479,
+                      "value": 3.425196886062622,
                       "controlAddress": "/swirlRadius"
                     },
                     {
@@ -13327,14 +13524,14 @@
                     },
                     {
                       "value": [
-                        0.0,
+                        1.0,
                         1.0,
                         0.0
                       ],
                       "controlAddress": "/axialAxis"
                     },
                     {
-                      "value": 0.00008467619773000479,
+                      "value": 0.0,
                       "controlAddress": "/orbitaIntensity"
                     },
                     {
@@ -13365,7 +13562,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 167626,
+                      "value": 629,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -13381,6 +13578,7 @@
             "Cameras": {
               "containers": {
                 "Camera-Controller": {
+                  "editorIsCollapsed": true,
                   "containers": {
                     "CameraRotate": {
                       "parameters": [
@@ -13397,27 +13595,27 @@
                           "controlAddress": "/rotateXSpeed"
                         },
                         {
-                          "value": true,
+                          "value": false,
                           "controlAddress": "/controlRotateWithAngle"
                         },
                         {
-                          "value": 362.9826354980469,
+                          "value": 0.0,
                           "controlAddress": "/rotateYAngle"
                         },
                         {
-                          "value": 4.297844886779785,
+                          "value": -0.00175186712294817,
                           "controlAddress": "/rotateXAngle"
                         },
                         {
-                          "value": 19.19999504089355,
+                          "value": 43.50005340576172,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 2.948716878890991,
+                          "value": 5.0,
                           "controlAddress": "/radius"
                         },
                         {
-                          "value": 60.0,
+                          "value": 50.39996337890625,
                           "controlAddress": "/resetDuration"
                         },
                         {
@@ -13665,7 +13863,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            122.1
+                            108
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13679,7 +13877,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            25
+                            36.21
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13693,7 +13891,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "FFFFFF00"
+                            "FFFFFFFF"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -13729,7 +13927,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.33
+                            0.39
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13743,7 +13941,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            2.52
+                            10
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13754,7 +13952,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13840,7 +14038,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            35
+                            44.79999
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14020,7 +14218,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3544
+                            5949.966
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14034,7 +14232,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            9
+                            4.881889
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14048,7 +14246,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "FFFFFF00"
+                            "FF0000FF"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -14070,7 +14268,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1
+                            0.3385827
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14084,7 +14282,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4.8
+                            1.799989
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14098,7 +14296,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.78
+                            2.519685
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14109,7 +14307,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.383
+                            0.09499999000000001
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14134,7 +14332,7 @@
                         "emitterShape": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "Sphere"
+                            "Torus"
                           ],
                           "TYPE": "s",
                           "RANGE": [
@@ -14195,7 +14393,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.68
+                            1.023622
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14206,7 +14404,7 @@
                         "emitFromInside": {
                           "ACCESS": 3,
                           "VALUE": [
-                            true
+                            false
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -14441,7 +14639,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            5949.966
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14455,7 +14653,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            20
+                            3.905512
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14469,7 +14667,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "FF000000"
+                            "FFFFFFFF"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -14491,7 +14689,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1
+                            0.4015748
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14505,7 +14703,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4.94
+                            1.799989
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14519,7 +14717,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.91
+                            1.968504
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14530,7 +14728,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            0.195
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14555,7 +14753,7 @@
                         "emitterShape": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "Sphere"
+                            "Torus"
                           ],
                           "TYPE": "s",
                           "RANGE": [
@@ -14616,7 +14814,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1
+                            0.8661415
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14862,7 +15060,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            5250
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14890,7 +15088,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "00000000"
+                            "00FFFFC5"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -14901,7 +15099,7 @@
                         "colorIntensity": {
                           "ACCESS": 3,
                           "VALUE": [
-                            2
+                            3
                           ],
                           "TYPE": "i",
                           "RANGE": [
@@ -14912,7 +15110,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14926,7 +15124,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            3.225001
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14940,7 +15138,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            3.399999
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14951,7 +15149,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            0.06
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14965,7 +15163,7 @@
                         "useCustomEmitterShape": {
                           "ACCESS": 3,
                           "VALUE": [
-                            false
+                            true
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -15013,7 +15211,7 @@
                           "VALUE": [
                             0,
                             0,
-                            0
+                            9
                           ],
                           "TYPE": "fff",
                           "RANGE": [
@@ -15025,7 +15223,7 @@
                           "ACCESS": 3,
                           "VALUE": [
                             0,
-                            0,
+                            180,
                             0
                           ],
                           "TYPE": "fff",
@@ -15097,7 +15295,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                2.007874
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15166,7 +15364,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.00002710329
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15193,7 +15391,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                3.98
+                                3.070866
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15249,7 +15447,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.00002410906
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15276,7 +15474,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                2.480315
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15359,7 +15557,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1.32
+                                13.16514
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15442,7 +15640,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1.13
+                                13.23394
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15498,7 +15696,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1.3
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15522,7 +15720,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                3.897638
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15533,7 +15731,7 @@
                             "frequency": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                1.175
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -15588,7 +15786,7 @@
                     "turbIntensity": {
                       "ACCESS": 3,
                       "VALUE": [
-                        0
+                        0.2992126
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15599,7 +15797,7 @@
                     "turbFrequency": {
                       "ACCESS": 3,
                       "VALUE": [
-                        0.2
+                        0.2791
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15638,7 +15836,7 @@
                     "turbLacunarity": {
                       "ACCESS": 3,
                       "VALUE": [
-                        1
+                        2
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15649,7 +15847,7 @@
                     "turbScale": {
                       "ACCESS": 3,
                       "VALUE": [
-                        1
+                        0.5300001
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15696,8 +15894,8 @@
                       "ACCESS": 3,
                       "VALUE": [
                         0,
-                        1,
-                        0
+                        0,
+                        1
                       ],
                       "TYPE": "fff",
                       "RANGE": [
@@ -15721,7 +15919,7 @@
                     "swirlRadius": {
                       "ACCESS": 3,
                       "VALUE": [
-                        1
+                        2.480315
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15744,8 +15942,8 @@
                       "ACCESS": 3,
                       "VALUE": [
                         0,
-                        0,
-                        1
+                        1,
+                        0
                       ],
                       "TYPE": "fff",
                       "RANGE": [
@@ -15756,7 +15954,7 @@
                     "orbitaIntensity": {
                       "ACCESS": 3,
                       "VALUE": [
-                        0
+                        0.0000846762
                       ],
                       "TYPE": "f",
                       "RANGE": [
@@ -15768,8 +15966,8 @@
                       "ACCESS": 3,
                       "VALUE": [
                         0,
-                        1,
-                        0
+                        0,
+                        1
                       ],
                       "TYPE": "fff",
                       "RANGE": [
@@ -15803,7 +16001,7 @@
                     "aliveParticleCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        61
+                        44787
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -15849,7 +16047,7 @@
                         "controlRotateWithAngle": {
                           "ACCESS": 3,
                           "VALUE": [
-                            false
+                            true
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -15860,7 +16058,7 @@
                         "rotateYAngle": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            6.22905
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -15871,7 +16069,7 @@
                         "rotateXAngle": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            9.724297
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -15882,7 +16080,7 @@
                         "fov": {
                           "ACCESS": 3,
                           "VALUE": [
-                            75
+                            19.2
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -15893,7 +16091,7 @@
                         "radius": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4
+                            2.852701
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -15904,7 +16102,7 @@
                         "resetDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            5
+                            60
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -15915,7 +16113,7 @@
                         "moveToDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            2.2605
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -16123,7 +16321,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                2.5
+                                1.2025
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -16134,7 +16332,7 @@
                             "velocity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                10
+                                2.5255
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -16522,7 +16720,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 0.7799999713897705,
+                      "value": 0.2099999785423279,
                       "controlAddress": "/Radius"
                     },
                     {
@@ -16541,7 +16739,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 0.3165862560272217,
+                      "value": 0.0,
                       "controlAddress": "/Drywetradialblur"
                     },
                     {
@@ -16550,11 +16748,11 @@
                       "controlAddress": "/Radialsamples"
                     },
                     {
-                      "value": 0.8009090423583984,
+                      "value": 0.4281817674636841,
                       "controlAddress": "/Radialstrength"
                     },
                     {
-                      "value": 0.6454545259475708,
+                      "value": 1.327272653579712,
                       "controlAddress": "/Radialbrightness"
                     }
                   ],
@@ -17825,7 +18023,7 @@
                 "controlChange": {
                   "parameters": [
                     {
-                      "value": 1,
+                      "value": 127,
                       "alwaysNotify": true,
                       "minValue": 0,
                       "maxValue": 127,
@@ -17844,7 +18042,7 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 1,
+                      "value": 127,
                       "alwaysNotify": true,
                       "minValue": 0,
                       "maxValue": 127,
@@ -19330,7 +19528,7 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 127,
+                      "value": 1,
                       "alwaysNotify": true,
                       "minValue": 0,
                       "maxValue": 127,
@@ -19420,7 +19618,7 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 1,
+                      "value": 127,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -20282,7 +20480,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 13,
+              "value": 8,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20300,7 +20498,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 11,
+              "value": 15,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20318,7 +20516,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 32,
+              "value": 64,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20336,7 +20534,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 25,
+              "value": 61,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20354,7 +20552,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 6,
+              "value": 73,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20372,7 +20570,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 6,
+              "value": 74,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20390,7 +20588,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 127,
+              "value": 31,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20408,7 +20606,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 127,
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20444,7 +20642,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 25,
+              "value": 57,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20480,7 +20678,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 21,
+              "value": 16,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20498,7 +20696,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 26,
+              "value": 27,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20516,7 +20714,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 21,
+              "value": 29,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20570,7 +20768,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 6,
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20588,7 +20786,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 11,
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20660,7 +20858,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 12,
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -20714,7 +20912,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
+              "value": 12,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -21218,7 +21416,7 @@
       {
         "parameters": [
           {
-            "value": false,
+            "value": true,
             "controlAddress": "/enabled"
           }
         ],
@@ -21284,70 +21482,845 @@
             {
               "value": 0,
               "hexMode": false,
-              "controlAddress": "/_hihat",
+              "controlAddress": "/_live_hihat",
               "type": "Integer",
-              "niceName": "/hihat",
+              "niceName": "/live/hihat",
               "customizable": true,
               "removable": true,
               "description": "",
               "hideInEditor": false,
               "feedbackOnly": false,
-              "shortName": "_hihat"
+              "shortName": "_live_hihat"
             },
             {
               "value": 0,
               "hexMode": false,
-              "controlAddress": "/_kick",
+              "controlAddress": "/_live_kick",
               "type": "Integer",
-              "niceName": "/kick",
+              "niceName": "/live/kick",
               "customizable": true,
               "removable": true,
               "description": "",
               "hideInEditor": false,
               "feedbackOnly": false,
-              "shortName": "_kick"
+              "shortName": "_live_kick"
             },
             {
-              "controlAddress": "/_record",
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live_snare",
+              "type": "Integer",
+              "niceName": "/live/snare",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live_snare"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A#0",
+              "type": "Integer",
+              "niceName": "/live/_1_A#0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A#0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A#1",
+              "type": "Integer",
+              "niceName": "/live/_1_A#1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A#1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A#2",
+              "type": "Integer",
+              "niceName": "/live/_1_A#2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A#2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A#3",
+              "type": "Integer",
+              "niceName": "/live/_1_A#3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A#3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A#4",
+              "type": "Integer",
+              "niceName": "/live/_1_A#4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A#4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A2",
+              "type": "Integer",
+              "niceName": "/live/_1_A2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A3",
+              "type": "Integer",
+              "niceName": "/live/_1_A3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A4",
+              "type": "Integer",
+              "niceName": "/live/_1_A4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_A5",
+              "type": "Integer",
+              "niceName": "/live/_1_A5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_A5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_B0",
+              "type": "Integer",
+              "niceName": "/live/_1_B0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_B0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_B1",
+              "type": "Integer",
+              "niceName": "/live/_1_B1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_B1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_B2",
+              "type": "Integer",
+              "niceName": "/live/_1_B2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_B2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_B3",
+              "type": "Integer",
+              "niceName": "/live/_1_B3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_B3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_B4",
+              "type": "Integer",
+              "niceName": "/live/_1_B4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_B4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C#1",
+              "type": "Integer",
+              "niceName": "/live/_1_C#1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C#1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C#3",
+              "type": "Integer",
+              "niceName": "/live/_1_C#3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C#3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C#4",
+              "type": "Integer",
+              "niceName": "/live/_1_C#4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C#4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C#5",
+              "type": "Integer",
+              "niceName": "/live/_1_C#5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C#5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C0",
+              "type": "Integer",
+              "niceName": "/live/_1_C0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C2",
+              "type": "Integer",
+              "niceName": "/live/_1_C2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C3",
+              "type": "Integer",
+              "niceName": "/live/_1_C3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C4",
+              "type": "Integer",
+              "niceName": "/live/_1_C4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C5",
+              "type": "Integer",
+              "niceName": "/live/_1_C5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_C6",
+              "type": "Integer",
+              "niceName": "/live/_1_C6",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_C6"
+            },
+            {
+              "value": 127,
+              "hexMode": false,
+              "controlAddress": "/_live__1_CC11",
+              "type": "Integer",
+              "niceName": "/live/_1_CC11",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_CC11"
+            },
+            {
+              "value": 53,
+              "hexMode": false,
+              "controlAddress": "/_live__1_CC3",
+              "type": "Integer",
+              "niceName": "/live/_1_CC3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_CC3"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#0",
+              "type": "Integer",
+              "niceName": "/live/_1_D#0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#1",
+              "type": "Integer",
+              "niceName": "/live/_1_D#1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#2",
+              "type": "Integer",
+              "niceName": "/live/_1_D#2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#3",
+              "type": "Integer",
+              "niceName": "/live/_1_D#3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#4",
+              "type": "Integer",
+              "niceName": "/live/_1_D#4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#4"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_D#5",
+              "type": "Integer",
+              "niceName": "/live/_1_D#5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D#5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D2",
+              "type": "Integer",
+              "niceName": "/live/_1_D2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D3",
+              "type": "Integer",
+              "niceName": "/live/_1_D3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D4",
+              "type": "Integer",
+              "niceName": "/live/_1_D4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_D5",
+              "type": "Integer",
+              "niceName": "/live/_1_D5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_D5"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_E1",
+              "type": "Integer",
+              "niceName": "/live/_1_E1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_E2",
+              "type": "Integer",
+              "niceName": "/live/_1_E2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_E3",
+              "type": "Integer",
+              "niceName": "/live/_1_E3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_E4",
+              "type": "Integer",
+              "niceName": "/live/_1_E4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_E5",
+              "type": "Integer",
+              "niceName": "/live/_1_E5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_E6",
+              "type": "Integer",
+              "niceName": "/live/_1_E6",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_E6"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F#2",
+              "type": "Integer",
+              "niceName": "/live/_1_F#2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F#2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F#3",
+              "type": "Integer",
+              "niceName": "/live/_1_F#3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F#3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F#4",
+              "type": "Integer",
+              "niceName": "/live/_1_F#4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F#4"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_F#5",
+              "type": "Integer",
+              "niceName": "/live/_1_F#5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F#5"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F1",
+              "type": "Integer",
+              "niceName": "/live/_1_F1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F2",
+              "type": "Integer",
+              "niceName": "/live/_1_F2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F3",
+              "type": "Integer",
+              "niceName": "/live/_1_F3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_F4",
+              "type": "Integer",
+              "niceName": "/live/_1_F4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_F4"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_G#0",
+              "type": "Integer",
+              "niceName": "/live/_1_G#0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G#0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G#1",
+              "type": "Integer",
+              "niceName": "/live/_1_G#1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G#1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G#2",
+              "type": "Integer",
+              "niceName": "/live/_1_G#2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G#2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G#3",
+              "type": "Integer",
+              "niceName": "/live/_1_G#3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G#3"
+            },
+            {
+              "hexMode": false,
+              "controlAddress": "/_live__1_G0",
+              "type": "Integer",
+              "niceName": "/live/_1_G0",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G0"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G1",
+              "type": "Integer",
+              "niceName": "/live/_1_G1",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G1"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G2",
+              "type": "Integer",
+              "niceName": "/live/_1_G2",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G2"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G3",
+              "type": "Integer",
+              "niceName": "/live/_1_G3",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G3"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G4",
+              "type": "Integer",
+              "niceName": "/live/_1_G4",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G4"
+            },
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_live__1_G5",
+              "type": "Integer",
+              "niceName": "/live/_1_G5",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_G5"
+            },
+            {
+              "value": 8192,
+              "hexMode": false,
+              "controlAddress": "/_live__1_PitchWheel",
+              "type": "Integer",
+              "niceName": "/live/_1_PitchWheel",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_live__1_PitchWheel"
+            },
+            {
+              "controlAddress": "/_startRecording",
               "type": "Trigger",
-              "niceName": "/record",
+              "niceName": "/startRecording",
               "customizable": true,
               "removable": true,
               "description": "",
               "hideInEditor": false,
               "feedbackOnly": false,
-              "shortName": "_record"
+              "shortName": "_startRecording"
             },
             {
-              "value": 0,
-              "hexMode": false,
-              "controlAddress": "/_snare",
-              "type": "Integer",
-              "niceName": "/snare",
-              "customizable": true,
-              "removable": true,
-              "description": "",
-              "hideInEditor": false,
-              "feedbackOnly": false,
-              "shortName": "_snare"
-            },
-            {
-              "value": 0.6141732335090637,
-              "controlAddress": "/_stellar_kick",
-              "type": "Float",
-              "niceName": "/stellar/kick",
-              "customizable": true,
-              "removable": true,
-              "description": "",
-              "hideInEditor": false,
-              "feedbackOnly": false,
-              "shortName": "_stellar_kick"
-            },
-            {
-              "value": 0.0000755998189561069,
+              "value": 6.056779966456816e-7,
               "minValue": 0,
               "maxValue": 1,
-              "default": 0.0,
+              "default": 0.0002074598451144993,
               "controlAddress": "/_stellar_SDHigh",
               "type": "Float",
               "niceName": "/stellar/SDHigh",
@@ -21359,7 +22332,7 @@
               "shortName": "_stellar_SDHigh"
             },
             {
-              "value": 2.841707100742497e-6,
+              "value": 0.0001490816503064707,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -21374,7 +22347,7 @@
               "shortName": "_stellar_SDLow"
             },
             {
-              "value": 0.00001391101613990031,
+              "value": 0.0003018443821929395,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -21389,19 +22362,7 @@
               "shortName": "_stellar_SDMid"
             },
             {
-              "value": 0.0,
-              "controlAddress": "/_stellar_snare",
-              "type": "Float",
-              "niceName": "/stellar/snare",
-              "customizable": true,
-              "removable": true,
-              "description": "",
-              "hideInEditor": false,
-              "feedbackOnly": false,
-              "shortName": "_stellar_snare"
-            },
-            {
-              "value": 0.00001644940857659094,
+              "value": 0.0009883518796414137,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -21416,16 +22377,15 @@
               "shortName": "_stellar_Voice"
             },
             {
-              "value": 0.0003368690668139607,
-              "controlAddress": "/_Voice",
-              "type": "Float",
-              "niceName": "/Voice",
+              "controlAddress": "/_stopRecording",
+              "type": "Trigger",
+              "niceName": "/stopRecording",
               "customizable": true,
               "removable": true,
               "description": "",
               "hideInEditor": false,
               "feedbackOnly": false,
-              "shortName": "_Voice"
+              "shortName": "_stopRecording"
             }
           ]
         }
@@ -22012,6 +22972,85 @@
             }
           }
         }
+      },
+      {
+        "niceName": "Time",
+        "type": "Time",
+        "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "params": {
+          "hideInEditor": true
+        },
+        "templates": {
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      },
+      {
+        "niceName": "OBS Websocket",
+        "type": "OBS Websocket",
+        "scripts": {
+          "items": [
+            {
+              "niceName": "OBS",
+              "type": "BaseItem",
+              "scriptParams": {
+                "hideInEditor": true
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "params": {
+          "parameters": [
+            {
+              "value": "Lines",
+              "controlAddress": "/protocol"
+            },
+            {
+              "value": false,
+              "controlAddress": "/autoAdd"
+            },
+            {
+              "value": "Space separated",
+              "controlAddress": "/messageStructure"
+            },
+            {
+              "value": true,
+              "controlAddress": "/firstValueIsTheName"
+            },
+            {
+              "value": "127.0.0.1:4444",
+              "controlAddress": "/serverPath"
+            }
+          ],
+          "containers": {
+            "pass_through": {
+            }
+          }
+        },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "values": {
+        }
       }
     ],
     "viewOffset": [
@@ -22065,7 +23104,7 @@
             {
               "parameters": [
                 {
-                  "value": 10.19999980926514,
+                  "value": 9.700000762939453,
                   "minValue": 0,
                   "maxValue": 20,
                   "default": 0.0,
@@ -22086,7 +23125,7 @@
             {
               "parameters": [
                 {
-                  "value": 102.0,
+                  "value": 97.00000762939453,
                   "controlAddress": "/outputLife",
                   "feedbackOnly": false,
                   "type": "Float",
@@ -22156,7 +23195,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.08499998599290848,
+                  "value": 0.01499999314546585,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0.0,
@@ -22268,7 +23307,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 7.0,
+                  "value": 4.0,
                   "minValue": 0.0,
                   "maxValue": 200.0,
                   "default": 0.0,
@@ -22296,7 +23335,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 0.449999988079071,
+                  "value": 1.079999923706055,
                   "minValue": 0.0,
                   "maxValue": 2.0,
                   "default": 0.0,
@@ -22351,7 +23390,7 @@
             {
               "parameters": [
                 {
-                  "value": 10.0,
+                  "value": 0.09420328587293625,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 10,
@@ -22373,7 +23412,7 @@
             {
               "parameters": [
                 {
-                  "value": 10.0,
+                  "value": 0.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 10,
@@ -22395,7 +23434,7 @@
             {
               "parameters": [
                 {
-                  "value": 6.199999332427979,
+                  "value": 6.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 20,
@@ -22417,7 +23456,7 @@
             {
               "parameters": [
                 {
-                  "value": 6.199999809265137,
+                  "value": 6.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 20,
@@ -22439,7 +23478,7 @@
             {
               "parameters": [
                 {
-                  "value": 61.99999237060547,
+                  "value": 0.5652197003364563,
                   "alwaysNotify": true,
                   "controlAddress": "/outputLife1",
                   "feedbackOnly": false,
@@ -22458,7 +23497,7 @@
             {
               "parameters": [
                 {
-                  "value": 62.0,
+                  "value": 0.0,
                   "alwaysNotify": true,
                   "controlAddress": "/outputLife2",
                   "feedbackOnly": false,
@@ -22479,8 +23518,8 @@
                 {
                   "value": [
                     1.0,
-                    0.0,
-                    0.0,
+                    1.0,
+                    1.0,
                     1.0
                   ],
                   "alwaysNotify": true,
@@ -22545,7 +23584,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.04724409431219101,
+                  "value": 1.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 1,
@@ -22567,7 +23606,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.04724409431219101,
+                  "value": 1.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 1,
@@ -22596,7 +23635,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 2.519685029983521,
+                  "value": 1.0,
                   "alwaysNotify": true,
                   "minValue": 0.0,
                   "maxValue": 10.0,
@@ -22625,7 +23664,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 1.968503952026367,
+                  "value": 1.0,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 10,
@@ -23045,7 +24084,7 @@
             {
               "parameters": [
                 {
-                  "value": 16.60002708435059,
+                  "value": 0.0,
                   "minValue": 0.0,
                   "maxValue": 200.0,
                   "default": 0.0,
@@ -23086,7 +24125,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 107.6086959838867,
                   "minValue": 0,
                   "maxValue": 300,
                   "default": 0.0,
@@ -23125,7 +24164,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.023621797561646,
+                  "value": 2.0,
                   "minValue": 0.0,
                   "maxValue": 5.0,
                   "default": 0.0,
@@ -23146,7 +24185,7 @@
             {
               "parameters": [
                 {
-                  "value": "Torus",
+                  "value": "Sphere",
                   "enumOptions": {
                     "Sphere": "0",
                     "Plane": "1",
@@ -23171,7 +24210,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.8661414980888367,
+                  "value": 2.0,
                   "minValue": 0.0,
                   "maxValue": 5.0,
                   "default": 0.0,
@@ -23192,7 +24231,7 @@
             {
               "parameters": [
                 {
-                  "value": "Torus",
+                  "value": "Sphere",
                   "enumOptions": {
                     "Sphere": "0",
                     "Plane": "1",
@@ -23281,7 +24320,7 @@
             {
               "parameters": [
                 {
-                  "value": 3.549987316131592,
+                  "value": 18.98550796508789,
                   "minValue": 0.0,
                   "maxValue": 40.0,
                   "default": 0.0,
@@ -23302,7 +24341,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 2.771739482879639,
                   "minValue": 0.0,
                   "maxValue": 5.0,
                   "default": 0.0,
@@ -23671,7 +24710,7 @@
             {
               "parameters": [
                 {
-                  "value": 100.0,
+                  "value": 52.49999618530273,
                   "minValue": 0,
                   "maxValue": 100,
                   "default": 0.0,
@@ -23950,7 +24989,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 2.948463678359985,
+                  "value": 5.0,
                   "alwaysNotify": true,
                   "minValue": 0.0,
                   "maxValue": 30.0,
@@ -23972,7 +25011,7 @@
             {
               "parameters": [
                 {
-                  "value": 60.0,
+                  "value": 50.39996337890625,
                   "alwaysNotify": true,
                   "minValue": 0.1000000014901161,
                   "maxValue": 60.0,
@@ -24060,7 +25099,7 @@
             {
               "parameters": [
                 {
-                  "value": 65.99999237060547,
+                  "value": 43.49998092651367,
                   "alwaysNotify": true,
                   "minValue": 0.0,
                   "maxValue": 180.0,
@@ -24114,7 +25153,6 @@
                 }
               ],
               "niceName": "Reset",
-              "editorIsCollapsed": true,
               "type": "MorphTarget",
               "values": {
                 "containers": {
@@ -24175,7 +25213,7 @@
                   "radius": {
                     "parameters": [
                       {
-                        "value": 4.724331855773926,
+                        "value": 5.0,
                         "controlAddress": "/radius"
                       }
                     ],
@@ -24279,9 +25317,9 @@
             {
               "parameters": [
                 {
-                  "value": 2.182733535766602,
+                  "value": 1.577684879302979,
                   "minValue": 0.009999999776482582,
-                  "maxValue": 3.0,
+                  "maxValue": 2.0,
                   "default": 0.0,
                   "controlAddress": "/frequency",
                   "feedbackOnly": false,
@@ -24300,7 +25338,7 @@
             {
               "parameters": [
                 {
-                  "value": 2,
+                  "value": 1,
                   "minValue": 1,
                   "maxValue": 8,
                   "default": 0,
@@ -24322,7 +25360,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.6266666650772095,
+                  "value": 1.0,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0.0,
@@ -24350,7 +25388,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 1.133333444595337,
+                  "value": 0.7802572250366211,
                   "minValue": 0,
                   "maxValue": 2,
                   "default": 0.0,
@@ -25079,7 +26117,7 @@
             {
               "parameters": [
                 {
-                  "value": 167.6260070800781,
+                  "value": 0.6290000081062317,
                   "minValue": 0.0,
                   "maxValue": 2500.0,
                   "default": 0.0,
@@ -25446,7 +26484,7 @@
             {
               "parameters": [
                 {
-                  "value": 1,
+                  "value": 0,
                   "hexMode": false,
                   "controlAddress": "/dashboardIndex",
                   "feedbackOnly": false,
@@ -25686,18 +26724,37 @@
             {
               "parameters": [
                 {
-                  "value": 0.2000000029802322,
-                  "controlAddress": "/positionMIDIStep",
+                  "value": 0,
+                  "hexMode": false,
+                  "controlAddress": "/showDurationSecond",
+                  "feedbackOnly": false,
+                  "type": "Integer",
+                  "niceName": "Show Duration Second",
+                  "customizable": true,
+                  "removable": false,
+                  "description": "Custom control of type Integer",
+                  "hideInEditor": false
+                }
+              ],
+              "niceName": "Show Duration Second",
+              "editorIsCollapsed": true,
+              "type": "Int Parameter"
+            },
+            {
+              "parameters": [
+                {
+                  "value": 0.0,
+                  "controlAddress": "/showDurationMinute",
                   "feedbackOnly": false,
                   "type": "Float",
-                  "niceName": "Position MIDI Step",
+                  "niceName": "Show Duration Minute",
                   "customizable": true,
                   "removable": false,
                   "description": "Custom control of type Float",
                   "hideInEditor": false
                 }
               ],
-              "niceName": "Position MIDI Step",
+              "niceName": "Show Duration Minute",
               "editorIsCollapsed": true,
               "type": "Float Parameter"
             }
@@ -25726,7 +26783,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.003468187758699059,
+                  "value": 0.0,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -25747,7 +26804,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 0.0003018294810317457,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -25768,7 +26825,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 0.6000000238418579,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -25789,7 +26846,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.00002796399348881096,
+                  "value": 0.00385457300581038,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -26296,7 +27353,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 0.0,
+                          "value": 107.6086959838867,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2Birth/variables/rateModifierAmount/rateModifierAmount",
@@ -26309,7 +27366,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 0.0,
+                      "value": 107.6086959838867,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2Birth/variables/rateModifierAmount/rateModifierAmount",
@@ -26341,7 +27398,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 16.60002708435059,
+                          "value": 0.0,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2Birth/variables/rate/rate",
@@ -26354,7 +27411,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 16.60002708435059,
+                      "value": 0.0,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2Birth/variables/rate/rate",
@@ -26989,7 +28046,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 0.0,
+                          "value": 2.771739482879639,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2Size/variables/sizePulseAmount/sizePulseAmount",
@@ -27002,7 +28059,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 0.0,
+                      "value": 2.771739482879639,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2Size/variables/sizePulseAmount/sizePulseAmount",
@@ -27038,7 +28095,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 3.549987316131592,
+                          "value": 18.98550796508789,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2Size/variables/size/size",
@@ -27051,7 +28108,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 3.549987316131592,
+                      "value": 18.98550796508789,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2Size/variables/size/size",
@@ -27572,7 +28629,7 @@
                           "controlAddress": "/targetPreset"
                         },
                         {
-                          "value": 60.0,
+                          "value": 50.39996337890625,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/camera/variables/resetDuration/resetDuration",
@@ -29994,7 +31051,7 @@
                     "controlAddress": "/updateRate"
                   },
                   {
-                    "value": true,
+                    "value": false,
                     "controlAddress": "/sendOnOutputChangeOnly"
                   }
                 ],
@@ -30148,7 +31205,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 10.19999980926514,
+                          "value": 9.700000762939453,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS1/variables/lifeRange/lifeRange",
@@ -30161,7 +31218,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 10.19999980926514,
+                      "value": 9.700000762939453,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS1/variables/lifeRange/lifeRange",
@@ -31355,63 +32412,6 @@
                 ],
                 "viewZoom": 1.0
               }
-            },
-            {
-              "niceName": "Record",
-              "editorIsCollapsed": true,
-              "type": "Action",
-              "conditions": {
-                "items": [
-                  {
-                    "parameters": [
-                      {
-                        "value": "/modules/stellarDrift/values/_record",
-                        "controlAddress": "/inputValue"
-                      }
-                    ],
-                    "niceName": "From Input Value",
-                    "type": "From Input Value"
-                  }
-                ],
-                "viewOffset": [
-                  0,
-                  0
-                ],
-                "viewZoom": 1.0
-              },
-              "consequences": {
-                "items": [
-                  {
-                    "niceName": "Consequence",
-                    "type": "Consequence",
-                    "commandModule": "generic",
-                    "commandPath": "",
-                    "commandType": "Trigger a Control",
-                    "command": {
-                      "parameters": [
-                        {
-                          "value": "/parrots/liveRecordingOutput/startRecord",
-                          "controlAddress": "/target"
-                        }
-                      ],
-                      "paramLinks": {
-                      }
-                    }
-                  }
-                ],
-                "viewOffset": [
-                  0,
-                  0
-                ],
-                "viewZoom": 1.0
-              },
-              "consequencesOff": {
-                "viewOffset": [
-                  0,
-                  0
-                ],
-                "viewZoom": 1.0
-              }
             }
           ],
           "viewOffset": [
@@ -32137,7 +33137,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 6.199999332427979,
+                          "value": 6.0,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2/variables/lifeRange1/lifeRange1",
@@ -32150,7 +33150,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 6.199999332427979,
+                      "value": 6.0,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2/variables/lifeRange1/lifeRange1",
@@ -32292,7 +33292,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 6.199999809265137,
+                          "value": 6.0,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2/variables/lifeRange2/lifeRange2",
@@ -32305,7 +33305,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 6.199999809265137,
+                      "value": 6.0,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2/variables/lifeRange2/lifeRange2",
@@ -35096,7 +36096,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 100.0,
+                          "value": 52.49999618530273,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS3Birth/variables/rate/rate",
@@ -35109,7 +36109,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 100.0,
+                      "value": 52.49999618530273,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS3Birth/variables/rate/rate",
@@ -35599,8 +36599,8 @@
           },
           {
             "value": [
-              315.5714416503906,
-              236.0
+              314.877685546875,
+              258.9038696289062
             ],
             "controlAddress": "/viewUISize"
           },
@@ -36071,15 +37071,15 @@
           },
           {
             "value": [
-              15.122314453125,
-              -435.9038696289062
+              17.0,
+              -435.0
             ],
             "controlAddress": "/viewUIPosition"
           },
           {
             "value": [
               286.0,
-              236.0
+              258.0
             ],
             "controlAddress": "/viewUISize"
           },
@@ -36204,7 +37204,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/osc_td/values/_Mid",
+                        "value": "/modules/stellarDrift/values/_stellar_SDMid",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36241,7 +37241,7 @@
                         },
                         {
                           "value": [
-                            0.1000000163912773,
+                            1.490116119384766e-8,
                             1.0
                           ],
                           "controlAddress": "/inputMin_Max"
@@ -36268,7 +37268,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 2.100000143051147,
+                          "value": 1.0,
                           "controlAddress": "/value"
                         }
                       ],
@@ -36276,7 +37276,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 2.100000143051147,
+                      "value": 1.0,
                       "controlAddress": "/states/audioReactive/processors/mid/filters/math/filterParams/value"
                     }
                   }
@@ -36335,7 +37335,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/osc_td/values/_Low",
+                        "value": "/modules/stellarDrift/values/_stellar_SDLow",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36376,7 +37376,7 @@
                         },
                         {
                           "value": [
-                            0.05000000074505806,
+                            0.009999999776482582,
                             1.0
                           ],
                           "controlAddress": "/inputMin_Max"
@@ -36403,7 +37403,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 1.399999618530273,
+                          "value": 1.0,
                           "controlAddress": "/value"
                         }
                       ],
@@ -36411,7 +37411,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 1.399999618530273,
+                      "value": 1.0,
                       "controlAddress": "/states/audioReactive/processors/low/filters/math/filterParams/value"
                     }
                   },
@@ -36435,7 +37435,7 @@
                           "controlAddress": "/smoothing"
                         },
                         {
-                          "value": 0.7188034653663635,
+                          "value": 0.4694737195968628,
                           "controlAddress": "/fallSmoothing"
                         }
                       ],
@@ -36538,7 +37538,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 1.699999928474426,
+                          "value": 3.90000057220459,
                           "controlAddress": "/value"
                         }
                       ],
@@ -36546,7 +37546,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 1.699999928474426,
+                      "value": 3.90000057220459,
                       "controlAddress": "/states/audioReactive/processors/voice/filters/math/filterParams/value"
                     }
                   },
@@ -36625,7 +37625,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/osc_td/values/_Kick",
+                        "value": "/modules/stellarDrift/values/_live_kick",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36692,7 +37692,7 @@
                           "controlAddress": "/smoothing"
                         },
                         {
-                          "value": 0.9186795353889465,
+                          "value": 0.5451876521110535,
                           "controlAddress": "/fallSmoothing"
                         }
                       ],
@@ -36747,7 +37747,7 @@
               }
             },
             {
-              "niceName": "Beabox/Snare",
+              "niceName": "Snare",
               "editorIsCollapsed": true,
               "type": "Mapping",
               "im": {
@@ -36755,7 +37755,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/stellarDrift/values/_snare",
+                        "value": "/modules/stellarDrift/values/_live_snare",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36871,7 +37871,7 @@
               }
             },
             {
-              "niceName": "Beabox/Hithat",
+              "niceName": "Hihat",
               "editorIsCollapsed": true,
               "type": "Mapping",
               "im": {
@@ -36879,7 +37879,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/stellarDrift/values/_hihat",
+                        "value": "/modules/stellarDrift/values/_live_hihat",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -41412,6 +42412,7 @@
                         }
                       ],
                       "niceName": "Slider Range",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 10
                     },
@@ -41567,6 +42568,7 @@
                         }
                       ],
                       "niceName": "Intensity Default",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 10
                     },
@@ -41871,15 +42873,15 @@
                     {
                       "parameters": [
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "value": "/customVariables/audioReactive/variables/mid/mid",
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/mid",
+                          "value": "/customVariables/customVariables/values/audioReactive/low",
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "value": "/customVariables/customVariables/values/audioReactive/voice",
                           "controlAddress": "/#3"
                         },
                         {
@@ -41887,15 +42889,15 @@
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/low",
+                          "value": "/customVariables/customVariables/values/audioReactive/mid",
                           "controlAddress": "/#5"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/low",
+                          "value": "/customVariables/customVariables/values/audioReactive/mid",
                           "controlAddress": "/#6"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "value": "/customVariables/customVariables/values/audioReactive/kick",
                           "controlAddress": "/#7"
                         },
                         {
@@ -41967,7 +42969,7 @@
                     {
                       "parameters": [
                         {
-                          "value": 0.0,
+                          "value": 0.2090032249689102,
                           "minValue": 0.0,
                           "maxValue": 5.0,
                           "default": 0.0,
@@ -42038,7 +43040,6 @@
                         }
                       ],
                       "niceName": "Source Multiplier",
-                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 10
                     },
@@ -43470,28 +44471,28 @@
                     {
                       "parameters": [
                         {
-                          "value": 2.952755928039551,
+                          "value": 6.732283592224121,
                           "minValue": 0.0,
                           "maxValue": 15.0,
                           "default": 0.0,
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 2.480314970016479,
+                          "value": 1.889763832092285,
                           "minValue": 0.0,
                           "maxValue": 15.0,
                           "default": 0.0,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 3.070866107940674,
+                          "value": 3.188976287841797,
                           "minValue": 0.0,
                           "maxValue": 15.0,
                           "default": 0.0,
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 2.480314970016479,
+                          "value": 3.425196886062622,
                           "minValue": 0.0,
                           "maxValue": 15.0,
                           "default": 0.0,
@@ -44017,8 +45018,8 @@
                         {
                           "value": [
                             0.0,
-                            1.0,
-                            0.0
+                            0.0,
+                            1.0
                           ],
                           "minValue": [
                             -1.0,
@@ -44063,8 +45064,8 @@
                         {
                           "value": [
                             0.0,
-                            0.0,
-                            1.0
+                            1.0,
+                            0.0
                           ],
                           "minValue": [
                             -1.0,
@@ -44085,7 +45086,7 @@
                         },
                         {
                           "value": [
-                            0.0,
+                            1.0,
                             1.0,
                             0.0
                           ],
@@ -44624,7 +45625,7 @@
                           "controlAddress": "/length"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.4942134618759155,
                           "controlAddress": "/position"
                         },
                         {
@@ -45135,8 +46136,8 @@
         "parameters": [
           {
             "value": [
-              -592.0,
-              457.0
+              -640.0,
+              431.0
             ],
             "controlAddress": "/viewUIPosition"
           },
@@ -45477,8 +46478,8 @@
         "parameters": [
           {
             "value": [
-              -1225.0,
-              -986.0
+              -1330.938720703125,
+              -948.244873046875
             ],
             "controlAddress": "/viewUIPosition"
           },
@@ -45637,7 +46638,7 @@
               }
             },
             {
-              "niceName": "Button1 to ControlAxisToggle",
+              "niceName": "Button9 to ControlAxisToggle",
               "editorIsCollapsed": true,
               "type": "Action",
               "conditions": {
@@ -45645,7 +46646,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/gamepad/values/buttons/button1",
+                        "value": "/modules/gamepad/values/buttons/button9",
                         "controlAddress": "/inputValue"
                       },
                       {
@@ -46111,13 +47112,1537 @@
           ],
           "viewZoom": 1.0
         }
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              -308.0,
+              -1164.0
+            ],
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": [
+              310.0,
+              200.0
+            ],
+            "controlAddress": "/viewUISize"
+          },
+          {
+            "value": true,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "Chronometer",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
+              "niceName": "Timer",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/time/values/seconds",
+                        "controlAddress": "/inputValue"
+                      },
+                      {
+                        "value": true,
+                        "controlAddress": "/alwaysTrigger"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value",
+                    "comparator": {
+                      "parameters": [
+                        {
+                          "value": "Change",
+                          "controlAddress": "/comparisonFunction"
+                        },
+                        {
+                          "value": 0,
+                          "hexMode": false,
+                          "controlAddress": "/reference"
+                        }
+                      ],
+                      "hideInEditor": true
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "customVariables",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/chataigneVariable/showDurationSecond",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Add",
+                          "controlAddress": "/operator"
+                        },
+                        {
+                          "value": 1,
+                          "hexMode": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "customVariables",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/chataigneVariable/showDurationMinute",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 2,
+                          "reference": {
+                            "value": "/customVariables/chataigneVariable/variables/showDurationSecond/showDurationSecond",
+                            "controlAddress": "/reference"
+                          },
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "customVariables",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/chataigneVariable/showDurationMinute",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Divide",
+                          "controlAddress": "/operator"
+                        },
+                        {
+                          "value": 60.0,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "Start",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Set Action Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/timer",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "Pause",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Set Action Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/timer",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "Stop",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Set Action Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/timer",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "customVariables",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/chataigneVariable/showDurationSecond",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "customVariables",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/chataigneVariable/showDurationMinute",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              -1162.448974609375,
+              1009.632629394531
+            ],
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": [
+              512.448974609375,
+              251.0
+            ],
+            "controlAddress": "/viewUISize"
+          },
+          {
+            "value": true,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "Stellar Drift",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 84.0,
+                  "controlAddress": "/listSize"
+                }
+              ],
+              "niceName": "Conductor",
+              "editorIsCollapsed": true,
+              "containers": {
+                "scripts": {
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                },
+                "conditions": {
+                  "items": [
+                    {
+                      "niceName": "From Input Value",
+                      "type": "From Input Value"
+                    }
+                  ],
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                },
+                "consequencesTRUE": {
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                },
+                "consequencesFALSE": {
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                },
+                "uiSettings": {
+                },
+                "processors": {
+                  "hideInEditor": true,
+                  "items": [
+                    {
+                      "niceName": "Init",
+                      "editorIsCollapsed": true,
+                      "type": "Cue",
+                      "conditions": {
+                        "items": [
+                          {
+                            "niceName": "From Input Value",
+                            "type": "From Input Value"
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      },
+                      "consequences": {
+                        "items": [
+                          {
+                            "niceName": "2 Shape",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/emitter2Shape",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "2a Shape",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/emitter2aShape",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Color 1",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/color1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Color 2",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/color2",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Drag 1",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/drag1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Drag 2",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/drag2",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Alpha 1",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/apha1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Alpha 2",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/apha2",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Life Range 1",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/lifeRange1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 6.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Life Range 2",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/lifeRange2",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 6.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Life 1",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/life1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 0.09420328587293625,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Life 2",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2/life2",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 0.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "2 Size",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/emitter2Size",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 2.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "2a Size",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/emitter2aSize",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 2.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Reset Camera Position",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "stateMachine",
+                            "commandPath": "Action",
+                            "commandType": "Trigger Action",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/camera/processors/resetCameraPosition",
+                                  "controlAddress": "/target"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Rate",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/rate",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 0.0,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Rate Modifier Amount",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Birth/rateModifierAmount",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 107.6086959838867,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Orb2 Size",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Size/size",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 18.98550796508789,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Size Pulse Amount",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/orbPS2Size/sizePulseAmount",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 2.771739482879639,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Reset Force",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "stateMachine",
+                            "commandPath": "Action",
+                            "commandType": "Trigger Action",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/resetParameters/processors/resetForce",
+                                  "controlAddress": "/target"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Turbulence Input",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "generic",
+                            "commandPath": "",
+                            "commandType": "Set Parameter Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/force/processors/forceIntensity/lists/sourceInput/#1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": "/customVariables/audioReactive/variables/mid/mid",
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Turbulence Multiplier",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "generic",
+                            "commandPath": "",
+                            "commandType": "Set Parameter Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#1",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 0.2090032249689102,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Turbulence Frequency",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/turbulence/frequency",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 1.577684879302979,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Turbulence Scale",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/turbulence/scale",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                },
+                                {
+                                  "value": 0.7802572250366211,
+                                  "controlAddress": "/value"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          },
+                          {
+                            "niceName": "Consequence",
+                            "editorIsCollapsed": true,
+                            "type": "Consequence",
+                            "commandModule": "stateMachine",
+                            "commandPath": "Action",
+                            "commandType": "Trigger Action",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/unity/processors/killAllParticle",
+                                  "controlAddress": "/target"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      }
+                    }
+                  ],
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                }
+              },
+              "type": "Conductor",
+              "scripts": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "conditions": {
+                "items": [
+                  {
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              17.0,
+              -1164.0
+            ],
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": [
+              283.0,
+              200.0
+            ],
+            "controlAddress": "/viewUISize"
+          },
+          {
+            "value": true,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "OBS",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "niceName": "Start Record",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/stellarDrift/values/_startRecording",
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "obsWebsocket",
+                    "commandPath": "",
+                    "commandType": "StartRecording",
+                    "command": {
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Trigger Action",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/stop",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Trigger Action",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/start",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 3",
+                    "type": "Consequence",
+                    "commandModule": "generic",
+                    "commandPath": "",
+                    "commandType": "Set Parameter Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/dashboards/camera/dashboard/item86/backgroundColor",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        },
+                        {
+                          "value": [
+                            0.1921568661928177,
+                            0.003921568859368563,
+                            0.003921568859368563,
+                            1.0
+                          ],
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "Stop Record",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/stellarDrift/values/_stopRecording",
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "obsWebsocket",
+                    "commandPath": "",
+                    "commandType": "StopRecording",
+                    "command": {
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Action",
+                    "commandType": "Trigger Action",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/chronometer/processors/pause",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "generic",
+                    "commandPath": "",
+                    "commandType": "Set Parameter Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/dashboards/camera/dashboard/item86/backgroundColor",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        },
+                        {
+                          "value": [
+                            0.1137254908680916,
+                            0.1529411822557449,
+                            0.1294117718935013,
+                            1.0
+                          ],
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
       }
     ],
     "viewOffset": [
-      1043,
-      815
+      -60,
+      362
     ],
-    "viewZoom": 1.0,
+    "viewZoom": 0.53125,
     "transitions": {
       "hideInEditor": true,
       "viewOffset": [
@@ -46129,10 +48654,10 @@
     "comments": {
       "hideInEditor": true,
       "viewOffset": [
-        1043,
-        815
+        -60,
+        362
       ],
-      "viewZoom": 1.0
+      "viewZoom": 0.53125
     }
   },
   "sequences": {
