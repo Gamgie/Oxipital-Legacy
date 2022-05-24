@@ -4708,11 +4708,12 @@
             }
           ],
           "viewOffset": [
-            -125,
-            0
+            -63,
+            16
           ],
-          "viewZoom": 1.53125
-        }
+          "viewZoom": 0.828125
+        },
+        "editing": true
       },
       {
         "niceName": "Orb Emitter",
@@ -8325,8 +8326,7 @@
             -7
           ],
           "viewZoom": 0.828125
-        },
-        "editing": true
+        }
       },
       {
         "niceName": "Post Process",
@@ -13134,7 +13134,7 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 1353.128295898438,
+                          "value": 1353.061401367188,
                           "controlAddress": "/rate"
                         },
                         {
@@ -13143,9 +13143,9 @@
                         },
                         {
                           "value": [
+                            0.8274509906768799,
+                            0.062745101749897,
                             1.0,
-                            0.0,
-                            0.0,
                             1.0
                           ],
                           "controlAddress": "/color"
@@ -13225,7 +13225,7 @@
                     "OrbController": {
                       "parameters": [
                         {
-                          "value": 1353.128295898438,
+                          "value": 1353.061401367188,
                           "controlAddress": "/rate"
                         },
                         {
@@ -13620,7 +13620,7 @@
                 "VFXController": {
                   "parameters": [
                     {
-                      "value": 0.0001172369156847708,
+                      "value": 0.000118551826744806,
                       "controlAddress": "/turbIntensity"
                     },
                     {
@@ -13681,7 +13681,7 @@
                       "controlAddress": "/swirlRadius"
                     },
                     {
-                      "value": 6.196411050041206e-6,
+                      "value": 0.10512425750494,
                       "controlAddress": "/axialIntensity"
                     },
                     {
@@ -13724,7 +13724,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 11926,
+                      "value": 11894,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -21367,7 +21367,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
+              "value": 89,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -22760,7 +22760,7 @@
               "shortName": "_stellar_SDHigh"
             },
             {
-              "value": 0.0001612081978237256,
+              "value": 0.002076653996482491,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -22775,7 +22775,7 @@
               "shortName": "_stellar_SDLow"
             },
             {
-              "value": 0.0002905754954554141,
+              "value": 0.0002843673573806882,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -22790,7 +22790,7 @@
               "shortName": "_stellar_SDMid"
             },
             {
-              "value": 0.00006393172952812165,
+              "value": 0.0000459134389529936,
               "minValue": 0,
               "maxValue": 1,
               "default": 0.0,
@@ -23889,9 +23889,9 @@
               "parameters": [
                 {
                   "value": [
+                    0.8274509906768799,
+                    0.062745101749897,
                     1.0,
-                    0.0,
-                    0.0,
                     1.0
                   ],
                   "alwaysNotify": true,
@@ -24713,7 +24713,7 @@
             {
               "parameters": [
                 {
-                  "value": 2.771739482879639,
+                  "value": 2.73458456993103,
                   "minValue": 0.0,
                   "maxValue": 5.0,
                   "default": 0.0,
@@ -26489,7 +26489,7 @@
             {
               "parameters": [
                 {
-                  "value": 11.92599964141846,
+                  "value": 11.89400005340576,
                   "minValue": 0.0,
                   "maxValue": 2500.0,
                   "default": 0.0,
@@ -27145,7 +27145,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0002905605942942202,
+                  "value": 0.0002843524562194943,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -27187,7 +27187,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0001956517226062715,
+                  "value": 0.000109901673567947,
                   "minValue": 0.0,
                   "maxValue": 1.0,
                   "default": 0.0,
@@ -28621,7 +28621,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 2.771739482879639,
+                          "value": 2.73458456993103,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbPS2Size/variables/sizePulseAmount/sizePulseAmount",
@@ -28634,7 +28634,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 2.771739482879639,
+                      "value": 2.73458456993103,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbPS2Size/variables/sizePulseAmount/sizePulseAmount",
@@ -34435,12 +34435,46 @@
                   },
                   {
                     "value": true,
+                    "controlAddress": "/sendOnOutputChangeOnly"
+                  },
+                  {
+                    "value": true,
                     "controlAddress": "/sendAfterLoad"
                   }
                 ],
                 "editorIsCollapsed": true
               },
               "filters": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": true,
+                        "controlAddress": "/enabled"
+                      }
+                    ],
+                    "niceName": "Smooth",
+                    "type": "Smooth",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlAddress": "/asynchronous"
+                        },
+                        {
+                          "value": 0.9909909963607788,
+                          "controlAddress": "/smoothing"
+                        },
+                        {
+                          "value": 0.800000011920929,
+                          "controlAddress": "/fallSmoothing"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
                 "viewOffset": [
                   0,
                   0
@@ -34518,6 +34552,10 @@
                   },
                   {
                     "value": true,
+                    "controlAddress": "/sendOnOutputChangeOnly"
+                  },
+                  {
+                    "value": true,
                     "controlAddress": "/sendAfterLoad"
                   },
                   {
@@ -34528,7 +34566,22 @@
                 "editorIsCollapsed": true
               },
               "filters": {
-                "editorIsCollapsed": true,
+                "items": [
+                  {
+                    "niceName": "Smooth",
+                    "type": "Smooth",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": 0.9924924969673157,
+                          "controlAddress": "/smoothing"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
                 "viewOffset": [
                   0,
                   0
@@ -43614,7 +43667,7 @@
                           "controlAddress": "/#6"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.7007874250411987,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0.0,
@@ -44044,11 +44097,11 @@
                     {
                       "parameters": [
                         {
-                          "value": "/customVariables/audioReactive/variables/mid/mid",
+                          "value": "/customVariables/audioReactive/variables/snare/snare",
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/snare",
+                          "value": "/customVariables/audioReactive/variables/kick/kick",
                           "controlAddress": "/#2"
                         },
                         {
@@ -44140,14 +44193,14 @@
                     {
                       "parameters": [
                         {
-                          "value": 0.5764074921607971,
+                          "value": 0.8847184181213379,
                           "minValue": 0.0,
                           "maxValue": 5.0,
                           "default": 0.0,
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 0.0,
+                          "value": 2.439678192138672,
                           "minValue": 0.0,
                           "maxValue": 5.0,
                           "default": 0.0,
@@ -51900,6 +51953,7 @@
                           },
                           {
                             "niceName": "Emitter2 Size",
+                            "editorIsCollapsed": true,
                             "type": "Consequence",
                             "commandModule": "customVariables",
                             "commandPath": "",
@@ -52145,6 +52199,7 @@
                           },
                           {
                             "niceName": "FoV",
+                            "editorIsCollapsed": true,
                             "type": "Consequence",
                             "commandModule": "customVariables",
                             "commandPath": "",
@@ -52267,6 +52322,7 @@
                           },
                           {
                             "niceName": "Camera Radius",
+                            "editorIsCollapsed": true,
                             "type": "Consequence",
                             "commandModule": "customVariables",
                             "commandPath": "",
@@ -53509,8 +53565,8 @@
       }
     ],
     "viewOffset": [
-      1361,
-      -1436
+      212,
+      -332
     ],
     "viewZoom": 1.0,
     "transitions": {
@@ -53642,8 +53698,8 @@
         }
       ],
       "viewOffset": [
-        1361,
-        -1436
+        212,
+        -332
       ],
       "viewZoom": 1.0
     }
