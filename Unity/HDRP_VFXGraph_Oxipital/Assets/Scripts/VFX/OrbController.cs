@@ -7,7 +7,7 @@ using System;
 [ExecuteInEditMode]
 public class OrbController : MonoBehaviour
 {
-    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe }
+    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe, Egg }
     public enum EmitterPlacementMode
     {
         Surface,
@@ -168,6 +168,9 @@ public class OrbController : MonoBehaviour
                 break;
             case EmitterShape.Pipe:
                 result = 4;
+                break;
+            case EmitterShape.Egg:
+                result = 5;
                 break;
         }
 
