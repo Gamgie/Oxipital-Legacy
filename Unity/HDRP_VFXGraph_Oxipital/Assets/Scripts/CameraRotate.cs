@@ -50,7 +50,7 @@ public class CameraRotate : MonoBehaviour
             }
             else // We want to control rotation with angle directly
             {
-                lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, 0);
+                lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, lookAtTarget.eulerAngles.z);
             }
 
             lookAtTarget.transform.position = positionTarget;
