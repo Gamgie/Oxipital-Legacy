@@ -11,6 +11,7 @@ public class CameraRotate : MonoBehaviour
     public bool controlRotateWithAngle = false;
     public float rotateYAngle;
     public float rotateXAngle;
+    public float rotateZAngle;
     public Transform lookAtTarget;
     public Camera camera;
     public float fov;
@@ -47,10 +48,11 @@ public class CameraRotate : MonoBehaviour
                 lookAtTarget.Rotate(rotateXSpeed * Time.deltaTime, rotateYSpeed * Time.deltaTime, 0);
                 rotateXAngle = lookAtTarget.eulerAngles.x;
                 rotateYAngle = lookAtTarget.eulerAngles.y;
+                rotateZAngle = lookAtTarget.eulerAngles.z;
             }
             else // We want to control rotation with angle directly
             {
-                lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, lookAtTarget.eulerAngles.z);
+                lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, rotateZAngle);
             }
 
             lookAtTarget.transform.position = positionTarget;
