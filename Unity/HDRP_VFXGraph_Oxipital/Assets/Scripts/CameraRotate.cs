@@ -120,6 +120,13 @@ public class CameraRotate : MonoBehaviour
         lookAtTarget.transform.DORotate(new Vector3(0, -90, 0), moveToDuration);
     }
 
+    public void FrontView()
+    {
+        rotateYSpeed = 0;
+        rotateXSpeed = 0;
+        lookAtTarget.transform.DORotate(new Vector3(0, 0, 0), moveToDuration);
+    }
+
     public void StartDragon()
     {
         orbitalDragon.Init();
