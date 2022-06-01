@@ -1,6 +1,8 @@
 # Oxipital
 Oxipital, visual instrument
 
+![Oxipital Logo](https://github.com/Gamgie/Oxipital/blob/master/Communication/Oxipital.Logo.png)
+
 It is currently controlled by a Akai MPD218 and Novation Laynchpad XL.
 
 Unity handles particles and rendering with VFX Graph.
