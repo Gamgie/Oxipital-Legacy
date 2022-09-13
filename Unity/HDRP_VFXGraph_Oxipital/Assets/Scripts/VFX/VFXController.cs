@@ -13,6 +13,7 @@ public class VFXController : MonoBehaviour
     public float orbAngle;
     public int orbCount;
     public Orb OrbPrefab;
+    public GameObject emitterOrb;
 
     [Header("Turbulence")]
     public float turbIntensity;
@@ -141,8 +142,12 @@ public class VFXController : MonoBehaviour
 
         Orb o = Instantiate(OrbPrefab);
         o.gameObject.name = "Orb" + m_orbsVisualEffect.Count;
-        o.transform.parent = this.transform;
+        o.transform.parent = emitterOrb.transform;
+        o.rate = 0;
         m_orbsVisualEffect.Add(o);
+        orbCount++;
+
+        UpdateOrbPosition();
     }
 
     public void DestroyOrb(int index)
@@ -151,6 +156,27 @@ public class VFXController : MonoBehaviour
         {
             Debug.LogError("Try to destroy an orb in a null list");
             return;
+        }
+
+        m_orbsVisualEffect.RemoveAt(index);
+
+        orbCount--;
+        UpdateOrbPosition();
+    }
+
+    public void UpdateOrbPosition()
+    {
+        if (m_orbsVisualEffect == null)
+        {
+            Debug.LogError("No orb list found");
+            return;
+        }
+
+        for (int i = 0; i < m_orbsVisualEffect.Count; i++)
+        {
+            float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbCount);
+            float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbCount);
+            m_orbsVisualEffect[i].transform.position = new Vector3(xPos,yPos,0);
         }
     }
 }
