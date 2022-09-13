@@ -12,13 +12,13 @@ public class HabiteTalePrefab : HabitePrefab
 
     public override void ToBeDestroy()
     {
-        DOTween.To(() => transform.GetComponentInChildren<OrbController>().rate,
-                    x => transform.GetComponentInChildren<OrbController>().rate = x,
+        DOTween.To(() => transform.GetComponentInChildren<Orb>().rate,
+                    x => transform.GetComponentInChildren<Orb>().rate = x,
                     0,
                     transitionDuration / 10);
 
-        DOTween.To(() => transform.GetComponentInChildren<OrbController>().size,
-                    x => transform.GetComponentInChildren<OrbController>().size = x,
+        DOTween.To(() => transform.GetComponentInChildren<Orb>().size,
+                    x => transform.GetComponentInChildren<Orb>().size = x,
                     0,
                     transitionDuration / 2).SetDelay(transitionDuration / 2);
 
@@ -33,8 +33,8 @@ public class HabiteTalePrefab : HabitePrefab
         id = 2;
 
         // Start emitting smoothly.
-        DOTween.To(() => transform.GetComponentInChildren<OrbController>().rate,
-                    x => transform.GetComponentInChildren<OrbController>().rate = x,
+        DOTween.To(() => transform.GetComponentInChildren<Orb>().rate,
+                    x => transform.GetComponentInChildren<Orb>().rate = x,
                     0,
                     transitionDuration*2).From();
 
