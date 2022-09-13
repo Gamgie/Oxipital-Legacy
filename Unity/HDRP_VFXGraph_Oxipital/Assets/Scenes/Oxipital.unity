@@ -312,7 +312,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 2.23
+      - m_Value: 2.21
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -384,7 +384,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Orbita Intensity
         m_Overridden: 1
-      - m_Value: 1.05
+      - m_Value: 2.22
         m_Name: Vortex Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -454,7 +454,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Orbita Origin
         m_Overridden: 1
-      - m_Value: {x: -1.52, y: 0, z: 0}
+      - m_Value: {x: -1.12, y: 0.68, z: 0.82}
         m_Name: Vortex Position
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   - {fileID: 15800913}
   - {fileID: 270486484}
   - {fileID: 1776848024}
-  aliveParticleCount: 10538
+  aliveParticleCount: 10557
 --- !u!1 &393338850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,58 +2166,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &554839595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 554839596}
-  - component: {fileID: 554839597}
-  m_Layer: 0
-  m_Name: Repulsor 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &554839596
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554839595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 918722355}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &554839597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554839595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ec5b4c10936a4aaf0155ddace008c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceID: 1
-  vfxObjectParent: {fileID: 360151756}
-  intensity: 0
-  radialType: 1
-  radius: 1.32
-  targetObject: {fileID: 554839596}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &594180641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,8 +2240,8 @@ MonoBehaviour:
   - {fileID: 1831299748}
   - {fileID: 929118334}
   - {fileID: 212291002}
-  - {fileID: 554839595}
-  - {fileID: 1542100264}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 663945654}
   - {fileID: 15800906}
   - {fileID: 1776848020}
@@ -3462,8 +3410,6 @@ Transform:
   - {fileID: 1831299749}
   - {fileID: 929118335}
   - {fileID: 212291003}
-  - {fileID: 554839596}
-  - {fileID: 1542100265}
   - {fileID: 1188738510}
   m_Father: {fileID: 360151757}
   m_RootOrder: 4
@@ -3639,7 +3585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 918722355}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1188738511
 MonoBehaviour:
@@ -3696,58 +3642,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1542100264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1542100265}
-  - component: {fileID: 1542100266}
-  m_Layer: 0
-  m_Name: Repulsor 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1542100265
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542100264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 918722355}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1542100266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542100264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ec5b4c10936a4aaf0155ddace008c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceID: 2
-  vfxObjectParent: {fileID: 360151756}
-  intensity: 0
-  radialType: 1
-  radius: 1.13
-  targetObject: {fileID: 1542100265}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &1567188314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,7 +4039,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 2.23
+      - m_Value: 2.21
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -4217,7 +4111,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Orbita Intensity
         m_Overridden: 1
-      - m_Value: 1.05
+      - m_Value: 2.22
         m_Name: Vortex Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -4287,7 +4181,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Orbita Origin
         m_Overridden: 1
-      - m_Value: {x: -1.52, y: 0, z: 0}
+      - m_Value: {x: -1.12, y: 0.68, z: 0.82}
         m_Name: Vortex Position
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
@@ -4531,7 +4425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831299748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.12, y: 0.68, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4552,13 +4446,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceID: 0
   vfxObjectParent: {fileID: 360151756}
-  intensity: 1.05
+  intensity: 2.22
   intensityRandom: 0
-  radius: 2.23
+  radius: 2.21
   axis: {x: 0, y: 1, z: 0}
   targetObject: {fileID: 1831299749}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
+  useVector3: 0
+  targetVector3: {x: 0.17, y: 0, z: 0}
 --- !u!1 &1917567316
 GameObject:
   m_ObjectHideFlags: 3
