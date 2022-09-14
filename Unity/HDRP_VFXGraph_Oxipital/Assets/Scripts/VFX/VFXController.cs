@@ -10,7 +10,8 @@ public class VFXController : MonoBehaviour
 
     [Header("Orbs Positions")]
     public float orbPositionRadius;
-    public float orbAngle;
+    public float orbRotationSpeedX;
+    public float orbRotationSpeedY;
     public int orbCount;
     public Orb OrbPrefab;
     public GameObject emitterOrb;
@@ -43,8 +44,9 @@ public class VFXController : MonoBehaviour
     void OnEnable()
     {
         m_orbsVisualEffect = new List<Orb>();
+        orbCount = PlayerPrefs.GetInt("OrbCount", orbCount);
 
-        for(int i=0; i<orbCount;i++)
+        for (int i=0; i<orbCount;i++)
         {
             AddOrb();
         }
@@ -61,7 +63,18 @@ public class VFXController : MonoBehaviour
         {
             DestroyOrb(orbCount - 1);
         }
-            UpdateVisualEffect();
+
+        UpdateVisualEffect();
+
+        // Rotate orbs
+        UpdateOrbPosition();
+        emitterOrb.transform.Rotate(orbRotationSpeedX * Time.deltaTime, orbRotationSpeedY * Time.deltaTime, 0);
+    }
+
+    private void OnDestroy()
+    {
+        // Save how many orbs where there
+        PlayerPrefs.SetInt("OrbCount", orbCount);
     }
 
     void UpdateVisualEffect()
@@ -143,11 +156,7 @@ public class VFXController : MonoBehaviour
         Orb o = Instantiate(OrbPrefab);
         o.gameObject.name = "Orb" + m_orbsVisualEffect.Count;
         o.transform.parent = emitterOrb.transform;
-        o.rate = 0;
         m_orbsVisualEffect.Add(o);
-        orbCount++;
-
-        UpdateOrbPosition();
     }
 
     public void DestroyOrb(int index)
@@ -158,10 +167,9 @@ public class VFXController : MonoBehaviour
             return;
         }
 
+        Orb orbToBeDestroyed = m_orbsVisualEffect[index];
+        Destroy(orbToBeDestroyed.gameObject);
         m_orbsVisualEffect.RemoveAt(index);
-
-        orbCount--;
-        UpdateOrbPosition();
     }
 
     public void UpdateOrbPosition()
@@ -174,9 +182,9 @@ public class VFXController : MonoBehaviour
 
         for (int i = 0; i < m_orbsVisualEffect.Count; i++)
         {
-            float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbCount);
-            float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbCount);
-            m_orbsVisualEffect[i].transform.position = new Vector3(xPos,yPos,0);
+            float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbCount * Mathf.Deg2Rad);
+            float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbCount * Mathf.Deg2Rad);
+            m_orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
         }
     }
 }

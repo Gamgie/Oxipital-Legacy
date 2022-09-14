@@ -8,22 +8,14 @@ public class ForceController : MonoBehaviour
 {
 
     public int forceID = 0;
-    public GameObject vfxObjectParent;
+    public VFXController orbs;
 
     protected VisualEffect[] m_vfxs;
     protected string suffix = "";
 
     private void OnEnable()
     {
-        if(vfxObjectParent == null)
-        {
-            m_vfxs = GetComponentsInChildren<VisualEffect>();
-        }
-        else
-        {
-            m_vfxs = vfxObjectParent.GetComponentsInChildren<VisualEffect>();
-        }
-        
+        UpdateVfxArray();
 
         // Set suffix to handle same multiple force on the same object.
         if (forceID != 0)
@@ -32,4 +24,23 @@ public class ForceController : MonoBehaviour
         }
     }
 
+    protected virtual void Update()
+    {
+        if(orbs.orbCount != m_vfxs.Length)
+        {
+            UpdateVfxArray();
+        }
+    }
+
+    void UpdateVfxArray()
+    {
+        if (orbs == null)
+        {
+            m_vfxs = GetComponentsInChildren<VisualEffect>();
+        }
+        else
+        {
+            m_vfxs = orbs.GetComponentsInChildren<VisualEffect>();
+        }
+    }
 }

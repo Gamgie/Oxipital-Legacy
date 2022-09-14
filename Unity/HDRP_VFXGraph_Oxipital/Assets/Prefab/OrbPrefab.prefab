@@ -1,45 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1065284758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1065284760}
-  - component: {fileID: 1065284761}
-  m_Layer: 0
-  m_Name: EmitterMesh
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1065284760
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065284758}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.17, y: 2.17, z: 2.17}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5914077870649237277}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0.34, z: 0}
---- !u!33 &1065284761
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065284758}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5914077870649237281
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,8 +12,6 @@ GameObject:
   - component: {fileID: 5914077870649237282}
   - component: {fileID: 5914077870649237276}
   - component: {fileID: 5914077870649237283}
-  - component: {fileID: 1702556383541774371}
-  - component: {fileID: 246758438453243114}
   m_Layer: 0
   m_Name: OrbPrefab
   m_TagString: Untagged
@@ -72,8 +30,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1065284760}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,13 +60,13 @@ VisualEffect:
       - m_Value: 5.88
         m_Name: AttractiveDrag
         m_Overridden: 1
-      - m_Value: 12.5
+      - m_Value: 3
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 2.9
+      - m_Value: 2
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -455,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbId: 0
-  rate: 346
+  rate: 524
   life: 3
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 6
@@ -463,43 +420,16 @@ MonoBehaviour:
   size: 2
   drag: 1
   velocityDrag: 0
-  useCustomEmitterShape: 1
   emitterShape: 0
   emitterPlacementMode: 0
-  emitterGO: {fileID: 1065284758}
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
   emitterSize: 2.17
-  meshArray: []
+  meshArray:
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
+  - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
+  - {fileID: 8048870288576412449, guid: a91d16b04adbdb5438ea60dc71cb4490, type: 3}
   emitFromInside: 0
---- !u!114 &1702556383541774371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914077870649237281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 246758438453243114}
-  m_VisualEffect: {fileID: 5914077870649237282}
---- !u!114 &246758438453243114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914077870649237281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: Emitter Transform
-  Target: {fileID: 1065284760}

@@ -19,8 +19,9 @@ public class VortexController : ForceController
     public Vector3 targetVector3;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         string vortex = "Vortex";
 
         foreach (VisualEffect visualEffect in m_vfxs)

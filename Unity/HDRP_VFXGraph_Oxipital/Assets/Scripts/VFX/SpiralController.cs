@@ -15,8 +15,9 @@ public class SpiralController : ForceController
     public Vector3 targetVector3;
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         string spiral = "Spiral";
 
         foreach (VisualEffect visualEffect in m_vfxs)

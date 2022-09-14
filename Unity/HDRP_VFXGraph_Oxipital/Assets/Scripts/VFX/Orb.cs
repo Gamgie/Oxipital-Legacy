@@ -33,10 +33,8 @@ public class Orb : MonoBehaviour
     public float velocityDrag;
 
     [Header("Emitter Parameters")]
-    public bool useCustomEmitterShape;
     public EmitterShape emitterShape;
     public EmitterPlacementMode emitterPlacementMode;
-    public GameObject emitterGO;
     public Vector3 emitterPosition;
     public Vector3 emitterOrientation;
     public float emitterSize;
@@ -59,8 +57,7 @@ public class Orb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (useCustomEmitterShape)
-            UpdateEmitter();
+        UpdateEmitter();
         
         UpdateVisualEffect();        
     }
@@ -95,33 +92,31 @@ public class Orb : MonoBehaviour
         float factor = Mathf.Pow(2, colorIntensity);
         if(Vfx.HasVector4("Color") == true)
             Vfx.SetVector4("Color", new Vector3(color.r* factor, color.g* factor, color.b* factor));
-        
-        if(!useCustomEmitterShape)
-        {
-            if (Vfx.HasFloat("Emitter Size") == true)
-                Vfx.SetFloat("Emitter Size", emitterSize);
-        }
     }
 
     void UpdateEmitter()
     {
-        if (emitterGO == null)
-            return;
-
-        emitterGO.transform.position = emitterPosition;
-        emitterGO.transform.eulerAngles= emitterOrientation;
-        emitterGO.transform.localScale= new Vector3(emitterSize, emitterSize, emitterSize);
-
         // If no emitter mesh in graph then no need to go further
         if (Vfx.HasMesh("Emitter Mesh") == false)
             return;
+
+        // Update Emitter transform
+        if(Vfx.HasVector3("Emitter Position") == true)
+        {
+            Vfx.SetVector3("Emitter Position", emitterPosition);
+        }
+        if (Vfx.HasVector3("Emitter Angles") == true)
+        {
+            Vfx.SetVector3("Emitter Angles", emitterOrientation);
+        }
+        if (Vfx.HasFloat("Emitter Scale") == true)
+            Vfx.SetFloat("Emitter Scale", emitterSize);
 
         // Check if we need to update mesh in graph
         emitterShapeIndex = GetEmitterShapeIndex();
         Mesh actualMesh = Vfx.GetMesh("Emitter Mesh");
         if(actualMesh != meshArray[emitterShapeIndex])
         {
-            emitterGO.GetComponent<MeshFilter>().mesh = meshArray[emitterShapeIndex];
             Vfx.SetMesh("Emitter Mesh", meshArray[emitterShapeIndex]);
         }
 
