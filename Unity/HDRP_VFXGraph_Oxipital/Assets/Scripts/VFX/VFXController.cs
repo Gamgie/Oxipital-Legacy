@@ -12,43 +12,31 @@ public class VFXController : MonoBehaviour
     public float orbPositionRadius;
     public float orbRotationSpeedX;
     public float orbRotationSpeedY;
+    public float orbRotationSpeedZ;
     public int orbCount;
     public Orb OrbPrefab;
     public GameObject emitterOrb;
 
-    [Header("Turbulence")]
-    public float turbIntensity;
-    public float turbFrequency;
-    [Range(1, 8)]
-    public int turbOctave;
-    [Range(0,1f)]
-    public float turbroughness;
-    public float turbLacunarity;
-    public float turbScale;
-
-    [Header("Zalem Gravity")]
-    public float zalemGravity;
-    public Vector3 gravityAxis;
-
-    [Header("Swirl")]
-    public float swirlIntensity;
-    public Vector3 swirlAxis;
-    public Vector3 swirlOrigin;
-    public float swirlRadius;
-
-    [Header("Axial Force")]
-    public float axialIntensity;
-    public Vector3 axialAxis;
-
     // Start is called before the first frame update
     void OnEnable()
     {
+        if(m_orbsVisualEffect != null)
+        {
+            foreach(Orb o in m_orbsVisualEffect)
+            {
+                Destroy(o.gameObject);
+            }
+        }
+
         m_orbsVisualEffect = new List<Orb>();
         orbCount = PlayerPrefs.GetInt("OrbCount", orbCount);
 
         for (int i=0; i<orbCount;i++)
         {
-            AddOrb();
+            if (orbCount > m_orbsVisualEffect.Count)
+            {
+                AddOrb();
+            }
         }
     }
 
@@ -61,77 +49,18 @@ public class VFXController : MonoBehaviour
         }
         else if(orbCount < m_orbsVisualEffect.Count)
         {
-            DestroyOrb(orbCount - 1);
+            DestroyOrb(m_orbsVisualEffect.Count - 1);
         }
-
-        UpdateVisualEffect();
 
         // Rotate orbs
         UpdateOrbPosition();
-        emitterOrb.transform.Rotate(orbRotationSpeedX * Time.deltaTime, orbRotationSpeedY * Time.deltaTime, 0);
+        emitterOrb.transform.Rotate(orbRotationSpeedX * Time.deltaTime, orbRotationSpeedY * Time.deltaTime, orbRotationSpeedZ * Time.deltaTime);
     }
 
     private void OnDestroy()
     {
         // Save how many orbs where there
         PlayerPrefs.SetInt("OrbCount", orbCount);
-    }
-
-    void UpdateVisualEffect()
-    {
-        if (m_orbsVisualEffect == null)
-            return;
-
-        foreach(Orb o in m_orbsVisualEffect)
-        {
-            // Turb parameter update
-            if (o.Vfx.HasFloat("Turb Intensity") == true)
-                o.Vfx.SetFloat("Turb Intensity", turbIntensity);
-
-            if (o.Vfx.HasFloat("Turb Frequency") == true)
-                o.Vfx.SetFloat("Turb Frequency", turbFrequency);
-
-            if (o.Vfx.HasInt("Octave") == true)
-                o.Vfx.SetInt("Octave", turbOctave);
-
-            if (o.Vfx.HasFloat("Roughness") == true)
-                o.Vfx.SetFloat("Roughness", turbroughness);
-
-            if (o.Vfx.HasFloat("Lacunarity") == true)
-                o.Vfx.SetFloat("Lacunarity", turbLacunarity);
-
-            if (o.Vfx.HasFloat("Turb Scale") == true)
-                o.Vfx.SetFloat("Turb Scale", turbScale);
-
-            // Gravity parameter update
-            if (o.Vfx.HasFloat("Gravity") == true)
-                o.Vfx.SetFloat("Gravity", zalemGravity);
-
-            if(o.Vfx.HasVector3("Gravity Axis"))
-                o.Vfx.SetVector3("Gravity Axis", gravityAxis);
-
-
-            // Swirl parameter update
-            if (o.Vfx.HasFloat("Swirl Intensity") == true)
-                o.Vfx.SetFloat("Swirl Intensity", swirlIntensity);
-
-            if (o.Vfx.HasVector3("Swirl Axis"))
-                o.Vfx.SetVector3("Swirl Axis", swirlAxis);
-
-            if (o.Vfx.HasVector3("Swirl Origin"))
-                o.Vfx.SetVector3("Swirl Origin", swirlOrigin);
-
-            if (o.Vfx.HasFloat("Swirl Radius") == true)
-                o.Vfx.SetFloat("Swirl Radius", swirlRadius);
-
-
-            // Axial parameter update
-            if (o.Vfx.HasFloat("Axial Intensity") == true)
-                o.Vfx.SetFloat("Axial Intensity", axialIntensity);
-
-            if (o.Vfx.HasVector3("Axial Axis"))
-                o.Vfx.SetVector3("Axial Axis", axialAxis);
-        }
     }
 
     public void KillAllParticles()
@@ -172,7 +101,7 @@ public class VFXController : MonoBehaviour
         m_orbsVisualEffect.RemoveAt(index);
     }
 
-    public void UpdateOrbPosition()
+    private void UpdateOrbPosition()
     {
         if (m_orbsVisualEffect == null)
         {
@@ -186,5 +115,10 @@ public class VFXController : MonoBehaviour
             float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbCount * Mathf.Deg2Rad);
             m_orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
         }
+    }
+
+    public void ResetOrbPosition()
+    {
+        emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.EulerAngles(0,0,0));
     }
 }

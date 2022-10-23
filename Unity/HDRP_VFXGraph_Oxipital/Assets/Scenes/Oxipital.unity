@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &132919795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132919796}
+  - component: {fileID: 132919797}
+  m_Layer: 0
+  m_Name: Gravity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132919796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132919795}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918722355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132919797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132919795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e32c47a2473dc4c8ce3f5d8b309e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  orbs: {fileID: 360151758}
+  intensity: 0
+  axis: {x: 0, y: -1, z: 0}
 --- !u!1 &135452449
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +835,59 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &251328721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251328722}
+  - component: {fileID: 251328723}
+  m_Layer: 0
+  m_Name: Swirl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &251328722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251328721}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918722355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &251328723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251328721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991bec25970a01849bfd958bd9e771a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  orbs: {fileID: 360151758}
+  intensity: 0
+  axis: {x: 0, y: 1, z: 0}
+  radius: 1
+  clockwise: 0
+  targetObject: {fileID: 251328722}
+  useVector3: 1
+  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &360151756
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,24 +938,11 @@ MonoBehaviour:
   orbPositionRadius: 0
   orbRotationSpeedX: 0
   orbRotationSpeedY: 0
+  orbRotationSpeedZ: 0
   orbCount: 2
   OrbPrefab: {fileID: 5914077870649237283, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
     type: 3}
   emitterOrb: {fileID: 1292866245}
-  turbIntensity: 0
-  turbFrequency: 0.2
-  turbOctave: 1
-  turbroughness: 0.5
-  turbLacunarity: 1
-  turbScale: 1
-  zalemGravity: 0
-  gravityAxis: {x: 0, y: 1, z: 0}
-  swirlIntensity: 0
-  swirlAxis: {x: 0, y: 0, z: 1}
-  swirlOrigin: {x: 0, y: 0, z: 0}
-  swirlRadius: 3.45
-  axialIntensity: 0
-  axialAxis: {x: 0, y: 0, z: 1}
 --- !u!114 &360151759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,6 +1107,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &549925948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549925949}
+  - component: {fileID: 549925950}
+  m_Layer: 0
+  m_Name: Axial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549925949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549925948}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918722355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &549925950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549925948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827b19d360f02c14a85a7db06abbc994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  orbs: {fileID: 360151758}
+  intensity: 1
+  axis: {x: 0, y: 1, z: 0}
 --- !u!1 &594180641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,6 +2200,10 @@ Transform:
   - {fileID: 929118335}
   - {fileID: 212291003}
   - {fileID: 1188738510}
+  - {fileID: 132919796}
+  - {fileID: 251328722}
+  - {fileID: 549925949}
+  - {fileID: 970826856}
   m_Father: {fileID: 360151757}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2119,6 +2259,58 @@ MonoBehaviour:
   targetObject: {fileID: 929118335}
   useVector3: 1
   targetVector3: {x: 0, y: 0, z: 0}
+--- !u!1 &970826855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970826856}
+  - component: {fileID: 970826857}
+  m_Layer: 0
+  m_Name: Turbulence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970826856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970826855}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 918722355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970826857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970826855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745b2a2014cdc994d8fe0fb88a4f12a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceID: 0
+  orbs: {fileID: 360151758}
+  turbIntensity: 0
+  turbFrequency: 1
+  turbOctave: 1
+  turbroughness: 0.5
+  turbLacunarity: 2
+  turbScale: 1
 --- !u!1 &994367193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,23 +3619,10 @@ MonoBehaviour:
   orbPositionRadius: 0
   orbRotationSpeedX: 0
   orbRotationSpeedY: 0
+  orbRotationSpeedZ: 0
   orbCount: 0
   OrbPrefab: {fileID: 0}
   emitterOrb: {fileID: 0}
-  turbIntensity: 0
-  turbFrequency: 0.2
-  turbOctave: 1
-  turbroughness: 0.5
-  turbLacunarity: 1
-  turbScale: 1
-  zalemGravity: 0
-  gravityAxis: {x: 0, y: 1, z: 0}
-  swirlIntensity: 0
-  swirlAxis: {x: 0, y: 0, z: 1}
-  swirlOrigin: {x: 0, y: 0, z: 0}
-  swirlRadius: 3.45
-  axialIntensity: 0
-  axialAxis: {x: 0, y: 0, z: 1}
 --- !u!4 &1401688159
 Transform:
   m_ObjectHideFlags: 0
@@ -3760,8 +3939,8 @@ MonoBehaviour:
   radius: 2.21
   axis: {x: 0, y: 1, z: 0}
   targetObject: {fileID: 1831299749}
-  useVector3: 0
-  targetVector3: {x: 0.17, y: 0, z: 0}
+  useVector3: 1
+  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &1917567316
 GameObject:
   m_ObjectHideFlags: 3

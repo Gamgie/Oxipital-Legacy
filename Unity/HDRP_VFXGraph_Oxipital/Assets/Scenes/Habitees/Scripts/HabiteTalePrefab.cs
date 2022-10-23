@@ -49,7 +49,7 @@ public class HabiteTalePrefab : HabitePrefab
             return;
         }
 
-        m_vfxCtrlr.turbIntensity = m_mngr.taleTurbence;
+        //m_vfxCtrlr.turbIntensity = m_mngr.taleTurbence;
         vortex0.intensity = m_mngr.vortex0Intensity;
         vortex1.intensity = m_mngr.vortex1Intensity;
 
