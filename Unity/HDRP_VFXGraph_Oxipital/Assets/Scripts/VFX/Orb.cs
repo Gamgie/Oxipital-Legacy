@@ -39,7 +39,9 @@ public class Orb : MonoBehaviour
     public Vector3 emitterOrientation;
     public float emitterSize;
     public Mesh[] meshArray;
+    public Texture[] sdfCollisionArray;
     public bool emitFromInside;
+    public bool activateCollision;
 
 
     private VisualEffect _visualEffect;
@@ -118,12 +120,14 @@ public class Orb : MonoBehaviour
         if(actualMesh != meshArray[emitterShapeIndex])
         {
             Vfx.SetMesh("Emitter Mesh", meshArray[emitterShapeIndex]);
+            Vfx.SetTexture("Collision SDF", sdfCollisionArray[emitterShapeIndex]);
         }
 
         if(Vfx.HasBool("Emit From Inside") == true)
-        {
             Vfx.SetBool("Emit From Inside", emitFromInside);
-        }
+
+        if (Vfx.HasBool("Activate Collision") == true)
+            Vfx.SetBool("Activate Collision", activateCollision);
 
         if (Vfx.HasInt("Emitter Placement Mode") == true)
         {

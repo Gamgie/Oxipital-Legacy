@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &5914077870649237282
 VisualEffect:
@@ -66,7 +66,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 2
+      - m_Value: 9.9
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -81,7 +81,7 @@ VisualEffect:
       - m_Value: 3.27
         m_Name: AttractiveRadius
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 1.16
         m_Name: Vortex Radius
         m_Overridden: 1
       - m_Value: 0
@@ -120,10 +120,10 @@ VisualEffect:
       - m_Value: 0
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 2.5
         m_Name: Linear Drag
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 1
         m_Name: Velocity Drag
         m_Overridden: 1
       - m_Value: 0
@@ -153,13 +153,13 @@ VisualEffect:
       - m_Value: 0
         m_Name: Axial Intensity Variance
         m_Overridden: 1
-      - m_Value: 1.64
+      - m_Value: 0
         m_Name: Axial Intensity
         m_Overridden: 1
       - m_Value: 0
         m_Name: Orbita Intensity
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 4.97
         m_Name: Vortex Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -179,6 +179,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 35
         m_Name: Emitter Size
+        m_Overridden: 1
+      - m_Value: 1.85
+        m_Name: Emitter Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -247,6 +250,12 @@ VisualEffect:
       - m_Value: {x: 2.17, y: 2.17, z: 2.17}
         m_Name: Emitter Transform_scale
         m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Emitter Position
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Emitter Angles
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
       - m_Value: {x: 64, y: 64, z: 64, w: 0}
@@ -262,7 +271,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 346
+      - m_Value: 524
         m_Name: Rate
         m_Overridden: 1
       - m_Value: 0
@@ -354,10 +363,16 @@ VisualEffect:
       - m_Value: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
         m_Name: Emitter Mesh
         m_Overridden: 1
+      - m_Value: {fileID: 11700000, guid: bec695729fbd5384c8a5dcd869dc932a, type: 2}
+        m_Name: Collision SDF
+        m_Overridden: 1
     m_Bool:
       m_Array:
       - m_Value: 0
         m_Name: Emit From Inside
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Activate Collision
         m_Overridden: 1
 --- !u!73398921 &5914077870649237276
 VFXRenderer:
@@ -417,14 +432,14 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 0}
   colorIntensity: 6
   alpha: 1
-  size: 2
-  drag: 1
-  velocityDrag: 0
+  size: 9.9
+  drag: 2.5
+  velocityDrag: 1
   emitterShape: 0
   emitterPlacementMode: 0
   emitterPosition: {x: 0, y: 0, z: 0}
   emitterOrientation: {x: 0, y: 0, z: 0}
-  emitterSize: 2.17
+  emitterSize: 1.85
   meshArray:
   - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -432,4 +447,12 @@ MonoBehaviour:
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
   - {fileID: 8048870288576412449, guid: a91d16b04adbdb5438ea60dc71cb4490, type: 3}
+  sdfCollisionArray:
+  - {fileID: 11700000, guid: bec695729fbd5384c8a5dcd869dc932a, type: 2}
+  - {fileID: 11700000, guid: 3cf177f0f7db4a649bc50c7a293530ba, type: 2}
+  - {fileID: 11700000, guid: 6b89dbadfd3592646b8e79e3cf289cd1, type: 2}
+  - {fileID: 11700000, guid: 8ac9f4e96a0547a49aa20731190326e9, type: 2}
+  - {fileID: 11700000, guid: a5edf3d7747b8ab439a18ef6a49e654f, type: 2}
+  - {fileID: 11700000, guid: e3947031457de294ab3ccebb83ffbf93, type: 2}
   emitFromInside: 0
+  activateCollision: 0

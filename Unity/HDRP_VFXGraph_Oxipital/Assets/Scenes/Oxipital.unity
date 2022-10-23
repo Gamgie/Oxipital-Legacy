@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 225356787}
   - component: {fileID: 225356784}
   m_Layer: 0
-  m_Name: Main Spout Camera
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,8 +834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd49aac2636e2a49ab9d7492fb4108a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbPositionRadius: 2
-  orbAngle: 0
+  orbPositionRadius: 0
+  orbRotationSpeedX: 0
+  orbRotationSpeedY: 0
   orbCount: 2
   OrbPrefab: {fileID: 5914077870649237283, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
     type: 3}
@@ -1749,7 +1750,9 @@ MonoBehaviour:
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
   - {fileID: 8048870288576412449, guid: a91d16b04adbdb5438ea60dc71cb4490, type: 3}
+  sdfCollisionArray: []
   emitFromInside: 0
+  activateCollision: 0
 --- !u!73398921 &660385336
 VFXRenderer:
   serializedVersion: 1
@@ -2169,7 +2172,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 3.8
+      - m_Value: 59.2
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -2283,6 +2286,9 @@ VisualEffect:
       - m_Value: 1
         m_Name: Spiral Frequency
         m_Overridden: 1
+      - m_Value: 3.68
+        m_Name: Emitter Scale
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -2326,7 +2332,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Orbita Origin
         m_Overridden: 1
-      - m_Value: {x: -1.12, y: 0.68, z: 0.82}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Vortex Position
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
@@ -2355,6 +2361,12 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: {x: 0, y: -1, z: 0}
         m_Name: Spiral Axis
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Emitter Angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: Emitter Position
         m_Overridden: 1
     m_Vector4f:
       m_Array:
@@ -2526,7 +2538,7 @@ MonoBehaviour:
   color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 0}
   colorIntensity: 4
   alpha: 1
-  size: 3.8
+  size: 59.2
   drag: 3.78
   velocityDrag: 0.383
   emitterShape: 0
@@ -2541,7 +2553,9 @@ MonoBehaviour:
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
   - {fileID: 8048870288576412449, guid: a91d16b04adbdb5438ea60dc71cb4490, type: 3}
+  sdfCollisionArray: []
   emitFromInside: 0
+  activateCollision: 0
 --- !u!73398921 &994367198
 VFXRenderer:
   serializedVersion: 1
@@ -3169,7 +3183,9 @@ MonoBehaviour:
   - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
   - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
   - {fileID: 8048870288576412449, guid: a91d16b04adbdb5438ea60dc71cb4490, type: 3}
+  sdfCollisionArray: []
   emitFromInside: 0
+  activateCollision: 0
 --- !u!73398921 &1260020099
 VFXRenderer:
   serializedVersion: 1
@@ -3409,7 +3425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbPositionRadius: 0
-  orbAngle: 0
+  orbRotationSpeedX: 0
+  orbRotationSpeedY: 0
   orbCount: 0
   OrbPrefab: {fileID: 0}
   emitterOrb: {fileID: 0}
@@ -3717,7 +3734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831299748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.12, y: 0.68, z: 0.82}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4005,46 +4022,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[43].m_Name
-      value: Emitter Scale
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[21].m_Name
-      value: Emitter Position
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[22].m_Name
-      value: Emitter Angles
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[43].m_Overridden
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[21].m_Overridden
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914077870649237282, guid: 7465022d5a16b1e44a29e4a1cc3158a2,
-        type: 3}
-      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[22].m_Overridden
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
