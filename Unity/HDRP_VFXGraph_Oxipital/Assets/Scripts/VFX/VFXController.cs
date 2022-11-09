@@ -121,4 +121,9 @@ public class VFXController : MonoBehaviour
     {
         emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.EulerAngles(0,0,0));
     }
+
+    public List<Orb> GetOrbList()
+    {
+        return m_orbsVisualEffect;
+    }
 }

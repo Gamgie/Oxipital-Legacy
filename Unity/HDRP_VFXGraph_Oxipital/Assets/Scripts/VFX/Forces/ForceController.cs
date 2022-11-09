@@ -26,9 +26,10 @@ public class ForceController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(orbs.orbCount != m_vfxs.Length)
+        foreach(VisualEffect vfx in m_vfxs)
         {
-            UpdateVfxArray();
+            if (vfx == null)
+                UpdateVfxArray();
         }
     }
 
