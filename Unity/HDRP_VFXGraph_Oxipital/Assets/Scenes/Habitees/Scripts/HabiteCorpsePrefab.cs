@@ -26,8 +26,8 @@ public class HabiteCorpsePrefab : HabitePrefab
         }
 
         // Start emitting smoothly.
-        DOTween.To(() => transform.GetComponentInChildren<Orb>().rate,
-                    x => transform.GetComponentInChildren<Orb>().rate = x,
+        DOTween.To(() => transform.GetComponentInChildren<OrbGroup>().rate,
+                    x => transform.GetComponentInChildren<OrbGroup>().rate = x,
                     0,
                     transitionDuration).From();
     }
@@ -44,9 +44,9 @@ public class HabiteCorpsePrefab : HabitePrefab
         }
 
         // Stop Emitting smoothly
-        transform.GetComponentInChildren<Orb>().rate = 0;
-        DOTween.To(() => transform.GetComponentInChildren<Orb>().size,
-                    x => transform.GetComponentInChildren<Orb>().size = x,
+        transform.GetComponentInChildren<OrbGroup>().rate = 0;
+        DOTween.To(() => transform.GetComponentInChildren<OrbGroup>().size,
+                    x => transform.GetComponentInChildren<OrbGroup>().size = x,
                     0,
                     transitionDuration).SetDelay(transitionDuration / 2);
 
