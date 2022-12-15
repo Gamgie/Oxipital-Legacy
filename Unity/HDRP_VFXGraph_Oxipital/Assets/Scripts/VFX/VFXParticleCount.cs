@@ -5,22 +5,22 @@ using UnityEngine.VFX;
 
 public class VFXParticleCount : MonoBehaviour
 {
-
-    public VisualEffect[] visualEffect;
     public int aliveParticleCount;
 
     // Update is called once per frame
     void Update()
     {
+        VisualEffect[] vfxList = GetComponentsInChildren<VisualEffect>();
+
         int totalCount = 0;
-        if (visualEffect.Length != 0)
+        if (vfxList.Length != 0)
         {
-            foreach(VisualEffect vfx in visualEffect)
+            foreach(VisualEffect vfx in vfxList)
             {
                 if(vfx != null)
                     totalCount += vfx.aliveParticleCount;
             }
         }
-            aliveParticleCount = totalCount;
+        aliveParticleCount = totalCount;
     }
 }
