@@ -6,36 +6,36 @@ using System;
 
 public class VFXController : MonoBehaviour
 {
-    private List<Orb> m_orbsVisualEffect;
+    private List<OrbGroup> orbsVisualEffect;
 
     [Header("Orbs Positions")]
-    public float orbPositionRadius;
-    public float orbRotationSpeedX;
-    public float orbRotationSpeedY;
-    public float orbRotationSpeedZ;
-    public int orbCount;
-    public Orb OrbPrefab;
+    //public float orbPositionRadius;
+    //public float orbRotationSpeedX;
+    //public float orbRotationSpeedY;
+    //public float orbRotationSpeedZ;
+    public int orbGroupCount;
+    public OrbGroup orbGroupPrefab;
     public GameObject emitterOrb;
 
     // Start is called before the first frame update
     void OnEnable()
     {
-        if(m_orbsVisualEffect != null)
+        if(orbsVisualEffect != null)
         {
-            foreach(Orb o in m_orbsVisualEffect)
+            foreach(OrbGroup o in orbsVisualEffect)
             {
                 Destroy(o.gameObject);
             }
         }
 
-        m_orbsVisualEffect = new List<Orb>();
-        orbCount = PlayerPrefs.GetInt("OrbCount", orbCount);
+        orbsVisualEffect = new List<OrbGroup>();
+        orbGroupCount = PlayerPrefs.GetInt("OrbCount", orbGroupCount);
 
-        for (int i=0; i<orbCount;i++)
+        for (int i=0; i<orbGroupCount;i++)
         {
-            if (orbCount > m_orbsVisualEffect.Count)
+            if (orbGroupCount > orbsVisualEffect.Count)
             {
-                AddOrb();
+                AddOrbGroup();
             }
         }
     }
@@ -43,87 +43,80 @@ public class VFXController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(orbCount > m_orbsVisualEffect.Count)
+        if(orbGroupCount > orbsVisualEffect.Count)
         {
-            AddOrb();
+            AddOrbGroup();
         }
-        else if(orbCount < m_orbsVisualEffect.Count)
+        else if(orbGroupCount < orbsVisualEffect.Count)
         {
-            DestroyOrb(m_orbsVisualEffect.Count - 1);
+            DestroyOrbGroup(orbsVisualEffect.Count - 1);
         }
-
-        // Rotate orbs
-        UpdateOrbPosition();
-        emitterOrb.transform.Rotate(orbRotationSpeedX * Time.deltaTime, orbRotationSpeedY * Time.deltaTime, orbRotationSpeedZ * Time.deltaTime);
     }
 
     private void OnDestroy()
     {
         // Save how many orbs where there
-        PlayerPrefs.SetInt("OrbCount", orbCount);
+        PlayerPrefs.SetInt("OrbCount", orbGroupCount);
     }
 
     public void KillAllParticles()
     {
-        if (m_orbsVisualEffect == null)
+        if (orbsVisualEffect == null)
             return;
 
-        foreach (Orb o in m_orbsVisualEffect)
+        foreach (OrbGroup o in orbsVisualEffect)
         {
-            o.Vfx.Reinit();
+            o.Reinit();
         }
     }
 
-    public void AddOrb()
+    public void AddOrbGroup()
     {
-        if (m_orbsVisualEffect == null)
+        if (orbsVisualEffect == null)
         {
             Debug.LogError("Try to add an orb in a null list");
             return;
         }
 
-        Orb o = Instantiate(OrbPrefab);
-        o.gameObject.name = "Orb" + m_orbsVisualEffect.Count;
+        OrbGroup o = Instantiate(orbGroupPrefab);
+        o.gameObject.name = "OrbGroup" + orbsVisualEffect.Count;
         o.transform.parent = emitterOrb.transform;
-        m_orbsVisualEffect.Add(o);
+        o.orbGroupId = orbsVisualEffect.Count;
+        o.Initialize();
+        orbsVisualEffect.Add(o);
     }
 
-    public void DestroyOrb(int index)
+    public void DestroyOrbGroup(int index)
     {
-        if (m_orbsVisualEffect == null)
+        if (orbsVisualEffect == null)
         {
             Debug.LogError("Try to destroy an orb in a null list");
             return;
         }
 
-        Orb orbToBeDestroyed = m_orbsVisualEffect[index];
+        OrbGroup orbToBeDestroyed = orbsVisualEffect[index];
         Destroy(orbToBeDestroyed.gameObject);
-        m_orbsVisualEffect.RemoveAt(index);
+        orbsVisualEffect.RemoveAt(index);
     }
 
-    private void UpdateOrbPosition()
-    {
-        if (m_orbsVisualEffect == null)
-        {
-            Debug.LogError("No orb list found");
-            return;
-        }
+    //private void UpdateOrbPosition()
+    //{
+    //    if (orbsVisualEffect == null)
+    //    {
+    //        Debug.LogError("No orb list found");
+    //        return;
+    //    }
 
-        for (int i = 0; i < m_orbsVisualEffect.Count; i++)
-        {
-            float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbCount * Mathf.Deg2Rad);
-            float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbCount * Mathf.Deg2Rad);
-            m_orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
-        }
-    }
+    //    for (int i = 0; i < orbsVisualEffect.Count; i++)
+    //    {
+    //        float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbGroupCount * Mathf.Deg2Rad);
+    //        float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbGroupCount * Mathf.Deg2Rad);
+    //        orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
+    //    }
+    //}
 
-    public void ResetOrbPosition()
-    {
-        emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.EulerAngles(0,0,0));
-    }
-
-    public List<Orb> GetOrbList()
-    {
-        return m_orbsVisualEffect;
-    }
+    //public void ResetOrbPosition()
+    //{
+    //    emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(0,0,0));
+    //}
 }
