@@ -3,70 +3,58 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class CameraSpoutMngr : MonoBehaviour
 {
-    public enum TextureResolution
-    {
-        Hd,
-        FullHD,
-        Lablab,
-        Square1280,
-        Custom 
-    }
 
     #region Public members
     public Klak.Spout.SpoutSender spoutSender;
     public Camera mainCamera;
-    public RenderTexture[] renderTextureList;
+    public int width;
+    public int height;
+    public RenderTextureFormat rtFormat;
     #endregion
 
     #region Private members
-    int _textureIndexSelected;
-    #endregion
+    RenderTexture m_renderTexture;
+	#endregion
 
-    public TextureResolution spoutTextureResolution;
+	private void OnEnable()
+	{
+        width = PlayerPrefs.GetInt("SpoutWidth", 1920);
+        height = PlayerPrefs.GetInt("SpoutHeight", 1080);
+    }
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
         UpdateTexture();
     }
 
     void UpdateTexture()
     {
-        int newIndex = -1;
-        // look for corresponding texture index
-        switch (spoutTextureResolution)
-        {
-            case TextureResolution.Hd:
-                newIndex = 0;
-                break;
-            case TextureResolution.FullHD:
-                newIndex = 1;
-                break;
-            case TextureResolution.Lablab:
-                newIndex = 2;
-                break;
-            case TextureResolution.Square1280:
-                newIndex = 3;
-                break;
-            case TextureResolution.Custom:
-                newIndex = 4;
-                break;
-        }
-        
-        // If it's different from actual, then update
-        if(newIndex != _textureIndexSelected)
-        {
-            _textureIndexSelected = newIndex;
+        if(width == 0 || height == 0)
+		{
+            Debug.LogError("Can't instantiate a render texture with size of 0");
+            return;
+		}
+
+        // No texture or not a valid one
+        if(m_renderTexture == null || width != m_renderTexture.width || height != m_renderTexture.height)
+		{
+            m_renderTexture = new RenderTexture(width, height, 16, rtFormat);
+            m_renderTexture.Create();
 
             // Udate spout and main camera
-            spoutSender.sourceTexture = renderTextureList[_textureIndexSelected];
-            mainCamera.targetTexture = renderTextureList[_textureIndexSelected];
+            spoutSender.sourceTexture = m_renderTexture;
+            mainCamera.targetTexture = m_renderTexture;
 
             // Disable and enable again to re-init spout plugin
             spoutSender.enabled = false;
             spoutSender.enabled = true;
         }
+    }
 
-        
+	private void OnDestroy()
+	{
+        PlayerPrefs.SetInt("SpoutWidth", width);
+        PlayerPrefs.SetInt("SpoutHeight", height);
     }
 }
