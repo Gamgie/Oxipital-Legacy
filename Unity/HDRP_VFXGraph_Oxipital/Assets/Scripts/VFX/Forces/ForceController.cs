@@ -13,9 +13,11 @@ public class ForceController : MonoBehaviour
     protected VisualEffect[] m_vfxs;
     protected string suffix = "";
 
-    private void OnEnable()
+    private void Start()
     {
-        UpdateVfxArray();
+        // Listen to vfxController to know when we created a new orb.
+        // Update our list when it is the case
+        orbs.GetOnOrbCreated().AddListener(UpdateVfxArray);
 
         // Set suffix to handle same multiple force on the same object.
         if (forceID != 0)
@@ -26,6 +28,11 @@ public class ForceController : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(m_vfxs == null)
+		{
+            UpdateVfxArray();
+		}
+
         foreach(VisualEffect vfx in m_vfxs)
         {
             if (vfx == null)

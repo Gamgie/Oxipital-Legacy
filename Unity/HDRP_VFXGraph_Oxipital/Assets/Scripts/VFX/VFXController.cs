@@ -1,122 +1,161 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 using System;
 
 public class VFXController : MonoBehaviour
 {
-    private List<OrbGroup> orbsVisualEffect;
+    public List<OrbGroup> orbs;
 
     [Header("Orbs Positions")]
-    //public float orbPositionRadius;
-    //public float orbRotationSpeedX;
-    //public float orbRotationSpeedY;
-    //public float orbRotationSpeedZ;
     public int orbGroupCount;
     public OrbGroup orbGroupPrefab;
-    public GameObject emitterOrb;
+    public Transform emitterOrbRoot;
+    public DataManager dataManager;
 
-    // Start is called before the first frame update
-    void OnEnable()
+    private UnityEvent OnOrbCreated;
+
+	void OnEnable()
+	{
+        OnOrbCreated = new UnityEvent();
+    }
+
+	// Start is called before the first frame update
+	void Start()
     {
-        if(orbsVisualEffect != null)
+        if(orbs != null)
         {
-            foreach(OrbGroup o in orbsVisualEffect)
+            foreach(OrbGroup o in orbs)
             {
                 Destroy(o.gameObject);
             }
         }
 
-        orbsVisualEffect = new List<OrbGroup>();
-        orbGroupCount = PlayerPrefs.GetInt("OrbCount", orbGroupCount);
-
-        for (int i=0; i<orbGroupCount;i++)
-        {
-            if (orbGroupCount > orbsVisualEffect.Count)
-            {
-                AddOrbGroup();
-            }
-        }
+        InitOrbs();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(orbGroupCount > orbsVisualEffect.Count)
+        if(orbGroupCount > orbs.Count)
         {
             AddOrbGroup();
         }
-        else if(orbGroupCount < orbsVisualEffect.Count)
+        else if(orbGroupCount < orbs.Count)
         {
-            DestroyOrbGroup(orbsVisualEffect.Count - 1);
+            DestroyOrbGroup(orbs.Count - 1);
         }
     }
 
+
     private void OnDestroy()
     {
-        // Save how many orbs where there
-        PlayerPrefs.SetInt("OrbCount", orbGroupCount);
+        // Save how many orbs were there
+        dataManager.SaveData("default.json");
     }
 
     public void KillAllParticles()
     {
-        if (orbsVisualEffect == null)
+        if (orbs == null)
             return;
 
-        foreach (OrbGroup o in orbsVisualEffect)
+        foreach (OrbGroup o in orbs)
         {
             o.Reinit();
         }
     }
 
-    public void AddOrbGroup()
+    public void InitOrbs()
+	{
+        orbs = new List<OrbGroup>();
+        VFXControllerData loadedData = dataManager.LoadData("default.json");
+        orbGroupCount = loadedData.orbCount;
+
+        for (int i = 0; i < orbGroupCount; i++)
+        {
+            if (orbGroupCount > orbs.Count)
+            {
+                AddOrbGroup(loadedData.orbGroupData[i]);
+            }
+        }
+    }
+    public void AddOrbGroup(OrbGroupData orbData = null)
     {
-        if (orbsVisualEffect == null)
+        if (orbs == null)
         {
             Debug.LogError("Try to add an orb in a null list");
             return;
         }
 
         OrbGroup o = Instantiate(orbGroupPrefab);
-        o.gameObject.name = "OrbGroup" + orbsVisualEffect.Count;
-        o.transform.parent = emitterOrb.transform;
-        o.orbGroupId = orbsVisualEffect.Count;
-        o.Initialize();
-        orbsVisualEffect.Add(o);
+        if(orbData == null)
+		{
+            o.gameObject.name = "OrbGroup" + orbs.Count;
+            o.orbGroupId = orbs.Count;
+        }
+        else
+		{
+            o.data = orbData;
+            o.LoadData();
+		}
+        
+        o.transform.parent = emitterOrbRoot;
+        o.Initialize(this);
+        orbs.Add(o);
     }
 
     public void DestroyOrbGroup(int index)
     {
-        if (orbsVisualEffect == null)
+        if (orbs == null)
         {
             Debug.LogError("Try to destroy an orb in a null list");
             return;
         }
 
-        OrbGroup orbToBeDestroyed = orbsVisualEffect[index];
+        OrbGroup orbToBeDestroyed = orbs[index];
         Destroy(orbToBeDestroyed.gameObject);
-        orbsVisualEffect.RemoveAt(index);
+        orbs.RemoveAt(index);
     }
 
-    //private void UpdateOrbPosition()
-    //{
-    //    if (orbsVisualEffect == null)
-    //    {
-    //        Debug.LogError("No orb list found");
-    //        return;
-    //    }
+    public UnityEvent GetOnOrbCreated()
+	{
+        if(OnOrbCreated == null)
+		{
+            OnOrbCreated = new UnityEvent();
+        }
 
-    //    for (int i = 0; i < orbsVisualEffect.Count; i++)
-    //    {
-    //        float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbGroupCount * Mathf.Deg2Rad);
-    //        float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbGroupCount * Mathf.Deg2Rad);
-    //        orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
-    //    }
-    //}
-
-    //public void ResetOrbPosition()
-    //{
-    //    emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(0,0,0));
-    //}
+        return OnOrbCreated;
+	}
 }
+
+[System.Serializable]
+public class VFXControllerData
+{
+    public int orbCount;
+    public List<OrbGroupData> orbGroupData;
+}
+
+
+
+//private void UpdateOrbPosition()
+//{
+//    if (orbsVisualEffect == null)
+//    {
+//        Debug.LogError("No orb list found");
+//        return;
+//    }
+
+//    for (int i = 0; i < orbsVisualEffect.Count; i++)
+//    {
+//        float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbGroupCount * Mathf.Deg2Rad);
+//        float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbGroupCount * Mathf.Deg2Rad);
+//        orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
+//    }
+//}
+
+//public void ResetOrbPosition()
+//{
+//    emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(0,0,0));
+//}
