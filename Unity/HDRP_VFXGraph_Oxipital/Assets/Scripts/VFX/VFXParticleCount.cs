@@ -13,7 +13,7 @@ public class VFXParticleCount : MonoBehaviour
         VisualEffect[] vfxList = GetComponentsInChildren<VisualEffect>();
 
         int totalCount = 0;
-        if (vfxList.Length != 0)
+        if (vfxList != null)
         {
             foreach(VisualEffect vfx in vfxList)
             {
