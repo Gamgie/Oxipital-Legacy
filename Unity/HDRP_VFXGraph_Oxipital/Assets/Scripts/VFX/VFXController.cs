@@ -8,6 +8,7 @@ using System;
 public class VFXController : MonoBehaviour
 {
     public List<OrbGroup> orbs;
+    public string dataFileName;
 
     [Header("Orbs Positions")]
     public int orbGroupCount;
@@ -53,7 +54,7 @@ public class VFXController : MonoBehaviour
     private void OnDestroy()
     {
         // Save how many orbs were there
-        dataManager.SaveData("default.json");
+        dataManager.SaveData(dataFileName + ".json");
     }
 
     public void KillAllParticles()
@@ -67,10 +68,10 @@ public class VFXController : MonoBehaviour
         }
     }
 
-    public void InitOrbs()
+    private void InitOrbs()
 	{
         orbs = new List<OrbGroup>();
-        VFXControllerData loadedData = dataManager.LoadData("default.json");
+        VFXControllerData loadedData = dataManager.LoadData(dataFileName + ".json");
         orbGroupCount = loadedData.orbCount;
 
         for (int i = 0; i < orbGroupCount; i++)
