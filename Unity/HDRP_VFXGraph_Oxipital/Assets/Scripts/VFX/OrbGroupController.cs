@@ -30,14 +30,14 @@ public class OrbGroupController : MonoBehaviour
     public bool emitFromInside;
     public bool activateCollision;
 
-    private VFXController _vfxController;
+    private OrbsManager _orbsManager;
     private bool _isLinked;
     private int _idControlled = -1;
 
     // Start is called before the first frame update
     void Start()
     {
-        _vfxController = transform.parent.GetComponent<VFXController>();
+        _orbsManager = transform.parent.GetComponent<OrbsManager>();
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class OrbGroupController : MonoBehaviour
         // Our id was updated then we need to update controller according to values
         if(idControlled != _idControlled)
 		{
-            foreach (OrbGroup oG in _vfxController.orbs)
+            foreach (OrbGroup oG in _orbsManager.orbs)
             {
                 if (oG.orbGroupId == idControlled)
                 {
@@ -70,7 +70,7 @@ public class OrbGroupController : MonoBehaviour
         }
         else
 		{
-            foreach (OrbGroup oG in _vfxController.orbs)
+            foreach (OrbGroup oG in _orbsManager.orbs)
             {
                 if (oG.orbGroupId == idControlled)
                 {

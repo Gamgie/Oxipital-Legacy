@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    public VFXController vfxController;
+    public OrbsManager orbsMngr;
 	private string path;
 
 	public VFXControllerData LoadData(string fileName)
@@ -26,7 +26,7 @@ public class DataManager : MonoBehaviour
 
 	public void SaveData(string fileName)
 	{
-		if(vfxController == null)
+		if(orbsMngr == null)
 		{
 			Debug.LogError("Can not save file because there is no vfxcontroller found");
 			return;
@@ -34,11 +34,11 @@ public class DataManager : MonoBehaviour
 
 		// save data of vfxcontroller
 		VFXControllerData data = new VFXControllerData();
-		data.orbCount = vfxController.orbGroupCount;
+		data.orbCount = orbsMngr.orbGroupCount;
 
 		// save data for each OrbGroup
 		data.orbGroupData = new List<OrbGroupData>();
-		foreach(OrbGroup o in vfxController.orbs)
+		foreach(OrbGroup o in orbsMngr.orbs)
 		{
 			data.orbGroupData.Add(o.StoreData());
 

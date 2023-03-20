@@ -8,7 +8,7 @@ public class ForceController : MonoBehaviour
 {
 
     public int forceID = 0;
-    public VFXController orbs;
+    public OrbsManager orbs;
 
     protected VisualEffect[] m_vfxs;
     protected string suffix = "";

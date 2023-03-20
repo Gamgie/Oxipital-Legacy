@@ -48,13 +48,13 @@ public class OrbGroup : MonoBehaviour
 
     private List<VisualEffect> visualEffects;
     private int emitterShapeIndex;
-    private VFXController vfxController;
+    private OrbsManager _orbsMngr;
 
 
     // Start is called before the first frame update
-    public void Initialize(VFXController vfxCtrler)
+    public void Initialize(OrbsManager orbsMngr)
     {
-        vfxController = vfxCtrler;
+        _orbsMngr = orbsMngr;
 
         // Initialize with the first orb
         visualEffects = new List<VisualEffect>();
@@ -245,7 +245,7 @@ public class OrbGroup : MonoBehaviour
         o.transform.parent = transform;
         visualEffects.Add(o);
 
-        vfxController.GetOnOrbCreated().Invoke();
+        _orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
     }
 
