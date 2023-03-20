@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 15800907}
   - component: {fileID: 15800913}
   - component: {fileID: 15800912}
-  - component: {fileID: 15800911}
   - component: {fileID: 15800909}
   - component: {fileID: 15800908}
   m_Layer: 0
@@ -190,65 +189,6 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 15800908}
   m_VisualEffect: {fileID: 15800913}
---- !u!114 &15800911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15800906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a078f1a1fa90645429767eade3c9cbb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbGroupId: 0
-  orbPrefab: {fileID: 0}
-  rate: 6986
-  life: 3.49
-  color: {r: 0.09545211, g: 0.11604862, b: 0.14150941, a: 1}
-  colorIntensity: 4
-  alpha: 0.203
-  size: 0.15
-  drag: 1.45
-  velocityDrag: 0
-  emitterShape: 1
-  emitterPlacementMode: 0
-  emitterPosition: {x: 0, y: 0, z: 0.92}
-  emitterOrientation: {x: 0, y: 0, z: 0}
-  emitterSize: 0.44
-  meshArray:
-  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
-  - {fileID: -5495902117074765545, guid: 4d573aa56255cf34184761a3370834df, type: 3}
-  - {fileID: -8803937527578110353, guid: ad218322fe0912947b26c92861f2462c, type: 3}
-  sdfCollisionArray: []
-  emitFromInside: 0
-  activateCollision: 0
-  data:
-    orbGroupId: 0
-    name: 
-    rate: 0
-    life: 0
-    colorR: 0
-    colorG: 0
-    colorB: 0
-    colorIntensity: 0
-    alpha: 0
-    size: 0
-    drag: 0
-    velocityDrag: 0
-    emitterShapeIndex: 0
-    emitterPlacementMode: 0
-    emitterPositionX: 0
-    emitterPositionY: 0
-    emitterPositionZ: 0
-    emitterOrientationX: 0
-    emitterOrientationY: 0
-    emitterOrientationZ: 0
-    emitterSize: 0
-    emitFromInside: 0
-    activateCollision: 0
 --- !u!73398921 &15800912
 VFXRenderer:
   serializedVersion: 1
@@ -315,13 +255,13 @@ VisualEffect:
       - m_Value: 5.88
         m_Name: AttractiveDrag
         m_Overridden: 1
-      - m_Value: 3.49
+      - m_Value: 21.51
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.718
+      - m_Value: 3.43
         m_Name: Size
         m_Overridden: 1
       - m_Value: 0
@@ -348,7 +288,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: Turbulence Intensity
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 1.56
         m_Name: Turb Frequency
         m_Overridden: 1
       - m_Value: 0.5
@@ -357,7 +297,7 @@ VisualEffect:
       - m_Value: 2
         m_Name: Lacunarity
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 0.3
         m_Name: Turb Intensity
         m_Overridden: 1
       - m_Value: 0
@@ -372,7 +312,7 @@ VisualEffect:
       - m_Value: 2.48
         m_Name: Repulsor Radius
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 0.71
         m_Name: Gravity
         m_Overridden: 1
       - m_Value: 1.45
@@ -451,7 +391,7 @@ VisualEffect:
       - m_Value: {x: 0, y: 0, z: 0}
         m_Name: Vortex Target Position
         m_Overridden: 1
-      - m_Value: {x: 0, y: 1, z: 0}
+      - m_Value: {x: 1, y: -0.35, z: 0}
         m_Name: Gravity Axis
         m_Overridden: 1
       - m_Value: {x: 1, y: 0, z: 0}
@@ -508,7 +448,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Octave
         m_Overridden: 1
-      - m_Value: 6986
+      - m_Value: 1965
         m_Name: Rate
         m_Overridden: 1
     m_Matrix4x4f:
@@ -742,7 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 1
-  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -880,7 +820,7 @@ Camera:
   far clip plane: 5000
   field of view: 14.4
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 2.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1772,7 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 220.3991
+  m_Intensity: 1110.5966
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1894,7 +1834,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 17.538801
+  m_Intensity: 88.37846
   m_Range: 26.49
   m_SpotAngle: 75.02482
   m_InnerSpotAngle: 21.80208
@@ -1952,7 +1892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539816141}
   m_LocalRotation: {x: 0.29978445, y: -0.070854574, z: -0.15488021, w: 0.9386805}
-  m_LocalPosition: {x: 1.519, y: 2.67, z: -2.134}
+  m_LocalPosition: {x: 0.271, y: 2.49, z: -2.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2328,7 +2268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 12.36957
+  m_Intensity: 643.07855
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -2450,7 +2390,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.98433906
+  m_Intensity: 51.174564
   m_Range: 26.49
   m_SpotAngle: 75.02482
   m_InnerSpotAngle: 21.80208
@@ -2508,7 +2448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249933376}
   m_LocalRotation: {x: 0.29978445, y: -0.070854574, z: -0.15488021, w: 0.9386805}
-  m_LocalPosition: {x: -0.85, y: 0.519, z: -2.472}
+  m_LocalPosition: {x: -1.01, y: 0.82, z: -1.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2750,7 +2690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1776848021
 Transform:
   m_ObjectHideFlags: 0
@@ -2833,7 +2773,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776848020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3206,56 +3146,6 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 1776848025}
   m_VisualEffect: {fileID: 1776848024}
---- !u!1 &1783646955
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1783646957}
-  - component: {fileID: 1783646956}
-  m_Layer: 0
-  m_Name: Unity Spout Oxipital
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1783646956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783646955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spoutName: Spout Sender
-  _keepAlpha: 0
-  _captureMethod: 0
-  _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 8400000, guid: c6dc7005450bb3841acf3e41373bd7a3, type: 2}
-  _resources: {fileID: 0}
---- !u!4 &1783646957
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783646955}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2083420221}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831299748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,11 +3224,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083420220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -4.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1783646957}
   - {fileID: 225356786}
   - {fileID: 594180642}
   m_Father: {fileID: 0}
