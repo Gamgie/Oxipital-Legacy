@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
+	public string fileName;
     public OrbsManager orbsMngr;
+	public OrbGroupController[] orbsControllers;
 	private string path;
+	private OrbManagerData loadedData;
 
-	public VFXControllerData LoadData(string fileName)
+	public OrbManagerData LoadData()
 	{
 		if(path == null)
 		{
 			path = Application.dataPath;
 		}
 
-		string filepath = path + "/" + fileName;
-		string orbsData =  System.IO.File.ReadAllText(path + "/" + fileName);
+		if(loadedData == null)
+		{
+			string filepath = path + "/" + fileName + ".json";
+			string orbsData = System.IO.File.ReadAllText(filepath);
 
-		VFXControllerData data = JsonUtility.FromJson<VFXControllerData>(orbsData);
+			loadedData = JsonUtility.FromJson<OrbManagerData>(orbsData);
 
-		Debug.Log("file loaded at " + path + "/" + fileName);
+			Debug.Log("file loaded at " + path + "/" + fileName);
+		}
 
-		return data;
+		return loadedData;
 	}
 
-	public void SaveData(string fileName)
+	public void SaveData()
 	{
 		if(orbsMngr == null)
 		{
@@ -32,8 +38,8 @@ public class DataManager : MonoBehaviour
 			return;
 		}
 
-		// save data of vfxcontroller
-		VFXControllerData data = new VFXControllerData();
+		// save data of orb mngr
+		OrbManagerData data = new OrbManagerData();
 		data.orbCount = orbsMngr.orbGroupCount;
 
 		// save data for each OrbGroup
@@ -44,9 +50,19 @@ public class DataManager : MonoBehaviour
 
 		}
 
+		// save data for each OrbGroupController
+		data.orbGroupControllersData = new List<OrbGroupControllerData>();
+		foreach(OrbGroupController oc in orbsControllers)
+		{
+			OrbGroupControllerData ogcData = new OrbGroupControllerData();
+			ogcData.name = oc.name;
+			ogcData.idControlled = oc.idControlled;
+			data.orbGroupControllersData.Add(ogcData);
+		}
+
 		// Save to file
 		string orbsData = JsonUtility.ToJson(data);
-		string filepath = path + "/" + fileName;
+		string filepath = path + "/" + fileName + ".json";
 		System.IO.File.WriteAllText(filepath, orbsData);
 		Debug.Log("file saved at " + filepath);
 	}

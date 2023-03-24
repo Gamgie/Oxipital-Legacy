@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OrbGroupController : MonoBehaviour
 {
+    public DataManager dataMngr;
     public int idControlled;
     public int orbCount;
     public OrbGroupController[] orbGroupControllers; // They need to know each other to not control the same orbgroup at the same time
@@ -39,6 +40,15 @@ public class OrbGroupController : MonoBehaviour
     void Start()
     {
         _orbsManager = transform.parent.GetComponent<OrbsManager>();
+
+        OrbManagerData loadedData = dataMngr.LoadData();
+        foreach(OrbGroupControllerData ogcData in loadedData.orbGroupControllersData)
+		{
+            if(ogcData.name == this.name)
+			{
+                idControlled = ogcData.idControlled;
+			}
+		}
     }
 
     // Update is called once per frame
@@ -129,4 +139,11 @@ public class OrbGroupController : MonoBehaviour
 
         return result;
 	}
+}
+
+[System.Serializable]
+public class OrbGroupControllerData
+{
+    public int idControlled;
+    public string name;
 }
