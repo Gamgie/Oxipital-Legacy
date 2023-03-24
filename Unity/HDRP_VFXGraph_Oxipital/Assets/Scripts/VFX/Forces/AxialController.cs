@@ -8,6 +8,7 @@ public class AxialController : ForceController
 {
     public float intensity;
     public Vector3 axis;
+    public float radius;
 
 
     // Update is called once per frame
