@@ -6,9 +6,10 @@ public class OrbGroupController : MonoBehaviour
 {
     public int idControlled;
     public int orbCount;
+    public OrbGroupController[] orbGroupControllers; // They need to know each other to not control the same orbgroup at the same time
 
     [Header("PS Parameters")]
-    [Range(0, 4000)]
+    [Range(0, 400000)]
     public float rate;
     [Range(0, 200)]
     public float life;
@@ -19,6 +20,7 @@ public class OrbGroupController : MonoBehaviour
     public float alpha;
     [Range(0, 100)]
     public float size;
+    [Range(0, 10)]
     public float drag;
     [Range(0, 1)]
     public float velocityDrag;
@@ -31,7 +33,6 @@ public class OrbGroupController : MonoBehaviour
     public bool activateCollision;
 
     private OrbsManager _orbsManager;
-    private bool _isLinked;
     private int _idControlled = -1;
 
     // Start is called before the first frame update
@@ -46,6 +47,28 @@ public class OrbGroupController : MonoBehaviour
         // Our id was updated then we need to update controller according to values
         if(idControlled != _idControlled)
 		{
+            // If it is already controlled by another OrbGroupController, don't update parameters
+            if(!CheckAvailability())
+            {
+                rate = 0;
+                life = 0;
+                color = Color.black;
+                colorIntensity = 0;
+                alpha = 0;
+                size = 0;
+                drag = 0;
+                velocityDrag = 0;
+                emitterSize = 0;
+                emitFromInside = false;
+                activateCollision = false;
+
+                Debug.Log("Cannot control an OrbGroup already controlled");
+
+                _idControlled = -1;
+
+                return;
+            }
+
             foreach (OrbGroup oG in _orbsManager.orbs)
             {
                 if (oG.orbGroupId == idControlled)
@@ -63,9 +86,9 @@ public class OrbGroupController : MonoBehaviour
                     emitterSize = oG.emitterSize;
                     emitFromInside = oG.emitFromInside;
                     activateCollision = oG.activateCollision;
-                }
 
-                _idControlled = idControlled;
+                    _idControlled = idControlled;
+                }
             }
         }
         else
@@ -91,4 +114,19 @@ public class OrbGroupController : MonoBehaviour
             }
         }
     }
+
+    public bool CheckAvailability()
+	{
+        bool result = true;
+
+        foreach(OrbGroupController ogc in orbGroupControllers)
+		{
+            if(ogc.idControlled == idControlled)
+            {
+                result = false;
+            }
+		}
+
+        return result;
+	}
 }
