@@ -15,7 +15,6 @@ public class TurbulenceController : ForceController
     public float turbroughness = 0.5f;
     public float turbLacunarity = 2;
     public float turbScale = 1;
-    public float radius;
 
     // Update is called once per frame
     protected override void Update()

@@ -5,14 +5,8 @@ using UnityEngine.VFX;
 
 public class SpiralController : ForceController
 {
-    public float intensity;
-    public Vector3 axis;
-    public float radius;
+    [Header("Spiral")]
     public float frequency;
-
-    public Transform targetObject;
-    public bool useVector3;
-    public Vector3 targetVector3;
 
     // Update is called once per frame
     protected override void Update()

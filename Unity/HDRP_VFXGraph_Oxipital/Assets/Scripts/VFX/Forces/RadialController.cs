@@ -10,13 +10,8 @@ public class RadialController : ForceController
         ATTRACTOR,
         REPULSOR
     }
-
-    public float intensity;
+    [Header("Radial")]
     public RadialType radialType;
-    public float radius;
-    public Transform targetObject;
-    public bool useVector3;
-    public Vector3 targetVector3;
 
 
     // Update is called once per frame

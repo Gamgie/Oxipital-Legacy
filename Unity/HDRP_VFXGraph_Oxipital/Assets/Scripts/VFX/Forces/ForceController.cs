@@ -9,6 +9,14 @@ public class ForceController : MonoBehaviour
 
     public int forceID = 0;
     public OrbsManager orbs;
+    public Transform targetObject;
+    [Space(10)]
+    public float intensity;
+    public float radius;
+    public Vector3 axis;
+    public bool useVector3;
+    public Vector3 targetVector3;
+    
 
     protected VisualEffect[] m_vfxs;
     protected string suffix = "";

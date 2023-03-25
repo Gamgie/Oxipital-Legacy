@@ -6,18 +6,10 @@ using UnityEngine.VFX;
 
 public class VortexController : ForceController
 {
-    public float intensity;
+    [Header("Vortex")]
     [Range(0, 1)]
     public float intensityRandom;
-    public float radius;
-
-    public Vector3 axis;
-
-
-    public Transform targetObject;
-    public bool useVector3;
-    public Vector3 targetVector3;
-
+    
     // Update is called once per frame
     protected override void Update()
     {
