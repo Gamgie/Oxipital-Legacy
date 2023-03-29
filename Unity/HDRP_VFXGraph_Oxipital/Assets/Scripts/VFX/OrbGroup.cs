@@ -7,7 +7,7 @@ using System;
 [ExecuteInEditMode]
 public class OrbGroup : MonoBehaviour
 {
-    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe, Egg, Line, Circle, Merkaba }
+    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe, Egg, Line, Circle, Merkaba, Pyramid, Triangle }
     public enum EmitterPlacementMode
     {
         Surface,
@@ -129,11 +129,36 @@ public class OrbGroup : MonoBehaviour
 
             // Check if we need to update mesh in graph
             emitterShapeIndex = GetEmitterShapeIndex();
-            Mesh actualMesh = vfx.GetMesh("Emitter Mesh");
-            if (actualMesh != meshArray[emitterShapeIndex])
+            if(emitterShape == EmitterShape.Line)
+			{
+                if (vfx.HasBool("isCircle") == true)
+                    vfx.SetBool("isCircle", false);
+
+                if (vfx.HasBool("isLine") == true)
+                    vfx.SetBool("isLine", true);
+            }
+            else if (emitterShape == EmitterShape.Circle)
+			{
+                if (vfx.HasBool("isLine") == true)
+                    vfx.SetBool("isLine", false);
+
+                if (vfx.HasBool("isCircle") == true)
+                    vfx.SetBool("isCircle", true);
+            }
+			else
             {
-                vfx.SetMesh("Emitter Mesh", meshArray[emitterShapeIndex]);
-                vfx.SetTexture("Collision SDF", sdfCollisionArray[emitterShapeIndex]);
+                if (vfx.HasBool("isLine") == true)
+                    vfx.SetBool("isLine", false);
+
+                if (vfx.HasBool("isCircle") == true)
+                    vfx.SetBool("isCircle", false);
+
+                Mesh actualMesh = vfx.GetMesh("Emitter Mesh");
+                if (actualMesh != meshArray[emitterShapeIndex])
+                {
+                    vfx.SetMesh("Emitter Mesh", meshArray[emitterShapeIndex]);
+                    vfx.SetTexture("Collision SDF", sdfCollisionArray[emitterShapeIndex]);
+                }
             }
 
             if (vfx.HasBool("Emit From Inside") == true)
@@ -187,6 +212,21 @@ public class OrbGroup : MonoBehaviour
             case EmitterShape.Egg:
                 result = 5;
                 break;
+            case EmitterShape.Line:
+                result = 6;
+                break;
+            case EmitterShape.Circle:
+                result = 7;
+                break;
+            case EmitterShape.Merkaba:
+                result = 8;
+                break;
+            case EmitterShape.Pyramid:
+                result = 9;
+                break;
+            case EmitterShape.Triangle:
+                result = 10;
+                break;
         }
 
         return result;
@@ -213,6 +253,21 @@ public class OrbGroup : MonoBehaviour
                 break;
             case 5:
                 emitterShape = EmitterShape.Egg;
+                break;
+            case 6:
+                emitterShape = EmitterShape.Line;
+                break;
+            case 7:
+                emitterShape = EmitterShape.Circle;
+                break;
+            case 8:
+                emitterShape = EmitterShape.Merkaba;
+                break;
+            case 9:
+                emitterShape = EmitterShape.Pyramid;
+                break;
+            case 10:
+                emitterShape = EmitterShape.Triangle;
                 break;
         }
     }

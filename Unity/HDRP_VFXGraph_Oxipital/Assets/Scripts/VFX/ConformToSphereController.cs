@@ -7,7 +7,6 @@ using UnityEngine.VFX;
 public class ConformToSphereController : ForceController
 {
     public Transform sphereCenter;
-    public float radius = 1;
     public float attractionSpeed = 5;
     public float attractionForce = 20;
     public float stickDistance = 0.1f;
