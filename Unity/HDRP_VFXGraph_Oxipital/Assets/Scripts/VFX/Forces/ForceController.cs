@@ -8,14 +8,24 @@ public class ForceController : MonoBehaviour
 {
 
     public int forceID = 0;
-    public VFXController orbs;
+    public OrbsManager orbs;
+    public Transform targetObject;
+    [Space(10)]
+    public float intensity;
+    public float radius;
+    public Vector3 axis;
+    public bool useVector3;
+    public Vector3 targetVector3;
+    
 
     protected VisualEffect[] m_vfxs;
     protected string suffix = "";
 
-    private void OnEnable()
+    private void Start()
     {
-        UpdateVfxArray();
+        // Listen to vfxController to know when we created a new orb.
+        // Update our list when it is the case
+        orbs.GetOnOrbCreated().AddListener(UpdateVfxArray);
 
         // Set suffix to handle same multiple force on the same object.
         if (forceID != 0)
@@ -26,9 +36,15 @@ public class ForceController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(orbs.orbCount != m_vfxs.Length)
-        {
+        if(m_vfxs == null)
+		{
             UpdateVfxArray();
+		}
+
+        foreach(VisualEffect vfx in m_vfxs)
+        {
+            if (vfx == null)
+                UpdateVfxArray();
         }
     }
 

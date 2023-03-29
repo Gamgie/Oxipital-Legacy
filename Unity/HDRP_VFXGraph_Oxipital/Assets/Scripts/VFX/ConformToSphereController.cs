@@ -24,11 +24,11 @@ public class ConformToSphereController : ForceController
     public List<Vector3> vector3List;*/
 
 
-    
+
 
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (m_vfxs == null)
             return;

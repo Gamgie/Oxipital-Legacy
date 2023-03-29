@@ -6,9 +6,6 @@ using UnityEngine.VFX;
 
 public class GravityController : ForceController
 {
-    public float intensity;
-    public Vector3 axis;
-
     // Update is called once per frame
     protected override void Update()
     {
