@@ -7,7 +7,7 @@ using System;
 [ExecuteInEditMode]
 public class OrbGroup : MonoBehaviour
 {
-    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe, Egg, Line, Circle, Merkaba, Pyramid, Triangle }
+    public enum EmitterShape { Sphere, Plane, Torus, Cube, Pipe, Egg, Line, Circle, Merkaba, Pyramid }
     public enum EmitterPlacementMode
     {
         Surface,
@@ -224,9 +224,6 @@ public class OrbGroup : MonoBehaviour
             case EmitterShape.Pyramid:
                 result = 9;
                 break;
-            case EmitterShape.Triangle:
-                result = 10;
-                break;
         }
 
         return result;
@@ -265,9 +262,6 @@ public class OrbGroup : MonoBehaviour
                 break;
             case 9:
                 emitterShape = EmitterShape.Pyramid;
-                break;
-            case 10:
-                emitterShape = EmitterShape.Triangle;
                 break;
         }
     }
