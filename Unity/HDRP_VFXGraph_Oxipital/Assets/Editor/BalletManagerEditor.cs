@@ -9,6 +9,8 @@ public class BalletManagerEditor : Editor
     {
         BalletManager balletMngr = (BalletManager)target;
 
+        /////////////////////////////////////////////////
+
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Add Dancer"))
         {
@@ -18,6 +20,20 @@ public class BalletManagerEditor : Editor
         if (GUILayout.Button("Remove Dancer"))
         {
             balletMngr.RemoveDancer();
+        }
+        GUILayout.EndHorizontal();
+
+        ///////////////////////////////////////////////
+
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Add Pattern"))
+        {
+            balletMngr.AddPattern(BalletManager.BalletPatternType.Circle);
+        }
+
+        if (GUILayout.Button("Remove Pattern"))
+        {
+            balletMngr.RemovePattern();
         }
         GUILayout.EndHorizontal();
 
