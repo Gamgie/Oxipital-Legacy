@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class BalletManager : MonoBehaviour
 {
-    public enum BalletPatternType { Line, Circle}
-
     public BalletDancer dancerPrefab;
-    public CirclePattern circlePatternPrefab;
-    public CirclePattern linePatternPrefab;
+    public BalletPattern patternPrefab;
 
     public List<BalletDancer> dancers; // a list of objects to choreograph
     public List<BalletPattern> patterns; // a list of patterns 
@@ -119,9 +116,9 @@ public class BalletManager : MonoBehaviour
         return result;
 	}
 
-    public void AddPattern(BalletPatternType type)
+    public void AddPattern()
 	{
-        BalletPattern pattern = null;
+        BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
 
         // Look for the next available ID
         int newID = 0;
@@ -137,26 +134,13 @@ public class BalletManager : MonoBehaviour
             }
         }
 
-        // Choose a beautiful name
-        string patternName = "";
-        switch (type)
-		{
-            case BalletPatternType.Circle:
-                patternName = "Circle";
-                pattern = Instantiate(circlePatternPrefab) as BalletPattern;
-                break;
-            case BalletPatternType.Line:
-                patternName = "Line";
-                pattern = Instantiate(linePatternPrefab) as BalletPattern;
-                break;
-		}
-
+        string patternName = "Pattern " + newID;
         
         if(pattern != null)
 		{
             // Set everything correctly before send it to the universe.
             pattern.id = newID;
-            pattern.name = patternName + " " + pattern.id;
+            pattern.name = patternName;
             pattern.transform.parent = patternParent;
             pattern.Init(this);
             patterns.Add(pattern);

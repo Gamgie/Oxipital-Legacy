@@ -28,7 +28,7 @@ public class BalletManagerEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Add Pattern"))
         {
-            balletMngr.AddPattern(BalletManager.BalletPatternType.Circle);
+            balletMngr.AddPattern();
         }
 
         if (GUILayout.Button("Remove Pattern"))
