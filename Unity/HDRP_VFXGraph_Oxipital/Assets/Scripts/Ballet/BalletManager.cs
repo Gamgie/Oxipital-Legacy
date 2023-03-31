@@ -18,7 +18,7 @@ public class BalletManager : MonoBehaviour
         OxipitalData data = dataMngr.LoadData();
         foreach(BalletPatternData patternData in data.balletMngrData.patternData)
 		{
-            BalletPattern p = AddPattern(patternData);
+            AddPattern(patternData);
 		}
 
     }
@@ -53,8 +53,6 @@ public class BalletManager : MonoBehaviour
                     break;
                 }
             }
-
-            
         }
         else
 		{

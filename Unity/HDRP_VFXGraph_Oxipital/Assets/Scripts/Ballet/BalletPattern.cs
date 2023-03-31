@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BalletPattern : MonoBehaviour
 {
-    public enum BalletPatternType { Line, Circle }
+    public enum BalletPatternType { Point, Line, Circle }
 
     public BalletDancer dancerPrefab;
 
@@ -70,6 +70,13 @@ public class BalletPattern : MonoBehaviour
                 break;
             case BalletPatternType.Line:
                 target = linePositions;
+                break;
+            case BalletPatternType.Point:
+                List<Vector3> onePosition = new List<Vector3>();
+                foreach (BalletDancer d in dancers)
+                    onePosition.Add(position);
+
+                target = onePosition;
                 break;
         }
 
@@ -171,9 +178,9 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3( Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2,
+                cirlePositions[i] = new Vector3( Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size / 2,
                                                  0f,
-                                                Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2);
+                                                Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size / 2);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
