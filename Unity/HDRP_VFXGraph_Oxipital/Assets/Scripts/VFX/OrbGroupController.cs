@@ -41,7 +41,7 @@ public class OrbGroupController : MonoBehaviour
     {
         _orbsManager = transform.parent.GetComponent<OrbsManager>();
 
-        OrbManagerData loadedData = dataMngr.LoadData();
+        OxipitalData loadedData = dataMngr.LoadData();
         foreach(OrbGroupControllerData ogcData in loadedData.orbGroupControllersData)
 		{
             if(ogcData.name == this.name)

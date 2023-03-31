@@ -7,10 +7,12 @@ public class DataManager : MonoBehaviour
 	public string fileName;
     public OrbsManager orbsMngr;
 	public OrbGroupController[] orbsControllers;
-	private string path;
-	private OrbManagerData loadedData;
+	public BalletManager balletMngr;
 
-	public OrbManagerData LoadData()
+	private string path;
+	private OxipitalData loadedData;
+
+	public OxipitalData LoadData()
 	{
 		if(path == null)
 		{
@@ -22,7 +24,7 @@ public class DataManager : MonoBehaviour
 			string filepath = path + "/" + fileName + ".json";
 			string orbsData = System.IO.File.ReadAllText(filepath);
 
-			loadedData = JsonUtility.FromJson<OrbManagerData>(orbsData);
+			loadedData = JsonUtility.FromJson<OxipitalData>(orbsData);
 
 			Debug.Log("file loaded at " + path + "/" + fileName);
 		}
@@ -38,11 +40,11 @@ public class DataManager : MonoBehaviour
 			return;
 		}
 
-		// save data of orb mngr
-		OrbManagerData data = new OrbManagerData();
+		// Save data of orb mngr.
+		OxipitalData data = new OxipitalData();
 		data.orbCount = orbsMngr.orbGroupCount;
 
-		// save data for each OrbGroup
+		// Save data for each OrbGroup.
 		data.orbGroupData = new List<OrbGroupData>();
 		foreach(OrbGroup o in orbsMngr.orbs)
 		{
@@ -50,7 +52,7 @@ public class DataManager : MonoBehaviour
 
 		}
 
-		// save data for each OrbGroupController
+		// Save data for each OrbGroupController.
 		data.orbGroupControllersData = new List<OrbGroupControllerData>();
 		foreach(OrbGroupController oc in orbsControllers)
 		{
@@ -60,10 +62,26 @@ public class DataManager : MonoBehaviour
 			data.orbGroupControllersData.Add(ogcData);
 		}
 
+		// Save patterns data of the Ballet 
+		data.balletMngrData = new BalletManagerData();
+		foreach(BalletPattern pattern in balletMngr.patterns)
+		{
+			data.balletMngrData.patternData.Add(pattern.StoreData());
+		}
+
 		// Save to file
 		string orbsData = JsonUtility.ToJson(data);
 		string filepath = path + "/" + fileName + ".json";
 		System.IO.File.WriteAllText(filepath, orbsData);
 		Debug.Log("file saved at " + filepath);
 	}
+}
+
+[System.Serializable]
+public class OxipitalData
+{
+	public int orbCount;
+	public List<OrbGroupData> orbGroupData;
+	public List<OrbGroupControllerData> orbGroupControllersData;
+	public BalletManagerData balletMngrData;
 }

@@ -9,20 +9,6 @@ public class BalletManagerEditor : Editor
     {
         BalletManager balletMngr = (BalletManager)target;
 
-        /////////////////////////////////////////////////
-
-        GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Add Dancer"))
-        {
-            balletMngr.AddDancer();
-        }
-
-        if (GUILayout.Button("Remove Dancer"))
-        {
-            balletMngr.RemoveDancer();
-        }
-        GUILayout.EndHorizontal();
-
         ///////////////////////////////////////////////
 
         GUILayout.BeginHorizontal();

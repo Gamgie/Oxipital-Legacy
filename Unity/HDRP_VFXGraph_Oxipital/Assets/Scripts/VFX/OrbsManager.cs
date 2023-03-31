@@ -70,7 +70,7 @@ public class OrbsManager : MonoBehaviour
     private void InitOrbs()
 	{
         orbs = new List<OrbGroup>();
-        OrbManagerData loadedData = dataManager.LoadData();
+        OxipitalData loadedData = dataManager.LoadData();
         orbGroupCount = loadedData.orbCount;
 
         for (int i = 0; i < orbGroupCount; i++)
@@ -129,34 +129,3 @@ public class OrbsManager : MonoBehaviour
         return OnOrbCreated;
 	}
 }
-
-[System.Serializable]
-public class OrbManagerData
-{
-    public int orbCount;
-    public List<OrbGroupData> orbGroupData;
-    public List<OrbGroupControllerData> orbGroupControllersData;
-}
-
-
-
-//private void UpdateOrbPosition()
-//{
-//    if (orbsVisualEffect == null)
-//    {
-//        Debug.LogError("No orb list found");
-//        return;
-//    }
-
-//    for (int i = 0; i < orbsVisualEffect.Count; i++)
-//    {
-//        float xPos = orbPositionRadius * Mathf.Cos(i * 360 / orbGroupCount * Mathf.Deg2Rad);
-//        float yPos = orbPositionRadius * Mathf.Sin(i * 360 / orbGroupCount * Mathf.Deg2Rad);
-//        orbsVisualEffect[i].emitterPosition = new Vector3(xPos,yPos,0);
-//    }
-//}
-
-//public void ResetOrbPosition()
-//{
-//    emitterOrb.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(0,0,0));
-//}
