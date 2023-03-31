@@ -30,7 +30,6 @@ public class BalletPattern : MonoBehaviour
     public float noiseSpeed = 0;
 
     private List<BalletDancer> dancers; // a list of objects to choreograph
-    private BalletPatternData data = new BalletPatternData();
 
     List<Vector3> cirlePositions; // Computed position of the circle
     List<Vector3> linePositions; // Computed position of the line
@@ -41,6 +40,11 @@ public class BalletPattern : MonoBehaviour
         dancers = new List<BalletDancer>();
         cirlePositions = new List<Vector3>();
         linePositions = new List<Vector3>();
+
+        for(int i = 0; i < dancerCount; i++)
+		{
+            AddDancer();
+		}
     }
 
     void Update()
@@ -209,6 +213,8 @@ public class BalletPattern : MonoBehaviour
 
     public BalletPatternData StoreData()
 	{
+
+        BalletPatternData data = new BalletPatternData();
         data.id = id;
         data.dancerCount = dancerCount;
         data.patternType = (int)patternType;
@@ -225,6 +231,23 @@ public class BalletPattern : MonoBehaviour
 
         return data;
 	}
+
+    public void LoadData(BalletPatternData data)
+	{
+        id = data.id;
+        dancerCount = data.dancerCount;
+        patternType = (BalletPatternType) data.patternType;
+        position = data.position;
+        rotation = data.rotation;
+        size = data.size;
+        sizeOffset = data.sizeOffset;
+        speed = data.speed;
+        lerpDuration = data.lerpDuration;
+        verticalOffset = data.verticalOffset;
+        LFOFrequency = data.LFOFrequency;
+        noiseAmplitude = data.noiseAmplitude;
+        noiseSpeed = data.noiseSpeed;
+    }
 }
 
 

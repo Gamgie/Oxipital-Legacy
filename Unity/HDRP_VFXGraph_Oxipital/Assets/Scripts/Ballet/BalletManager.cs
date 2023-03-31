@@ -5,6 +5,7 @@ using UnityEngine;
 public class BalletManager : MonoBehaviour
 {
     public bool showDancers; // Show debug object to visualize easier
+    public DataManager dataMngr; // Load stored data
     public BalletPattern patternPrefab;
     public List<BalletPattern> patterns; // a list of patterns 
 
@@ -13,6 +14,13 @@ public class BalletManager : MonoBehaviour
     {
         // Initialize list
         patterns = new List<BalletPattern>();
+
+        OxipitalData data = dataMngr.LoadData();
+        foreach(BalletPatternData patternData in data.balletMngrData.patternData)
+		{
+            BalletPattern p = AddPattern(patternData);
+		}
+
     }
 
     // Update is called once per frame
@@ -25,35 +33,50 @@ public class BalletManager : MonoBehaviour
 		}
     }
 
-    public void AddPattern()
+    public BalletPattern AddPattern(BalletPatternData patternData = null)
 	{
         BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
-
-        // Look for the next available ID
         int newID = 0;
-        foreach (BalletPattern p in patterns)
-        {
-            if (newID == p.id)
-            {
-                newID++;
-            }
-            else
-            {
-                break;
-            }
-        }
+        string patternName = "";
 
-        string patternName = "Pattern " + newID;
-        
-        if(pattern != null)
+        if (patternData == null)
+		{
+            // Look for the next available ID
+            foreach (BalletPattern p in patterns)
+            {
+                if (newID == p.id)
+                {
+                    newID++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            
+        }
+        else
+		{
+            pattern.LoadData(patternData);
+            newID = pattern.id;
+		}
+
+        patternName = "Pattern " + newID;
+
+        if (pattern != null)
 		{
             // Set everything correctly before send it to the universe.
             pattern.id = newID;
             pattern.name = patternName;
             pattern.transform.parent = this.transform;
             pattern.Init(this);
+
+            // Add to main list
             patterns.Add(pattern);
         }
+
+        return pattern;
     }
 
     public bool RemovePattern(int id=-1)
