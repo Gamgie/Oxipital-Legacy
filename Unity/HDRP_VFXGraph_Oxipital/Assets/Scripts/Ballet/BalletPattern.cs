@@ -6,6 +6,8 @@ public class BalletPattern : MonoBehaviour
 {
     public enum BalletPatternType { Line, Circle }
 
+    public BalletDancer dancerPrefab;
+
     public int id;
     public int dancerCount;
     public BalletPatternType patternType = BalletPatternType.Circle;
@@ -15,6 +17,7 @@ public class BalletPattern : MonoBehaviour
     public float sizeOffset; // offset between each dancer of this pattern
     public float speed = 1f; // speed of the choreography
     public float lerpDuration = 3f; // Time for moving from a pattern to another
+    public float phase; // Rotation phase
     //public float frequency = 1f; // frequency of the oscillation
 
     [Header("Circle Parameter")]
@@ -22,25 +25,22 @@ public class BalletPattern : MonoBehaviour
 
     [Header("Position Alteration")]
     public float LFOFrequency = 0;
+    public Vector3 LFODirection = Vector3.zero;
     public float noiseAmplitude = 0;
     public float noiseSpeed = 0;
 
-    List<BalletDancer> dancers;
-    BalletManager mngr;
+    private List<BalletDancer> dancers; // a list of objects to choreograph
+    private BalletPatternData data = new BalletPatternData();
 
     List<Vector3> cirlePositions; // Computed position of the circle
     List<Vector3> linePositions; // Computed position of the line
 
-    void Start()
-	{
-        cirlePositions = new List<Vector3>();
-        linePositions = new List<Vector3>();
-    }
-
     public void Init(BalletManager balletMngr)
     {
-        mngr = balletMngr;
+        // Initialize list
         dancers = new List<BalletDancer>();
+        cirlePositions = new List<Vector3>();
+        linePositions = new List<Vector3>();
     }
 
     void Update()
@@ -76,37 +76,65 @@ public class BalletPattern : MonoBehaviour
 		}
     }
 
-    public void AddDancer()
+    public void ShowDancer(bool isVisible)
 	{
-        if(mngr == null)
+        foreach(BalletDancer d in dancers)
 		{
-            Debug.LogError("No BalletManager attached to " + gameObject.name);
-            return;
+            d.isVisible = isVisible;
 		}
+	}
 
-        BalletDancer dancer = mngr.AddDancer();
+    public BalletDancer AddDancer()
+	{
+        BalletDancer dancer = Instantiate(dancerPrefab) as BalletDancer;
+
+        // Look for the next available ID
+        int newID = 0;
+        foreach (BalletDancer d in dancers)
+        {
+            if (newID == d.id)
+            {
+                newID++;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        // Set everything correctly before send it to the universe.
+        dancer.id = newID;
+        dancer.name = "Dancer " + dancer.id;
+        dancer.transform.parent = this.transform;
+
         dancers.Add(dancer);
         cirlePositions.Add(new Vector3());
         linePositions.Add(new Vector3());
+
+        return dancer;
     }
 
-    public bool RemoveDancer(BalletDancer dancer = null)
+    public bool RemoveDancer(int id = -1)
 	{
         bool result = false;
+        BalletDancer dancerToRemove = null;
+
+        // If no dancer here, let's get out directly.
+        if (dancers.Count < 1)
+            return false;
 
         // Remove dancer from the list of this pattern.
-        if(dancer == null) // No target so remove last one in the list
-		{
-            dancer = dancers[dancers.Count - 1];
+        if (id == -1) // If id is -1, it means we want to remove last object
+        {
+            dancerToRemove = dancers[dancers.Count - 1];
             dancers.RemoveAt(dancers.Count - 1);
+            result = true;
         }
-        else
-		{
-            // Look for the target in the list.
-            BalletDancer dancerToRemove = null;
+        else // Look for the target in the list.
+        {
             foreach (BalletDancer d in dancers)
             {
-                if (d.name == dancer.name)
+                if (d.id == id)
                 {
                     dancerToRemove = d;
                 }
@@ -119,20 +147,15 @@ public class BalletPattern : MonoBehaviour
             }
             else
 			{
-                Debug.LogError("Couldn't find " + dancer.name + " in pattern " + gameObject.name);
+                Debug.LogError("Couldn't find Dancer " + id + " in pattern " + gameObject.name);
                 return false;
 			}
         }
 
-        // Call manager to finish the job : remove it from main list and destroy it
-        if (mngr == null)
+        if (dancerToRemove != null)
         {
-            Debug.LogError("No BalletManager attached to " + gameObject.name);
-            result = false;
-        }
-        else
-        {
-            mngr.RemoveDancer(dancer.id);
+            Debug.Log("Dancer " + dancerToRemove.id + " removed from the list and destroyed.");
+            Destroy(dancerToRemove.gameObject);
         }
 
         return result;
@@ -144,9 +167,9 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3(Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2,
-                                             0f,
-                                             Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2);
+                cirlePositions[i] = new Vector3( Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2,
+                                                 0f,
+                                                Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size * 2);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
@@ -183,4 +206,42 @@ public class BalletPattern : MonoBehaviour
             linePositions[i] -= midPoint;
         }
     }
+
+    public BalletPatternData StoreData()
+	{
+        data.id = id;
+        data.dancerCount = dancerCount;
+        data.patternType = (int)patternType;
+        data.position = position;
+        data.rotation = rotation; 
+        data.size = size; 
+        data.sizeOffset = sizeOffset;
+        data.speed = speed;
+        data.lerpDuration = lerpDuration;
+        data.verticalOffset = verticalOffset;
+        data.LFOFrequency = LFOFrequency;
+        data.noiseAmplitude = noiseAmplitude;
+        data.noiseSpeed = noiseSpeed;
+
+        return data;
+	}
+}
+
+
+[System.Serializable]
+public class BalletPatternData
+{
+    public int id;
+    public int dancerCount;
+    public int patternType;
+    public Vector3 position;
+    public Vector3 rotation;
+    public float size; 
+    public float sizeOffset; 
+    public float speed; 
+    public float lerpDuration;
+    public float verticalOffset;
+    public float LFOFrequency;
+    public float noiseAmplitude;
+    public float noiseSpeed;
 }
