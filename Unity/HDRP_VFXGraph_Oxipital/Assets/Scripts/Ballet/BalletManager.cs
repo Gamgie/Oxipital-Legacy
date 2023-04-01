@@ -112,6 +112,30 @@ public class BalletManager : MonoBehaviour
 
         return result;
     }
+
+    public BalletPattern GetPattern(int id)
+	{
+        BalletPattern p = null;
+
+        if(id < 0 || id >= patterns.Count)
+		{
+            Debug.LogError("Trying to get pattern out of bound.");
+            return p;
+		}
+
+        foreach(BalletPattern pa in patterns)
+		{
+            if (pa.id == id)
+                p = pa;
+		}
+
+        if(p == null)
+		{
+            Debug.LogError("Could find Pattern " + id);
+		}
+
+        return p;
+	}
 }
 
 [System.Serializable]

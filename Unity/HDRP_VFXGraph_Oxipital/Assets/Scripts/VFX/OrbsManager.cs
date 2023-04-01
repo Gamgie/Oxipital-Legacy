@@ -14,6 +14,7 @@ public class OrbsManager : MonoBehaviour
     public OrbGroup orbGroupPrefab;
     public Transform emitterOrbRoot;
     public DataManager dataManager;
+    public BalletManager balletMngr;
 
     private UnityEvent OnOrbCreated;
 
@@ -106,7 +107,12 @@ public class OrbsManager : MonoBehaviour
         orbs.Add(o);
     }
 
-    public void DestroyOrbGroup(int index)
+	public BalletPattern GetPattern(int patternID)
+	{
+        return balletMngr.GetPattern(patternID);
+	}
+
+	public void DestroyOrbGroup(int index)
     {
         if (orbs == null)
         {

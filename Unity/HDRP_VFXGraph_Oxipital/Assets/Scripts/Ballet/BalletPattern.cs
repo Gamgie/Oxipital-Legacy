@@ -255,6 +255,11 @@ public class BalletPattern : MonoBehaviour
         noiseAmplitude = data.noiseAmplitude;
         noiseSpeed = data.noiseSpeed;
     }
+
+    public Vector3 GetPosition(int idPos)
+	{
+        return Vector3.zero;
+	}
 }
 
 

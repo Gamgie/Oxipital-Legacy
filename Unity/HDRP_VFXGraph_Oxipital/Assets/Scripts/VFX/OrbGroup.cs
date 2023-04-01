@@ -16,6 +16,7 @@ public class OrbGroup : MonoBehaviour
 
     public int orbGroupId;
     public VisualEffect orbPrefab;
+    public int patternID = -1;
 
     [Header("PS Parameters")]
     [Range(0, 4000)]
@@ -48,13 +49,14 @@ public class OrbGroup : MonoBehaviour
 
     private List<VisualEffect> visualEffects;
     private int emitterShapeIndex;
-    private OrbsManager _orbsMngr;
+    private OrbsManager orbsMngr;
+    private BalletPattern pattern;
 
 
     // Start is called before the first frame update
     public void Initialize(OrbsManager orbsMngr)
     {
-        _orbsMngr = orbsMngr;
+        this.orbsMngr = orbsMngr;
 
         // Initialize with the first orb
         visualEffects = new List<VisualEffect>();
@@ -70,6 +72,27 @@ public class OrbGroup : MonoBehaviour
         UpdateEmitter();
 
         UpdateVisualEffect();
+
+        // Update pattern link
+        if(patternID != -1) // Update only if we have selected a pattern id
+		{
+            if(pattern != null)
+            {
+                if(pattern.id != patternID)
+				{
+                    pattern = orbsMngr.GetPattern(patternID); // Id are diferent so we should update
+                }
+            }
+            else // If pattern is null, it means we have to update also
+			{
+                pattern = orbsMngr.GetPattern(patternID);
+            }
+
+            if (pattern == null)
+                patternID = -1;
+        }
+
+        UpdatePositions();
     }
 
     void UpdateVisualEffect()
@@ -188,6 +211,22 @@ public class OrbGroup : MonoBehaviour
         }
     }
 
+    void UpdatePositions()
+	{
+        if (pattern == null)
+            return;
+
+        if(pattern.dancerCount != visualEffects.Count)
+		{
+            // Update list of vfx.
+		}
+
+        for(int i = 0; i < pattern.dancerCount; i++)
+		{
+            visualEffects[i].transform.position = pattern.GetPosition(i);
+		}
+	}
+
     private int GetEmitterShapeIndex()
     {
         int result = -1;
@@ -294,7 +333,7 @@ public class OrbGroup : MonoBehaviour
         o.transform.parent = transform;
         visualEffects.Add(o);
 
-        _orbsMngr.GetOnOrbCreated().Invoke();
+        orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
     }
 
