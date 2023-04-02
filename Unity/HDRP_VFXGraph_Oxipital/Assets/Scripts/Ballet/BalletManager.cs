@@ -15,11 +15,11 @@ public class BalletManager : MonoBehaviour
         // Initialize list
         patterns = new List<BalletPattern>();
 
-        OxipitalData data = dataMngr.LoadData();
+        /*OxipitalData data = dataMngr.LoadData();
         foreach(BalletPatternData patternData in data.balletMngrData.patternData)
 		{
             AddPattern(patternData);
-		}
+		}*/
 
     }
 

@@ -56,10 +56,14 @@ public class OrbGroup : MonoBehaviour
     // Start is called before the first frame update
     public void Initialize(OrbsManager orbsMngr)
     {
-        this.orbsMngr = orbsMngr;
+        this.orbsMngr = orbsMngr;        
+        visualEffects = new List<VisualEffect>();
+
+        // Add a pattern linked to this orbGroup.
+        pattern = orbsMngr.balletMngr.AddPattern();
+        patternID = pattern.id;
 
         // Initialize with the first orb
-        visualEffects = new List<VisualEffect>();
         AddOrb();
 
         // Update shape according to index
@@ -139,14 +143,14 @@ public class OrbGroup : MonoBehaviour
                 return;
 
             // Update Emitter transform
-            if (vfx.HasVector3("Emitter Position") == true)
+            /*if (vfx.HasVector3("Emitter Position") == true)
             {
                 vfx.SetVector3("Emitter Position", emitterPosition);
             }
             if (vfx.HasVector3("Emitter Angles") == true)
             {
                 vfx.SetVector3("Emitter Angles", emitterOrientation);
-            }
+            }*/
             if (vfx.HasFloat("Emitter Scale") == true)
                 vfx.SetFloat("Emitter Scale", emitterSize);
 
@@ -219,11 +223,30 @@ public class OrbGroup : MonoBehaviour
         if(pattern.dancerCount != visualEffects.Count)
 		{
             // Update list of vfx.
+            if(pattern.dancerCount > visualEffects.Count)
+			{
+                int instanceCount = pattern.dancerCount - visualEffects.Count;
+                for(int i = 0; i < instanceCount; i++)
+				{
+                    AddOrb();
+				}
+            }
+            else
+			{
+                int removeCount = visualEffects.Count - pattern.dancerCount;
+                for (int i = 0; i < removeCount; i++)
+                {
+                    DestroyOrb();
+                }
+            }
 		}
 
         for(int i = 0; i < pattern.dancerCount; i++)
 		{
-            visualEffects[i].transform.position = pattern.GetPosition(i);
+            if (visualEffects[i].HasVector3("Emitter Position") == true)
+            {
+                visualEffects[i].SetVector3("Emitter Position", pattern.GetPosition(i));
+            }
 		}
 	}
 
@@ -333,11 +356,22 @@ public class OrbGroup : MonoBehaviour
         o.transform.parent = transform;
         visualEffects.Add(o);
 
+        // Add a dancer in pattern
+        if(pattern != null)
+		{
+            pattern.AddDancer();
+		}
+        else
+		{
+            Debug.LogError("No pattern found in " + this.gameObject.name);
+		}
+
+        // Send a message to the o
         orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
     }
 
-    void DestroyOrb(int index)
+    void DestroyOrb(int index = -1)
     {
         if (visualEffects == null)
         {
@@ -345,9 +379,33 @@ public class OrbGroup : MonoBehaviour
             return;
         }
 
-        VisualEffect orbToBeDestroyed = visualEffects[index];
+        VisualEffect orbToBeDestroyed = null;
+
+        if (index == -1) // Remove last one
+		{
+            orbToBeDestroyed = visualEffects[visualEffects.Count-1];
+            pattern.RemoveDancer();
+            index = visualEffects.Count - 1;
+        }
+        else // Remove at index
+		{
+            orbToBeDestroyed = visualEffects[index];
+            pattern.RemoveDancer(index);
+        }
+ 
         Destroy(orbToBeDestroyed.gameObject);
         visualEffects.RemoveAt(index);
+    }
+
+    public int GetOrbCount()
+	{
+        return visualEffects.Count;
+	}
+
+    public void SetOrbCount(int count)
+	{
+        pattern.dancerCount = count;
+
     }
 
 	#region ManageData

@@ -40,6 +40,10 @@ public class OrbsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (orbGroupCount < 0)
+            return;
+
         if(orbGroupCount > orbs.Count)
         {
             AddOrbGroup();

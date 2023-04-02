@@ -54,6 +54,9 @@ public class OrbGroupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        OrbGroup selectedOrbGroup = null;
+
         // Our id was updated then we need to update controller according to values
         if(idControlled != _idControlled)
 		{
@@ -62,6 +65,7 @@ public class OrbGroupController : MonoBehaviour
             {
                 rate = 0;
                 life = 0;
+                orbCount = 0;
                 color = Color.black;
                 colorIntensity = 0;
                 alpha = 0;
@@ -79,10 +83,12 @@ public class OrbGroupController : MonoBehaviour
                 return;
             }
 
+            // Update data from the newly connected orbGroup
             foreach (OrbGroup oG in _orbsManager.orbs)
             {
                 if (oG.orbGroupId == idControlled)
                 {
+                    orbCount = oG.GetOrbCount();
                     rate = oG.rate;
                     life = oG.life;
                     color = oG.color;
@@ -106,7 +112,9 @@ public class OrbGroupController : MonoBehaviour
             foreach (OrbGroup oG in _orbsManager.orbs)
             {
                 if (oG.orbGroupId == idControlled)
-                {
+                { 
+                    selectedOrbGroup = oG;
+                    oG.SetOrbCount(orbCount);
                     oG.rate = rate;
                     oG.life = life;
                     oG.color = color;

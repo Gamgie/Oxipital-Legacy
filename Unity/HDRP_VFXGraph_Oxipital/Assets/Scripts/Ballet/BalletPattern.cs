@@ -52,14 +52,15 @@ public class BalletPattern : MonoBehaviour
         transform.position = position;
         transform.eulerAngles = rotation;
 
-        dancerCount = dancers.Count;
-
         ComputeCircleMovement();
         ComputeLineMovement();
     }
 
     public void ApplyMovement()
 	{
+        if (dancers == null)
+            return;
+
         List<Vector3> target = null;
 
         // Look for the good target
@@ -83,12 +84,16 @@ public class BalletPattern : MonoBehaviour
         // Apply movement
         for(int i = 0; i < dancers.Count; i++)
 		{
-            dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, target[i],0.1f);
+            if (dancers[i] != null)
+                dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, target[i],0.1f);
 		}
     }
 
     public void ShowDancer(bool isVisible)
 	{
+        if (dancers == null)
+            return;
+
         foreach(BalletDancer d in dancers)
 		{
             d.isVisible = isVisible;
@@ -121,6 +126,11 @@ public class BalletPattern : MonoBehaviour
         dancers.Add(dancer);
         cirlePositions.Add(new Vector3());
         linePositions.Add(new Vector3());
+
+        Debug.Log("Dancer " + dancer.id + " created and added to pattern" + id);
+
+        // Update dancerCount
+        dancerCount = dancers.Count;
 
         return dancer;
     }
@@ -167,6 +177,7 @@ public class BalletPattern : MonoBehaviour
         {
             Debug.Log("Dancer " + dancerToRemove.id + " removed from the list and destroyed.");
             Destroy(dancerToRemove.gameObject);
+            dancerCount = dancers.Count;
         }
 
         return result;
@@ -179,8 +190,8 @@ public class BalletPattern : MonoBehaviour
             if(size != 0)
 			{
                 cirlePositions[i] = new Vector3( Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size / 2,
-                                                 0f,
-                                                Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size / 2);
+                                                 Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f/ dancers.Count) * size / 2,
+                                                0f);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
@@ -258,7 +269,14 @@ public class BalletPattern : MonoBehaviour
 
     public Vector3 GetPosition(int idPos)
 	{
-        return Vector3.zero;
+        Vector3 result = Vector3.zero; 
+
+        if(idPos >= 0 && idPos < dancerCount)
+		{
+            result = dancers[idPos].transform.position;
+		}
+
+        return result;
 	}
 }
 
