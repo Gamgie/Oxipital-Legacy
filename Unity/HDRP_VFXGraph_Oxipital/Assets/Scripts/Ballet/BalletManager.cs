@@ -99,14 +99,16 @@ public class BalletManager : MonoBehaviour
             {
                 if (p.id == id)
                 {
+                    patternToRemove = p;
                     result = patterns.Remove(p);
+                    break;
                 }
             }
         }
 
         if (patternToRemove != null)
         {
-            Debug.Log("Dancer " + patternToRemove.id + " removed from the list and destroyed.");
+            Debug.Log("Pattern " + patternToRemove.id + " removed from the list and destroyed.");
             Destroy(patternToRemove.gameObject);
         }
 

@@ -408,8 +408,13 @@ public class OrbGroup : MonoBehaviour
 
     }
 
+	private void OnDestroy()
+	{
+        orbsMngr.balletMngr.RemovePattern(orbGroupId);
+    }
+
 	#region ManageData
-    public OrbGroupData StoreData()
+	public OrbGroupData StoreData()
     { 
         data.orbGroupId = orbGroupId;
         data.name = name;
