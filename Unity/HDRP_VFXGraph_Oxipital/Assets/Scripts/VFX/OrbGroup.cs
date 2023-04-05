@@ -51,6 +51,7 @@ public class OrbGroup : MonoBehaviour
     private int emitterShapeIndex;
     private OrbsManager orbsMngr;
     private BalletPattern pattern;
+    private int orbCount = 0;
 
 
     // Start is called before the first frame update
@@ -64,7 +65,7 @@ public class OrbGroup : MonoBehaviour
         patternID = pattern.id;
 
         // Initialize with the first orb
-        AddOrb();
+        SetOrbCount(orbCount);
 
         // Update shape according to index
         SetEmitterShape();
@@ -220,7 +221,7 @@ public class OrbGroup : MonoBehaviour
         if (pattern == null)
             return;
 
-        if(pattern.dancerCount != visualEffects.Count)
+        /*if(pattern.dancerCount != visualEffects.Count)
 		{
             // Update list of vfx.
             if(pattern.dancerCount > visualEffects.Count)
@@ -239,9 +240,9 @@ public class OrbGroup : MonoBehaviour
                     DestroyOrb();
                 }
             }
-		}
+		}*/
 
-        for(int i = 0; i < pattern.dancerCount; i++)
+        for(int i = 0; i < visualEffects.Count; i++)
 		{
             if (visualEffects[i].HasVector3("Emitter Position") == true)
             {
@@ -359,16 +360,20 @@ public class OrbGroup : MonoBehaviour
         // Add a dancer in pattern
         if(pattern != null)
 		{
-            pattern.AddDancer();
+            if(pattern.dancerCount < GetOrbCount())
+                pattern.AddDancer();
 		}
         else
 		{
             Debug.LogError("No pattern found in " + this.gameObject.name);
 		}
 
-        // Send a message to the o
+        // Send a message to the manager
         orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
+
+        // Update OrbCount accordingly
+        orbCount = visualEffects.Count;
     }
 
     void DestroyOrb(int index = -1)
@@ -395,17 +400,37 @@ public class OrbGroup : MonoBehaviour
  
         Destroy(orbToBeDestroyed.gameObject);
         visualEffects.RemoveAt(index);
+
+        // Update OrbCount accordingly
+        orbCount = visualEffects.Count;
     }
 
     public int GetOrbCount()
 	{
-        return visualEffects.Count;
+        return orbCount;
 	}
 
     public void SetOrbCount(int count)
 	{
-        pattern.dancerCount = count;
+        pattern.UpdateDancerCount(count);
 
+        // Update list of vfx.
+        if (count > visualEffects.Count)
+        {
+            int instanceCount = pattern.dancerCount - visualEffects.Count;
+            for (int i = 0; i < instanceCount; i++)
+            {
+                AddOrb();
+            }
+        }
+        else
+        {
+            int removeCount = visualEffects.Count - count;
+            for (int i = 0; i < removeCount; i++)
+            {
+                DestroyOrb();
+            }
+        }
     }
 
 	private void OnDestroy()
@@ -418,6 +443,7 @@ public class OrbGroup : MonoBehaviour
     { 
         data.orbGroupId = orbGroupId;
         data.name = name;
+        data.orbCount = GetOrbCount();
         data.rate = rate;
         data.life = life;
         data.colorR = color.r;
@@ -447,6 +473,7 @@ public class OrbGroup : MonoBehaviour
     {
         orbGroupId = data.orbGroupId;
         name = data.name;
+        orbCount = data.orbCount;
         rate = data.rate;
         life = data.life;
         color = new Color(data.colorR, data.colorG, data.colorB);
@@ -471,6 +498,7 @@ public class OrbGroupData
 {
     public int orbGroupId;
     public string name;
+    public int orbCount;
     public float rate;
     public float life; 
     public float colorR;

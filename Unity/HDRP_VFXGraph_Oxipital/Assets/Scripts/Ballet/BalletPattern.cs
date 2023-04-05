@@ -41,13 +41,10 @@ public class BalletPattern : MonoBehaviour
         cirlePositions = new List<Vector3>();
         linePositions = new List<Vector3>();
 
-        for(int i = 0; i < dancerCount; i++)
-		{
-            AddDancer();
-		}
+        UpdateDancerCount(dancerCount);
     }
 
-    void Update()
+    public void UpdateMovement()
 	{
         transform.position = position;
         transform.eulerAngles = rotation;
@@ -278,6 +275,26 @@ public class BalletPattern : MonoBehaviour
 
         return result;
 	}
+
+    public void UpdateDancerCount(int count)
+	{
+        if (count > dancers.Count)
+        {
+            int instanceCount = count - dancers.Count;
+            for (int i = 0; i < instanceCount; i++)
+            {
+                AddDancer();
+            }
+        }
+        else if(count < dancers.Count)
+        {
+            int removeCount = dancers.Count - count;
+            for (int i = 0; i < removeCount; i++)
+            {
+                RemoveDancer();
+            }
+        }
+    }
 }
 
 

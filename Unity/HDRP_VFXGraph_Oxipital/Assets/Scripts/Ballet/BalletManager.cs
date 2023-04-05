@@ -9,18 +9,16 @@ public class BalletManager : MonoBehaviour
     public BalletPattern patternPrefab;
     public List<BalletPattern> patterns; // a list of patterns 
 
+    private OxipitalData data;
+
     // Start is called before the first frame update
     void Start()
     {
         // Initialize list
-        patterns = new List<BalletPattern>();
+        if(patterns == null)
+            patterns = new List<BalletPattern>();
 
-        /*OxipitalData data = dataMngr.LoadData();
-        foreach(BalletPatternData patternData in data.balletMngrData.patternData)
-		{
-            AddPattern(patternData);
-		}*/
-
+        data = dataMngr.LoadData();
     }
 
     // Update is called once per frame
@@ -28,37 +26,30 @@ public class BalletManager : MonoBehaviour
     {
         foreach(BalletPattern pattern in patterns)
 		{
+            pattern.UpdateMovement();
             pattern.ApplyMovement();
             pattern.ShowDancer(showDancers);
 		}
     }
 
-    public BalletPattern AddPattern(BalletPatternData patternData = null)
+    public BalletPattern AddPattern()
 	{
         BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
         int newID = 0;
         string patternName = "";
 
-        if (patternData == null)
-		{
-            // Look for the next available ID
-            foreach (BalletPattern p in patterns)
+        // Look for the next available ID
+        foreach (BalletPattern p in patterns)
+        {
+            if (newID == p.id)
             {
-                if (newID == p.id)
-                {
-                    newID++;
-                }
-                else
-                {
-                    break;
-                }
+                newID++;
+            }
+            else
+            {
+                break;
             }
         }
-        else
-		{
-            pattern.LoadData(patternData);
-            newID = pattern.id;
-		}
 
         patternName = "Pattern " + newID;
 
@@ -68,6 +59,18 @@ public class BalletManager : MonoBehaviour
             pattern.id = newID;
             pattern.name = patternName;
             pattern.transform.parent = this.transform;
+
+            // Check if we have available data for this guy.
+            if (data == null)
+                data = dataMngr.LoadData();
+            foreach(BalletPatternData patternData in data.balletMngrData.patternData)
+			{
+                if(patternData.id == newID)
+				{
+                    pattern.LoadData(patternData);
+				}
+			}
+
             pattern.Init(this);
 
             // Add to main list
