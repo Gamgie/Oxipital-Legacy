@@ -30,9 +30,9 @@ public class BalletPattern : MonoBehaviour
     public float noiseSpeed = 0;
 
     private List<BalletDancer> dancers; // a list of objects to choreograph
-
-    List<Vector3> cirlePositions; // Computed position of the circle
-    List<Vector3> linePositions; // Computed position of the line
+    private List<Vector3> cirlePositions; // Computed position of the circle
+    private List<Vector3> linePositions; // Computed position of the line
+    private float currentSpeed;
 
     public void Init(BalletManager balletMngr)
     {
@@ -42,12 +42,17 @@ public class BalletPattern : MonoBehaviour
         linePositions = new List<Vector3>();
 
         UpdateDancerCount(dancerCount);
+
+        currentSpeed = speed;
     }
 
     public void UpdateMovement()
 	{
         transform.position = position;
         transform.eulerAngles = rotation;
+
+        // Update Speed
+        currentSpeed += speed / 1000;
 
         ComputeCircleMovement();
         ComputeLineMovement();
@@ -186,8 +191,8 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3( Mathf.Sin(Time.time * speed / size + i * Mathf.PI * 2f / dancers.Count) * size / 2,
-                                                 Mathf.Cos(Time.time * speed / size + i * Mathf.PI * 2f/ dancers.Count) * size / 2,
+                cirlePositions[i] = new Vector3( Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * size / 2,
+                                                 Mathf.Cos(currentSpeed + i * Mathf.PI * 2f/ dancers.Count) * size / 2,
                                                 0f);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
