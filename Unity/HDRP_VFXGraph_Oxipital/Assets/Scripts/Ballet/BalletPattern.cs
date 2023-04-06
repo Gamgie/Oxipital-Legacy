@@ -14,11 +14,14 @@ public class BalletPattern : MonoBehaviour
     public Vector3 position; // Position of this pattern
     public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
     public float size = 1; // Size of this pattern
-    public float sizeOffset; // offset between each dancer of this pattern
     public float speed = 1f; // speed of the choreography
     public float lerpDuration = 3f; // Time for moving from a pattern to another
     public float phase; // Rotation phase
     //public float frequency = 1f; // frequency of the oscillation
+
+    [Header("Size LFO")]
+    public float sizeLFOFrequency;
+    public float sizeLFOAmplitude;
 
     [Header("Circle Parameter")]
     public float verticalOffset;
@@ -32,7 +35,13 @@ public class BalletPattern : MonoBehaviour
     private List<BalletDancer> dancers; // a list of objects to choreograph
     private List<Vector3> cirlePositions; // Computed position of the circle
     private List<Vector3> linePositions; // Computed position of the line
-    private float currentSpeed;
+    private List<Vector3> startPositions; // starting positions for lerp
+    private List<Vector3> targetPositions; // ending positions for lerp
+    private float currentSpeed; // internal speed
+    private BalletPatternType lastPatternType;
+    private bool isLerping;
+    private float lerpStartTime;
+    private float currentSize;
 
     public void Init(BalletManager balletMngr)
     {
@@ -42,6 +51,8 @@ public class BalletPattern : MonoBehaviour
         linePositions = new List<Vector3>();
 
         UpdateDancerCount(dancerCount);
+
+        lastPatternType = patternType;
 
         currentSpeed = speed;
     }
@@ -54,6 +65,9 @@ public class BalletPattern : MonoBehaviour
         // Update Speed
         currentSpeed += speed / 1000;
 
+        // Update Size
+        currentSize = size + sizeLFOAmplitude * Mathf.Sin(sizeLFOFrequency * Mathf.PI * 2f * Time.time);
+
         ComputeCircleMovement();
         ComputeLineMovement();
     }
@@ -63,31 +77,73 @@ public class BalletPattern : MonoBehaviour
         if (dancers == null)
             return;
 
-        List<Vector3> target = null;
+        // If we change pattern type then start lerping
+        if(lastPatternType != patternType)
+		{
+            lerpStartTime = Time.time;
+
+            // Save starting position for lerping
+            switch (lastPatternType)
+            {
+                case BalletPatternType.Circle:
+                    startPositions = cirlePositions;
+                    break;
+                case BalletPatternType.Line:
+                    startPositions = linePositions;
+                    break;
+                case BalletPatternType.Point:
+                    List<Vector3> onePosition = new List<Vector3>();
+                    foreach (BalletDancer d in dancers)
+                        onePosition.Add(position);
+
+                    startPositions = onePosition;
+                    break;
+            }
+
+            lastPatternType = patternType;
+            isLerping = true;
+		}
 
         // Look for the good target
         switch (patternType)
 		{
             case BalletPatternType.Circle:
-                target = cirlePositions;
+                targetPositions = cirlePositions;
                 break;
             case BalletPatternType.Line:
-                target = linePositions;
+                targetPositions = linePositions;
                 break;
             case BalletPatternType.Point:
                 List<Vector3> onePosition = new List<Vector3>();
                 foreach (BalletDancer d in dancers)
                     onePosition.Add(position);
 
-                target = onePosition;
+                targetPositions = onePosition;
                 break;
         }
 
+        // Lerp amount
+        float t = (Time.time - lerpStartTime) / lerpDuration;
+        if(t >= 1f)
+		{
+            isLerping = false;
+		}
+
         // Apply movement
-        for(int i = 0; i < dancers.Count; i++)
+        for (int i = 0; i < dancers.Count; i++)
 		{
             if (dancers[i] != null)
-                dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, target[i],0.1f);
+			{
+                if(isLerping)
+				{
+                    dancers[i].transform.position = Vector3.Lerp(startPositions[i], targetPositions[i], t);
+                }
+                else
+				{
+                    dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, targetPositions[i], 0.1f);
+                }
+            }
+                
 		}
     }
 
@@ -191,9 +247,9 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3( Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * size / 2,
-                                                 Mathf.Cos(currentSpeed + i * Mathf.PI * 2f/ dancers.Count) * size / 2,
-                                                0f);
+                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * currentSize / 2,
+                                                0f,
+                                                Mathf.Cos(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * currentSize / 2);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
@@ -221,7 +277,7 @@ public class BalletPattern : MonoBehaviour
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                           (i * size / (dancers.Count - 1)),
+                                           (i * currentSize / (dancers.Count - 1)),
                                            0);
 
             linePositions[i] = transform.TransformPoint(linePositions[i]);
@@ -248,7 +304,6 @@ public class BalletPattern : MonoBehaviour
         data.position = position;
         data.rotation = rotation; 
         data.size = size; 
-        data.sizeOffset = sizeOffset;
         data.speed = speed;
         data.lerpDuration = lerpDuration;
         data.verticalOffset = verticalOffset;
@@ -267,7 +322,6 @@ public class BalletPattern : MonoBehaviour
         position = data.position;
         rotation = data.rotation;
         size = data.size;
-        sizeOffset = data.sizeOffset;
         speed = data.speed;
         lerpDuration = data.lerpDuration;
         verticalOffset = data.verticalOffset;
@@ -319,7 +373,6 @@ public class BalletPatternData
     public Vector3 position;
     public Vector3 rotation;
     public float size; 
-    public float sizeOffset; 
     public float speed; 
     public float lerpDuration;
     public float verticalOffset;
