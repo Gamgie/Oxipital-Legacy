@@ -205,11 +205,18 @@ public class BalletPattern : MonoBehaviour
         if (dancerCount == 0)
             return;
 
+        if(dancerCount == 1)
+		{
+            linePositions[0] = Vector3.zero;
+            linePositions[0] = transform.TransformPoint(linePositions[0]);
+            return;
+        }
+
         // Set points positions
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                           (i * size * 4 / dancers.Count),
+                                           (i * size / (dancers.Count - 1)),
                                            0);
 
             linePositions[i] = transform.TransformPoint(linePositions[i]);
