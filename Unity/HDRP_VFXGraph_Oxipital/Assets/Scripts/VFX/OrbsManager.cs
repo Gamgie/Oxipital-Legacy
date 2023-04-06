@@ -21,6 +21,7 @@ public class OrbsManager : MonoBehaviour
 	void OnEnable()
 	{
         OnOrbCreated = new UnityEvent();
+        Application.targetFrameRate = 60;
     }
 
 	// Start is called before the first frame update
