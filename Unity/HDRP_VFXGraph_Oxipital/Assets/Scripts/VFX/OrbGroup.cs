@@ -65,7 +65,7 @@ public class OrbGroup : MonoBehaviour
         patternID = pattern.id;
 
         // Initialize with the first orb
-        SetOrbCount(orbCount);
+        SetOrbCount(1);
 
         // Update shape according to index
         SetEmitterShape();
@@ -220,27 +220,6 @@ public class OrbGroup : MonoBehaviour
 	{
         if (pattern == null)
             return;
-
-        /*if(pattern.dancerCount != visualEffects.Count)
-		{
-            // Update list of vfx.
-            if(pattern.dancerCount > visualEffects.Count)
-			{
-                int instanceCount = pattern.dancerCount - visualEffects.Count;
-                for(int i = 0; i < instanceCount; i++)
-				{
-                    AddOrb();
-				}
-            }
-            else
-			{
-                int removeCount = visualEffects.Count - pattern.dancerCount;
-                for (int i = 0; i < removeCount; i++)
-                {
-                    DestroyOrb();
-                }
-            }
-		}*/
 
         for(int i = 0; i < visualEffects.Count; i++)
 		{
