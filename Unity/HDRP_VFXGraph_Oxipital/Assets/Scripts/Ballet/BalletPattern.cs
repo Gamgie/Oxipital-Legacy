@@ -17,7 +17,6 @@ public class BalletPattern : MonoBehaviour
     public float speed = 1f; // speed of the choreography
     public float lerpDuration = 3f; // Time for moving from a pattern to another
     public float phase; // Rotation phase
-    //public float frequency = 1f; // frequency of the oscillation
 
     [Header("Size LFO")]
     public float sizeLFOFrequency;
@@ -147,7 +146,12 @@ public class BalletPattern : MonoBehaviour
 		}
     }
 
-    public void ShowDancer(bool isVisible)
+	public void ResetSpeed()
+	{
+        currentSpeed = 0;
+	}
+
+	public void ShowDancer(bool isVisible)
 	{
         if (dancers == null)
             return;
@@ -247,9 +251,9 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * currentSize / 2,
+                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
                                                 0f,
-                                                Mathf.Cos(currentSpeed + i * Mathf.PI * 2f / dancers.Count) * currentSize / 2);
+                                                Mathf.Cos(currentSpeed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
@@ -306,6 +310,9 @@ public class BalletPattern : MonoBehaviour
         data.size = size; 
         data.speed = speed;
         data.lerpDuration = lerpDuration;
+        data.phase = phase;
+        data.sizeLFOFrequency = sizeLFOFrequency;
+        data.sizeLFOAmplitude = sizeLFOAmplitude;
         data.verticalOffset = verticalOffset;
         data.LFOFrequency = LFOFrequency;
         data.noiseAmplitude = noiseAmplitude;
@@ -324,6 +331,9 @@ public class BalletPattern : MonoBehaviour
         size = data.size;
         speed = data.speed;
         lerpDuration = data.lerpDuration;
+        phase = data.phase;
+        sizeLFOFrequency = data.sizeLFOFrequency;
+        sizeLFOAmplitude = data.sizeLFOAmplitude;
         verticalOffset = data.verticalOffset;
         LFOFrequency = data.LFOFrequency;
         noiseAmplitude = data.noiseAmplitude;
@@ -375,6 +385,9 @@ public class BalletPatternData
     public float size; 
     public float speed; 
     public float lerpDuration;
+    public float phase;
+    public float sizeLFOFrequency;
+    public float sizeLFOAmplitude;
     public float verticalOffset;
     public float LFOFrequency;
     public float noiseAmplitude;
