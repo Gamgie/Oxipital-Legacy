@@ -5,6 +5,7 @@ using UnityEngine;
 public class OrbGroupController : MonoBehaviour
 {
     public DataManager dataMngr;
+    public BalletManager balletMngr;
     public int idControlled;
     public int orbCount;
     public OrbGroupController[] orbGroupControllers; // They need to know each other to not control the same orbgroup at the same time
@@ -36,6 +37,28 @@ public class OrbGroupController : MonoBehaviour
     private OrbsManager _orbsManager;
     private int _idControlled = -1;
 
+    [Header("Ballet Pattern Parameters")]
+    public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Circle;
+    public Vector3 position; // Position of this pattern
+    public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
+    public float patternSize = 1; // Size of this pattern
+    public float speed = 1f; // speed of the choreography
+    public float lerpDuration = 3f; // Time for moving from a pattern to another
+    public float phase; // Rotation phase
+
+    [Header("Size LFO")]
+    public float sizeLFOFrequency;
+    public float sizeLFOAmplitude;
+
+    [Header("Circle Parameter")]
+    public float verticalOffset;
+
+    [Header("Position Alteration")]
+    public float LFOFrequency = 0;
+    public Vector3 LFODirection = Vector3.zero;
+    public float noiseAmplitude = 0;
+    public float noiseSpeed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,9 +77,6 @@ public class OrbGroupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        OrbGroup selectedOrbGroup = null;
-
         // Our id was updated then we need to update controller according to values
         if(idControlled != _idControlled)
 		{
@@ -76,6 +96,20 @@ public class OrbGroupController : MonoBehaviour
                 emitFromInside = false;
                 activateCollision = false;
 
+                position = Vector3.zero;
+                rotation = Vector3.zero;
+                size = 0;
+                speed = 0;
+                lerpDuration = 0;
+                phase = 0;
+                sizeLFOFrequency = 0;
+                sizeLFOAmplitude = 0;
+                verticalOffset = 0;
+                LFOFrequency = 0;
+                LFODirection = Vector3.zero;
+                noiseAmplitude = 0;
+                noiseSpeed = 0;
+
                 Debug.Log("Cannot control an OrbGroup already controlled");
 
                 _idControlled = -1;
@@ -88,6 +122,7 @@ public class OrbGroupController : MonoBehaviour
             {
                 if (oG.orbGroupId == idControlled)
                 {
+                    // Get Orb parameters
                     orbCount = oG.GetOrbCount();
                     rate = oG.rate;
                     life = oG.life;
@@ -103,6 +138,23 @@ public class OrbGroupController : MonoBehaviour
                     emitFromInside = oG.emitFromInside;
                     activateCollision = oG.activateCollision;
 
+                    // Get ballet pattern parameters
+                    BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
+                    patternType = balletPattern.patternType;
+                    position = balletPattern.position;
+                    rotation = balletPattern.rotation;
+                    patternSize = balletPattern.size;
+                    speed = balletPattern.speed;
+                    lerpDuration = balletPattern.lerpDuration;
+                    phase = balletPattern.phase;
+                    sizeLFOFrequency = balletPattern.sizeLFOFrequency;
+                    sizeLFOAmplitude = balletPattern.sizeLFOAmplitude;
+                    verticalOffset = balletPattern.verticalOffset;
+                    LFOFrequency = balletPattern.LFOFrequency;
+                    LFODirection = balletPattern.LFODirection;
+                    noiseAmplitude = balletPattern.noiseAmplitude;
+                    noiseSpeed = balletPattern.noiseSpeed;
+
                     _idControlled = idControlled;
                 }
             }
@@ -113,7 +165,7 @@ public class OrbGroupController : MonoBehaviour
             {
                 if (oG.orbGroupId == idControlled)
                 { 
-                    selectedOrbGroup = oG;
+                    // Update orb parameters
                     oG.SetOrbCount(orbCount);
                     oG.rate = rate;
                     oG.life = life;
@@ -128,6 +180,23 @@ public class OrbGroupController : MonoBehaviour
                     oG.emitterSize = emitterSize;
                     oG.emitFromInside = emitFromInside;
                     oG.activateCollision = activateCollision;
+
+                    // Update ballet pattern
+                    BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
+                    balletPattern.patternType = patternType;
+                    balletPattern.position = position;
+                    balletPattern.rotation = rotation;
+                    balletPattern.size = patternSize;
+                    balletPattern.speed = speed;
+                    balletPattern.lerpDuration = lerpDuration;
+                    balletPattern.phase = phase;
+                    balletPattern.sizeLFOFrequency = sizeLFOFrequency;
+                    balletPattern.sizeLFOAmplitude = sizeLFOAmplitude;
+                    balletPattern.verticalOffset = verticalOffset;
+                    balletPattern.LFOFrequency = LFOFrequency;
+                    balletPattern.LFODirection = LFODirection;
+                    balletPattern.noiseAmplitude = noiseAmplitude;
+                    balletPattern.noiseSpeed = noiseSpeed;
                 }
             }
         }

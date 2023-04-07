@@ -30,7 +30,7 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": false,
+        "value": true,
         "controlAddress": "/editMode"
       },
       {
@@ -5326,10 +5326,10 @@
             }
           ],
           "viewOffset": [
-            11,
-            97
+            73,
+            92
           ],
-          "viewZoom": 1.55859375
+          "viewZoom": 1.08984375
         }
       },
       {
@@ -6580,8 +6580,8 @@
                 },
                 {
                   "value": [
-                    0.000103584308817517,
-                    0.3998875916004181,
+                    0.003792254952713847,
+                    0.3958850204944611,
                     0.0,
                     1.0
                   ],
@@ -7584,10 +7584,42 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/rate",
               "controllable": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/rate"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -690.0,
+                    -70.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    200.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/position",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 30",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/position",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/position"
             }
           ],
           "viewOffset": [
-            25,
+            189,
             23
           ],
           "viewZoom": 1.008203148841858
@@ -9377,8 +9409,8 @@
             }
           ],
           "viewOffset": [
-            217,
-            126
+            53,
+            62
           ],
           "viewZoom": 1.27734375
         }
@@ -11579,8 +11611,8 @@
             }
           ],
           "viewOffset": [
-            -102,
-            -52
+            -88,
+            -153
           ],
           "viewZoom": 1.171875
         }
@@ -11911,19 +11943,19 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 676,
+              "height": 736,
               "direction": 1,
               "shifters": [
                 {
                   "type": 1,
-                  "width": 307,
-                  "height": 676,
+                  "width": 256,
+                  "height": 736,
                   "direction": 2,
                   "shifters": [
                     {
                       "type": 0,
-                      "width": 307,
-                      "height": 345,
+                      "width": 256,
+                      "height": 376,
                       "currentContent": "Modules",
                       "tabs": [
                         {
@@ -11933,8 +11965,8 @@
                     },
                     {
                       "type": 0,
-                      "width": 307,
-                      "height": 325,
+                      "width": 256,
+                      "height": 354,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -11946,9 +11978,9 @@
                 },
                 {
                   "type": 0,
-                  "width": 1244,
-                  "height": 676,
-                  "currentContent": "State Machine",
+                  "width": 1235,
+                  "height": 736,
+                  "currentContent": "Dashboard",
                   "tabs": [
                     {
                       "name": "State Machine"
@@ -11966,8 +11998,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 357,
-                  "height": 676,
+                  "width": 417,
+                  "height": 736,
                   "currentContent": "Inspector",
                   "tabs": [
                     {
@@ -11980,13 +12012,13 @@
             {
               "type": 1,
               "width": 1920,
-              "height": 306,
+              "height": 246,
               "direction": 1,
               "shifters": [
                 {
                   "type": 0,
-                  "width": 178,
-                  "height": 306,
+                  "width": 189,
+                  "height": 246,
                   "currentContent": "Sequences",
                   "tabs": [
                     {
@@ -11996,8 +12028,8 @@
                 },
                 {
                   "type": 0,
-                  "width": 1256,
-                  "height": 306,
+                  "width": 1245,
+                  "height": 246,
                   "currentContent": "Sequence Editor",
                   "tabs": [
                     {
@@ -12008,7 +12040,7 @@
                 {
                   "type": 0,
                   "width": 474,
-                  "height": 306,
+                  "height": 246,
                   "currentContent": "Logger",
                   "tabs": [
                     {
@@ -12033,6 +12065,16 @@
   "modules": {
     "items": [
       {
+        "parameters": [
+          {
+            "value": false,
+            "controlAddress": "/logIncoming"
+          },
+          {
+            "value": true,
+            "controlAddress": "/logOutgoing"
+          }
+        ],
         "niceName": "OSCQuery_Unity",
         "type": "OSCQuery",
         "scripts": {
@@ -12045,7 +12087,7 @@
         "params": {
           "parameters": [
             {
-              "value": true,
+              "value": false,
               "controlAddress": "/keepValuesOnSync"
             },
             {
@@ -12097,31 +12139,19 @@
                     "CameraRotate": {
                       "parameters": [
                         {
-                          "value": 0.0,
-                          "controlAddress": "/rotateYAngle"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/rotateXAngle"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/rotateZAngle"
-                        },
-                        {
-                          "value": 75.0,
+                          "value": 21.00003,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 2.135314702987671,
+                          "value": 4.535315,
                           "controlAddress": "/radius"
                         },
                         {
-                          "value": 10.4000415802002,
+                          "value": 5.0,
                           "controlAddress": "/resetDuration"
                         },
                         {
-                          "value": 4.100000381469727,
+                          "value": 0.0,
                           "controlAddress": "/moveToDuration"
                         }
                       ],
@@ -12165,7 +12195,6 @@
               "niceName": "Cameras"
             },
             "Orbs": {
-              "editorIsCollapsed": true,
               "containers": {
                 "Forces": {
                   "editorIsCollapsed": true,
@@ -12176,7 +12205,11 @@
                         "VortexController": {
                           "parameters": [
                             {
-                              "value": 1.771653532981873,
+                              "value": 0.2639999687671661,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 0.5716535,
                               "controlAddress": "/radius"
                             },
                             {
@@ -12206,14 +12239,18 @@
                               "controlAddress": "/radialType"
                             },
                             {
-                              "value": 5.551181316375732,
+                              "value": 0.1759999990463257,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 3.98,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
                                 0.0,
-                                -0.06382977962493896,
-                                1.0
+                                0.0,
+                                0.0
                               ],
                               "controlAddress": "/axis"
                             }
@@ -12236,14 +12273,18 @@
                               "controlAddress": "/radialType"
                             },
                             {
-                              "value": 7.559055328369141,
+                              "value": 0.0,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 1.0,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
                                 0.0,
                                 0.0,
-                                1.0
+                                0.0
                               ],
                               "controlAddress": "/axis"
                             }
@@ -12262,11 +12303,11 @@
                         "SpiralController": {
                           "parameters": [
                             {
-                              "value": 0.4999998211860657,
+                              "value": 1.0,
                               "controlAddress": "/frequency"
                             },
                             {
-                              "value": 1.299212574958801,
+                              "value": 1.0,
                               "controlAddress": "/radius"
                             },
                             {
@@ -12292,18 +12333,18 @@
                         "GravityController": {
                           "parameters": [
                             {
-                              "value": 0.3031496107578278,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
-                              "value": 6.496062755584717,
+                              "value": 0.0,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
                                 0.0,
-                                0.0,
-                                1.0
+                                -1.0,
+                                0.0
                               ],
                               "controlAddress": "/axis"
                             }
@@ -12322,7 +12363,7 @@
                         "SwirlController": {
                           "parameters": [
                             {
-                              "value": 0.000011163181625306,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
@@ -12332,14 +12373,14 @@
                             {
                               "value": [
                                 0.0,
-                                0.0,
-                                1.0
+                                1.0,
+                                0.0
                               ],
                               "controlAddress": "/axis"
                             },
                             {
                               "value": [
-                                1.490116119384766e-8,
+                                0.0,
                                 0.0,
                                 0.0
                               ],
@@ -12360,16 +12401,12 @@
                         "AxialController": {
                           "parameters": [
                             {
-                              "value": 8.781401447777171e-6,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 7.181102275848389,
+                              "value": 0.0,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
-                                1.0,
+                                0.0,
                                 1.0,
                                 0.0
                               ],
@@ -12390,24 +12427,24 @@
                         "TurbulenceController": {
                           "parameters": [
                             {
-                              "value": 0.00007939647184684701,
+                              "value": 0.00001442968,
                               "controlAddress": "/turbIntensity"
                             },
                             {
-                              "value": 1.233599901199341,
+                              "value": 3.2818,
                               "controlAddress": "/turbFrequency"
                             },
                             {
-                              "value": 1.343926906585693,
+                              "value": 1.11726,
                               "controlAddress": "/turbScale"
                             },
                             {
-                              "value": 18.96,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
                               "value": [
-                                1.0,
+                                0.0,
                                 0.0,
                                 0.0
                               ],
@@ -12427,7 +12464,6 @@
                   "niceName": "Forces"
                 },
                 "Orb-A": {
-                  "editorIsCollapsed": true,
                   "containers": {
                     "OrbGroupController": {
                       "parameters": [
@@ -12441,23 +12477,23 @@
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 0.0,
+                          "value": 9999.999,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 70.30098,
+                          "value": 8.0,
                           "controlAddress": "/life"
                         },
                         {
-                          "value": 0.9308790564537048,
+                          "value": 0.1708791,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 10.39908027648926,
+                          "value": 4.39908,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 2.440944910049438,
+                          "value": 2.62,
                           "controlAddress": "/drag"
                         },
                         {
@@ -12483,15 +12519,38 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 0.3472437858581543,
+                          "value": 0.04,
                           "controlAddress": "/emitterSize"
                         },
                         {
                           "value": false,
+                          "controlAddress": "/emitFromInside"
+                        },
+                        {
+                          "value": true,
                           "controlAddress": "/activateCollision"
+                        },
+                        {
+                          "value": "Circle",
+                          "controlAddress": "/patternType"
+                        },
+                        {
+                          "value": [
+                            90.0,
+                            0.0,
+                            0.0
+                          ],
+                          "controlAddress": "/rotation"
+                        },
+                        {
+                          "value": 5.07,
+                          "controlAddress": "/lerpDuration"
+                        },
+                        {
+                          "value": 0.5,
+                          "controlAddress": "/phase"
                         }
                       ],
-                      "editorIsCollapsed": true,
                       "owned": true,
                       "niceName": "OrbGroupController"
                     }
@@ -12509,29 +12568,42 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 0,
+                          "value": 1,
                           "hexMode": false,
                           "controlAddress": "/orbCount"
                         },
                         {
+                          "value": 2685.0,
+                          "controlAddress": "/rate"
+                        },
+                        {
+                          "value": 8.0,
+                          "controlAddress": "/life"
+                        },
+                        {
                           "value": [
-                            1.0,
-                            0.4901960790157318,
                             0.0,
+                            0.0,
+                            1.0,
                             1.0
                           ],
                           "controlAddress": "/color"
                         },
                         {
-                          "value": 0.1669953167438507,
+                          "value": 6,
+                          "hexMode": false,
+                          "controlAddress": "/colorIntensity"
+                        },
+                        {
+                          "value": 1.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 22.39908027648926,
+                          "value": 2.7,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 1.181102395057678,
+                          "value": 2.5,
                           "controlAddress": "/drag"
                         },
                         {
@@ -12539,7 +12611,7 @@
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": "Torus",
+                          "value": "Sphere",
                           "controlAddress": "/emitterShape"
                         },
                         {
@@ -12547,8 +12619,24 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.05,
                           "controlAddress": "/emitterSize"
+                        },
+                        {
+                          "value": "Circle",
+                          "controlAddress": "/patternType"
+                        },
+                        {
+                          "value": [
+                            90.0,
+                            0.0,
+                            0.0
+                          ],
+                          "controlAddress": "/rotation"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlAddress": "/phase"
                         }
                       ],
                       "editorIsCollapsed": true,
@@ -12560,6 +12648,13 @@
                   "niceName": "Orb-B"
                 },
                 "OrbsManager": {
+                  "parameters": [
+                    {
+                      "value": 2,
+                      "hexMode": false,
+                      "controlAddress": "/orbGroupCount"
+                    }
+                  ],
                   "editorIsCollapsed": true,
                   "owned": true,
                   "niceName": "OrbsManager"
@@ -12571,7 +12666,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 1124,
+                      "value": 41150,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -12672,7 +12767,7 @@
                         "fov": {
                           "ACCESS": 3,
                           "VALUE": [
-                            75
+                            21.00003
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -12683,7 +12778,7 @@
                         "radius": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4
+                            4.535315
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13014,7 +13109,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.264
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13025,7 +13120,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                3
+                                0.5716535
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13037,8 +13132,8 @@
                               "ACCESS": 3,
                               "VALUE": [
                                 0,
-                                1,
-                                0
+                                0,
+                                1
                               ],
                               "TYPE": "fff",
                               "RANGE": [
@@ -13110,7 +13205,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.176
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13377,7 +13472,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0.3031496
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13617,7 +13712,7 @@
                             "turbIntensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.00001442968
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13628,7 +13723,7 @@
                             "turbFrequency": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                3.2818
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13678,7 +13773,7 @@
                             "turbScale": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                1.11726
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -13793,7 +13888,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            9999.999
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13807,7 +13902,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            70.30098
+                            8
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13843,7 +13938,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.9308791
+                            0.1708791
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13857,7 +13952,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            22.39908
+                            4.39908
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13871,7 +13966,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            2.440945
+                            2.62
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13939,7 +14034,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            2.047244
+                            0.04
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -13961,13 +14056,179 @@
                         "activateCollision": {
                           "ACCESS": 3,
                           "VALUE": [
-                            false
+                            true
                           ],
                           "TYPE": "T",
                           "RANGE": [
                             null
                           ],
                           "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/activateCollision"
+                        },
+                        "patternType": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            "Circle"
+                          ],
+                          "TYPE": "s",
+                          "RANGE": [
+                            {
+                              "VALS": [
+                                "Point",
+                                "Line",
+                                "Circle"
+                              ]
+                            }
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/patternType"
+                        },
+                        "position": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/position"
+                        },
+                        "rotation": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            90,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/rotation"
+                        },
+                        "patternSize": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            1.5
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/patternSize"
+                        },
+                        "speed": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            10
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/speed"
+                        },
+                        "lerpDuration": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            5.07
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/lerpDuration"
+                        },
+                        "phase": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0.5
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/phase"
+                        },
+                        "sizeLFOFrequency": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/sizeLFOFrequency"
+                        },
+                        "sizeLFOAmplitude": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/sizeLFOAmplitude"
+                        },
+                        "verticalOffset": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/verticalOffset"
+                        },
+                        "LFOFrequency": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/LFOFrequency"
+                        },
+                        "LFODirection": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/LFODirection"
+                        },
+                        "noiseAmplitude": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/noiseAmplitude"
+                        },
+                        "noiseSpeed": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-A/OrbGroupController/noiseSpeed"
                         },
                         "CheckAvailability": {
                           "ACCESS": 3,
@@ -13998,7 +14259,7 @@
                         "orbCount": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "i",
                           "RANGE": [
@@ -14009,7 +14270,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            2685
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14023,7 +14284,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            8
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14037,7 +14298,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "00000000"
+                            "FF0000FF"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -14048,7 +14309,7 @@
                         "colorIntensity": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            6
                           ],
                           "TYPE": "i",
                           "RANGE": [
@@ -14059,7 +14320,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14073,7 +14334,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            22.39908
+                            2.7
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14087,7 +14348,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            2.5
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14155,7 +14416,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            0.05
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -14185,6 +14446,172 @@
                           ],
                           "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/activateCollision"
                         },
+                        "patternType": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            "Circle"
+                          ],
+                          "TYPE": "s",
+                          "RANGE": [
+                            {
+                              "VALS": [
+                                "Point",
+                                "Line",
+                                "Circle"
+                              ]
+                            }
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/patternType"
+                        },
+                        "position": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/position"
+                        },
+                        "rotation": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            90,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/rotation"
+                        },
+                        "patternSize": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            1.5
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/patternSize"
+                        },
+                        "speed": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            10
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/speed"
+                        },
+                        "lerpDuration": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/lerpDuration"
+                        },
+                        "phase": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/phase"
+                        },
+                        "sizeLFOFrequency": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/sizeLFOFrequency"
+                        },
+                        "sizeLFOAmplitude": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/sizeLFOAmplitude"
+                        },
+                        "verticalOffset": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/verticalOffset"
+                        },
+                        "LFOFrequency": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/LFOFrequency"
+                        },
+                        "LFODirection": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "TYPE": "fff",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/LFODirection"
+                        },
+                        "noiseAmplitude": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/noiseAmplitude"
+                        },
+                        "noiseSpeed": {
+                          "ACCESS": 3,
+                          "VALUE": [
+                            0
+                          ],
+                          "TYPE": "f",
+                          "RANGE": [
+                            null
+                          ],
+                          "FULL_PATH": "/Orbs/Orb-B/OrbGroupController/noiseSpeed"
+                        },
                         "CheckAvailability": {
                           "ACCESS": 3,
                           "TYPE": "N",
@@ -14200,7 +14627,7 @@
                     "orbGroupCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        1
+                        2
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -14231,7 +14658,7 @@
                     "aliveParticleCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        1124
+                        41171
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -14510,11 +14937,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 0.0,
-                      "controlAddress": "/Drywetradialblur"
-                    },
-                    {
-                      "value": 2,
+                      "value": 84,
                       "hexMode": false,
                       "controlAddress": "/Radialsamples"
                     },
@@ -22663,7 +23086,7 @@
             {
               "parameters": [
                 {
-                  "value": 2,
+                  "value": 6,
                   "hexMode": false,
                   "controlAddress": "/orbACount",
                   "feedbackOnly": false,
@@ -23067,7 +23490,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 2.135314702987671,
+                  "value": 4.535315036773682,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 30,
@@ -23177,7 +23600,7 @@
             {
               "parameters": [
                 {
-                  "value": 30.0,
+                  "value": 21.00000953674316,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 180,
@@ -23390,7 +23813,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.233599901199341,
+                  "value": 3.281799793243408,
                   "minValue": 0.009999999776482582,
                   "maxValue": 4.0,
                   "default": 0,
@@ -23461,7 +23884,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 1.343926906585693,
+                  "value": 1.117260217666626,
                   "minValue": 0,
                   "maxValue": 2,
                   "default": 0,
@@ -24086,7 +24509,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.123999953269958,
+                  "value": 41.15000152587891,
                   "minValue": 0.0,
                   "maxValue": 4000.0,
                   "default": 0,
@@ -24346,8 +24769,8 @@
               "parameters": [
                 {
                   "value": [
-                    0.000103584308817517,
-                    0.3998875916004181,
+                    0.003792254952713847,
+                    0.3958850204944611,
                     0.0,
                     1.0
                   ],
@@ -24665,7 +25088,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.0,
+                  "value": 0.699894905090332,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -31118,7 +31541,7 @@
               }
             },
             {
-              "niceName": "Orb A Count 1",
+              "niceName": "Orb B Count",
               "editorIsCollapsed": true,
               "type": "Mapping",
               "im": {
@@ -36122,7 +36545,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 266.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -36231,14 +36654,14 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.4399999976158142,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.4330708682537079,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
@@ -36252,7 +36675,7 @@
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.1466666609048843,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
@@ -36546,7 +36969,7 @@
                     {
                       "parameters": [
                         {
-                          "value": 1.771653532981873,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -36560,7 +36983,7 @@
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 5.0,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -36588,7 +37011,7 @@
                           "controlAddress": "/#6"
                         },
                         {
-                          "value": 4.251968383789062,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -37778,7 +38201,7 @@
             {
               "parameters": [
                 {
-                  "value": 110.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -37846,7 +38269,7 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 1.771653532981873,
+                          "value": 0.5716534852981567,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
@@ -37874,7 +38297,7 @@
                           "controlAddress": "/#5"
                         },
                         {
-                          "value": 15.0,
+                          "value": 2.399999856948853,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
@@ -38165,7 +38588,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 84.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -38359,7 +38782,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 84.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -38843,7 +39266,7 @@
                           "controlAddress": "/length"
                         },
                         {
-                          "value": 0.7364970445632935,
+                          "value": 0.3428455889225006,
                           "controlAddress": "/position"
                         },
                         {
@@ -40898,7 +41321,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 240.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -53564,7 +53987,7 @@
             {
               "parameters": [
                 {
-                  "value": 448.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -65337,7 +65760,7 @@
       }
     ],
     "viewOffset": [
-      -1753,
+      -1823,
       -242
     ],
     "viewZoom": 1.0,
@@ -65494,7 +65917,7 @@
         }
       ],
       "viewOffset": [
-        -1753,
+        -1823,
         -242
       ],
       "viewZoom": 1.0
@@ -66083,7 +66506,8 @@
             0
           ],
           "viewZoom": 1.0
-        }
+        },
+        "editing": true
       },
       {
         "parameters": [
@@ -68231,7 +68655,7 @@
                       "controlAddress": "/length"
                     },
                     {
-                      "value": 131.9799957275391,
+                      "value": 0.800000011920929,
                       "controlAddress": "/position"
                     },
                     {
@@ -68460,7 +68884,7 @@
                       "controlAddress": "/length"
                     },
                     {
-                      "value": 131.9799957275391,
+                      "value": 0.800000011920929,
                       "controlAddress": "/position"
                     },
                     {
@@ -68827,7 +69251,7 @@
                       "controlAddress": "/length"
                     },
                     {
-                      "value": 131.9799957275391,
+                      "value": 0.800000011920929,
                       "controlAddress": "/position"
                     },
                     {
