@@ -141,6 +141,14 @@ public class BalletManager : MonoBehaviour
 
         return p;
 	}
+
+    public void SynchronizePattern()
+	{
+        foreach(BalletPattern bp in patterns)
+		{
+            bp.ResetSpeed();
+		}
+	}
 }
 
 [System.Serializable]

@@ -23,6 +23,11 @@ public class BalletManagerEditor : Editor
         }
         GUILayout.EndHorizontal();
 
+        if (GUILayout.Button("Synchronize Pattern"))
+        {
+            balletMngr.SynchronizePattern();
+        }
+
         base.DrawDefaultInspector();
     }
 }
