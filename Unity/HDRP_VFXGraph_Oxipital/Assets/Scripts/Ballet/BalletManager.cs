@@ -19,6 +19,8 @@ public class BalletManager : MonoBehaviour
             patterns = new List<BalletPattern>();
 
         data = dataMngr.LoadData();
+
+        showDancers = (PlayerPrefs.GetInt("ShowDancer") != 0);
     }
 
     // Update is called once per frame
@@ -32,7 +34,12 @@ public class BalletManager : MonoBehaviour
 		}
     }
 
-    public BalletPattern AddPattern()
+	private void OnDestroy()
+	{
+        PlayerPrefs.SetInt("ShowDancer", showDancers ? 1 : 0);
+	}
+
+	public BalletPattern AddPattern()
 	{
         BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
         int newID = 0;
