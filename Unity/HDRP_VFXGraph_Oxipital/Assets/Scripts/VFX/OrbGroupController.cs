@@ -41,22 +41,32 @@ public class OrbGroupController : MonoBehaviour
     public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Circle;
     public Vector3 position; // Position of this pattern
     public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
+    [Range(0, 10)]
     public float patternSize = 1; // Size of this pattern
+    [Range(0, 100)]
     public float speed = 1f; // speed of the choreography
+    [Range(0, 20)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
+    [Range(0, 1)]
     public float phase; // Rotation phase
 
     [Header("Size LFO")]
+    [Range(0, 5)]
     public float sizeLFOFrequency;
+    [Range(0, 10)]
     public float sizeLFOAmplitude;
 
     [Header("Circle Parameter")]
+    [Range(0, 5)]
     public float verticalOffset;
 
     [Header("Position Alteration")]
+    [Range(0, 5)]
     public float LFOFrequency = 0;
     public Vector3 LFODirection = Vector3.zero;
+    [Range(0, 3)]
     public float noiseAmplitude = 0;
+    [Range(0, 10)]
     public float noiseSpeed = 0;
 
     // Start is called before the first frame update
