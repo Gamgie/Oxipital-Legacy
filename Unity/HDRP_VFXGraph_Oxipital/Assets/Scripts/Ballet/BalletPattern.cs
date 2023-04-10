@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BalletPattern : MonoBehaviour
 {
-    public enum BalletPatternType { Point, Line, Circle }
+    public enum BalletPatternType { Point, Line, Circle, Orbit, Atom }
 
     public BalletDancer dancerPrefab;
 
@@ -34,13 +34,16 @@ public class BalletPattern : MonoBehaviour
     private List<BalletDancer> dancers; // a list of objects to choreograph
     private List<Vector3> cirlePositions; // Computed position of the circle
     private List<Vector3> linePositions; // Computed position of the line
+    private List<Vector3> orbitPositions; // Computed position of the line
+    private List<Vector3> atomPositions; // Computed position of the line
     private List<Vector3> startPositions; // starting positions for lerp
     private List<Vector3> targetPositions; // ending positions for lerp
     private float currentSpeed; // internal speed
     private BalletPatternType lastPatternType;
     private bool isLerping;
     private float lerpStartTime;
-    private float currentSize;
+    private float currentSize; // Actual size after being modified by LFO
+    private List<OrbitData> orbitData; // A list of element needed by the orbit pattern
 
     public void Init(BalletManager balletMngr)
     {
@@ -48,8 +51,11 @@ public class BalletPattern : MonoBehaviour
         dancers = new List<BalletDancer>();
         cirlePositions = new List<Vector3>();
         linePositions = new List<Vector3>();
+        orbitPositions = new List<Vector3>();
+        atomPositions = new List<Vector3>();
 
         UpdateDancerCount(dancerCount);
+        GenerateOrbits();
 
         lastPatternType = patternType;
 
@@ -69,6 +75,8 @@ public class BalletPattern : MonoBehaviour
 
         ComputeCircleMovement();
         ComputeLineMovement();
+        ComputeOrbitMovement();
+        ComputeAtomMovement();
     }
 
     public void ApplyMovement()
@@ -94,8 +102,13 @@ public class BalletPattern : MonoBehaviour
                     List<Vector3> onePosition = new List<Vector3>();
                     foreach (BalletDancer d in dancers)
                         onePosition.Add(position);
-
                     startPositions = onePosition;
+                    break;
+                case BalletPatternType.Orbit:
+                    startPositions = orbitPositions;
+                    break;
+                case BalletPatternType.Atom:
+                    startPositions = atomPositions;
                     break;
             }
 
@@ -118,6 +131,12 @@ public class BalletPattern : MonoBehaviour
                     onePosition.Add(position);
 
                 targetPositions = onePosition;
+                break;
+            case BalletPatternType.Orbit:
+                targetPositions = orbitPositions;
+                break;
+            case BalletPatternType.Atom:
+                targetPositions = atomPositions;
                 break;
         }
 
@@ -188,6 +207,8 @@ public class BalletPattern : MonoBehaviour
         dancers.Add(dancer);
         cirlePositions.Add(new Vector3());
         linePositions.Add(new Vector3());
+        orbitPositions.Add(new Vector3());
+        atomPositions.Add(new Vector3());
 
         Debug.Log("Dancer " + dancer.id + " created and added to pattern" + id);
 
@@ -239,6 +260,12 @@ public class BalletPattern : MonoBehaviour
         {
             Debug.Log("Dancer " + dancerToRemove.id + " removed from the list and destroyed.");
             Destroy(dancerToRemove.gameObject);
+
+            cirlePositions.RemoveAt(dancerCount - 1);
+            linePositions.RemoveAt(dancerCount - 1);
+            orbitPositions.RemoveAt(dancerCount - 1);
+            atomPositions.RemoveAt(dancerCount - 1);
+
             dancerCount = dancers.Count;
         }
 
@@ -297,6 +324,57 @@ public class BalletPattern : MonoBehaviour
             linePositions[i] -= midPoint;
         }
     }
+
+    void ComputeOrbitMovement()
+	{
+        if(orbitData == null || orbitData.Count != dancerCount)
+		{
+            GenerateOrbits();
+		}
+
+        for (int i = 0; i < dancers.Count; i++)
+        {
+            if (size != 0)
+            {
+                orbitPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
+                                                0f,
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2);
+                orbitPositions[i] = transform.TransformPoint(orbitPositions[i]);
+            }
+            else
+            {
+                orbitPositions[i] = Vector3.zero;
+
+            }
+
+        }
+    }
+
+    public void GenerateOrbits()
+	{
+        orbitData = new List<OrbitData>();
+       for(int i = 1; i < dancerCount + 1; i++)
+		{
+            OrbitData oD = new OrbitData();
+
+            // Compute radius for this fellow
+            float radius = (float)i / (float)dancerCount;
+            radius = Mathf.Clamp(Random.Range(radius - 0.1f, radius + 0.1f), 0f, 1f);
+            oD.radius = radius;
+
+            // Compute speed for this fellow
+            float orbitalSpeed = Random.Range(speed * 0.5f, speed);
+            oD.speed = orbitalSpeed;
+
+            orbitData.Add(oD);
+
+        }
+	}
+
+    void ComputeAtomMovement()
+	{
+
+	}
 
     public BalletPatternData StoreData()
 	{
@@ -373,6 +451,11 @@ public class BalletPattern : MonoBehaviour
     }
 }
 
+public class OrbitData
+{
+    public float radius; // A percentage of radius between 0 and 1
+    public float speed; // A percentage of speed between 0 and 1
+}
 
 [System.Serializable]
 public class BalletPatternData
