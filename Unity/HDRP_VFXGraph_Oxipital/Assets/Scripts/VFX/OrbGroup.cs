@@ -34,6 +34,7 @@ public class OrbGroup : MonoBehaviour
     [Range(0, 1)]
     public float velocityDrag;
     public bool staticParticle;
+    public bool stationaryTransparent;
 
     [Header("Emitter Parameters")]
     public EmitterShape emitterShape;
@@ -136,6 +137,9 @@ public class OrbGroup : MonoBehaviour
 
             if (vfx.HasBool("Static Particle") == true)
                 vfx.SetBool("Static Particle", staticParticle);
+
+            if (vfx.HasBool("Stationary Transparent") == true)
+                vfx.SetBool("Stationary Transparent", stationaryTransparent);
         }
     }
 
@@ -438,6 +442,7 @@ public class OrbGroup : MonoBehaviour
         data.drag = drag;
         data.velocityDrag = velocityDrag;
         data.staticParticle = staticParticle;
+        data.stationaryTransparent = stationaryTransparent;
         data.emitterShapeIndex = GetEmitterShapeIndex();
         data.emitterPlacementMode = (int)emitterPlacementMode;
         data.emitterPositionX = emitterPosition.x;
@@ -467,6 +472,7 @@ public class OrbGroup : MonoBehaviour
         drag = data.drag;
         velocityDrag = data.velocityDrag;
         staticParticle = data.staticParticle;
+        stationaryTransparent = data.stationaryTransparent;
         emitterShapeIndex = data.emitterShapeIndex;
         emitterPlacementMode = (EmitterPlacementMode)data.emitterPlacementMode;
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
@@ -495,6 +501,7 @@ public class OrbGroupData
     public float drag;
     public float velocityDrag;
     public bool staticParticle;
+    public bool stationaryTransparent;
     public int emitterShapeIndex;
     public int emitterPlacementMode;
     public float emitterPositionX;
