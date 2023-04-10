@@ -26,6 +26,7 @@ public class OrbGroupController : MonoBehaviour
     public float drag;
     [Range(0, 1)]
     public float velocityDrag;
+    public bool staticParticle;
 
     [Header("Emitter Parameters")]
     public OrbGroup.EmitterShape emitterShape;
@@ -102,6 +103,7 @@ public class OrbGroupController : MonoBehaviour
                 size = 0;
                 drag = 0;
                 velocityDrag = 0;
+                staticParticle = false;
                 emitterSize = 0;
                 emitFromInside = false;
                 activateCollision = false;
@@ -142,6 +144,7 @@ public class OrbGroupController : MonoBehaviour
                     size = oG.size;
                     drag = oG.drag;
                     velocityDrag = oG.velocityDrag;
+                    staticParticle = oG.staticParticle;
                     emitterShape = oG.emitterShape;
                     emitterPlacementMode = oG.emitterPlacementMode;
                     emitterSize = oG.emitterSize;
@@ -185,6 +188,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.size = size;
                     oG.drag = drag;
                     oG.velocityDrag = velocityDrag;
+                    oG.staticParticle = staticParticle;
                     oG.emitterShape = emitterShape;
                     oG.emitterPlacementMode = emitterPlacementMode;
                     oG.emitterSize = emitterSize;

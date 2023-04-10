@@ -33,6 +33,7 @@ public class OrbGroup : MonoBehaviour
     public float drag;
     [Range(0, 1)]
     public float velocityDrag;
+    public bool staticParticle;
 
     [Header("Emitter Parameters")]
     public EmitterShape emitterShape;
@@ -132,6 +133,9 @@ public class OrbGroup : MonoBehaviour
             float factor = Mathf.Pow(2, colorIntensity);
             if (vfx.HasVector4("Color") == true)
                 vfx.SetVector4("Color", new Vector3(color.r * factor, color.g * factor, color.b * factor));
+
+            if (vfx.HasBool("Static Particle") == true)
+                vfx.SetBool("Static Particle", staticParticle);
         }
     }
 
@@ -433,6 +437,7 @@ public class OrbGroup : MonoBehaviour
         data.size = size;
         data.drag = drag;
         data.velocityDrag = velocityDrag;
+        data.staticParticle = staticParticle;
         data.emitterShapeIndex = GetEmitterShapeIndex();
         data.emitterPlacementMode = (int)emitterPlacementMode;
         data.emitterPositionX = emitterPosition.x;
@@ -461,6 +466,7 @@ public class OrbGroup : MonoBehaviour
         size = data.size;
         drag = data.drag;
         velocityDrag = data.velocityDrag;
+        staticParticle = data.staticParticle;
         emitterShapeIndex = data.emitterShapeIndex;
         emitterPlacementMode = (EmitterPlacementMode)data.emitterPlacementMode;
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
@@ -488,6 +494,7 @@ public class OrbGroupData
     public float size;
     public float drag;
     public float velocityDrag;
+    public bool staticParticle;
     public int emitterShapeIndex;
     public int emitterPlacementMode;
     public float emitterPositionX;
