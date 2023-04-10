@@ -66,7 +66,7 @@ public class OrbGroup : MonoBehaviour
         patternID = pattern.id;
 
         // Initialize with the first orb
-        SetOrbCount(1);
+        SetOrbCount(orbCount);
 
         // Update shape according to index
         SetEmitterShape();
