@@ -43,7 +43,7 @@ public class BalletPattern : MonoBehaviour
     private bool isLerping;
     private float lerpStartTime;
     private float currentSize; // Actual size after being modified by LFO
-    private List<OrbitData> orbitData; // A list of element needed by the orbit pattern
+    private List<OrbitData> orbitData; // A list of element needed by the orbit & atom pattern
 
     public void Init(BalletManager balletMngr)
     {
@@ -366,6 +366,11 @@ public class BalletPattern : MonoBehaviour
             float orbitalSpeed = Random.Range(speed * 0.5f, speed);
             oD.speed = orbitalSpeed;
 
+            // Compute angle 
+            float orbitAngle = Random.Range(-180,180);
+            Quaternion orbitRotation = Quaternion.AngleAxis(orbitAngle, new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)));
+            oD.rotation = orbitRotation;
+
             orbitData.Add(oD);
 
         }
@@ -373,8 +378,33 @@ public class BalletPattern : MonoBehaviour
 
     void ComputeAtomMovement()
 	{
+        if (orbitData == null || orbitData.Count != dancerCount)
+        {
+            GenerateOrbits();
+        }
 
-	}
+        for (int i = 0; i < dancers.Count; i++)
+        {
+            if (size != 0)
+            {
+                atomPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                                                0f,
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2);
+
+                // Rotate position with angle degree
+                atomPositions[i] = orbitData[i].rotation * atomPositions[i];
+
+                // Apply pattern transform 
+                atomPositions[i] = transform.TransformPoint(atomPositions[i]);
+            }
+            else
+            {
+                atomPositions[i] = Vector3.zero;
+
+            }
+
+        }
+    }
 
     public BalletPatternData StoreData()
 	{
@@ -450,11 +480,12 @@ public class BalletPattern : MonoBehaviour
         }
     }
 }
-
+[System.Serializable]
 public class OrbitData
 {
     public float radius; // A percentage of radius between 0 and 1
     public float speed; // A percentage of speed between 0 and 1
+    public Quaternion rotation; // Orbital rotation
 }
 
 [System.Serializable]
