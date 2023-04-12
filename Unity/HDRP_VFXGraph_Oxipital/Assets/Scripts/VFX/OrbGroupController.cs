@@ -11,7 +11,7 @@ public class OrbGroupController : MonoBehaviour
     public OrbGroupController[] orbGroupControllers; // They need to know each other to not control the same orbgroup at the same time
 
     [Header("PS Parameters")]
-    [Range(0, 400000)]
+    [Range(0, 200000)]
     public float rate;
     [Range(0, 200)]
     public float life;
@@ -35,6 +35,7 @@ public class OrbGroupController : MonoBehaviour
     public float emitterSize;
     public bool emitFromInside;
     public bool activateCollision;
+    public Vector3 emitterRotation; // Rotation in euler angle of the emitter
 
     private OrbsManager _orbsManager;
     private int _idControlled = -1;
@@ -42,10 +43,10 @@ public class OrbGroupController : MonoBehaviour
     [Header("Ballet Pattern Parameters")]
     public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Circle;
     public Vector3 position; // Position of this pattern
-    public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
+    public Vector3 patternRotation = Vector3.zero; // Rotation in euler angle of this pattern
     [Range(0, 10)]
     public float patternSize = 1; // Size of this pattern
-    [Range(0, 15)]
+    [Range(0, 30)]
     public float speed = 1f; // speed of the choreography
     [Range(0, 20)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
@@ -55,7 +56,7 @@ public class OrbGroupController : MonoBehaviour
     [Header("Size LFO")]
     [Range(0, 5)]
     public float sizeLFOFrequency;
-    [Range(0, 10)]
+    [Range(0, 3)]
     public float sizeLFOAmplitude;
 
     [Header("Circle Parameter")]
@@ -111,7 +112,8 @@ public class OrbGroupController : MonoBehaviour
                 activateCollision = false;
 
                 position = Vector3.zero;
-                rotation = Vector3.zero;
+                patternRotation = Vector3.zero;
+                emitterRotation = Vector3.zero;
                 size = 0;
                 speed = 0;
                 lerpDuration = 0;
@@ -153,12 +155,13 @@ public class OrbGroupController : MonoBehaviour
                     emitterSize = oG.emitterSize;
                     emitFromInside = oG.emitFromInside;
                     activateCollision = oG.activateCollision;
+                    emitterRotation = oG.emitterRotation;
 
                     // Get ballet pattern parameters
                     BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
                     patternType = balletPattern.patternType;
                     position = balletPattern.position;
-                    rotation = balletPattern.rotation;
+                    patternRotation = balletPattern.rotation;
                     patternSize = balletPattern.size;
                     speed = balletPattern.speed;
                     lerpDuration = balletPattern.lerpDuration;
@@ -198,12 +201,13 @@ public class OrbGroupController : MonoBehaviour
                     oG.emitterSize = emitterSize;
                     oG.emitFromInside = emitFromInside;
                     oG.activateCollision = activateCollision;
+                    oG.emitterRotation = emitterRotation;
 
                     // Update ballet pattern
                     BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
                     balletPattern.patternType = patternType;
                     balletPattern.position = position;
-                    balletPattern.rotation = rotation;
+                    balletPattern.rotation = patternRotation;
                     balletPattern.size = patternSize;
                     balletPattern.speed = speed;
                     balletPattern.lerpDuration = lerpDuration;
