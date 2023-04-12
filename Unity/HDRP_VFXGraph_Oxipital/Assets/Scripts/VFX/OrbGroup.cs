@@ -40,7 +40,7 @@ public class OrbGroup : MonoBehaviour
     public EmitterShape emitterShape;
     public EmitterPlacementMode emitterPlacementMode;
     public Vector3 emitterPosition;
-    public Vector3 emitterOrientation;
+    public Vector3 emitterRotation;
     public float emitterSize;
     public Mesh[] meshArray;
     public Texture[] sdfCollisionArray;
@@ -152,14 +152,9 @@ public class OrbGroup : MonoBehaviour
                 return;
 
             // Update Emitter transform
-            /*if (vfx.HasVector3("Emitter Position") == true)
-            {
-                vfx.SetVector3("Emitter Position", emitterPosition);
-            }
             if (vfx.HasVector3("Emitter Angles") == true)
-            {
-                vfx.SetVector3("Emitter Angles", emitterOrientation);
-            }*/
+                vfx.SetVector3("Emitter Angles", emitterRotation);
+
             if (vfx.HasFloat("Emitter Scale") == true)
                 vfx.SetFloat("Emitter Scale", emitterSize);
 
@@ -390,6 +385,7 @@ public class OrbGroup : MonoBehaviour
 
         // Update OrbCount accordingly
         orbCount = visualEffects.Count;
+        orbsMngr.GetOnOrbCreated().Invoke();
     }
 
     public int GetOrbCount()
@@ -448,9 +444,9 @@ public class OrbGroup : MonoBehaviour
         data.emitterPositionX = emitterPosition.x;
         data.emitterPositionY = emitterPosition.y;
         data.emitterPositionZ = emitterPosition.z;
-        data.emitterOrientationX = emitterOrientation.x;
-        data.emitterOrientationY = emitterOrientation.y;
-        data.emitterOrientationZ = emitterOrientation.z;
+        data.emitterOrientationX = emitterRotation.x;
+        data.emitterOrientationY = emitterRotation.y;
+        data.emitterOrientationZ = emitterRotation.z;
         data.emitterSize = emitterSize;
         data.emitFromInside = emitFromInside;
         data.activateCollision = activateCollision;
@@ -476,7 +472,7 @@ public class OrbGroup : MonoBehaviour
         emitterShapeIndex = data.emitterShapeIndex;
         emitterPlacementMode = (EmitterPlacementMode)data.emitterPlacementMode;
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
-        emitterOrientation = new Vector3(data.emitterOrientationX, data.emitterOrientationY, data.emitterOrientationZ);
+        emitterRotation = new Vector3(data.emitterOrientationX, data.emitterOrientationY, data.emitterOrientationZ);
         emitterSize = data.emitterSize;
         emitFromInside = data.emitFromInside;
         activateCollision = data.activateCollision;
