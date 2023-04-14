@@ -7,7 +7,6 @@ using UnityEngine.VFX;
 public class TurbulenceController : ForceController
 {
     [Header("Turbulence")]
-    public float turbIntensity;
     public float turbFrequency = 1;
     [Range(1, 8)]
     public int turbOctave = 1;
@@ -26,7 +25,7 @@ public class TurbulenceController : ForceController
         {
             // Turb parameter update
             if (visualEffect.HasFloat(turb + " Intensity") == true)
-                visualEffect.SetFloat(turb + " Intensity", turbIntensity);
+                visualEffect.SetFloat(turb + " Intensity", intensity);
 
             if (visualEffect.HasFloat(turb + " Frequency") == true)
                 visualEffect.SetFloat(turb + " Frequency", turbFrequency);

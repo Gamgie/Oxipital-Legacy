@@ -15,21 +15,15 @@ public class ForceController : MonoBehaviour
     public float intensity;
     public float radius;
     public Vector3 axis;
-    public bool useVector3;
-    public Vector3 targetVector3;
-    
 
+
+    protected BalletPattern pattern; // Handle positions of the force
     protected VisualEffect[] m_vfxs;
     protected string m_suffix = "";
     protected List<Vector3> m_targetPositions;
     protected GraphicsBuffer m_buffer;
     protected static readonly int s_BufferID = Shader.PropertyToID("Attractor Graphics Buffer");
 
-    /*[VFXType(VFXTypeAttribute.Usage.GraphicsBuffer)]
-    struct GraphicBufferData
-    {
-        public Vector3 position;
-    }*/
 
     private void Start()
     {
@@ -53,7 +47,6 @@ public class ForceController : MonoBehaviour
             };
             m_buffer.SetData(data);
         }
-        
     }
 
     protected virtual void Update()
@@ -63,10 +56,18 @@ public class ForceController : MonoBehaviour
             UpdateVfxArray();
 		}
 
-        foreach(VisualEffect vfx in m_vfxs)
+        foreach (VisualEffect vfx in m_vfxs)
         {
             if (vfx == null)
                 UpdateVfxArray();
+
+            // Update targets
+            UpdateTargets();
+            //m_buffer.SetData(targets);
+            if (vfx.HasGraphicsBuffer(s_BufferID))
+            {
+                vfx.SetGraphicsBuffer(s_BufferID, m_buffer);
+            }
         }
     }
 
@@ -81,4 +82,14 @@ public class ForceController : MonoBehaviour
             m_vfxs = orbs.GetComponentsInChildren<VisualEffect>();
         }
     }
+
+    void UpdateTargets()
+	{
+
+	}
+
+	private void OnDestroy()
+	{
+        m_buffer.Release();
+	}
 }

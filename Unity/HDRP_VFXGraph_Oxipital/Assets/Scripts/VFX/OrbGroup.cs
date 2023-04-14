@@ -55,8 +55,6 @@ public class OrbGroup : MonoBehaviour
     private BalletPattern pattern;
     private int orbCount = 0;
 
-
-    // Start is called before the first frame update
     public void Initialize(OrbsManager orbsMngr)
     {
         this.orbsMngr = orbsMngr;        

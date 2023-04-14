@@ -30,20 +30,7 @@ public class SwirlController : ForceController
 
             if (visualEffect.HasBool(swirl + " Rotation Clockwise") == true)
                 visualEffect.SetBool(swirl + " Rotation Clockwise", clockwise);
-
-            // Target
-            Vector3 target = Vector3.zero;
-            if (useVector3)
-            {
-                target = targetVector3;
-            }
-            else
-            {
-                if (targetObject != null)
-                    target = targetObject.position;
-            }
-            if (visualEffect.HasVector3(swirl + " Position" + m_suffix))
-                visualEffect.SetVector3(swirl + " Position" + m_suffix, target);
+            
         }
     }
 }

@@ -34,20 +34,6 @@ public class VortexController : ForceController
             if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))
                 visualEffect.SetVector3(vortex + " Axis" + m_suffix, axis);
 
-            // Target
-            Vector3 target = Vector3.zero;
-            if (useVector3)
-            {
-                target = targetVector3;
-            }
-            else
-            {
-                if (targetObject != null)
-                    target = targetObject.position;
-            }
-            if (visualEffect.HasVector3(vortex + " Position" + m_suffix))
-                visualEffect.SetVector3(vortex + " Position" + m_suffix, target);
-
         }
     }
 }

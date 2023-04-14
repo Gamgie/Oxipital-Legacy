@@ -37,29 +37,7 @@ public class RadialController : ForceController
 
             // Radius
             if (visualEffect.HasFloat(radial + " Radius" + m_suffix))
-                visualEffect.SetFloat(radial + " Radius" + m_suffix, radius);
-
-            // Target
-            Vector3 target = Vector3.zero;
-            if (useVector3)
-            {
-                target = targetVector3;
-            }
-            else
-            {
-                if (targetObject != null)
-                    target = targetObject.position;
-            }
-            if (visualEffect.HasVector3(radial + " Position" + m_suffix))
-                visualEffect.SetVector3(radial + " Position" + m_suffix, target);
-
-            // Update Buffer
-            if(visualEffect.HasGraphicsBuffer(s_BufferID))
-			{
-                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
-                Debug.Log("set buffer");
-            }
-                
+                visualEffect.SetFloat(radial + " Radius" + m_suffix, radius); 
         }
     }
 }
