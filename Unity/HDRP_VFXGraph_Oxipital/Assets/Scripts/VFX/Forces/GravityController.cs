@@ -15,12 +15,12 @@ public class GravityController : ForceController
         foreach (VisualEffect visualEffect in m_vfxs)
         {
             // Intensity
-            if (visualEffect.HasFloat(gravity + suffix))
-                visualEffect.SetFloat(gravity + suffix, intensity);
+            if (visualEffect.HasFloat(gravity + m_suffix))
+                visualEffect.SetFloat(gravity + m_suffix, intensity);
 
             // Axis
-            if (visualEffect.HasVector3(gravity + " Axis" + suffix))
-                visualEffect.SetVector3(gravity + " Axis" + suffix, axis);
+            if (visualEffect.HasVector3(gravity + " Axis" + m_suffix))
+                visualEffect.SetVector3(gravity + " Axis" + m_suffix, axis);
         }
     }
 }

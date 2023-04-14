@@ -34,23 +34,23 @@ public class ConformToSphereController : ForceController
 
         foreach (VisualEffect visualEffect in m_vfxs)
         {
-            if (visualEffect.HasVector3("CTS Center" + suffix))
-                visualEffect.SetVector3("CTS Center" + suffix, sphereCenter.position);
+            if (visualEffect.HasVector3("CTS Center" + m_suffix))
+                visualEffect.SetVector3("CTS Center" + m_suffix, sphereCenter.position);
 
-            if (visualEffect.HasFloat("CTS Radius" + suffix))
-                visualEffect.SetFloat("CTS Radius" + suffix, radius);
+            if (visualEffect.HasFloat("CTS Radius" + m_suffix))
+                visualEffect.SetFloat("CTS Radius" + m_suffix, radius);
 
-            if (visualEffect.HasFloat("CTS Attraction Speed" + suffix))
-                visualEffect.SetFloat("CTS Attraction Speed" + suffix, attractionSpeed);
+            if (visualEffect.HasFloat("CTS Attraction Speed" + m_suffix))
+                visualEffect.SetFloat("CTS Attraction Speed" + m_suffix, attractionSpeed);
 
-            if (visualEffect.HasFloat("CTS Attraction Force" + suffix))
-                visualEffect.SetFloat("CTS Attraction Force" + suffix, attractionForce);
+            if (visualEffect.HasFloat("CTS Attraction Force" + m_suffix))
+                visualEffect.SetFloat("CTS Attraction Force" + m_suffix, attractionForce);
 
-            if (visualEffect.HasFloat("CTS Stick Distance" + suffix))
-                visualEffect.SetFloat("CTS Stick Distance" + suffix, stickDistance);
+            if (visualEffect.HasFloat("CTS Stick Distance" + m_suffix))
+                visualEffect.SetFloat("CTS Stick Distance" + m_suffix, stickDistance);
 
-            if (visualEffect.HasFloat("CTS Stick Force" + suffix))
-                visualEffect.SetFloat("CTS Stick Force" + suffix, stickForce);
+            if (visualEffect.HasFloat("CTS Stick Force" + m_suffix))
+                visualEffect.SetFloat("CTS Stick Force" + m_suffix, stickForce);
 
             /*VFXFloatElement fElem = floatList[0];
             if (visualEffect.HasFloat(fElem.name))

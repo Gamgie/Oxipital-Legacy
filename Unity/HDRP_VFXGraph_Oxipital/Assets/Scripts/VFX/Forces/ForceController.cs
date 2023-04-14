@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -19,7 +20,16 @@ public class ForceController : MonoBehaviour
     
 
     protected VisualEffect[] m_vfxs;
-    protected string suffix = "";
+    protected string m_suffix = "";
+    protected List<Vector3> m_targetPositions;
+    protected GraphicsBuffer m_buffer;
+    protected static readonly int s_BufferID = Shader.PropertyToID("Attractor Graphics Buffer");
+
+    /*[VFXType(VFXTypeAttribute.Usage.GraphicsBuffer)]
+    struct GraphicBufferData
+    {
+        public Vector3 position;
+    }*/
 
     private void Start()
     {
@@ -30,8 +40,20 @@ public class ForceController : MonoBehaviour
         // Set suffix to handle same multiple force on the same object.
         if (forceID != 0)
         {
-            suffix = " " + forceID.ToString();
+            m_suffix = " " + forceID.ToString();
         }
+
+        if(m_buffer == null)
+		{
+            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 2, Marshal.SizeOf(typeof(Vector3)));
+            var data = new List<Vector3>()
+            {
+                new Vector3(5,0,0),
+                new Vector3(-5,0,0)
+            };
+            m_buffer.SetData(data);
+        }
+        
     }
 
     protected virtual void Update()

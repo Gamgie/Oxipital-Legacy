@@ -19,20 +19,20 @@ public class VortexController : ForceController
         foreach (VisualEffect visualEffect in m_vfxs)
         {
             // Intensity
-            if (visualEffect.HasFloat(vortex + " Intensity" + suffix))
-                visualEffect.SetFloat(vortex + " Intensity" + suffix, intensity);
+            if (visualEffect.HasFloat(vortex + " Intensity" + m_suffix))
+                visualEffect.SetFloat(vortex + " Intensity" + m_suffix, intensity);
 
             // Intensity Random
-            if (visualEffect.HasFloat(vortex + " Intensity Random" + suffix))
-                visualEffect.SetFloat(vortex + " Intensity Random" + suffix, intensityRandom);
+            if (visualEffect.HasFloat(vortex + " Intensity Random" + m_suffix))
+                visualEffect.SetFloat(vortex + " Intensity Random" + m_suffix, intensityRandom);
 
             // Radius
-            if (visualEffect.HasFloat(vortex + " Radius" + suffix))
-                visualEffect.SetFloat(vortex + " Radius" + suffix, radius);
+            if (visualEffect.HasFloat(vortex + " Radius" + m_suffix))
+                visualEffect.SetFloat(vortex + " Radius" + m_suffix, radius);
 
             // Axis
-            if (visualEffect.HasVector3(vortex + " Axis" + suffix))
-                visualEffect.SetVector3(vortex + " Axis" + suffix, axis);
+            if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))
+                visualEffect.SetVector3(vortex + " Axis" + m_suffix, axis);
 
             // Target
             Vector3 target = Vector3.zero;
@@ -45,8 +45,8 @@ public class VortexController : ForceController
                 if (targetObject != null)
                     target = targetObject.position;
             }
-            if (visualEffect.HasVector3(vortex + " Position" + suffix))
-                visualEffect.SetVector3(vortex + " Position" + suffix, target);
+            if (visualEffect.HasVector3(vortex + " Position" + m_suffix))
+                visualEffect.SetVector3(vortex + " Position" + m_suffix, target);
 
         }
     }

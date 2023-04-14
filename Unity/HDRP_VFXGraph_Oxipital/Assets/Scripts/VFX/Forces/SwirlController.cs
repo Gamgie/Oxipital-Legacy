@@ -18,12 +18,12 @@ public class SwirlController : ForceController
         foreach (VisualEffect visualEffect in m_vfxs)
         {
             // Intensity
-            if (visualEffect.HasFloat(swirl + " Intensity" + suffix))
-                visualEffect.SetFloat(swirl + " Intensity" + suffix, intensity);
+            if (visualEffect.HasFloat(swirl + " Intensity" + m_suffix))
+                visualEffect.SetFloat(swirl + " Intensity" + m_suffix, intensity);
 
             // Axis
-            if (visualEffect.HasVector3(swirl + " Axis" + suffix))
-                visualEffect.SetVector3(swirl + " Axis" + suffix, axis);
+            if (visualEffect.HasVector3(swirl + " Axis" + m_suffix))
+                visualEffect.SetVector3(swirl + " Axis" + m_suffix, axis);
 
             if (visualEffect.HasFloat(swirl + " Radius") == true)
                 visualEffect.SetFloat(swirl + " Radius", radius);
@@ -42,8 +42,8 @@ public class SwirlController : ForceController
                 if (targetObject != null)
                     target = targetObject.position;
             }
-            if (visualEffect.HasVector3(swirl + " Position" + suffix))
-                visualEffect.SetVector3(swirl + " Position" + suffix, target);
+            if (visualEffect.HasVector3(swirl + " Position" + m_suffix))
+                visualEffect.SetVector3(swirl + " Position" + m_suffix, target);
         }
     }
 }

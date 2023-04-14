@@ -15,12 +15,12 @@ public class AxialController : ForceController
         foreach (VisualEffect visualEffect in m_vfxs)
         {
             // Intensity
-            if (visualEffect.HasFloat(axial + " Intensity" + suffix))
-                visualEffect.SetFloat(axial + " Intensity" + suffix, intensity);
+            if (visualEffect.HasFloat(axial + " Intensity" + m_suffix))
+                visualEffect.SetFloat(axial + " Intensity" + m_suffix, intensity);
 
             // Axis
-            if (visualEffect.HasVector3(axial + " Axis" + suffix))
-                visualEffect.SetVector3(axial + " Axis" + suffix, axis);
+            if (visualEffect.HasVector3(axial + " Axis" + m_suffix))
+                visualEffect.SetVector3(axial + " Axis" + m_suffix, axis);
         }
     }
 }

@@ -21,24 +21,24 @@ public class SDFController : ForceController
         foreach(VisualEffect vfx in m_vfxs)
         {
             // Texture
-            if (vfx.HasTexture(sdf + " Texture" + suffix))
-                vfx.SetTexture(sdf + " Texture" + suffix, texture);
+            if (vfx.HasTexture(sdf + " Texture" + m_suffix))
+                vfx.SetTexture(sdf + " Texture" + m_suffix, texture);
 
             // Attraction Speed
-            if (vfx.HasFloat(sdf + " Attraction Speed" + suffix))
-                vfx.SetFloat(sdf + " Attraction Speed" + suffix, attractionSpeed);
+            if (vfx.HasFloat(sdf + " Attraction Speed" + m_suffix))
+                vfx.SetFloat(sdf + " Attraction Speed" + m_suffix, attractionSpeed);
 
             // Attraction Force
-            if (vfx.HasFloat(sdf + " Attraction Force" + suffix))
-                vfx.SetFloat(sdf + " Attraction Force" + suffix, attractionForce);
+            if (vfx.HasFloat(sdf + " Attraction Force" + m_suffix))
+                vfx.SetFloat(sdf + " Attraction Force" + m_suffix, attractionForce);
 
             // Stick Force
-            if (vfx.HasFloat(sdf + " Stick Force" + suffix))
-                vfx.SetFloat(sdf + " Stick Force" + suffix, stickForce);
+            if (vfx.HasFloat(sdf + " Stick Force" + m_suffix))
+                vfx.SetFloat(sdf + " Stick Force" + m_suffix, stickForce);
 
             // Stick Distance
-            if (vfx.HasFloat(sdf + " Stick Distance" + suffix))
-                vfx.SetFloat(sdf + " Stick Distance" + suffix, stickDistance);
+            if (vfx.HasFloat(sdf + " Stick Distance" + m_suffix))
+                vfx.SetFloat(sdf + " Stick Distance" + m_suffix, stickDistance);
         }
     
     }

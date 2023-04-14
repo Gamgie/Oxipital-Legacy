@@ -29,15 +29,15 @@ public class RadialController : ForceController
             radial = "Repulsor";
         }
 
-            foreach (VisualEffect visualEffect in m_vfxs)
+        foreach (VisualEffect visualEffect in m_vfxs)
         {
             // Intensity
-            if (visualEffect.HasFloat(radial + " Intensity" + suffix))
-                visualEffect.SetFloat(radial + " Intensity" + suffix, intensity);
+            if (visualEffect.HasFloat(radial + " Intensity" + m_suffix))
+                visualEffect.SetFloat(radial + " Intensity" + m_suffix, intensity);
 
             // Radius
-            if (visualEffect.HasFloat(radial + " Radius" + suffix))
-                visualEffect.SetFloat(radial + " Radius" + suffix, radius);
+            if (visualEffect.HasFloat(radial + " Radius" + m_suffix))
+                visualEffect.SetFloat(radial + " Radius" + m_suffix, radius);
 
             // Target
             Vector3 target = Vector3.zero;
@@ -50,8 +50,16 @@ public class RadialController : ForceController
                 if (targetObject != null)
                     target = targetObject.position;
             }
-            if (visualEffect.HasVector3(radial + " Position" + suffix))
-                visualEffect.SetVector3(radial + " Position" + suffix, target);
+            if (visualEffect.HasVector3(radial + " Position" + m_suffix))
+                visualEffect.SetVector3(radial + " Position" + m_suffix, target);
+
+            // Update Buffer
+            if(visualEffect.HasGraphicsBuffer(s_BufferID))
+			{
+                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
+                Debug.Log("set buffer");
+            }
+                
         }
     }
 }
