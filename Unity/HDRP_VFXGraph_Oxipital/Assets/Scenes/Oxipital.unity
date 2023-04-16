@@ -167,14 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e32c47a2473dc4c8ce3f5d8b309e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 132919796}
+  forceID: 3
+  forceCount: 1
   intensity: 0
   radius: 0
   axis: {x: 0, y: -1, z: 0}
-  useVector3: 0
-  targetVector3: {x: 0, y: 0, z: 0}
 --- !u!1 &135452449
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,59 +224,6 @@ MonoBehaviour:
   stopDuration: 5
   showDebugSphere: 0
   debugSphere: {fileID: 1611934613}
---- !u!1 &212291002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 212291003}
-  - component: {fileID: 212291004}
-  m_Layer: 0
-  m_Name: 'Repulsor '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &212291003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212291002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 918722355}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &212291004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212291002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ec5b4c10936a4aaf0155ddace008c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 212291003}
-  intensity: 0
-  radius: 1
-  axis: {x: 0, y: 0, z: 0}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
-  radialType: 1
 --- !u!1 &225356782
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +448,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 566763224}
+  m_TargetTexture: {fileID: 1303357330}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -845,14 +789,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991bec25970a01849bfd958bd9e771a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 251328722}
+  forceID: 4
+  forceCount: 1
   intensity: 0
   radius: 1
   axis: {x: 0, y: 1, z: 0}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
   clockwise: 0
 --- !u!1 &360151756
 GameObject:
@@ -867,7 +808,7 @@ GameObject:
   - component: {fileID: 360151759}
   m_Layer: 0
   m_Name: Orbs
-  m_TagString: Untagged
+  m_TagString: Orb Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,7 +981,7 @@ GameObject:
   - component: {fileID: 394209773}
   m_Layer: 0
   m_Name: Root Scene
-  m_TagString: Untagged
+  m_TagString: Data Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,51 +1115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827b19d360f02c14a85a7db06abbc994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 549925949}
+  forceID: 5
+  forceCount: 1
   intensity: 0
   radius: 0
   axis: {x: 0, y: 1, z: 0}
-  useVector3: 0
-  targetVector3: {x: 0, y: 0, z: 0}
---- !u!84 &566763224
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &594180641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1192,7 @@ MonoBehaviour:
   - {fileID: 1117133396}
   - {fileID: 1831299748}
   - {fileID: 929118334}
-  - {fileID: 212291002}
+  - {fileID: 0}
   - {fileID: 1188738509}
   - {fileID: 132919795}
   - {fileID: 251328721}
@@ -1774,7 +1675,7 @@ GameObject:
   - component: {fileID: 760171667}
   m_Layer: 0
   m_Name: Ballet
-  m_TagString: Untagged
+  m_TagString: Ballet Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1810,7 +1711,8 @@ MonoBehaviour:
   dataMngr: {fileID: 394209773}
   patternPrefab: {fileID: 5967261629905918720, guid: f894172d9d43cf9428f441b3a0e7923f,
     type: 3}
-  patterns: []
+  orbsPatterns: []
+  forcePatterns: []
 --- !u!1 &914728416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,14 +1771,17 @@ MonoBehaviour:
   size: 0
   drag: 0
   velocityDrag: 0
+  staticParticle: 0
+  stationaryTransparent: 0
   emitterShape: 0
   emitterPlacementMode: 0
   emitterSize: 0
   emitFromInside: 0
   activateCollision: 0
+  emitterRotation: {x: 0, y: 0, z: 0}
   patternType: 2
   position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
+  patternRotation: {x: 0, y: 0, z: 0}
   patternSize: 1
   speed: 1
   lerpDuration: 3
@@ -1918,7 +1823,6 @@ Transform:
   m_Children:
   - {fileID: 1831299749}
   - {fileID: 929118335}
-  - {fileID: 212291003}
   - {fileID: 1188738510}
   - {fileID: 132919796}
   - {fileID: 251328722}
@@ -1971,15 +1875,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323ec5b4c10936a4aaf0155ddace008c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 929118335}
+  forceID: 1
+  forceCount: 1
   intensity: 0
   radius: 3.98
   axis: {x: 0, y: 0, z: 0}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
-  radialType: 0
+  radialFrequency: 0
+  radialSmoothness: 0
+  sphericalFrequency: 0
+  sphericalSmoothness: 0
 --- !u!1 &970826855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,15 +1928,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745b2a2014cdc994d8fe0fb88a4f12a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 0}
+  forceID: 6
+  forceCount: 1
   intensity: 0
   radius: 0
   axis: {x: 0, y: 0, z: 0}
-  useVector3: 0
-  targetVector3: {x: 0, y: 0, z: 0}
-  turbIntensity: 0
   turbFrequency: 1
   turbOctave: 1
   turbroughness: 0.5
@@ -2145,14 +2045,17 @@ MonoBehaviour:
   size: 0
   drag: 0
   velocityDrag: 0
+  staticParticle: 0
+  stationaryTransparent: 0
   emitterShape: 0
   emitterPlacementMode: 0
   emitterSize: 0
   emitFromInside: 0
   activateCollision: 0
+  emitterRotation: {x: 0, y: 0, z: 0}
   patternType: 2
   position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
+  patternRotation: {x: 0, y: 0, z: 0}
   patternSize: 1
   speed: 1
   lerpDuration: 3
@@ -2208,14 +2111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd1a94a8464373439b540e06aeca65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 1188738510}
+  forceID: 2
+  forceCount: 1
   intensity: 0
   radius: 1
   axis: {x: 0, y: -1, z: 0}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
   frequency: 1
 --- !u!1 &1292866245
 GameObject:
@@ -2248,6 +2148,43 @@ Transform:
   m_Father: {fileID: 360151757}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1303357330
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1920
+  m_Height: 1080
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 90
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1567188314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2448,7 @@ MonoBehaviour:
   _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 566763224}
+  _sourceTexture: {fileID: 1303357330}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
 --- !u!1 &1831299748
 GameObject:
@@ -2558,13 +2495,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceID: 0
-  orbs: {fileID: 360151758}
-  targetObject: {fileID: 1831299749}
+  forceCount: 1
   intensity: 0
   radius: 3
   axis: {x: 0, y: 1, z: 0}
-  useVector3: 1
-  targetVector3: {x: 0, y: 0, z: 0}
   intensityRandom: 0
 --- !u!1 &1917567316
 GameObject:

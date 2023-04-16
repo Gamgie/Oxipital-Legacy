@@ -14,12 +14,12 @@ public class BalletManagerEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Add Pattern"))
         {
-            balletMngr.AddPattern();
+            balletMngr.AddPattern(BalletManager.PatternGroup.Orb);
         }
 
         if (GUILayout.Button("Remove Pattern"))
         {
-            balletMngr.RemovePattern();
+            balletMngr.RemovePattern(BalletManager.PatternGroup.Orb);
         }
         GUILayout.EndHorizontal();
 
