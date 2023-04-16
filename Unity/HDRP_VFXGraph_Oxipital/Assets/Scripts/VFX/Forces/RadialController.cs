@@ -7,8 +7,10 @@ public class RadialController : ForceController
 {
     [Header("Radial")]
     public float radialFrequency;
+    [Range(0,1)]
     public float radialSmoothness;
     public float sphericalFrequency;
+    [Range(0, 1)]
     public float sphericalSmoothness;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Radial Graphics Buffer");
@@ -31,19 +33,19 @@ public class RadialController : ForceController
 
             // Radial Frequency
             if (visualEffect.HasFloat(radial + " Radial Frequency" + m_suffix))
-                visualEffect.SetFloat(radial + " Radial Frequency" + m_suffix, radius);
+                visualEffect.SetFloat(radial + " Radial Frequency" + m_suffix, radialFrequency);
 
             // Radial Smoothness
             if (visualEffect.HasFloat(radial + " Radial Smoothness" + m_suffix))
-                visualEffect.SetFloat(radial + " Radial Smoothness" + m_suffix, radius);
+                visualEffect.SetFloat(radial + " Radial Smoothness" + m_suffix, radialSmoothness);
 
             // Spherical Frequency
             if (visualEffect.HasFloat(radial + " Spherical Frequency" + m_suffix))
-                visualEffect.SetFloat(radial + " Spherical Frequency" + m_suffix, radius);
+                visualEffect.SetFloat(radial + " Spherical Frequency" + m_suffix, sphericalFrequency);
 
             // Spherical Smoothness
             if (visualEffect.HasFloat(radial + " Spherical Smoothness" + m_suffix))
-                visualEffect.SetFloat(radial + " Spherical Smoothness" + m_suffix, radius);
+                visualEffect.SetFloat(radial + " Spherical Smoothness" + m_suffix, sphericalSmoothness);
 
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
                 visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
