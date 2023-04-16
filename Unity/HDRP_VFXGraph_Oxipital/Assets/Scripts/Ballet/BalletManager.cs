@@ -9,7 +9,7 @@ public class BalletManager : MonoBehaviour
     public BalletPattern patternPrefab;
     public List<BalletPattern> orbsPatterns; // a list of orbs patterns 
     public List<BalletPattern> forcePatterns; // A list of forse patterns
-    public enum PatternTargetID { Orb, Force }
+    public enum PatternGroup { Orb, Force }
 
     private OxipitalData data;
 
@@ -50,27 +50,15 @@ public class BalletManager : MonoBehaviour
         PlayerPrefs.SetInt("ShowDancer", showDancers ? 1 : 0);
 	}
 
-	public BalletPattern AddPattern(PatternTargetID target = PatternTargetID.Orb)
+	public BalletPattern AddPattern(PatternGroup group = PatternGroup.Orb)
 	{
         BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
         int newID = 0;
         string patternName = "";
-        List<BalletPattern> targetList = null;
-
-        // Define where to add this baby : is it a force or an orbs ?
-        switch (target)
-		{
-            case PatternTargetID.Orb:
-                targetList = orbsPatterns;
-                break;
-            case PatternTargetID.Force:
-                targetList = forcePatterns;
-                break;
-        }
-            
+        List<BalletPattern> groupList = GetGroupList(group);   
 
         // Look for the next available ID
-        foreach (BalletPattern p in targetList)
+        foreach (BalletPattern p in groupList)
         {
             if (newID == p.id)
             {
@@ -82,7 +70,7 @@ public class BalletManager : MonoBehaviour
             }
         }
 
-        patternName = "Pattern " + newID;
+        patternName = "["+group.ToString()+"] Pattern " + newID;
 
         if (pattern != null)
 		{
@@ -94,7 +82,7 @@ public class BalletManager : MonoBehaviour
             // Check if we have available data for this guy.
             if (data == null)
                 data = dataMngr.LoadData();
-            if(target == PatternTargetID.Orb)
+            if(group == PatternGroup.Orb)
 			{
                 foreach (BalletPatternData patternData in data.balletMngrData.orbsPatternData)
                 {
@@ -104,7 +92,7 @@ public class BalletManager : MonoBehaviour
                     }
                 }
             }
-            else if(target == PatternTargetID.Force)
+            else if(group == PatternGroup.Force)
 			{
                 foreach (BalletPatternData patternData in data.balletMngrData.forcePatternData)
                 {
@@ -118,36 +106,37 @@ public class BalletManager : MonoBehaviour
             pattern.Init(this);
 
             // Add to main list
-            targetList.Add(pattern);
+            groupList.Add(pattern);
         }
 
         return pattern;
     }
 
-    public bool RemovePattern(int id=-1)
+    public bool RemovePattern(PatternGroup group, int id=-1)
 	{
         bool result = false;
         BalletPattern patternToRemove = null;
+        List<BalletPattern> groupList = GetGroupList(group);
 
         // If no patterns here, let's get out directly.
-        if (orbsPatterns.Count == 0)
+        if (groupList.Count == 0)
             return false;
 
         // If id is -1, it means we want to remove last object
         if (id == -1)
         {
-            patternToRemove = orbsPatterns[orbsPatterns.Count - 1];
-            orbsPatterns.RemoveAt(orbsPatterns.Count - 1);
+            patternToRemove = groupList[groupList.Count - 1];
+            groupList.RemoveAt(groupList.Count - 1);
             result = true;
         }
         else // Let's find the right guy to kill
         {
-            foreach (BalletPattern p in orbsPatterns)
+            foreach (BalletPattern p in groupList)
             {
                 if (p.id == id)
                 {
                     patternToRemove = p;
-                    result = orbsPatterns.Remove(p);
+                    result = groupList.Remove(p);
                     break;
                 }
             }
@@ -155,24 +144,25 @@ public class BalletManager : MonoBehaviour
 
         if (patternToRemove != null)
         {
-            Debug.Log("Pattern " + patternToRemove.id + " removed from the list and destroyed.");
+            Debug.Log("Pattern " + patternToRemove.id + " removed from the list " + group.ToString() + " and destroyed.");
             Destroy(patternToRemove.gameObject);
         }
 
         return result;
     }
 
-    public BalletPattern GetPattern(int id)
+    public BalletPattern GetPattern(PatternGroup group, int id)
 	{
         BalletPattern p = null;
+        List<BalletPattern> groupList = GetGroupList(group);
 
-        if(id < 0 || id >= orbsPatterns.Count)
+        if (id < 0 || id >= groupList.Count)
 		{
-            Debug.LogError("Trying to get pattern out of bound.");
+            Debug.LogError("Trying to get pattern out of bound in "+ group.ToString() +".");
             return p;
 		}
 
-        foreach(BalletPattern pa in orbsPatterns)
+        foreach(BalletPattern pa in groupList)
 		{
             if (pa.id == id)
                 p = pa;
@@ -180,7 +170,7 @@ public class BalletManager : MonoBehaviour
 
         if(p == null)
 		{
-            Debug.LogError("Could find Pattern " + id);
+            Debug.LogError("Could find Pattern " + id + " of group " + groupList.ToString());
 		}
 
         return p;
@@ -192,7 +182,33 @@ public class BalletManager : MonoBehaviour
 		{
             bp.ResetSpeed();
 		}
-	}
+
+        foreach (BalletPattern bp in forcePatterns)
+        {
+            bp.ResetSpeed();
+        }
+    }
+
+    private List<BalletPattern> GetGroupList(PatternGroup g)
+	{
+        List<BalletPattern> result = null;
+
+        // Define where to add this baby : is it a force or an orbs ?
+        switch (g)
+        {
+            case PatternGroup.Orb:
+                result = orbsPatterns;
+                break;
+            case PatternGroup.Force:
+                result = forcePatterns;
+                break;
+            default:
+                Debug.LogError("Cannot find the requested pattern group.");
+                break;
+        }
+
+        return result;
+    }
 }
 
 [System.Serializable]

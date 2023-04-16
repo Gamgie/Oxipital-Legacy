@@ -62,11 +62,17 @@ public class DataManager : MonoBehaviour
 			data.orbGroupControllersData.Add(ogcData);
 		}
 
-		// Save patterns data of the Ballet 
+		// Save patterns data of the Ballet.
 		data.balletMngrData = new BalletManagerData();
+		// Save orbs pattern data.
 		foreach(BalletPattern pattern in balletMngr.orbsPatterns)
 		{
 			data.balletMngrData.orbsPatternData.Add(pattern.StoreData());
+		}
+		// Save force pattern data.
+		foreach (BalletPattern pattern in balletMngr.forcePatterns)
+		{
+			data.balletMngrData.forcePatternData.Add(pattern.StoreData());
 		}
 
 		// Save to file
