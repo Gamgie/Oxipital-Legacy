@@ -90,6 +90,7 @@ public class ForceController : MonoBehaviour
 
 	private void OnDestroy()
 	{
-        m_buffer.Release();
+        if(m_buffer != null)
+            m_buffer.Release();
 	}
 }
