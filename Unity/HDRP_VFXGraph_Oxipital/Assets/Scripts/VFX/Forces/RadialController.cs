@@ -13,7 +13,7 @@ public class RadialController : ForceController
     [Range(0, 1)]
     public float sphericalSmoothness;
 
-    protected readonly int s_BufferID = Shader.PropertyToID("Radial Graphics Buffer");
+    protected readonly int s_BufferID = Shader.PropertyToID("Attractor Graphics Buffer");
 
     // Update is called once per frame
     protected override void Update()
@@ -47,6 +47,10 @@ public class RadialController : ForceController
             if (visualEffect.HasFloat(radial + " Spherical Smoothness" + m_suffix))
                 visualEffect.SetFloat(radial + " Spherical Smoothness" + m_suffix, sphericalSmoothness);
 
+            // Buffer size
+            if (visualEffect.HasInt(radial + " Buffer Size" + m_suffix))
+                visualEffect.SetInt(radial + " Buffer Size" + m_suffix, forceCount);
+            // Buffer
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
                 visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
 

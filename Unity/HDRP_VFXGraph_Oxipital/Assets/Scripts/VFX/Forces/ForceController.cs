@@ -21,6 +21,7 @@ public class ForceController : MonoBehaviour
     
     private BalletManager m_balletMngr;
     private OrbsManager m_orbsMngr;
+    private BalletPatternController m_patternController;
 
     private void Start()
     {
@@ -49,6 +50,11 @@ public class ForceController : MonoBehaviour
 		{
             // Add a pattern to ballet manager
             pattern = m_balletMngr.AddPattern(BalletManager.PatternGroup.Force);
+            if(pattern != null)
+			{
+                m_patternController = this.gameObject.AddComponent<BalletPatternController>();
+                m_patternController.SetPattern(pattern);
+			}
         }
         else
 		{
@@ -57,13 +63,7 @@ public class ForceController : MonoBehaviour
 
         if (m_buffer == null)
 		{
-            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 2, Marshal.SizeOf(typeof(Vector3)));
-            /*var data = new List<Vector3>()
-            {
-                new Vector3(5,0,0),
-                new Vector3(-5,0,0)
-            };
-            m_buffer.SetData(data);*/
+            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 1, Marshal.SizeOf(typeof(Vector3)));
         }
     }
 
@@ -74,9 +74,12 @@ public class ForceController : MonoBehaviour
             UpdateVfxArray();
 		}
 
-        // Update pattern
-        if(pattern != null)
+        // Update pattern dancer count
+        if(pattern != null && forceCount != pattern.dancerCount)
+		{
             pattern.UpdateDancerCount(forceCount);
+            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, forceCount, Marshal.SizeOf(typeof(Vector3)));
+        }     
 
         // Update positions
         if (m_buffer != null)
