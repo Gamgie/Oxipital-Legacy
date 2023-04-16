@@ -61,7 +61,7 @@ public class OrbGroup : MonoBehaviour
         visualEffects = new List<VisualEffect>();
 
         // Add a pattern linked to this orbGroup.
-        pattern = orbsMngr.balletMngr.AddPattern();
+        pattern = orbsMngr.balletMngr.AddPattern(BalletManager.PatternGroup.Orb);
         patternID = pattern.id;
 
         // Initialize with the first orb
@@ -416,7 +416,7 @@ public class OrbGroup : MonoBehaviour
 
 	private void OnDestroy()
 	{
-        orbsMngr.balletMngr.RemovePattern(orbGroupId);
+        orbsMngr.balletMngr.RemovePattern(BalletManager.PatternGroup.Orb,orbGroupId);
     }
 
 	#region ManageData

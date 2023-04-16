@@ -158,7 +158,7 @@ public class OrbGroupController : MonoBehaviour
                     emitterRotation = oG.emitterRotation;
 
                     // Get ballet pattern parameters
-                    BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
+                    BalletPattern balletPattern = balletMngr.GetPattern(BalletManager.PatternGroup.Orb,idControlled);
                     patternType = balletPattern.patternType;
                     position = balletPattern.position;
                     patternRotation = balletPattern.rotation;
@@ -204,7 +204,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.emitterRotation = emitterRotation;
 
                     // Update ballet pattern
-                    BalletPattern balletPattern = balletMngr.GetPattern(idControlled);
+                    BalletPattern balletPattern = balletMngr.GetPattern(BalletManager.PatternGroup.Orb,idControlled);
                     balletPattern.patternType = patternType;
                     balletPattern.position = position;
                     balletPattern.rotation = patternRotation;

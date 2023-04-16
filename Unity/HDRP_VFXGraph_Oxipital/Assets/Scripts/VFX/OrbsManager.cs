@@ -114,7 +114,7 @@ public class OrbsManager : MonoBehaviour
 
 	public BalletPattern GetPattern(int patternID)
 	{
-        return balletMngr.GetPattern(patternID);
+        return balletMngr.GetPattern(BalletManager.PatternGroup.Orb,patternID);
 	}
 
 	public void DestroyOrbGroup(int index)
