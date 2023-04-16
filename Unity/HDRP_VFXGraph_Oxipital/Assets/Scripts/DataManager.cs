@@ -64,9 +64,9 @@ public class DataManager : MonoBehaviour
 
 		// Save patterns data of the Ballet 
 		data.balletMngrData = new BalletManagerData();
-		foreach(BalletPattern pattern in balletMngr.patterns)
+		foreach(BalletPattern pattern in balletMngr.orbsPatterns)
 		{
-			data.balletMngrData.patternData.Add(pattern.StoreData());
+			data.balletMngrData.orbsPatternData.Add(pattern.StoreData());
 		}
 
 		// Save to file

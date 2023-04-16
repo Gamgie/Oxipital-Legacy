@@ -7,16 +7,20 @@ public class BalletManager : MonoBehaviour
     public bool showDancers; // Show debug object to visualize easier
     public DataManager dataMngr; // Load stored data
     public BalletPattern patternPrefab;
-    public List<BalletPattern> patterns; // a list of patterns 
+    public List<BalletPattern> orbsPatterns; // a list of orbs patterns 
+    public List<BalletPattern> forcePatterns; // A list of forse patterns
+    public enum PatternTargetID { Orb, Force }
 
     private OxipitalData data;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Initialize list
-        if(patterns == null)
-            patterns = new List<BalletPattern>();
+        // Initialize lists
+        if(orbsPatterns == null)
+            orbsPatterns = new List<BalletPattern>();
+        if (forcePatterns == null)
+            forcePatterns = new List<BalletPattern>();
 
         data = dataMngr.LoadData();
 
@@ -26,12 +30,19 @@ public class BalletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(BalletPattern pattern in patterns)
+        foreach(BalletPattern pattern in orbsPatterns)
 		{
             pattern.UpdateMovement();
             pattern.ApplyMovement();
             pattern.ShowDancer(showDancers);
 		}
+
+        foreach (BalletPattern pattern in forcePatterns)
+        {
+            pattern.UpdateMovement();
+            pattern.ApplyMovement();
+            pattern.ShowDancer(showDancers);
+        }
     }
 
 	private void OnDestroy()
@@ -39,14 +50,27 @@ public class BalletManager : MonoBehaviour
         PlayerPrefs.SetInt("ShowDancer", showDancers ? 1 : 0);
 	}
 
-	public BalletPattern AddPattern()
+	public BalletPattern AddPattern(PatternTargetID target = PatternTargetID.Orb)
 	{
         BalletPattern pattern = Instantiate(patternPrefab) as BalletPattern;
         int newID = 0;
         string patternName = "";
+        List<BalletPattern> targetList = null;
+
+        // Define where to add this baby : is it a force or an orbs ?
+        switch (target)
+		{
+            case PatternTargetID.Orb:
+                targetList = orbsPatterns;
+                break;
+            case PatternTargetID.Force:
+                targetList = forcePatterns;
+                break;
+        }
+            
 
         // Look for the next available ID
-        foreach (BalletPattern p in patterns)
+        foreach (BalletPattern p in targetList)
         {
             if (newID == p.id)
             {
@@ -70,18 +94,31 @@ public class BalletManager : MonoBehaviour
             // Check if we have available data for this guy.
             if (data == null)
                 data = dataMngr.LoadData();
-            foreach(BalletPatternData patternData in data.balletMngrData.patternData)
+            if(target == PatternTargetID.Orb)
 			{
-                if(patternData.id == newID)
-				{
-                    pattern.LoadData(patternData);
-				}
-			}
+                foreach (BalletPatternData patternData in data.balletMngrData.orbsPatternData)
+                {
+                    if (patternData.id == newID)
+                    {
+                        pattern.LoadData(patternData);
+                    }
+                }
+            }
+            else if(target == PatternTargetID.Force)
+			{
+                foreach (BalletPatternData patternData in data.balletMngrData.forcePatternData)
+                {
+                    if (patternData.id == newID)
+                    {
+                        pattern.LoadData(patternData);
+                    }
+                }
+            }
 
             pattern.Init(this);
 
             // Add to main list
-            patterns.Add(pattern);
+            targetList.Add(pattern);
         }
 
         return pattern;
@@ -93,24 +130,24 @@ public class BalletManager : MonoBehaviour
         BalletPattern patternToRemove = null;
 
         // If no patterns here, let's get out directly.
-        if (patterns.Count == 0)
+        if (orbsPatterns.Count == 0)
             return false;
 
         // If id is -1, it means we want to remove last object
         if (id == -1)
         {
-            patternToRemove = patterns[patterns.Count - 1];
-            patterns.RemoveAt(patterns.Count - 1);
+            patternToRemove = orbsPatterns[orbsPatterns.Count - 1];
+            orbsPatterns.RemoveAt(orbsPatterns.Count - 1);
             result = true;
         }
         else // Let's find the right guy to kill
         {
-            foreach (BalletPattern p in patterns)
+            foreach (BalletPattern p in orbsPatterns)
             {
                 if (p.id == id)
                 {
                     patternToRemove = p;
-                    result = patterns.Remove(p);
+                    result = orbsPatterns.Remove(p);
                     break;
                 }
             }
@@ -129,13 +166,13 @@ public class BalletManager : MonoBehaviour
 	{
         BalletPattern p = null;
 
-        if(id < 0 || id >= patterns.Count)
+        if(id < 0 || id >= orbsPatterns.Count)
 		{
             Debug.LogError("Trying to get pattern out of bound.");
             return p;
 		}
 
-        foreach(BalletPattern pa in patterns)
+        foreach(BalletPattern pa in orbsPatterns)
 		{
             if (pa.id == id)
                 p = pa;
@@ -151,7 +188,7 @@ public class BalletManager : MonoBehaviour
 
     public void SynchronizePattern()
 	{
-        foreach(BalletPattern bp in patterns)
+        foreach(BalletPattern bp in orbsPatterns)
 		{
             bp.ResetSpeed();
 		}
@@ -161,5 +198,6 @@ public class BalletManager : MonoBehaviour
 [System.Serializable]
 public class BalletManagerData
 {
-    public List<BalletPatternData> patternData = new List<BalletPatternData>();
+    public List<BalletPatternData> orbsPatternData = new List<BalletPatternData>();
+    public List<BalletPatternData> forcePatternData = new List<BalletPatternData>();
 }
