@@ -35,6 +35,7 @@ public class OrbGroup : MonoBehaviour
     public float velocityDrag;
     public bool staticParticle;
     public bool stationaryTransparent;
+    public float stationaryMaxSpeed; // When in stationary, we interpolat alpha according to speed. This the max speed for alpha to reach value 1.
 
     [Header("Emitter Parameters")]
     public EmitterShape emitterShape;
@@ -138,6 +139,9 @@ public class OrbGroup : MonoBehaviour
 
             if (vfx.HasBool("Stationary Transparent") == true)
                 vfx.SetBool("Stationary Transparent", stationaryTransparent);
+
+            if (vfx.HasFloat("Stationary Max Speed") == true)
+                vfx.SetFloat("Stationary Max Speed", stationaryMaxSpeed);
         }
     }
 
@@ -437,6 +441,7 @@ public class OrbGroup : MonoBehaviour
         data.velocityDrag = velocityDrag;
         data.staticParticle = staticParticle;
         data.stationaryTransparent = stationaryTransparent;
+        data.stationaryMaxSpeed = stationaryMaxSpeed;
         data.emitterShapeIndex = GetEmitterShapeIndex();
         data.emitterPlacementMode = (int)emitterPlacementMode;
         data.emitterPositionX = emitterPosition.x;
@@ -467,6 +472,7 @@ public class OrbGroup : MonoBehaviour
         velocityDrag = data.velocityDrag;
         staticParticle = data.staticParticle;
         stationaryTransparent = data.stationaryTransparent;
+        stationaryMaxSpeed = data.stationaryMaxSpeed;
         emitterShapeIndex = data.emitterShapeIndex;
         emitterPlacementMode = (EmitterPlacementMode)data.emitterPlacementMode;
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
@@ -496,6 +502,7 @@ public class OrbGroupData
     public float velocityDrag;
     public bool staticParticle;
     public bool stationaryTransparent;
+    public float stationaryMaxSpeed;
     public int emitterShapeIndex;
     public int emitterPlacementMode;
     public float emitterPositionX;

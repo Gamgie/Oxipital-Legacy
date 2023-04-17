@@ -28,6 +28,8 @@ public class OrbGroupController : MonoBehaviour
     public float velocityDrag;
     public bool staticParticle;
     public bool stationaryTransparent;
+    [Range(0,30)]
+    public float stationaryMaxSpeed; // When in stationary, we interpolat alpha according to speed. This the max speed for alpha to reach value 1.
 
     [Header("Emitter Parameters")]
     public OrbGroup.EmitterShape emitterShape;
@@ -37,8 +39,6 @@ public class OrbGroupController : MonoBehaviour
     public bool activateCollision;
     public Vector3 emitterRotation; // Rotation in euler angle of the emitter
 
-    private OrbsManager _orbsManager;
-    private int _idControlled = -1;
 
     [Header("Ballet Pattern Parameters")]
     public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Circle;
@@ -54,7 +54,7 @@ public class OrbGroupController : MonoBehaviour
     public float phase; // Rotation phase
 
     [Header("Size LFO")]
-    [Range(0, 5)]
+    [Range(0, 2)]
     public float sizeLFOFrequency;
     [Range(0, 3)]
     public float sizeLFOAmplitude;
@@ -71,6 +71,9 @@ public class OrbGroupController : MonoBehaviour
     public float noiseAmplitude = 0;
     [Range(0, 10)]
     public float noiseSpeed = 0;
+
+    private OrbsManager _orbsManager;
+    private int _idControlled = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +110,7 @@ public class OrbGroupController : MonoBehaviour
                 velocityDrag = 0;
                 staticParticle = false;
                 stationaryTransparent = false;
+                stationaryMaxSpeed = 0;
                 emitterSize = 0;
                 emitFromInside = false;
                 activateCollision = false;
@@ -150,6 +154,7 @@ public class OrbGroupController : MonoBehaviour
                     velocityDrag = oG.velocityDrag;
                     staticParticle = oG.staticParticle;
                     stationaryTransparent = oG.stationaryTransparent;
+                    stationaryMaxSpeed = oG.stationaryMaxSpeed;
                     emitterShape = oG.emitterShape;
                     emitterPlacementMode = oG.emitterPlacementMode;
                     emitterSize = oG.emitterSize;
@@ -196,6 +201,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.velocityDrag = velocityDrag;
                     oG.staticParticle = staticParticle;
                     oG.stationaryTransparent = stationaryTransparent;
+                    oG.stationaryMaxSpeed = stationaryMaxSpeed;
                     oG.emitterShape = emitterShape;
                     oG.emitterPlacementMode = emitterPlacementMode;
                     oG.emitterSize = emitterSize;
