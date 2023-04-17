@@ -50,6 +50,7 @@ public class RadialController : ForceController
             // Buffer size
             if (visualEffect.HasInt(radial + " Buffer Size" + m_suffix))
                 visualEffect.SetInt(radial + " Buffer Size" + m_suffix, forceCount);
+            
             // Buffer
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
                 visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);

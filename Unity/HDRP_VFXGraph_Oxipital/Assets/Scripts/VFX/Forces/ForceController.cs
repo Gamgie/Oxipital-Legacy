@@ -23,6 +23,7 @@ public class ForceController : MonoBehaviour
     private OrbsManager m_orbsMngr;
     private BalletPatternController m_patternController;
 
+
     private void Start()
     {
         m_orbsMngr = GameObject.FindGameObjectWithTag("Orb Manager").GetComponent<OrbsManager>();

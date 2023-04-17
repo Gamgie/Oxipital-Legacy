@@ -20,7 +20,7 @@ public class BalletPatternController : MonoBehaviour
     public float phase; // Rotation phase
 
     [Header("Size LFO")]
-    [Range(0, 5)]
+    [Range(0, 2)]
     public float sizeLFOFrequency;
     [Range(0, 3)]
     public float sizeLFOAmplitude;
