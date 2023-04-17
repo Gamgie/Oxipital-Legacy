@@ -9,6 +9,8 @@ public class SwirlController : ForceController
 
     [Header("Swirl")]
     public bool clockwise;
+    [Range(0,1)]
+    public float centralVertical;
 
     // Update is called once per frame
     protected override void Update()
@@ -25,12 +27,18 @@ public class SwirlController : ForceController
             // Axis
             if (visualEffect.HasVector3(swirl + " Axis" + m_suffix))
                 visualEffect.SetVector3(swirl + " Axis" + m_suffix, axis);
-
+            
+            // Radius
             if (visualEffect.HasFloat(swirl + " Radius") == true)
                 visualEffect.SetFloat(swirl + " Radius", radius);
-
+            
+            // Clockwise
             if (visualEffect.HasBool(swirl + " Rotation Clockwise") == true)
                 visualEffect.SetBool(swirl + " Rotation Clockwise", clockwise);
+
+            // Central Vertical
+            if (visualEffect.HasFloat(swirl + " Central Vertical") == true)
+                visualEffect.SetFloat(swirl + " Central Vertical", centralVertical);
 
             // Buffer size
             if (visualEffect.HasInt(swirl + " Buffer Size" + m_suffix))
