@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-
 public class SwirlController : ForceController
 {
+    protected readonly int s_BufferID = Shader.PropertyToID("Swirl Graphics Buffer");
+
     [Header("Swirl")]
     public bool clockwise;
 
@@ -30,7 +31,14 @@ public class SwirlController : ForceController
 
             if (visualEffect.HasBool(swirl + " Rotation Clockwise") == true)
                 visualEffect.SetBool(swirl + " Rotation Clockwise", clockwise);
-            
+
+            // Buffer size
+            if (visualEffect.HasInt(swirl + " Buffer Size" + m_suffix))
+                visualEffect.SetInt(swirl + " Buffer Size" + m_suffix, forceCount);
+
+            // Buffer
+            if (visualEffect.HasGraphicsBuffer(s_BufferID))
+                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
         }
     }
 }
