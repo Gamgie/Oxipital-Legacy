@@ -9,6 +9,8 @@ public class VortexController : ForceController
     [Header("Vortex")]
     [Range(0, 1)]
     public float intensityRandom;
+    [Range(0, 1)]
+    public float innerRadius;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Vortex Graphics Buffer");
 
@@ -35,10 +37,14 @@ public class VortexController : ForceController
             // Axis
             if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))
                 visualEffect.SetVector3(vortex + " Axis" + m_suffix, axis);
-            
-            // Buffer size
-            if (visualEffect.HasInt(vortex + " Buffer Size" + m_suffix))
-                visualEffect.SetInt(vortex + " Buffer Size" + m_suffix, forceCount);
+
+            // Intensity Random
+            if (visualEffect.HasFloat(vortex + " Intensity Random" + m_suffix))
+                visualEffect.SetFloat(vortex + " Intensity Random" + m_suffix, intensityRandom);
+
+            // Inner Radius
+            if (visualEffect.HasFloat(vortex + " Inner Radius" + m_suffix))
+                visualEffect.SetFloat(vortex + " Inner Radius" + m_suffix, innerRadius);
 
             // Buffer
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
