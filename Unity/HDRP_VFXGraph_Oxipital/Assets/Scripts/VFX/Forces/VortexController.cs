@@ -8,9 +8,9 @@ public class VortexController : ForceController
 {
     [Header("Vortex")]
     [Range(0, 1)]
-    public float intensityRandom;
+    public float intensityRandom = 0f;
     [Range(0, 1)]
-    public float innerRadius;
+    public float innerRadius = 0.5f;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Vortex Graphics Buffer");
 
