@@ -46,10 +46,6 @@ public class RadialController : ForceController
             // Spherical Smoothness
             if (visualEffect.HasFloat(radial + " Spherical Smoothness" + m_suffix))
                 visualEffect.SetFloat(radial + " Spherical Smoothness" + m_suffix, sphericalSmoothness);
-
-            // Buffer size
-            if (visualEffect.HasInt(radial + " Buffer Size" + m_suffix))
-                visualEffect.SetInt(radial + " Buffer Size" + m_suffix, forceCount);
             
             // Buffer
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
