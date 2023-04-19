@@ -12,8 +12,12 @@ public class TurbulenceController : ForceController
     public int turbOctave = 1;
     [Range(0, 1f)]
     public float turbroughness = 0.5f;
+    [Range(0, 5f)]
     public float turbLacunarity = 2;
+    [Range(0, 5f)]
     public float turbScale = 1;
+    [Range(0, 5f)]
+    public float turbEvolutionSpeed = 1;
 
     // Update is called once per frame
     protected override void Update()
@@ -41,6 +45,9 @@ public class TurbulenceController : ForceController
 
             if (visualEffect.HasFloat(turb + " Scale") == true)
                 visualEffect.SetFloat(turb + " Scale", turbScale);
+
+            if (visualEffect.HasFloat(turb + " Evolution Speed") == true)
+                visualEffect.SetFloat(turb + " Evolution Speed", turbEvolutionSpeed);
         }
     }
 }
