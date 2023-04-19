@@ -5,10 +5,15 @@ using UnityEngine.VFX;
 
 public class PerlinController : ForceController
 {
+    public enum PerlinNoiseType { Perlin, Cellular }
+
     [Header("Perlin")]
+    public PerlinNoiseType noiseType = PerlinNoiseType.Perlin;
+    [Range(0, 3f)]
+    public float evolutionSpeed = 0;
     [Range(0,3)]
     public float frequency = 1;
-    [Range(0,8)]
+    [Range(1,8)]
     public int octaves;
     [Range(0,1)]
     public float roughness = 0.5f;
@@ -33,6 +38,10 @@ public class PerlinController : ForceController
             if (visualEffect.HasFloat(perlin + " Intensity" + m_suffix))
                 visualEffect.SetFloat(perlin + " Intensity" + m_suffix, intensity);
 
+            // Evolution Speed
+            if (visualEffect.HasFloat(perlin + " Evolution Speed" + m_suffix))
+                visualEffect.SetFloat(perlin + " Evolution Speed" + m_suffix, evolutionSpeed);
+
             // Radius
             if (visualEffect.HasFloat(perlin + " Radius" + m_suffix))
                 visualEffect.SetFloat(perlin + " Radius" + m_suffix, radius);
@@ -42,8 +51,8 @@ public class PerlinController : ForceController
                 visualEffect.SetFloat(perlin + " Frequency", frequency);
 
             // Octaves
-            if (visualEffect.HasInt(perlin + " Octave") == true)
-                visualEffect.SetInt(perlin + " Octave", octaves);
+            if (visualEffect.HasInt(perlin + " Octaves") == true)
+                visualEffect.SetInt(perlin + " Octaves", octaves);
 
             // Roughness
             if (visualEffect.HasFloat(perlin + " Roughness") == true)
@@ -60,6 +69,10 @@ public class PerlinController : ForceController
             // Max Range
             if (visualEffect.HasFloat(perlin + " Max Range") == true)
                 visualEffect.SetFloat(perlin + " Max Range", maxRange);
+
+            // Noise Type
+            if (visualEffect.HasInt(perlin + " Noise Type") == true)
+                visualEffect.SetInt(perlin + " Noise Type", (int) noiseType);
 
             // Buffer
             if (visualEffect.HasGraphicsBuffer(s_BufferID))
