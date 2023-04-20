@@ -14,7 +14,7 @@ public class PerlinController : ForceController
     [Range(0,3)]
     public float frequency = 1;
     [Range(1,8)]
-    public int octaves;
+    public int octaves = 1;
     [Range(0,1)]
     public float roughness = 0.5f;
     [Range(0,5)]
