@@ -26,6 +26,10 @@ public class OrbGroupController : MonoBehaviour
     public float drag;
     [Range(0, 1)]
     public float velocityDrag;
+    [Range(0, 20)]
+    public float noisyDrag;
+    [Range(0, 5)]
+    public float noisyDragFrequency;
     public bool staticParticle;
     public bool stationaryTransparent;
     [Range(0,30)]
@@ -108,6 +112,8 @@ public class OrbGroupController : MonoBehaviour
                 size = 0;
                 drag = 0;
                 velocityDrag = 0;
+                noisyDrag = 0;
+                noisyDragFrequency = 0;
                 staticParticle = false;
                 stationaryTransparent = false;
                 stationaryMaxSpeed = 0;
@@ -152,6 +158,8 @@ public class OrbGroupController : MonoBehaviour
                     size = oG.size;
                     drag = oG.drag;
                     velocityDrag = oG.velocityDrag;
+                    noisyDrag = oG.noisyDrag;
+                    noisyDragFrequency = oG.noisyDragFrequency;
                     staticParticle = oG.staticParticle;
                     stationaryTransparent = oG.stationaryTransparent;
                     stationaryMaxSpeed = oG.stationaryMaxSpeed;
@@ -199,6 +207,8 @@ public class OrbGroupController : MonoBehaviour
                     oG.size = size;
                     oG.drag = drag;
                     oG.velocityDrag = velocityDrag;
+                    oG.noisyDrag = noisyDrag;
+                    oG.noisyDragFrequency = noisyDragFrequency;
                     oG.staticParticle = staticParticle;
                     oG.stationaryTransparent = stationaryTransparent;
                     oG.stationaryMaxSpeed = stationaryMaxSpeed;

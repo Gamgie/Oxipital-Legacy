@@ -33,6 +33,10 @@ public class OrbGroup : MonoBehaviour
     public float drag;
     [Range(0, 1)]
     public float velocityDrag;
+    [Range(0,20)]
+    public float noisyDrag;
+    [Range(0, 5)]
+    public float noisyDragFrequency;
     public bool staticParticle;
     public bool stationaryTransparent;
     public float stationaryMaxSpeed; // When in stationary, we interpolat alpha according to speed. This the max speed for alpha to reach value 1.
@@ -142,6 +146,12 @@ public class OrbGroup : MonoBehaviour
 
             if (vfx.HasFloat("Stationary Max Speed") == true)
                 vfx.SetFloat("Stationary Max Speed", stationaryMaxSpeed);
+
+            if (vfx.HasFloat("Noisy Linear Drag") == true)
+                vfx.SetFloat("Noisy Linear Drag", noisyDrag);
+
+            if (vfx.HasFloat("Noisy Linear Drag Frequency") == true)
+                vfx.SetFloat("Noisy Linear Drag Frequency", noisyDragFrequency);
         }
     }
 
@@ -439,6 +449,8 @@ public class OrbGroup : MonoBehaviour
         data.size = size;
         data.drag = drag;
         data.velocityDrag = velocityDrag;
+        data.noisyDrag = noisyDrag;
+        data.noisyDragFrequency = noisyDragFrequency;
         data.staticParticle = staticParticle;
         data.stationaryTransparent = stationaryTransparent;
         data.stationaryMaxSpeed = stationaryMaxSpeed;
@@ -469,6 +481,8 @@ public class OrbGroup : MonoBehaviour
         alpha = data.alpha;
         size = data.size;
         drag = data.drag;
+        noisyDrag = data.noisyDrag;
+        noisyDragFrequency = data.noisyDragFrequency;
         velocityDrag = data.velocityDrag;
         staticParticle = data.staticParticle;
         stationaryTransparent = data.stationaryTransparent;
@@ -500,6 +514,8 @@ public class OrbGroupData
     public float size;
     public float drag;
     public float velocityDrag;
+    public float noisyDrag;
+    public float noisyDragFrequency;
     public bool staticParticle;
     public bool stationaryTransparent;
     public float stationaryMaxSpeed;
