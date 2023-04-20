@@ -47,6 +47,7 @@ MonoBehaviour:
   orbGroupId: 0
   orbPrefab: {fileID: 5914077870649237282, guid: 8fb4ac99fba0a2044a24f00f828e9a88,
     type: 3}
+  patternID: -1
   rate: 524
   life: 3
   color: {r: 1, g: 1, b: 1, a: 0}
@@ -55,14 +56,19 @@ MonoBehaviour:
   size: 9.9
   drag: 2.5
   velocityDrag: 1
+  noisyDrag: 0
+  noisyDragFrequency: 0
+  staticParticle: 0
+  stationaryTransparent: 0
+  stationaryMaxSpeed: 0
   emitterShape: 0
   emitterPlacementMode: 0
   emitterPosition: {x: 0, y: 0, z: 0}
-  emitterOrientation: {x: 0, y: 0, z: 0}
+  emitterRotation: {x: 0, y: 0, z: 0}
   emitterSize: 1.85
   meshArray:
   - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: -462981019419857548, guid: 4f80f05a85bd6b145877e07448fe4712, type: 3}
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: -8803937527578110353, guid: 2c7be26c26c4662478d899ea9bffa353, type: 3}
   - {fileID: -6402532953415861574, guid: 4db93dad8293a5344a9633174fe8749a, type: 3}
@@ -87,6 +93,7 @@ MonoBehaviour:
   data:
     orbGroupId: 0
     name: 
+    orbCount: 0
     rate: 0
     life: 0
     colorR: 0
@@ -97,6 +104,11 @@ MonoBehaviour:
     size: 0
     drag: 0
     velocityDrag: 0
+    noisyDrag: 0
+    noisyDragFrequency: 0
+    staticParticle: 0
+    stationaryTransparent: 0
+    stationaryMaxSpeed: 0
     emitterShapeIndex: 0
     emitterPlacementMode: 0
     emitterPositionX: 0
