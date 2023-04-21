@@ -4523,10 +4523,6 @@
                   "controlAddress": "/readOnly"
                 },
                 {
-                  "value": "Default",
-                  "controlAddress": "/style"
-                },
-                {
                   "value": "",
                   "controlAddress": "/toggleImage",
                   "enabled": false
@@ -5269,82 +5265,6 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/customVariables/orbsCommonParameters/variables/rateModifierAmount/rateModifierAmount",
               "controllable": "/customVariables/orbsCommonParameters/variables/rateModifierAmount/rateModifierAmount"
-            },
-            {
-              "parameters": [
-                {
-                  "value": [
-                    -200.0,
-                    130.0
-                  ],
-                  "controlAddress": "/viewUIPosition"
-                },
-                {
-                  "value": [
-                    100.0,
-                    100.0
-                  ],
-                  "controlAddress": "/viewUISize"
-                },
-                {
-                  "value": "/customVariables/orbsCommonParameters/variables/rate/rate",
-                  "controlAddress": "/target"
-                },
-                {
-                  "value": 16,
-                  "hexMode": false,
-                  "controlAddress": "/textSize",
-                  "enabled": true
-                },
-                {
-                  "value": [
-                    0.2156862765550613,
-                    0.6941176652908325,
-                    0.6509804129600525,
-                    1
-                  ],
-                  "controlAddress": "/borderColor",
-                  "enabled": false
-                },
-                {
-                  "value": 1.0,
-                  "controlAddress": "/borderWidth"
-                },
-                {
-                  "value": [
-                    0.1333333402872086,
-                    0.1333333402872086,
-                    0.1333333402872086,
-                    1.0
-                  ],
-                  "controlAddress": "/backgroundColor",
-                  "enabled": false
-                },
-                {
-                  "value": [
-                    0.1333333402872086,
-                    0.800000011920929,
-                    0.9058823585510254,
-                    1.0
-                  ],
-                  "controlAddress": "/foregroundColor",
-                  "enabled": true
-                },
-                {
-                  "value": "Rotary Slider",
-                  "controlAddress": "/style"
-                },
-                {
-                  "value": "",
-                  "controlAddress": "/toggleImage",
-                  "enabled": false
-                }
-              ],
-              "niceName": "Dashboard Item 13",
-              "hideInEditor": true,
-              "type": "DashboardParameterItem",
-              "ghostAddress": "/customVariables/orbsCommonParameters/variables/rate/rate",
-              "controllable": "/customVariables/orbsCommonParameters/variables/rate/rate"
             },
             {
               "parameters": [
@@ -9744,8 +9664,8 @@
             }
           ],
           "viewOffset": [
-            23,
-            6
+            308,
+            -21
           ],
           "viewZoom": 1.00390625
         },
@@ -14033,22 +13953,126 @@
       "direction": 2,
       "shifters": [
         {
-          "type": 0,
+          "type": 1,
           "width": 1920,
           "height": 989,
-          "currentContent": "Dashboard",
-          "tabs": [
+          "direction": 2,
+          "shifters": [
             {
-              "name": "Dashboard"
+              "type": 1,
+              "width": 1920,
+              "height": 778,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 1,
+                  "width": 307,
+                  "height": 778,
+                  "direction": 2,
+                  "shifters": [
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 396,
+                      "currentContent": "Modules",
+                      "tabs": [
+                        {
+                          "name": "Modules"
+                        }
+                      ]
+                    },
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 376,
+                      "currentContent": "Custom Variables",
+                      "tabs": [
+                        {
+                          "name": "Custom Variables"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 901,
+                  "height": 778,
+                  "currentContent": "State Machine",
+                  "tabs": [
+                    {
+                      "name": "State Machine"
+                    },
+                    {
+                      "name": "Dashboard"
+                    },
+                    {
+                      "name": "Module Router"
+                    },
+                    {
+                      "name": "Morpher"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 700,
+                  "height": 778,
+                  "currentContent": "Inspector",
+                  "tabs": [
+                    {
+                      "name": "Inspector"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "name": "Modules"
-            },
-            {
-              "name": "Inspector"
-            },
-            {
-              "name": "State Machine"
+              "type": 1,
+              "width": 1920,
+              "height": 204,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 0,
+                  "width": 178,
+                  "height": 204,
+                  "currentContent": "Sequences",
+                  "tabs": [
+                    {
+                      "name": "Sequences"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1256,
+                  "height": 204,
+                  "currentContent": "Sequence Editor",
+                  "tabs": [
+                    {
+                      "name": "Sequence Editor"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 474,
+                  "height": 204,
+                  "currentContent": "Logger",
+                  "tabs": [
+                    {
+                      "name": "Help"
+                    },
+                    {
+                      "name": "Logger"
+                    },
+                    {
+                      "name": "Warnings"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -14079,10 +14103,6 @@
             {
               "value": "Unity-OSCQuery",
               "controlAddress": "/serverName"
-            },
-            {
-              "value": false,
-              "controlAddress": "/isConnected"
             }
           ],
           "containers": {
@@ -14141,10 +14161,6 @@
                           "controlAddress": "/radius"
                         },
                         {
-                          "value": 0.6990000009536743,
-                          "controlAddress": "/resetDuration"
-                        },
-                        {
                           "value": 11.78800106048584,
                           "controlAddress": "/moveToDuration"
                         }
@@ -14200,7 +14216,7 @@
                         "VortexController": {
                           "parameters": [
                             {
-                              "value": 0.0000303278211504221,
+                              "value": 0.000030327821150422,
                               "controlAddress": "/intensity"
                             },
                             {
@@ -14454,7 +14470,7 @@
                               "controlAddress": "/turbroughness"
                             },
                             {
-                              "value": 0.00001429107214789838,
+                              "value": 0.000014291072147898,
                               "controlAddress": "/intensity"
                             }
                           ],
@@ -14491,27 +14507,27 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 24.55341148376465,
+                          "value": 0.0,
+                          "controlAddress": "/rate"
+                        },
+                        {
+                          "value": 0.0,
                           "controlAddress": "/life"
                         },
                         {
-                          "value": 0.08374970406293869,
+                          "value": 0.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 55.6983528137207,
+                          "value": 18.76979637145996,
                           "controlAddress": "/size"
-                        },
-                        {
-                          "value": 2.0,
-                          "controlAddress": "/drag"
                         },
                         {
                           "value": 0.06499999761581421,
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": 11.30000114440918,
+                          "value": 0.0,
                           "controlAddress": "/noisyDrag"
                         },
                         {
@@ -14519,7 +14535,7 @@
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 2.215287446975708,
+                          "value": 0.0,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -14541,7 +14557,7 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 3.149606227874756,
+                          "value": 14.01574802398682,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -14585,24 +14601,12 @@
                           "controlAddress": "/verticalOffset"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/LFOFrequency"
-                        },
-                        {
                           "value": [
                             0.0,
                             2.599999666213989,
                             0.0
                           ],
                           "controlAddress": "/LFODirection"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/noiseAmplitude"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/noiseSpeed"
                         }
                       ],
                       "editorIsCollapsed": true,
@@ -14628,7 +14632,7 @@
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 110524.0,
+                          "value": 97559.8359375,
                           "controlAddress": "/rate"
                         },
                         {
@@ -14654,7 +14658,7 @@
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 54.19835662841797,
+                          "value": 18.76979637145996,
                           "controlAddress": "/size"
                         },
                         {
@@ -14682,7 +14686,7 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 2.047244071960449,
+                          "value": 14.01574802398682,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -24249,7 +24253,7 @@
           "parameters": [
             {
               "value": [
-                "",
+                "\\\\?\\usb#vid_1397&pid_00b3&mi_00#6&329d7d1c&0&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global",
                 ""
               ],
               "controlAddress": "/devices"
@@ -24525,7 +24529,24 @@
               "feedbackOnly": false
             },
             {
-              "value": 36,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 25,
+              "MIDIType": 0,
+              "controlAddress": "/_11_C#0",
+              "type": "MIDI Value",
+              "niceName": "[11] C#0",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : C#0",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 72,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24543,6 +24564,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 89,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24560,7 +24582,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 49,
+              "value": 6,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24578,6 +24600,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 5,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24613,7 +24636,25 @@
               "feedbackOnly": false
             },
             {
-              "value": 2,
+              "value": 6,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 6,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC6",
+              "type": "MIDI Value",
+              "niceName": "[11] CC6",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC6",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 6,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24627,6 +24668,24 @@
               "customizable": false,
               "removable": true,
               "description": "Channel 11 : CC7",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 10,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 8,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC8",
+              "type": "MIDI Value",
+              "niceName": "[11] CC8",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC8",
               "hideInEditor": false,
               "feedbackOnly": false
             },
@@ -24647,6 +24706,165 @@
               "description": "Channel 11 : CC9",
               "hideInEditor": false,
               "feedbackOnly": false
+            },
+            {
+              "value": 127,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 10,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC10",
+              "type": "MIDI Value",
+              "niceName": "[11] CC10",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC10",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 11,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC11",
+              "type": "MIDI Value",
+              "niceName": "[11] CC11",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC11",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 21,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 12,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC12",
+              "type": "MIDI Value",
+              "niceName": "[11] CC12",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC12",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 13,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC13",
+              "type": "MIDI Value",
+              "niceName": "[11] CC13",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC13",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 14,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC14",
+              "type": "MIDI Value",
+              "niceName": "[11] CC14",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC14",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 8,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 15,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC15",
+              "type": "MIDI Value",
+              "niceName": "[11] CC15",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC15",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 6,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 16,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC16",
+              "type": "MIDI Value",
+              "niceName": "[11] CC16",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC16",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 6,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 17,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC17",
+              "type": "MIDI Value",
+              "niceName": "[11] CC17",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC17",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 5,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 18,
+              "MIDIType": 2,
+              "controlAddress": "/_11_CC18",
+              "type": "MIDI Value",
+              "niceName": "[11] CC18",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : CC18",
+              "hideInEditor": false,
+              "feedbackOnly": false
             }
           ],
           "containers": {
@@ -24658,7 +24876,7 @@
                   "controlAddress": "/lastChannel"
                 },
                 {
-                  "value": 8,
+                  "value": 1,
                   "hexMode": false,
                   "controlAddress": "/lastPitch"
                 },
@@ -26627,6 +26845,12 @@
         }
       },
       {
+        "parameters": [
+          {
+            "value": false,
+            "controlAddress": "/enabled"
+          }
+        ],
         "niceName": "Metronome",
         "type": "Metronome",
         "scripts": {
@@ -26726,6 +26950,7 @@
             {
               "parameters": [
                 {
+                  "value": true,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": false,
@@ -26767,7 +26992,7 @@
             {
               "parameters": [
                 {
-                  "value": 39999.99609375,
+                  "value": 97559.8359375,
                   "minValue": 0.0,
                   "maxValue": 400000.0,
                   "default": 0,
@@ -26788,7 +27013,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 38225.2578125,
                   "minValue": 0.0,
                   "maxValue": 400000.0,
                   "default": 0,
@@ -26809,7 +27034,7 @@
             {
               "parameters": [
                 {
-                  "value": 35.42856216430664,
+                  "value": 0.0,
                   "minValue": 0.0,
                   "maxValue": 80.0,
                   "default": 0,
@@ -26830,7 +27055,7 @@
             {
               "parameters": [
                 {
-                  "value": 25.71428489685059,
+                  "value": 9.332033157348633,
                   "minValue": 0.0,
                   "maxValue": 40.0,
                   "default": 0,
@@ -28553,7 +28778,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.8581940531730652,
+                  "value": 1.0,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -29110,6 +29335,10 @@
       {
         "parameters": [
           {
+            "value": false,
+            "controlAddress": "/enabled"
+          },
+          {
             "value": [
               1822.11767578125,
               -1.882352948188782
@@ -29339,12 +29568,6 @@
               }
             },
             {
-              "parameters": [
-                {
-                  "value": false,
-                  "controlAddress": "/enabled"
-                }
-              ],
               "niceName": "Birth Rate",
               "editorIsCollapsed": true,
               "type": "Mapping",
@@ -29397,7 +29620,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 0.0,
+                          "value": 38225.2578125,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbsCommonParameters/variables/rateModifierAmount/rateModifierAmount",
@@ -29410,7 +29633,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 0.0,
+                      "value": 38225.2578125,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbsCommonParameters/variables/rateModifierAmount/rateModifierAmount",
@@ -29438,7 +29661,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 39999.99609375,
+                          "value": 97559.8359375,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbsCommonParameters/variables/rate/rate",
@@ -29451,7 +29674,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 39999.99609375,
+                      "value": 97559.8359375,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbsCommonParameters/variables/rate/rate",
@@ -29600,7 +29823,7 @@
                           "controlAddress": "/length"
                         },
                         {
-                          "value": 0.2834645807743073,
+                          "value": 0.4566929042339325,
                           "controlAddress": "/position"
                         },
                         {
@@ -29751,6 +29974,12 @@
               }
             },
             {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
               "niceName": "KNOB Rate Modifier",
               "editorIsCollapsed": true,
               "type": "Mapping",
@@ -29813,6 +30042,10 @@
                         {
                           "value": 1.0,
                           "controlAddress": "/length"
+                        },
+                        {
+                          "value": 0.7007874250411987,
+                          "controlAddress": "/position"
                         },
                         {
                           "value": [
@@ -30073,6 +30306,10 @@
       },
       {
         "parameters": [
+          {
+            "value": false,
+            "controlAddress": "/enabled"
+          },
           {
             "value": [
               1821.0,
@@ -30355,7 +30592,7 @@
                           "controlAddress": "/operation"
                         },
                         {
-                          "value": 25.71428489685059,
+                          "value": 9.332033157348633,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbsCommonParameters/variables/sizePulseAmount/sizePulseAmount",
@@ -30368,7 +30605,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 25.71428489685059,
+                      "value": 9.332033157348633,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbsCommonParameters/variables/sizePulseAmount/sizePulseAmount",
@@ -30396,7 +30633,7 @@
                           "controlAddress": "/rangeRemapMode"
                         },
                         {
-                          "value": 35.42856216430664,
+                          "value": 0.0,
                           "controlMode": 2,
                           "reference": {
                             "value": "/customVariables/orbsCommonParameters/variables/size/size",
@@ -30409,7 +30646,7 @@
                       }
                     },
                     "operationValue": {
-                      "value": 35.42856216430664,
+                      "value": 0.0,
                       "controlMode": 2,
                       "reference": {
                         "value": "/customVariables/orbsCommonParameters/variables/size/size",
@@ -30566,7 +30803,7 @@
                           "controlAddress": "/length"
                         },
                         {
-                          "value": 0.3858267664909363,
+                          "value": 0.04724409431219101,
                           "controlAddress": "/position"
                         },
                         {
@@ -30717,6 +30954,12 @@
               }
             },
             {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
               "niceName": "KNOB Size Modifier ",
               "editorIsCollapsed": true,
               "type": "Mapping",
@@ -30779,6 +31022,10 @@
                         {
                           "value": 1.0,
                           "controlAddress": "/length"
+                        },
+                        {
+                          "value": 0.03937007859349251,
+                          "controlAddress": "/position"
                         },
                         {
                           "value": [
@@ -34481,6 +34728,10 @@
       {
         "parameters": [
           {
+            "value": false,
+            "controlAddress": "/enabled"
+          },
+          {
             "value": [
               1470.11767578125,
               -1.882354736328125
@@ -35522,7 +35773,13 @@
               }
             },
             {
-              "niceName": "KNOB Emitter Size  A",
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
+              "niceName": "KNOB Emitter Size A",
               "editorIsCollapsed": true,
               "type": "Mapping",
               "im": {
@@ -35530,7 +35787,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiLaunchControlXL/values/_1_CC13",
+                        "value": "/modules/midiXTouchMini/values/_11_CC2",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -35575,7 +35832,7 @@
                         {
                           "value": [
                             0.0,
-                            5.0
+                            20.0
                           ],
                           "controlAddress": "/targetMin_Max"
                         }
@@ -35645,6 +35902,12 @@
               }
             },
             {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
               "niceName": "KNOB Emitter Size B",
               "editorIsCollapsed": true,
               "type": "Mapping",
@@ -35653,7 +35916,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiLaunchControlXL/values/_1_CC14",
+                        "value": "/modules/midiXTouchMini/values/_11_CC12",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -35698,7 +35961,7 @@
                         {
                           "value": [
                             0.0,
-                            5.0
+                            20.0
                           ],
                           "controlAddress": "/targetMin_Max"
                         }
@@ -35756,6 +36019,358 @@
                           "linkType": 1,
                           "mappingValueIndex": 0
                         }
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "KNOB Emitter Size",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "im": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/midiXTouchMini/values/_11_CC2",
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "Input Value 1",
+                    "type": "Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "params": {
+                "parameters": [
+                  {
+                    "value": 50,
+                    "hexMode": false,
+                    "controlAddress": "/updateRate"
+                  },
+                  {
+                    "value": true,
+                    "controlAddress": "/sendAfterLoad"
+                  }
+                ],
+                "editorIsCollapsed": true
+              },
+              "filters": {
+                "items": [
+                  {
+                    "niceName": "Remap",
+                    "type": "Remap",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": [
+                            0.0,
+                            1.0
+                          ],
+                          "controlAddress": "/inputMin_Max"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            20.0
+                          ],
+                          "controlAddress": "/targetMin_Max"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Smooth",
+                    "type": "Smooth",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": 0.9104683399200439,
+                          "controlAddress": "/smoothing"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "oSCQuery_Unity",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/Orbs/Orb-B/OrbGroupController/emitterSize",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        }
+                      ],
+                      "paramLinks": {
+                        "value": {
+                          "linkType": 1,
+                          "mappingValueIndex": 0
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "MappingOutput 1",
+                    "type": "BaseItem",
+                    "commandModule": "oSCQuery_Unity",
+                    "commandPath": "",
+                    "commandType": "Set Value",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/Orbs/Orb-A/OrbGroupController/emitterSize",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": "All",
+                          "controlAddress": "/component"
+                        },
+                        {
+                          "value": "Equals",
+                          "controlAddress": "/operator"
+                        }
+                      ],
+                      "paramLinks": {
+                        "value": {
+                          "linkType": 1,
+                          "mappingValueIndex": 0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            },
+            {
+              "niceName": "Link Emitter Size",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "parameters": [
+                  {
+                    "value": "OR",
+                    "controlAddress": "/operator"
+                  }
+                ],
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/midiXTouchMini/values/_11_C#0",
+                        "controlAddress": "/inputValue"
+                      },
+                      {
+                        "value": true,
+                        "controlAddress": "/toggleMode"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value",
+                    "comparator": {
+                      "parameters": [
+                        {
+                          "value": 127,
+                          "hexMode": false,
+                          "controlAddress": "/reference"
+                        }
+                      ],
+                      "hideInEditor": true
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/midiXTouchMini/values/_11_C#_2",
+                        "controlAddress": "/inputValue"
+                      },
+                      {
+                        "value": true,
+                        "controlAddress": "/toggleMode"
+                      }
+                    ],
+                    "niceName": "From Input Value 1",
+                    "type": "From Input Value",
+                    "comparator": {
+                      "parameters": [
+                        {
+                          "value": 127,
+                          "hexMode": false,
+                          "controlAddress": "/reference"
+                        }
+                      ],
+                      "hideInEditor": true
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSize",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSizeA",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSizeB",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSize",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/value"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 1",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSizeA",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  },
+                  {
+                    "niceName": "Consequence 2",
+                    "type": "Consequence",
+                    "commandModule": "stateMachine",
+                    "commandPath": "Mapping",
+                    "commandType": "Set Mapping Enabled",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/states/orb/processors/knobEmitterSizeB",
+                          "controlAddress": "/target"
+                        }
+                      ],
+                      "paramLinks": {
                       }
                     }
                   }
@@ -41440,7 +42055,7 @@
                           "controlAddress": "/length"
                         },
                         {
-                          "value": 0.6006456613540649,
+                          "value": 1.0,
                           "controlAddress": "/position"
                         },
                         {
@@ -67956,11 +68571,491 @@
           ],
           "viewZoom": 1.0
         }
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1054.0,
+              0.0
+            ],
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": [
+              392.0,
+              301.0
+            ],
+            "controlAddress": "/viewUISize"
+          },
+          {
+            "value": true,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "State 1",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 24.0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 8,
+                  "hexMode": false,
+                  "controlAddress": "/count"
+                },
+                {
+                  "value": 2,
+                  "hexMode": false,
+                  "controlAddress": "/previewIndex"
+                }
+              ],
+              "niceName": "Multiplex",
+              "editorIsCollapsed": true,
+              "containers": {
+                "lists": {
+                  "items": [
+                    {
+                      "parameters": [
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/rate",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/emitterSize",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/stationaryMaxSpeed",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/size",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/drag",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/noisyDrag",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/alpha",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/life",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Parameters A",
+                      "editorIsCollapsed": true,
+                      "type": "Input Values",
+                      "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/rate",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/emitterSize",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/stationaryMaxSpeed",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/size",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/drag",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/noisyDrag",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/alpha",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/life",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Parameters B",
+                      "editorIsCollapsed": true,
+                      "type": "Input Values",
+                      "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC1",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC2",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC3",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC4",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC5",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC6",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC7",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC8",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Knob A",
+                      "editorIsCollapsed": true,
+                      "type": "Input Values",
+                      "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC11",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC12",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC13",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC14",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC15",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC16",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC17",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_CC18",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Knob B",
+                      "editorIsCollapsed": true,
+                      "type": "Input Values",
+                      "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": [
+                            0.0,
+                            20.0
+                          ],
+                          "controlAddress": "/#2"
+                        }
+                      ],
+                      "niceName": "Min Max Range",
+                      "editorIsCollapsed": true,
+                      "type": "Point2D",
+                      "listSize": 8
+                    },
+                    {
+                      "niceName": "Modifier",
+                      "editorIsCollapsed": true,
+                      "type": "Float",
+                      "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/customVariables/customVariables/values/audioReactive/high",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Input Modifier",
+                      "type": "Input Values",
+                      "listSize": 8
+                    }
+                  ],
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                },
+                "processors": {
+                  "hideInEditor": true,
+                  "items": [
+                    {
+                      "niceName": "Knob To Unity",
+                      "editorIsCollapsed": true,
+                      "type": "Mapping",
+                      "im": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": "/knobA",
+                                "controlAddress": "/inputList"
+                              }
+                            ],
+                            "niceName": "Input List",
+                            "type": "Input List"
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      },
+                      "params": {
+                        "parameters": [
+                          {
+                            "value": 50,
+                            "hexMode": false,
+                            "controlAddress": "/updateRate"
+                          }
+                        ],
+                        "editorIsCollapsed": true
+                      },
+                      "filters": {
+                        "items": [
+                          {
+                            "niceName": "Curve Map",
+                            "type": "Curve Map",
+                            "filterParams": {
+                              "parameters": [
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/inputMin_Max"
+                                }
+                              ],
+                              "paramLinks": {
+                                "targetMin_Max": {
+                                  "linkType": 2,
+                                  "list": "minMaxRange"
+                                }
+                              }
+                            },
+                            "curve": {
+                              "parameters": [
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/length"
+                                },
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/viewValueRange"
+                                },
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/range",
+                                  "enabled": true
+                                }
+                              ],
+                              "hideInRemoteControl": false,
+                              "items": [
+                                {
+                                  "parameters": [
+                                    {
+                                      "value": "Bezier",
+                                      "controlAddress": "/easingType"
+                                    }
+                                  ],
+                                  "niceName": "Key",
+                                  "containers": {
+                                    "easing": {
+                                      "parameters": [
+                                        {
+                                          "value": [
+                                            0.4426035583019257,
+                                            0.03424656391143799
+                                          ],
+                                          "controlAddress": "/anchor1"
+                                        },
+                                        {
+                                          "value": [
+                                            -0.05207103490829468,
+                                            -0.6095890402793884
+                                          ],
+                                          "controlAddress": "/anchor2"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "type": "Key"
+                                },
+                                {
+                                  "parameters": [
+                                    {
+                                      "value": 1.0,
+                                      "controlAddress": "/position"
+                                    },
+                                    {
+                                      "value": 1.0,
+                                      "controlAddress": "/value"
+                                    },
+                                    {
+                                      "value": "Bezier",
+                                      "controlAddress": "/easingType"
+                                    }
+                                  ],
+                                  "niceName": "Key 1",
+                                  "containers": {
+                                    "easing": {
+                                    }
+                                  },
+                                  "type": "Key"
+                                }
+                              ],
+                              "viewOffset": [
+                                0,
+                                0
+                              ],
+                              "viewZoom": 1.0
+                            }
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      },
+                      "outputs": {
+                        "items": [
+                          {
+                            "niceName": "MappingOutput",
+                            "type": "BaseItem",
+                            "commandModule": "multiplex",
+                            "commandPath": "",
+                            "commandType": "Set List Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "/states/state1/processors/multiplex/lists/parametersA",
+                                  "controlAddress": "/target"
+                                },
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                }
+                              ],
+                              "paramLinks": {
+                                "value": {
+                                  "linkType": 1,
+                                  "mappingValueIndex": 0
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      }
+                    }
+                  ],
+                  "viewOffset": [
+                    0,
+                    0
+                  ],
+                  "viewZoom": 1.0
+                }
+              },
+              "type": "Multiplex"
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
       }
     ],
     "viewOffset": [
-      18,
-      -257
+      -1425,
+      -221
     ],
     "viewZoom": 1.0,
     "transitions": {
@@ -68116,8 +69211,8 @@
         }
       ],
       "viewOffset": [
-        18,
-        -257
+        -1425,
+        -221
       ],
       "viewZoom": 1.0
     }
