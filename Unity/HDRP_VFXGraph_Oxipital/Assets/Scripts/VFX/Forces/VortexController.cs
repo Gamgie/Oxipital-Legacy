@@ -32,10 +32,6 @@ public class VortexController : ForceController
             if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))
                 visualEffect.SetVector3(vortex + " Axis" + m_suffix, axis);
 
-            // Intensity Random
-            if (visualEffect.HasFloat(vortex + " Intensity Random" + m_suffix))
-                visualEffect.SetFloat(vortex + " Intensity Random" + m_suffix, intensityRandom);
-
             // Inner Radius
             if (visualEffect.HasFloat(vortex + " Inner Radius" + m_suffix))
                 visualEffect.SetFloat(vortex + " Inner Radius" + m_suffix, innerRadius);
