@@ -4967,12 +4967,11 @@
             }
           ],
           "viewOffset": [
-            385,
-            177
+            -12,
+            123
           ],
           "viewZoom": 1.0625
-        },
-        "editing": true
+        }
       },
       {
         "niceName": "Orb Emitter",
@@ -9665,11 +9664,12 @@
             }
           ],
           "viewOffset": [
-            29,
-            -35
+            67,
+            -24
           ],
           "viewZoom": 0.53515625
-        }
+        },
+        "editing": true
       },
       {
         "niceName": "Camera",
@@ -13996,9 +13996,9 @@
                 },
                 {
                   "type": 0,
-                  "width": 1288,
+                  "width": 995,
                   "height": 778,
-                  "currentContent": "Dashboard",
+                  "currentContent": "State Machine",
                   "tabs": [
                     {
                       "name": "State Machine"
@@ -14016,7 +14016,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 313,
+                  "width": 606,
                   "height": 778,
                   "currentContent": "Inspector",
                   "tabs": [
@@ -14035,7 +14035,7 @@
               "shifters": [
                 {
                   "type": 0,
-                  "width": 247,
+                  "width": 306,
                   "height": 204,
                   "currentContent": "Sequences",
                   "tabs": [
@@ -14046,7 +14046,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 1187,
+                  "width": 1183,
                   "height": 204,
                   "currentContent": "Sequence Editor",
                   "tabs": [
@@ -14057,7 +14057,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 474,
+                  "width": 419,
                   "height": 204,
                   "currentContent": "Logger",
                   "tabs": [
@@ -14508,19 +14508,19 @@
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 12.00227546691895,
+                          "value": 23.23957824707031,
                           "controlAddress": "/life"
                         },
                         {
-                          "value": 0.02517168596386909,
+                          "value": 0.2323957830667496,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 22.5897274017334,
+                          "value": 24.53928756713867,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 0.131437212228775,
+                          "value": 0.432293713092804,
                           "controlAddress": "/drag"
                         },
                         {
@@ -14528,7 +14528,7 @@
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": 0.7043197154998779,
+                          "value": 4.258003711700439,
                           "controlAddress": "/noisyDrag"
                         },
                         {
@@ -14536,7 +14536,7 @@
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 8.416187286376953,
+                          "value": 23.77357864379883,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -14558,7 +14558,7 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 9.966760635375977,
+                          "value": 10.62234783172607,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -14658,7 +14658,7 @@
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 24.53928756713867,
+                          "value": 34.16041564941406,
                           "controlAddress": "/size"
                         },
                         {
@@ -14674,7 +14674,7 @@
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 2.930001735687256,
+                          "value": 4.034680366516113,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -14686,7 +14686,7 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 0.811164915561676,
+                          "value": 8.031269073486328,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -24252,9 +24252,13 @@
         "params": {
           "parameters": [
             {
+              "value": false,
+              "controlAddress": "/autoFeedback"
+            },
+            {
               "value": [
                 "\\\\?\\usb#vid_1397&pid_00b3&mi_00#6&329d7d1c&0&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global",
-                ""
+                "\\\\?\\usb#vid_1397&pid_00b3&mi_00#6&329d7d1c&0&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global"
               ],
               "controlAddress": "/devices"
             }
@@ -24274,6 +24278,7 @@
         "values": {
           "parameters": [
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24291,6 +24296,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24308,6 +24314,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24325,6 +24332,97 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 3,
+              "MIDIType": 0,
+              "controlAddress": "/_11_D#_2",
+              "type": "MIDI Value",
+              "niceName": "[11] D#-2",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : D#-2",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 4,
+              "MIDIType": 0,
+              "controlAddress": "/_11_E_2",
+              "type": "MIDI Value",
+              "niceName": "[11] E-2",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : E-2",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 5,
+              "MIDIType": 0,
+              "controlAddress": "/_11_F_2",
+              "type": "MIDI Value",
+              "niceName": "[11] F-2",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : F-2",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 6,
+              "MIDIType": 0,
+              "controlAddress": "/_11_F#_2",
+              "type": "MIDI Value",
+              "niceName": "[11] F#-2",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : F#-2",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 7,
+              "MIDIType": 0,
+              "controlAddress": "/_11_G_2",
+              "type": "MIDI Value",
+              "niceName": "[11] G-2",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : G-2",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24342,6 +24440,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24359,6 +24458,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24376,6 +24476,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24427,6 +24528,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24444,6 +24546,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24457,6 +24560,42 @@
               "customizable": false,
               "removable": true,
               "description": "Channel 11 : F-1",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 18,
+              "MIDIType": 0,
+              "controlAddress": "/_11_F#_1",
+              "type": "MIDI Value",
+              "niceName": "[11] F#-1",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : F#-1",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 19,
+              "MIDIType": 0,
+              "controlAddress": "/_11_G_1",
+              "type": "MIDI Value",
+              "niceName": "[11] G-1",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : G-1",
               "hideInEditor": false,
               "feedbackOnly": false
             },
@@ -24495,6 +24634,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24546,7 +24686,25 @@
               "feedbackOnly": false
             },
             {
-              "value": 18,
+              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 27,
+              "MIDIType": 0,
+              "controlAddress": "/_11_D#0",
+              "type": "MIDI Value",
+              "niceName": "[11] D#0",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : D#0",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
+              "value": 35,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24564,7 +24722,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 96,
+              "value": 99,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24582,7 +24740,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 71,
+              "value": 118,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24600,7 +24758,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 63,
+              "value": 66,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24618,7 +24776,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 11,
+              "value": 24,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24636,7 +24794,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 21,
+              "value": 61,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24654,7 +24812,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 17,
+              "value": 64,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24672,7 +24830,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 44,
+              "value": 64,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24690,7 +24848,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 13,
+              "value": 114,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24708,7 +24866,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 127,
+              "value": 123,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24726,7 +24884,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 53,
+              "value": 98,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24744,7 +24902,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 23,
+              "value": 86,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24762,7 +24920,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 39,
+              "value": 47,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24780,7 +24938,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 66,
+              "value": 79,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -24874,12 +25032,16 @@
             "infos": {
               "parameters": [
                 {
+                  "value": false,
+                  "controlAddress": "/oneNoteOn"
+                },
+                {
                   "value": 11,
                   "hexMode": false,
                   "controlAddress": "/lastChannel"
                 },
                 {
-                  "value": 1,
+                  "value": 22,
                   "hexMode": false,
                   "controlAddress": "/lastPitch"
                 },
@@ -28224,6 +28386,7 @@
             {
               "parameters": [
                 {
+                  "value": 1,
                   "hexMode": false,
                   "controlAddress": "/dashboardIndex",
                   "feedbackOnly": false,
@@ -28589,7 +28752,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.0,
+                  "value": 0.0,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -36638,7 +36801,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiXTouchMini/values/_11_G#_2",
+                        "value": "/modules/midiXTouchMini/values/_11_E_1",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36647,7 +36810,7 @@
                     "comparator": {
                       "parameters": [
                         {
-                          "value": ">",
+                          "value": "!=",
                           "controlAddress": "/comparisonFunction"
                         },
                         {
@@ -36717,7 +36880,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiXTouchMini/values/_11_A_2",
+                        "value": "/modules/midiXTouchMini/values/_11_F_1",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36726,7 +36889,7 @@
                     "comparator": {
                       "parameters": [
                         {
-                          "value": ">",
+                          "value": "!=",
                           "controlAddress": "/comparisonFunction"
                         },
                         {
@@ -36801,7 +36964,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiXTouchMini/values/_11_A#_2",
+                        "value": "/modules/midiXTouchMini/values/_11_F#_1",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -36885,7 +37048,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiXTouchMini/values/_11_B_2",
+                        "value": "/modules/midiXTouchMini/values/_11_G_1",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -38220,6 +38383,12 @@
               }
             },
             {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
               "niceName": "Toggle Metronome",
               "editorIsCollapsed": true,
               "type": "Action",
@@ -68005,7 +68174,7 @@
             {
               "parameters": [
                 {
-                  "value": 110.0,
+                  "value": 136.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -68060,6 +68229,7 @@
                         }
                       ],
                       "niceName": "Parameters A",
+                      "editorIsCollapsed": true,
                       "type": "Input Values",
                       "listSize": 8
                     },
@@ -68099,6 +68269,7 @@
                         }
                       ],
                       "niceName": "Parameters B",
+                      "editorIsCollapsed": true,
                       "type": "Input Values",
                       "listSize": 8
                     },
@@ -68138,7 +68309,6 @@
                         }
                       ],
                       "niceName": "Knob A",
-                      "editorIsCollapsed": true,
                       "type": "Input Values",
                       "listSize": 8
                     },
@@ -68178,7 +68348,6 @@
                         }
                       ],
                       "niceName": "Knob B",
-                      "editorIsCollapsed": true,
                       "type": "Input Values",
                       "listSize": 8
                     },
@@ -68235,6 +68404,7 @@
                         }
                       ],
                       "niceName": "Min Max Range",
+                      "editorIsCollapsed": true,
                       "type": "Point2D",
                       "listSize": 8
                     },
@@ -68283,6 +68453,45 @@
                       "editorIsCollapsed": true,
                       "type": "Input Values",
                       "listSize": 8
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_C_2",
+                          "controlAddress": "/#1"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_C#_2",
+                          "controlAddress": "/#2"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_D_2",
+                          "controlAddress": "/#3"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_D#_2",
+                          "controlAddress": "/#4"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_E_2",
+                          "controlAddress": "/#5"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_F_2",
+                          "controlAddress": "/#6"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_F#_2",
+                          "controlAddress": "/#7"
+                        },
+                        {
+                          "value": "/modules/midiXTouchMini/values/_11_G_2",
+                          "controlAddress": "/#8"
+                        }
+                      ],
+                      "niceName": "Knob Button",
+                      "type": "Input Values",
+                      "listSize": 8
                     }
                   ],
                   "viewOffset": [
@@ -68295,6 +68504,12 @@
                   "hideInEditor": true,
                   "items": [
                     {
+                      "parameters": [
+                        {
+                          "value": true,
+                          "controlAddress": "/enabled"
+                        }
+                      ],
                       "niceName": "Knob A To Unity",
                       "editorIsCollapsed": true,
                       "type": "Mapping",
@@ -68502,6 +68717,12 @@
                       }
                     },
                     {
+                      "parameters": [
+                        {
+                          "value": true,
+                          "controlAddress": "/enabled"
+                        }
+                      ],
                       "niceName": "Knob B To Unity",
                       "editorIsCollapsed": true,
                       "type": "Mapping",
@@ -68699,6 +68920,246 @@
                         ],
                         "viewZoom": 1.0
                       }
+                    },
+                    {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlAddress": "/enabled"
+                        }
+                      ],
+                      "niceName": "Knob To Unity",
+                      "editorIsCollapsed": true,
+                      "type": "Mapping",
+                      "im": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": "/knobA",
+                                "controlAddress": "/inputList"
+                              }
+                            ],
+                            "niceName": "Input List",
+                            "type": "Input List"
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      },
+                      "params": {
+                        "parameters": [
+                          {
+                            "value": 50,
+                            "hexMode": false,
+                            "controlAddress": "/updateRate"
+                          }
+                        ],
+                        "editorIsCollapsed": true
+                      },
+                      "filters": {
+                        "items": [
+                          {
+                            "niceName": "Curve Map",
+                            "type": "Curve Map",
+                            "filterParams": {
+                              "parameters": [
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/inputMin_Max"
+                                }
+                              ],
+                              "paramLinks": {
+                                "targetMin_Max": {
+                                  "linkType": 2,
+                                  "list": "minMaxRange"
+                                }
+                              }
+                            },
+                            "curve": {
+                              "parameters": [
+                                {
+                                  "value": 1.0,
+                                  "controlAddress": "/length"
+                                },
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/viewValueRange"
+                                },
+                                {
+                                  "value": [
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlAddress": "/range",
+                                  "enabled": true
+                                }
+                              ],
+                              "hideInRemoteControl": false,
+                              "items": [
+                                {
+                                  "parameters": [
+                                    {
+                                      "value": "Bezier",
+                                      "controlAddress": "/easingType"
+                                    }
+                                  ],
+                                  "niceName": "Key",
+                                  "containers": {
+                                    "easing": {
+                                      "parameters": [
+                                        {
+                                          "value": [
+                                            0.4426035583019257,
+                                            0.03424656391143799
+                                          ],
+                                          "controlAddress": "/anchor1"
+                                        },
+                                        {
+                                          "value": [
+                                            -0.09200000762939453,
+                                            -0.431506872177124
+                                          ],
+                                          "controlAddress": "/anchor2"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "type": "Key"
+                                },
+                                {
+                                  "parameters": [
+                                    {
+                                      "value": 1.0,
+                                      "controlAddress": "/position"
+                                    },
+                                    {
+                                      "value": 1.0,
+                                      "controlAddress": "/value"
+                                    },
+                                    {
+                                      "value": "Bezier",
+                                      "controlAddress": "/easingType"
+                                    }
+                                  ],
+                                  "niceName": "Key 1",
+                                  "containers": {
+                                    "easing": {
+                                    }
+                                  },
+                                  "type": "Key"
+                                }
+                              ],
+                              "viewOffset": [
+                                0,
+                                0
+                              ],
+                              "viewZoom": 1.0
+                            }
+                          },
+                          {
+                            "niceName": "Smooth",
+                            "type": "Smooth",
+                            "filterParams": {
+                              "parameters": [
+                                {
+                                  "value": 0.6666666269302368,
+                                  "controlAddress": "/smoothing"
+                                }
+                              ],
+                              "paramLinks": {
+                              }
+                            }
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      },
+                      "outputs": {
+                        "items": [
+                          {
+                            "niceName": "MappingOutput",
+                            "type": "BaseItem",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                }
+                              ],
+                              "paramLinks": {
+                                "target": {
+                                  "linkType": 2,
+                                  "list": "parametersB"
+                                },
+                                "value": {
+                                  "linkType": 1,
+                                  "mappingValueIndex": 0
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/enabled"
+                              }
+                            ],
+                            "niceName": "MappingOutput 1",
+                            "type": "BaseItem",
+                            "commandModule": "customVariables",
+                            "commandPath": "",
+                            "commandType": "Set Value",
+                            "command": {
+                              "parameters": [
+                                {
+                                  "value": "All",
+                                  "controlAddress": "/component"
+                                },
+                                {
+                                  "value": "Equals",
+                                  "controlAddress": "/operator"
+                                }
+                              ],
+                              "paramLinks": {
+                                "target": {
+                                  "linkType": 2,
+                                  "list": "parametersA"
+                                },
+                                "value": {
+                                  "linkType": 1,
+                                  "mappingValueIndex": 0
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "viewOffset": [
+                          0,
+                          0
+                        ],
+                        "viewZoom": 1.0
+                      }
                     }
                   ],
                   "viewOffset": [
@@ -68709,6 +69170,87 @@
                 }
               },
               "type": "Multiplex"
+            },
+            {
+              "niceName": "Mapping",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "im": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/midiXTouchMini/values/_11_CC2",
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "Input Value",
+                    "type": "Input Value"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "params": {
+                "parameters": [
+                  {
+                    "value": 50,
+                    "hexMode": false,
+                    "controlAddress": "/updateRate"
+                  }
+                ],
+                "editorIsCollapsed": true
+              },
+              "filters": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "midiXTouchMini",
+                    "commandPath": "",
+                    "commandType": "Control Change",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": 11,
+                          "hexMode": false,
+                          "controlAddress": "/channel"
+                        },
+                        {
+                          "value": 12,
+                          "hexMode": false,
+                          "controlAddress": "/ccNumber"
+                        },
+                        {
+                          "value": false,
+                          "controlAddress": "/remapTo0_127"
+                        }
+                      ],
+                      "paramLinks": {
+                        "ccValue": {
+                          "linkType": 1,
+                          "mappingValueIndex": 0
+                        }
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
             }
           ],
           "viewOffset": [
@@ -68720,8 +69262,8 @@
       }
     ],
     "viewOffset": [
-      -1444,
-      -340
+      -1339,
+      -268
     ],
     "viewZoom": 1.0,
     "transitions": {
@@ -68877,8 +69419,8 @@
         }
       ],
       "viewOffset": [
-        -1444,
-        -340
+        -1339,
+        -268
       ],
       "viewZoom": 1.0
     }
