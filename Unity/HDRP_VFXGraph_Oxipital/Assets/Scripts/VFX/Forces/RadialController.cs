@@ -6,9 +6,11 @@ using UnityEngine.VFX;
 public class RadialController : ForceController
 {
     [Header("Radial")]
+    [Range(0, 3)]
     public float radialFrequency;
     [Range(0,1)]
     public float radialSmoothness;
+    [Range(0, 3)]
     public float sphericalFrequency;
     [Range(0, 1)]
     public float sphericalSmoothness;
