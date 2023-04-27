@@ -9,6 +9,7 @@ public class VortexController : ForceController
     [Header("Vortex")]
     [Range(0, 1)]
     public float innerRadius = 0.5f;
+    public bool clockwise = true;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Vortex Graphics Buffer");
 
@@ -27,6 +28,10 @@ public class VortexController : ForceController
             // Radius
             if (visualEffect.HasFloat(vortex + " Radius" + m_suffix))
                 visualEffect.SetFloat(vortex + " Radius" + m_suffix, radius);
+
+            // Clockwise
+            if (visualEffect.HasBool(vortex + " Clockwise" + m_suffix))
+                visualEffect.SetBool(vortex + " Clockwise" + m_suffix, clockwise);
 
             // Axis
             if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))

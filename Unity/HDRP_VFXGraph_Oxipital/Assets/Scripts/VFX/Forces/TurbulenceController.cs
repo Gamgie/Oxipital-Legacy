@@ -16,7 +16,7 @@ public class TurbulenceController : ForceController
     public float turbLacunarity = 2;
     [Range(0, 5f)]
     public float turbScale = 1;
-    [Range(0, 5f)]
+    [Range(0, 1f)]
     public float turbEvolutionSpeed = 1;
 
     // Update is called once per frame

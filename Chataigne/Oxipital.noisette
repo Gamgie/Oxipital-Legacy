@@ -336,72 +336,6 @@
               "parameters": [
                 {
                   "value": [
-                    -790.0,
-                    -180.0
-                  ],
-                  "controlAddress": "/viewUIPosition"
-                },
-                {
-                  "value": [
-                    150.0,
-                    20.0
-                  ],
-                  "controlAddress": "/viewUISize"
-                },
-                {
-                  "value": "/customVariables/vortexForce1/variables/vortexRandom/vortexRandom",
-                  "controlAddress": "/target"
-                },
-                {
-                  "value": 12,
-                  "hexMode": false,
-                  "controlAddress": "/textSize",
-                  "enabled": true
-                },
-                {
-                  "value": [
-                    0.9215686321258545,
-                    0.1843137294054031,
-                    0.0235294122248888,
-                    1
-                  ],
-                  "controlAddress": "/borderColor",
-                  "enabled": true
-                },
-                {
-                  "value": 1.0,
-                  "controlAddress": "/borderWidth"
-                },
-                {
-                  "value": [
-                    0,
-                    0,
-                    0,
-                    0
-                  ],
-                  "controlAddress": "/backgroundColor",
-                  "enabled": true
-                },
-                {
-                  "value": "Horizontal Slider",
-                  "controlAddress": "/style"
-                },
-                {
-                  "value": "",
-                  "controlAddress": "/toggleImage",
-                  "enabled": true
-                }
-              ],
-              "niceName": "Dashboard Item 70",
-              "hideInEditor": true,
-              "type": "DashboardParameterItem",
-              "ghostAddress": "/customVariables/vortexForce1/variables/vortexRandom/vortexRandom",
-              "controllable": "/customVariables/vortexForce1/variables/vortexRandom/vortexRandom"
-            },
-            {
-              "parameters": [
-                {
-                  "value": [
                     -940.0,
                     -120.0
                   ],
@@ -1640,7 +1574,7 @@
                     0.9215686321258545,
                     0.1843137294054031,
                     0.0235294122248888,
-                    1
+                    1.0
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": true
@@ -2872,7 +2806,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/forceIntensity/lists/reset/#3",
+                  "value": "/states/force/processors/forceIntensity/lists/reset/#4",
                   "controlAddress": "/target"
                 },
                 {
@@ -2906,7 +2840,7 @@
               "hideInEditor": true,
               "type": "DashboardTriggerItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/reset/#3",
-              "controllable": "/states/force/processors/forceIntensity/lists/reset/#3"
+              "controllable": "/states/force/processors/forceIntensity/lists/reset/#4"
             },
             {
               "parameters": [
@@ -7085,13 +7019,87 @@
               "type": "DashboardParameterItem",
               "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Gravity/GravityController/forceCount",
               "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Gravity/GravityController/forceCount"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -790.0,
+                    -180.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/innerRadius",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.9215686321258545,
+                    0.1843137294054031,
+                    0.0235294122248888,
+                    0.5607843399047852
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 87",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/innerRadius",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/innerRadius"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    -790.0,
+                    -160.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/clockwise",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 130",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/clockwise",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Vortex/VortexController/clockwise"
             }
           ],
           "viewOffset": [
-            157,
-            -35
+            16,
+            -18
           ],
-          "viewZoom": 0.9867187738418579
+          "viewZoom": 1.001953125
         },
         "editing": true
       },
@@ -8080,10 +8088,10 @@
                 },
                 {
                   "value": [
-                    0.3686274588108063,
-                    0,
-                    0,
-                    1
+                    0.08380551636219025,
+                    0.3090620934963226,
+                    0.0,
+                    1.0
                   ],
                   "controlAddress": "/foregroundColor",
                   "enabled": true
@@ -18624,9 +18632,6 @@
               "name": "Modules"
             },
             {
-              "name": "Inspector"
-            },
-            {
               "name": "State Machine"
             }
           ]
@@ -18660,7 +18665,7 @@
               "controlAddress": "/serverName"
             },
             {
-              "value": true,
+              "value": false,
               "controlAddress": "/isConnected"
             }
           ],
@@ -18704,11 +18709,23 @@
                     "CameraRotate": {
                       "parameters": [
                         {
-                          "value": 65.21431,
+                          "value": 0.0,
+                          "controlAddress": "/rotateYSpeed"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlAddress": "/rotateXSpeed"
+                        },
+                        {
+                          "value": 331.8477,
+                          "controlAddress": "/rotateXAngle"
+                        },
+                        {
+                          "value": 17.64290046691895,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 10.0,
+                          "value": 5.714286327362061,
                           "controlAddress": "/radius"
                         },
                         {
@@ -18718,6 +18735,14 @@
                         {
                           "value": 8.365145,
                           "controlAddress": "/moveToDuration"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            0.6969075202941895,
+                            0.0
+                          ],
+                          "controlAddress": "/positionTarget"
                         }
                       ],
                       "editorIsCollapsed": true,
@@ -18760,8 +18785,10 @@
               "niceName": "Cameras"
             },
             "Orbs": {
+              "editorIsCollapsed": true,
               "containers": {
                 "Forces": {
+                  "editorIsCollapsed": true,
                   "containers": {
                     "Vortex": {
                       "editorIsCollapsed": true,
@@ -18769,8 +18796,16 @@
                         "VortexController": {
                           "parameters": [
                             {
-                              "value": 0.3199999630451202,
+                              "value": 0.2600000500679016,
+                              "controlAddress": "/innerRadius"
+                            },
+                            {
+                              "value": 1.0,
                               "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 1.799999952316284,
+                              "controlAddress": "/radius"
                             },
                             {
                               "value": [
@@ -18806,27 +18841,11 @@
                         "RadialController": {
                           "parameters": [
                             {
-                              "value": 3.066666603088379,
-                              "controlAddress": "/radialFrequency"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/radialSmoothness"
-                            },
-                            {
                               "value": 0.0,
-                              "controlAddress": "/sphericalFrequency"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sphericalSmoothness"
-                            },
-                            {
-                              "value": 1.200000047683716,
                               "controlAddress": "/intensity"
                             },
                             {
-                              "value": 3.98,
+                              "value": 2.551181316375732,
                               "controlAddress": "/radius"
                             }
                           ],
@@ -18837,8 +18856,16 @@
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Line",
+                              "value": "Point",
                               "controlAddress": "/patternType"
+                            },
+                            {
+                              "value": [
+                                0.0,
+                                0.8000000715255737,
+                                0.0
+                              ],
+                              "controlAddress": "/position"
                             },
                             {
                               "value": 1.8,
@@ -18891,20 +18918,16 @@
                       "niceName": "Spiral"
                     },
                     "Gravity": {
+                      "editorIsCollapsed": true,
                       "containers": {
                         "GravityController": {
                           "parameters": [
                             {
-                              "value": 2,
-                              "hexMode": false,
-                              "controlAddress": "/forceCount"
-                            },
-                            {
-                              "value": 1.390666604042053,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
-                              "value": 0.6960625648498535,
+                              "value": 4.096062183380127,
                               "controlAddress": "/radius"
                             },
                             {
@@ -18916,13 +18939,14 @@
                               "controlAddress": "/axis"
                             }
                           ],
+                          "editorIsCollapsed": true,
                           "owned": true,
                           "niceName": "GravityController"
                         },
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Circle",
+                              "value": "Point",
                               "controlAddress": "/patternType"
                             },
                             {
@@ -18934,11 +18958,7 @@
                               "controlAddress": "/patternRotation"
                             },
                             {
-                              "value": 3.0,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 8.399999618530273,
+                              "value": 8.4,
                               "controlAddress": "/speed"
                             }
                           ],
@@ -18955,6 +18975,22 @@
                       "containers": {
                         "SwirlController": {
                           "parameters": [
+                            {
+                              "value": true,
+                              "controlAddress": "/clockwise"
+                            },
+                            {
+                              "value": 0.0,
+                              "controlAddress": "/centralVertical"
+                            },
+                            {
+                              "value": 0.0,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 1.8,
+                              "controlAddress": "/radius"
+                            },
                             {
                               "value": [
                                 0.0,
@@ -19005,6 +19041,10 @@
                         "AxialController": {
                           "parameters": [
                             {
+                              "value": 0.0,
+                              "controlAddress": "/intensity"
+                            },
+                            {
                               "value": [
                                 0.0,
                                 1.0,
@@ -19036,6 +19076,16 @@
                       "editorIsCollapsed": true,
                       "containers": {
                         "TurbulenceController": {
+                          "parameters": [
+                            {
+                              "value": 0.7399998903274536,
+                              "controlAddress": "/turbEvolutionSpeed"
+                            },
+                            {
+                              "value": 0.00002732261782512069,
+                              "controlAddress": "/intensity"
+                            }
+                          ],
                           "editorIsCollapsed": true,
                           "owned": true,
                           "niceName": "TurbulenceController"
@@ -19063,6 +19113,26 @@
                             {
                               "value": "Perlin",
                               "controlAddress": "/noiseType"
+                            },
+                            {
+                              "value": 0.1400000005960464,
+                              "controlAddress": "/evolutionSpeed"
+                            },
+                            {
+                              "value": 2.160000085830688,
+                              "controlAddress": "/frequency"
+                            },
+                            {
+                              "value": -0.1333333253860474,
+                              "controlAddress": "/minRange"
+                            },
+                            {
+                              "value": 0.4399999976158142,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 6.759055137634277,
+                              "controlAddress": "/radius"
                             }
                           ],
                           "editorIsCollapsed": true,
@@ -19118,27 +19188,44 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 66647.2109375,
+                          "value": 25926.52734375,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 41.99576568603516,
+                          "value": 43.83518981933594,
+                          "controlAddress": "/life"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            0.4196078479290009,
+                            1.0,
+                            1.0
+                          ],
+                          "controlAddress": "/color"
+                        },
+                        {
+                          "value": 1.0,
+                          "controlAddress": "/alpha"
+                        },
+                        {
+                          "value": 11.05538558959961,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 3.027181625366211,
+                          "value": 1.296671509742737,
                           "controlAddress": "/drag"
                         },
                         {
-                          "value": 1.635000109672546,
+                          "value": 1.249444484710693,
+                          "controlAddress": "/noisyDrag"
+                        },
+                        {
+                          "value": 3.585,
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": true,
-                          "controlAddress": "/stationaryTransparent"
-                        },
-                        {
-                          "value": 0.2567234337329865,
+                          "value": 3.316615581512451,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -19160,12 +19247,8 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 6.208851337432861,
+                          "value": 3.104243516921997,
                           "controlAddress": "/emitterSize"
-                        },
-                        {
-                          "value": true,
-                          "controlAddress": "/emitFromInside"
                         },
                         {
                           "value": "Point",
@@ -19180,11 +19263,11 @@
                           "controlAddress": "/patternRotation"
                         },
                         {
-                          "value": 5.222221374511719,
+                          "value": 5.222221,
                           "controlAddress": "/patternSize"
                         },
                         {
-                          "value": 16.01428604125977,
+                          "value": 16.01429,
                           "controlAddress": "/lerpDuration"
                         }
                       ],
@@ -19206,15 +19289,27 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 3.027181625366211,
+                          "value": 43.83518981933594,
+                          "controlAddress": "/life"
+                        },
+                        {
+                          "value": 1.0,
+                          "controlAddress": "/alpha"
+                        },
+                        {
+                          "value": 1.296671509742737,
                           "controlAddress": "/drag"
                         },
                         {
-                          "value": 1.699999809265137,
+                          "value": 1.249444484710693,
+                          "controlAddress": "/noisyDrag"
+                        },
+                        {
+                          "value": 1.7,
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 0.2567234337329865,
+                          "value": 3.316615581512451,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -19226,7 +19321,7 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 5.468962669372559,
+                          "value": 5.468963,
                           "controlAddress": "/emitterSize"
                         },
                         {
@@ -19262,7 +19357,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 6540898,
+                      "value": 909379,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -19353,7 +19448,7 @@
                         "rotateXAngle": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            331.8477
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -19375,7 +19470,7 @@
                         "fov": {
                           "ACCESS": 3,
                           "VALUE": [
-                            65.21431
+                            60.07145
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -19386,7 +19481,7 @@
                         "radius": {
                           "ACCESS": 3,
                           "VALUE": [
-                            10
+                            2.285715
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -19692,7 +19787,7 @@
                             "innerRadius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0.5
+                                0.4266667
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -19702,6 +19797,17 @@
                                 }
                               ],
                               "FULL_PATH": "/Orbs/Forces/Vortex/VortexController/innerRadius"
+                            },
+                            "clockwise": {
+                              "ACCESS": 3,
+                              "VALUE": [
+                                false
+                              ],
+                              "TYPE": "T",
+                              "RANGE": [
+                                null
+                              ],
+                              "FULL_PATH": "/Orbs/Forces/Vortex/VortexController/clockwise"
                             },
                             "forceID": {
                               "ACCESS": 3,
@@ -19728,7 +19834,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0.32
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -19739,7 +19845,7 @@
                             "radius": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                2.4
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -19976,13 +20082,13 @@
                             "radialFrequency": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
                                 {
                                   "MIN": 0,
-                                  "MAX": 10
+                                  "MAX": 3
                                 }
                               ],
                               "FULL_PATH": "/Orbs/Forces/Attractor/RadialController/radialFrequency"
@@ -20010,7 +20116,7 @@
                               "RANGE": [
                                 {
                                   "MIN": 0,
-                                  "MAX": 10
+                                  "MAX": 3
                                 }
                               ],
                               "FULL_PATH": "/Orbs/Forces/Attractor/RadialController/sphericalFrequency"
@@ -20645,7 +20751,7 @@
                             "patternType": {
                               "ACCESS": 3,
                               "VALUE": [
-                                "Line"
+                                "Point"
                               ],
                               "TYPE": "s",
                               "RANGE": [
@@ -20677,7 +20783,7 @@
                             "patternRotation": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0,
+                                90,
                                 0,
                                 0
                               ],
@@ -20690,7 +20796,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                3
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -20704,7 +20810,7 @@
                             "speed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                8.4
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21485,13 +21591,13 @@
                             "turbEvolutionSpeed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1
+                                0.2999999
                               ],
                               "TYPE": "f",
                               "RANGE": [
                                 {
                                   "MIN": 0,
-                                  "MAX": 5
+                                  "MAX": 1
                                 }
                               ],
                               "FULL_PATH": "/Orbs/Forces/Turbulence/TurbulenceController/turbEvolutionSpeed"
@@ -21521,7 +21627,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21785,7 +21891,7 @@
                             "evolutionSpeed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.5600000000000001
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21905,7 +22011,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.1466666
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22177,7 +22283,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            66647.21000000001
+                            12484.49
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22191,7 +22297,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1
+                            12.00228
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22241,7 +22347,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            50.00212
+                            13.44893
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22255,7 +22361,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            2.949937
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22283,7 +22389,7 @@
                         "noisyDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            0.09214752
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22297,7 +22403,7 @@
                         "noisyDragFrequency": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.635
+                            3.585
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22322,7 +22428,7 @@
                         "stationaryTransparent": {
                           "ACCESS": 3,
                           "VALUE": [
-                            false
+                            true
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -22333,7 +22439,7 @@
                         "stationaryMaxSpeed": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1
+                            4.334181
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22387,7 +22493,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            6.36334
+                            2.689787
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22682,7 +22788,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            12.00228
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22718,7 +22824,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22746,7 +22852,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            2.949937
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22774,7 +22880,7 @@
                         "noisyDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            0.09214752
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -22824,7 +22930,7 @@
                         "stationaryMaxSpeed": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            4.334181
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23165,7 +23271,7 @@
                     "aliveParticleCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        105021
+                        100855
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -29618,7 +29724,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 110,
+              "value": 68,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29636,7 +29742,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 75,
+              "value": 51,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29654,7 +29760,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 8,
+              "value": 42,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29672,7 +29778,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 88,
+              "value": 42,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29690,7 +29796,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 74,
+              "value": 46,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29708,6 +29814,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 30,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29743,7 +29850,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 16,
+              "value": 90,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -29761,7 +29868,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 116,
+              "value": 95,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32321,7 +32428,7 @@
                 {
                   "value": [
                     0.0,
-                    0.0,
+                    0.6969075202941895,
                     0.0
                   ],
                   "alwaysNotify": true,
@@ -32364,7 +32471,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 10.0,
+                  "value": 5.714286327362061,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 30,
@@ -32430,7 +32537,7 @@
             {
               "parameters": [
                 {
-                  "value": 65.21430969238281,
+                  "value": 17.64287948608398,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 180,
@@ -32598,56 +32705,6 @@
               }
             }
           ],
-          "viewOffset": [
-            0,
-            0
-          ],
-          "viewZoom": 1.0
-        }
-      },
-      {
-        "niceName": "Vortex Force 1",
-        "type": "CVGroup",
-        "params": {
-        },
-        "variables": {
-          "items": [
-            {
-              "parameters": [
-                {
-                  "value": [
-                    40.0,
-                    40.0
-                  ],
-                  "controlAddress": "/viewUIPosition"
-                },
-                {
-                  "value": 0.0,
-                  "minValue": 0,
-                  "maxValue": 1,
-                  "default": 0,
-                  "controlAddress": "/vortexRandom",
-                  "feedbackOnly": false,
-                  "type": "Float",
-                  "niceName": "Vortex Random",
-                  "customizable": true,
-                  "removable": false,
-                  "description": "Custom control of type Float",
-                  "hideInEditor": false
-                }
-              ],
-              "niceName": "Vortex Random",
-              "editorIsCollapsed": true,
-              "type": "Float Parameter"
-            }
-          ],
-          "viewOffset": [
-            0,
-            0
-          ],
-          "viewZoom": 1.0
-        },
-        "presets": {
           "viewOffset": [
             0,
             0
@@ -33119,7 +33176,7 @@
             {
               "parameters": [
                 {
-                  "value": 4000.0,
+                  "value": 909.3790283203125,
                   "minValue": 0.0,
                   "maxValue": 4000.0,
                   "default": 0,
@@ -33379,10 +33436,10 @@
               "parameters": [
                 {
                   "value": [
-                    0.3686274588108063,
-                    0,
-                    0,
-                    1
+                    0.08380551636219025,
+                    0.3090620934963226,
+                    0.0,
+                    1.0
                   ],
                   "controlAddress": "/particleCountBackgroundColor",
                   "feedbackOnly": false,
@@ -40749,28 +40806,28 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 0.5333333611488342,
+                          "value": 1.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.7866666913032532,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.4399999976158142,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 1.0,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
@@ -41078,7 +41135,7 @@
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 1.199999928474426,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -41138,19 +41195,19 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 0.5999999046325684,
+                          "value": 1.0,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.699999988079071,
+                          "value": 1.0,
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 1.200000047683716,
+                          "value": 1.0,
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 1.200000047683716,
+                          "value": 1.0,
                           "controlAddress": "/#5"
                         },
                         {
@@ -41158,7 +41215,7 @@
                           "controlAddress": "/#6"
                         },
                         {
-                          "value": 0.1500000059604645,
+                          "value": 1.0,
                           "controlAddress": "/#7"
                         },
                         {
@@ -41167,7 +41224,6 @@
                         }
                       ],
                       "niceName": "Output Equalizer",
-                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 8
                     },
@@ -42369,35 +42425,35 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 2.799999952316284,
+                          "value": 1.799999952316284,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.6960625648498535,
+                          "value": 4.096062183380127,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 7.559055328369141,
+                          "value": 6.759055137634277,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 9.951181411743164,
+                          "value": 2.551181316375732,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
                           "controlAddress": "/#5"
                         },
                         {
-                          "value": 4.800000190734863,
+                          "value": 1.8,
                           "minValue": 0,
                           "maxValue": 15,
                           "default": 0,
@@ -70579,8 +70635,8 @@
       }
     ],
     "viewOffset": [
-      85,
-      -233
+      222,
+      -191
     ],
     "viewZoom": 0.53125,
     "transitions": {
@@ -70736,8 +70792,8 @@
         }
       ],
       "viewOffset": [
-        85,
-        -233
+        222,
+        -191
       ],
       "viewZoom": 0.53125
     }
