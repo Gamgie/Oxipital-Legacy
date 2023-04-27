@@ -189,10 +189,10 @@ MonoBehaviour:
   - title: Axial
     position:
       serializedVersion: 2
-      x: -3820
+      x: -3841
       y: 3623
-      width: 650
-      height: 194
+      width: 671
+      height: 262
     contents:
     - model: {fileID: 8926484042661617900}
       id: 0
@@ -201,6 +201,12 @@ MonoBehaviour:
       id: 4
       isStickyNote: 0
     - model: {fileID: 8926484042661622105}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661623595}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661623593}
       id: 0
       isStickyNote: 0
   - title: Select Output by Angle Against Eye Vector
@@ -264,10 +270,10 @@ MonoBehaviour:
   - title: Perlin
     position:
       serializedVersion: 2
-      x: 0
-      y: 0
-      width: 100
-      height: 100
+      x: -3884
+      y: 3910
+      width: 716
+      height: 644
     contents:
     - model: {fileID: 8926484042661623023}
       id: 0
@@ -354,7 +360,7 @@ MonoBehaviour:
   - name: Attractor
     collapsed: 1
   - name: Vortex
-    collapsed: 0
+    collapsed: 1
   - name: Turbulence
     collapsed: 1
   - name: Zalem Gravity
@@ -364,9 +370,9 @@ MonoBehaviour:
   - name: Emitter Parameter
     collapsed: 1
   - name: Swirl
-    collapsed: 1
+    collapsed: 0
   - name: Axial Force
-    collapsed: 1
+    collapsed: 0
   - name: Spiral
     collapsed: 1
   - name: Perlin
@@ -528,6 +534,8 @@ MonoBehaviour:
   - {fileID: 8926484042661623561}
   - {fileID: 8926484042661623581}
   - {fileID: 8926484042661623583}
+  - {fileID: 8926484042661623593}
+  - {fileID: 8926484042661623595}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -616,8 +624,8 @@ MonoBehaviour:
     max: 1
     enumValues: []
     descendantCount: 0
-  - name: Attractor Spherical  Frequency
-    path: Attractor Spherical  Frequency
+  - name: Attractor Spherical Frequency
+    path: Attractor Spherical Frequency
     tooltip: 
     sheetType: m_Float
     realType: Single
@@ -1578,6 +1586,33 @@ MonoBehaviour:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: Axial Radius
+    path: Axial Radius
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: Axial Graphics Buffer
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: GraphicsBuffer
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -6527,7 +6562,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617901}
   m_ExposedName: Axial Intensity
   m_Exposed: 1
-  m_Order: 65
+  m_Order: 0
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -6607,7 +6642,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617903}
   m_ExposedName: Axial Axis
   m_Exposed: 1
-  m_Order: 66
+  m_Order: 1
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -15758,6 +15793,8 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661622257}
   - {fileID: 8926484042661622261}
+  - {fileID: 8926484042661623591}
+  - {fileID: 8926484042661623592}
   m_OutputSlots:
   - {fileID: 8926484042661622262}
   m_Subgraph: {fileID: 5371698745253816930, guid: 2c4de2715fee5674a96a088fbfeea1b0,
@@ -28353,7 +28390,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661622718}
-  m_ExposedName: Attractor Spherical  Frequency
+  m_ExposedName: Attractor Spherical Frequency
   m_Exposed: 1
   m_Order: 45
   m_Category: Attractor
@@ -29602,7 +29639,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623024}
       inputSlot: {fileID: 8926484042661623297}
-    position: {x: -3816, y: 3910}
+    position: {x: -3806, y: 3969}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623024
@@ -29682,7 +29719,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623026}
       inputSlot: {fileID: 8926484042661623304}
-    position: {x: -3844, y: 4269}
+    position: {x: -3834, y: 4328}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623026
@@ -29764,7 +29801,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623028}
       inputSlot: {fileID: 8926484042661623298}
-    position: {x: -3814, y: 3961}
+    position: {x: -3804, y: 4020}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623028
@@ -29846,7 +29883,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623030}
       inputSlot: {fileID: 8926484042661623299}
-    position: {x: -3835, y: 4012}
+    position: {x: -3825, y: 4071}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623030
@@ -29926,7 +29963,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623032}
       inputSlot: {fileID: 8926484042661623300}
-    position: {x: -3835, y: 4063}
+    position: {x: -3825, y: 4122}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623032
@@ -30008,7 +30045,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623034}
       inputSlot: {fileID: 8926484042661623301}
-    position: {x: -3835, y: 4099}
+    position: {x: -3825, y: 4158}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623034
@@ -30090,7 +30127,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623036}
       inputSlot: {fileID: 8926484042661623302}
-    position: {x: -3844, y: 4162}
+    position: {x: -3834, y: 4221}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623036
@@ -30170,7 +30207,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623050}
       inputSlot: {fileID: 8926484042661623303}
-    position: {x: -3819, y: 4218}
+    position: {x: -3809, y: 4277}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623050
@@ -30250,7 +30287,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623111}
       inputSlot: {fileID: 8926484042661623305}
-    position: {x: -3869, y: 4320}
+    position: {x: -3859, y: 4379}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623111
@@ -30330,7 +30367,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623198}
       inputSlot: {fileID: 8926484042661623306}
-    position: {x: -3848, y: 4368}
+    position: {x: -3838, y: 4427}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623198
@@ -30410,7 +30447,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661623291}
       inputSlot: {fileID: 8926484042661623307}
-    position: {x: -3865, y: 4419}
+    position: {x: -3855, y: 4478}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661623291
@@ -30463,7 +30500,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -3557, y: 4027}
+  m_UIPosition: {x: -3547, y: 4086}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -34166,3 +34203,233 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
+--- !u!114 &8926484042661623591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661623591}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661622105}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: Axial Radius
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots:
+  - {fileID: 8926484042661623596}
+--- !u!114 &8926484042661623592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ff4abdfc4ddb54992e15a0636f5d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661623592}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661622105}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.GraphicsBuffer, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: 
+    m_Space: 2147483647
+  m_Property:
+    name: Buffer
+    m_serializedType:
+      m_SerializableType: UnityEngine.GraphicsBuffer, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 0
+  m_LinkedSlots:
+  - {fileID: 8926484042661623594}
+--- !u!114 &8926484042661623593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661623594}
+  m_ExposedName: Axial Graphics Buffer
+  m_Exposed: 1
+  m_Order: 2
+  m_Category: Axial Force
+  m_Min:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_Max:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 0
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661623594}
+      inputSlot: {fileID: 8926484042661623592}
+    position: {x: -3816, y: 3809}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &8926484042661623594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ff4abdfc4ddb54992e15a0636f5d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661623594}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661623593}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.GraphicsBuffer, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: 
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: UnityEngine.GraphicsBuffer, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661623592}
+--- !u!114 &8926484042661623595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661623596}
+  m_ExposedName: Axial Radius
+  m_Exposed: 1
+  m_Order: 1
+  m_Category: Axial Force
+  m_Min:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_Max:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 0
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661623596}
+      inputSlot: {fileID: 8926484042661623591}
+    position: {x: -3767, y: 3783}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &8926484042661623596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661623596}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661623595}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661623591}
