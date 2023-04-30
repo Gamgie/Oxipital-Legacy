@@ -180,6 +180,7 @@ public class OrbGroup : MonoBehaviour
             if(showMesh)
 			{
                 _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
+                _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation) ;
                 _meshRenderer.enabled = true;
 			}
             else
@@ -259,6 +260,7 @@ public class OrbGroup : MonoBehaviour
             if (_visualEffects[i].HasVector3("Emitter Position") == true)
             {
                 _visualEffects[i].SetVector3("Emitter Position", _pattern.GetPosition(i));
+                _meshRenderer.transform.position = _pattern.GetPosition(i);
             }
 		}
 	}

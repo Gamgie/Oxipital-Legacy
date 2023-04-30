@@ -299,7 +299,7 @@ public class BalletPattern : MonoBehaviour
 
         if(dancerCount == 1)
 		{
-            linePositions[0] = Vector3.zero;
+            linePositions[0] = new Vector3(0,Mathf.Sin(2 * Mathf.PI * currentSpeed + phase * Mathf.PI * 2),0);
             linePositions[0] = transform.TransformPoint(linePositions[0]);
             return;
         }
@@ -308,7 +308,7 @@ public class BalletPattern : MonoBehaviour
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                           (i * currentSize / (dancers.Count - 1)),
+                                           (i * currentSize * Mathf.Sin(2*Mathf.PI* currentSpeed + phase * Mathf.PI * 2) / (dancers.Count - 1)),
                                            0);
 
             linePositions[i] = transform.TransformPoint(linePositions[i]);
