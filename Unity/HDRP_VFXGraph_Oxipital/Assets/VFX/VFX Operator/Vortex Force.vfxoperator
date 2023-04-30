@@ -83,6 +83,8 @@ MonoBehaviour:
   - {fileID: 570}
   - {fileID: 572}
   - {fileID: 586}
+  - {fileID: 611}
+  - {fileID: 614}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -114,6 +116,34 @@ MonoBehaviour:
       m_SerializableObject: '{"x":0.0,"y":0.0,"z":0.0}'
     min: -Infinity
     max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: Vortex Force Orthoradial
+    path: Vortex Force Orthoradial
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    min: 0
+    max: 1
+    enumValues: []
+    descendantCount: 0
+  - name: Vortex Force Cylindric
+    path: Vortex Force Cylindric
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    min: 0
+    max: 1
     enumValues: []
     descendantCount: 0
   - name: Vortex Radius
@@ -208,10 +238,10 @@ MonoBehaviour:
   - title: Radial to Axis Vector
     position:
       serializedVersion: 2
-      x: -7920
-      y: 1444
-      width: 1366
-      height: 243
+      x: -8592
+      y: 1886
+      width: 1344
+      height: 212
     contents:
     - model: {fileID: 20}
       id: 0
@@ -225,10 +255,10 @@ MonoBehaviour:
   - title: Cylindric Force r
     position:
       serializedVersion: 2
-      x: -8877
-      y: 721
-      width: 2178
-      height: 542
+      x: -8793
+      y: 1177
+      width: 2015
+      height: 498
     contents:
     - model: {fileID: 196}
       id: 1
@@ -266,11 +296,14 @@ MonoBehaviour:
     - model: {fileID: 387}
       id: 1
       isStickyNote: 0
+    - model: {fileID: 614}
+      id: 0
+      isStickyNote: 0
   - title: "Orthoradial (1/r\xB2)"
     position:
       serializedVersion: 2
-      x: -7533
-      y: -357
+      x: -7770
+      y: -690
       width: 1410
       height: 550
     contents:
@@ -299,6 +332,9 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 389}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 611}
       id: 0
       isStickyNote: 0
   - title: Radius Threshold
@@ -363,8 +399,8 @@ MonoBehaviour:
   - title: Vortex Tornado
     position:
       serializedVersion: 2
-      x: -7838
-      y: -265
+      x: -8383
+      y: -542
       width: 389
       height: 275
     contents: "This is the similar behavior as the vortex in TD.\nWe have an orthoradial
@@ -386,9 +422,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -10110
-    y: -357
+    y: -690
     width: 6932
-    height: 2013
+    height: 2788
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +814,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6841, y: 1533}
+  m_UIPosition: {x: -7535, y: 1975}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1333,7 +1369,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7254, y: 780}
+  m_UIPosition: {x: -7333, y: 1236}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1470,7 +1506,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6881, y: 847}
+  m_UIPosition: {x: -6960, y: 1303}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1635,7 +1671,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7588, y: 817}
+  m_UIPosition: {x: -7667, y: 1273}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -1730,12 +1766,13 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6305, y: -298}
+  m_UIPosition: {x: -6542, y: -631}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 106}
   - {fileID: 107}
+  - {fileID: 613}
   m_OutputSlots:
   - {fileID: 108}
   m_Operands:
@@ -1744,6 +1781,10 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   - name: b
+    type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  - name: c
     type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
@@ -3872,7 +3913,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7145, y: -128}
+  m_UIPosition: {x: -7382, y: -461}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -4069,7 +4110,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6495, y: -193}
+  m_UIPosition: {x: -6732, y: -526}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4205,7 +4246,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6691, y: -178}
+  m_UIPosition: {x: -6928, y: -511}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4342,7 +4383,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -6993, y: -148}
+  m_UIPosition: {x: -7230, y: -481}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4507,14 +4548,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 197}
       inputSlot: {fileID: 106}
-    position: {x: -6802, y: -290}
+    position: {x: -7039, y: -623}
     expandedSlots: []
     expanded: 0
   - m_Id: 1
     linkedSlots:
     - outputSlot: {fileID: 197}
       inputSlot: {fileID: 312}
-    position: {x: -8299, y: 1187}
+    position: {x: -8160, y: 1530}
     expandedSlots: []
     expanded: 0
 --- !u!114 &197
@@ -4602,7 +4643,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 199}
       inputSlot: {fileID: 347}
-    position: {x: -7873, y: 1503}
+    position: {x: -8567, y: 1945}
     expandedSlots: []
     expanded: 0
   - m_Id: 2
@@ -4774,7 +4815,7 @@ MonoBehaviour:
   - {fileID: 209}
   m_ExposedName: Vortex Radius
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -4802,14 +4843,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 209}
       inputSlot: {fileID: 390}
-    position: {x: -7427, y: 31}
+    position: {x: -7664, y: -302}
     expandedSlots: []
     expanded: 0
   - m_Id: 3
     linkedSlots:
     - outputSlot: {fileID: 209}
       inputSlot: {fileID: 394}
-    position: {x: -8610, y: 943}
+    position: {x: -8689, y: 1399}
     expandedSlots: []
     expanded: 0
 --- !u!114 &209
@@ -4873,7 +4914,7 @@ MonoBehaviour:
   - {fileID: 211}
   m_ExposedName: Vortex Force Random
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -4894,7 +4935,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 211}
       inputSlot: {fileID: 103}
-    position: {x: -7803, y: 810}
+    position: {x: -7882, y: 1266}
     expandedSlots: []
     expanded: 0
 --- !u!114 &211
@@ -4955,7 +4996,7 @@ MonoBehaviour:
   m_OutputSlots: []
   m_ExposedName: Output
   m_Exposed: 0
-  m_Order: 4
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -5540,7 +5581,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -8233, y: 831}
+  m_UIPosition: {x: -8312, y: 1287}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -5737,12 +5778,13 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7788, y: 1005}
+  m_UIPosition: {x: -7867, y: 1461}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 311}
   - {fileID: 312}
+  - {fileID: 616}
   m_OutputSlots:
   - {fileID: 313}
   m_Operands:
@@ -5751,6 +5793,10 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   - name: b
+    type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  - name: c
     type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
@@ -5875,7 +5921,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -8611, y: 792}
+  m_UIPosition: {x: -8690, y: 1248}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6207,7 +6253,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -8053, y: 861}
+  m_UIPosition: {x: -8132, y: 1317}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6344,7 +6390,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7425, y: 1533}
+  m_UIPosition: {x: -8119, y: 1975}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7724,7 +7770,7 @@ MonoBehaviour:
   - {fileID: 388}
   m_ExposedName: Vortex Inner Radius
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -7745,14 +7791,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 388}
       inputSlot: {fileID: 391}
-    position: {x: -7508, y: 117}
+    position: {x: -7745, y: -216}
     expandedSlots: []
     expanded: 0
   - m_Id: 1
     linkedSlots:
     - outputSlot: {fileID: 388}
       inputSlot: {fileID: 395}
-    position: {x: -8689, y: 994}
+    position: {x: -8768, y: 1450}
     expandedSlots: []
     expanded: 0
 --- !u!114 &388
@@ -7806,7 +7852,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -7187, y: 24}
+  m_UIPosition: {x: -7424, y: -309}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7943,7 +7989,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 2}
   m_Children: []
-  m_UIPosition: {x: -8370, y: 936}
+  m_UIPosition: {x: -8449, y: 1392}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -9431,7 +9477,7 @@ MonoBehaviour:
   - {fileID: 569}
   m_ExposedName: Buffer
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:
@@ -9514,7 +9560,7 @@ MonoBehaviour:
   - {fileID: 571}
   m_ExposedName: Clockwise
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 9
   m_Category: 
   m_Min:
     m_Type:
@@ -10726,3 +10772,237 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 2}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 612}
+  m_ExposedName: Vortex Force Orthoradial
+  m_Exposed: 1
+  m_Order: 2
+  m_Category: 
+  m_Min:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 0
+  m_Max:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 1
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 1
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 612}
+      inputSlot: {fileID: 613}
+    position: {x: -7024, y: -577}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 612}
+  m_MasterData:
+    m_Owner: {fileID: 611}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 613}
+--- !u!114 &613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 613}
+  m_MasterData:
+    m_Owner: {fileID: 105}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: 2147483647
+  m_Property:
+    name: c
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots:
+  - {fileID: 612}
+--- !u!114 &614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 2}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 615}
+  m_ExposedName: Vortex Force Cylindric
+  m_Exposed: 1
+  m_Order: 3
+  m_Category: 
+  m_Min:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 0
+  m_Max:
+    m_Type:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 1
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 1
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 615}
+      inputSlot: {fileID: 616}
+    position: {x: -8213, y: 1599}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 615}
+  m_MasterData:
+    m_Owner: {fileID: 614}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 616}
+--- !u!114 &616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 616}
+  m_MasterData:
+    m_Owner: {fileID: 310}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: 2147483647
+  m_Property:
+    name: c
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots:
+  - {fileID: 615}

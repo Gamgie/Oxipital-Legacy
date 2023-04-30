@@ -10,6 +10,10 @@ public class VortexController : ForceController
     [Range(0, 1)]
     public float innerRadius = 0.5f;
     public bool clockwise = true;
+    [Range(0, 1)]
+    public float orthoradialIntensity = 1f;
+    [Range(0, 1)]
+    public float cylindricIntensity = 1f;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Vortex Graphics Buffer");
 
@@ -24,6 +28,14 @@ public class VortexController : ForceController
             // Intensity
             if (visualEffect.HasFloat(vortex + " Intensity" + m_suffix))
                 visualEffect.SetFloat(vortex + " Intensity" + m_suffix, intensity);
+
+            // Orthoradial Intensity
+            if (visualEffect.HasFloat(vortex + " Orthoradial Intensity" + m_suffix))
+                visualEffect.SetFloat(vortex + " Orthoradial Intensity" + m_suffix, orthoradialIntensity);
+
+            // Cylindric Intensity
+            if (visualEffect.HasFloat(vortex + " Cylindric Intensity" + m_suffix))
+                visualEffect.SetFloat(vortex + " Cylindric Intensity" + m_suffix, cylindricIntensity);
 
             // Radius
             if (visualEffect.HasFloat(vortex + " Radius" + m_suffix))
