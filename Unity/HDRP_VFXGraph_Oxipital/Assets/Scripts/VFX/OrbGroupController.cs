@@ -41,6 +41,7 @@ public class OrbGroupController : MonoBehaviour
     public float emitterSize;
     public bool emitFromInside;
     public bool activateCollision;
+    public bool showMesh;
     public Vector3 emitterRotation; // Rotation in euler angle of the emitter
 
 
@@ -120,6 +121,7 @@ public class OrbGroupController : MonoBehaviour
                 emitterSize = 0;
                 emitFromInside = false;
                 activateCollision = false;
+                showMesh = false;
 
                 position = Vector3.zero;
                 patternRotation = Vector3.zero;
@@ -168,6 +170,7 @@ public class OrbGroupController : MonoBehaviour
                     emitterSize = oG.emitterSize;
                     emitFromInside = oG.emitFromInside;
                     activateCollision = oG.activateCollision;
+                    showMesh = oG.showMesh;
                     emitterRotation = oG.emitterRotation;
 
                     // Get ballet pattern parameters
@@ -217,6 +220,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.emitterSize = emitterSize;
                     oG.emitFromInside = emitFromInside;
                     oG.activateCollision = activateCollision;
+                    oG.showMesh = showMesh;
                     oG.emitterRotation = emitterRotation;
 
                     // Update ballet pattern

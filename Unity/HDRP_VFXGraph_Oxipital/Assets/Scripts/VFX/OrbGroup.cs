@@ -61,6 +61,7 @@ public class OrbGroup : MonoBehaviour
     private BalletPattern _pattern;
     private int _orbCount = 0;
     private MeshRenderer _meshRenderer;
+    private MeshFilter _meshFilter;
 
     public void Initialize(OrbsManager orbsMngr)
     {
@@ -71,13 +72,15 @@ public class OrbGroup : MonoBehaviour
         _pattern = orbsMngr.balletMngr.AddPattern(BalletManager.PatternGroup.Orb);
         patternID = _pattern.id;
 
-        gameObject.AddComponent<MeshRenderer>();
-
         // Initialize with the first orb
         SetOrbCount(_orbCount);
 
         // Update shape according to index
         SetEmitterShape();
+
+        // Get Mesh references
+        _meshFilter = GetComponentInChildren<MeshFilter>();
+        _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -174,6 +177,16 @@ public class OrbGroup : MonoBehaviour
             if (vfx.HasFloat("Emitter Scale") == true)
                 vfx.SetFloat("Emitter Scale", emitterSize);
 
+            if(showMesh)
+			{
+                _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
+                _meshRenderer.enabled = true;
+			}
+            else
+			{
+                _meshRenderer.enabled = false;
+            }
+
             // Check if we need to update mesh in graph
             _emitterShapeIndex = GetEmitterShapeIndex();
             if(emitterShape == EmitterShape.Line)
@@ -205,6 +218,7 @@ public class OrbGroup : MonoBehaviour
                 {
                     vfx.SetMesh("Emitter Mesh", meshArray[_emitterShapeIndex]);
                     vfx.SetTexture("Collision SDF", sdfCollisionArray[_emitterShapeIndex]);
+                    _meshFilter.mesh = meshArray[_emitterShapeIndex];
                 }
             }
 
@@ -469,6 +483,7 @@ public class OrbGroup : MonoBehaviour
         data.emitterSize = emitterSize;
         data.emitFromInside = emitFromInside;
         data.activateCollision = activateCollision;
+        data.showMesh = showMesh;
 
         return data;
     }
@@ -498,6 +513,7 @@ public class OrbGroup : MonoBehaviour
         emitterSize = data.emitterSize;
         emitFromInside = data.emitFromInside;
         activateCollision = data.activateCollision;
+        showMesh = data.showMesh;
     }
 	#endregion
 }
@@ -534,4 +550,5 @@ public class OrbGroupData
     public float emitterSize;
     public bool emitFromInside;
     public bool activateCollision;
+    public bool showMesh;
 }
