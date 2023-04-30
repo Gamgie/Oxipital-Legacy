@@ -16,6 +16,7 @@ public class BalletPattern : MonoBehaviour
     public float size = 1; // Size of this pattern
     public float speed = 1f; // speed of the choreography
     public float lerpDuration = 3f; // Time for moving from a pattern to another
+    public AnimationCurve lerpCurve; // Interpolation curve for lerping
     public float phase; // Rotation phase
 
     [Header("Size LFO")]
@@ -142,6 +143,7 @@ public class BalletPattern : MonoBehaviour
 
         // Lerp amount
         float t = (Time.time - lerpStartTime) / lerpDuration;
+        t = lerpCurve.Evaluate(t);
         if(t >= 1f)
 		{
             isLerping = false;
@@ -279,8 +281,8 @@ public class BalletPattern : MonoBehaviour
             if(size != 0)
 			{
                 cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
-                                                0f,
-                                                Mathf.Cos(currentSpeed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2);
+                                                Mathf.Cos(currentSpeed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                                                0f);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
             else
@@ -299,7 +301,7 @@ public class BalletPattern : MonoBehaviour
 
         if(dancerCount == 1)
 		{
-            linePositions[0] = new Vector3(0,Mathf.Sin(2 * Mathf.PI * currentSpeed + phase * Mathf.PI * 2),0);
+            linePositions[0] = new Vector3(0,Mathf.Sin(2 * Mathf.PI + currentSpeed + phase * Mathf.PI * 2),0);
             linePositions[0] = transform.TransformPoint(linePositions[0]);
             return;
         }
@@ -337,8 +339,8 @@ public class BalletPattern : MonoBehaviour
             if (size != 0)
             {
                 orbitPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
-                                                0f,
-                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2);
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
+                                                0f);
                 orbitPositions[i] = transform.TransformPoint(orbitPositions[i]);
             }
             else
@@ -363,7 +365,7 @@ public class BalletPattern : MonoBehaviour
             oD.radius = radius;
 
             // Compute speed for this fellow
-            float orbitalSpeed = Random.Range(speed * 0.5f, speed);
+            float orbitalSpeed = Random.Range(speed * 0.9f, speed * 1.2f);
             oD.speed = orbitalSpeed;
 
             // Compute angle 
@@ -388,8 +390,8 @@ public class BalletPattern : MonoBehaviour
             if (size != 0)
             {
                 atomPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
-                                                0f,
-                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2);
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                                                0f);
 
                 // Rotate position with angle degree
                 atomPositions[i] = orbitData[i].rotation * atomPositions[i];
