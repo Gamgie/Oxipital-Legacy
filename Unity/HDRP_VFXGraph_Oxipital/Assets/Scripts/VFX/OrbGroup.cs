@@ -51,26 +51,30 @@ public class OrbGroup : MonoBehaviour
     public Texture[] sdfCollisionArray;
     public bool emitFromInside;
     public bool activateCollision;
+    public bool showMesh = false;
 
     public OrbGroupData data = new OrbGroupData();
 
-    private List<VisualEffect> visualEffects;
-    private int emitterShapeIndex;
-    private OrbsManager orbsMngr;
-    private BalletPattern pattern;
-    private int orbCount = 0;
+    private List<VisualEffect> _visualEffects;
+    private int _emitterShapeIndex;
+    private OrbsManager _orbsMngr;
+    private BalletPattern _pattern;
+    private int _orbCount = 0;
+    private MeshRenderer _meshRenderer;
 
     public void Initialize(OrbsManager orbsMngr)
     {
-        this.orbsMngr = orbsMngr;        
-        visualEffects = new List<VisualEffect>();
+        this._orbsMngr = orbsMngr;        
+        _visualEffects = new List<VisualEffect>();
 
         // Add a pattern linked to this orbGroup.
-        pattern = orbsMngr.balletMngr.AddPattern(BalletManager.PatternGroup.Orb);
-        patternID = pattern.id;
+        _pattern = orbsMngr.balletMngr.AddPattern(BalletManager.PatternGroup.Orb);
+        patternID = _pattern.id;
+
+        gameObject.AddComponent<MeshRenderer>();
 
         // Initialize with the first orb
-        SetOrbCount(orbCount);
+        SetOrbCount(_orbCount);
 
         // Update shape according to index
         SetEmitterShape();
@@ -86,19 +90,19 @@ public class OrbGroup : MonoBehaviour
         // Update pattern link
         if(patternID != -1) // Update only if we have selected a pattern id
 		{
-            if(pattern != null)
+            if(_pattern != null)
             {
-                if(pattern.id != patternID)
+                if(_pattern.id != patternID)
 				{
-                    pattern = orbsMngr.GetPattern(patternID); // Id are diferent so we should update
+                    _pattern = _orbsMngr.GetPattern(patternID); // Id are diferent so we should update
                 }
             }
             else // If pattern is null, it means we have to update also
 			{
-                pattern = orbsMngr.GetPattern(patternID);
+                _pattern = _orbsMngr.GetPattern(patternID);
             }
 
-            if (pattern == null)
+            if (_pattern == null)
                 patternID = -1;
         }
 
@@ -107,7 +111,7 @@ public class OrbGroup : MonoBehaviour
 
     void UpdateVisualEffect()
     {
-        foreach (VisualEffect vfx in visualEffects)
+        foreach (VisualEffect vfx in _visualEffects)
         {
             if (vfx == null)
             {
@@ -157,7 +161,7 @@ public class OrbGroup : MonoBehaviour
 
     void UpdateEmitter()
     {
-        foreach (VisualEffect vfx in visualEffects)
+        foreach (VisualEffect vfx in _visualEffects)
         {
             // If no emitter mesh in graph then no need to go further
             if (vfx.HasMesh("Emitter Mesh") == false)
@@ -171,7 +175,7 @@ public class OrbGroup : MonoBehaviour
                 vfx.SetFloat("Emitter Scale", emitterSize);
 
             // Check if we need to update mesh in graph
-            emitterShapeIndex = GetEmitterShapeIndex();
+            _emitterShapeIndex = GetEmitterShapeIndex();
             if(emitterShape == EmitterShape.Line)
 			{
                 if (vfx.HasBool("isCircle") == true)
@@ -197,10 +201,10 @@ public class OrbGroup : MonoBehaviour
                     vfx.SetBool("isCircle", false);
 
                 Mesh actualMesh = vfx.GetMesh("Emitter Mesh");
-                if (actualMesh != meshArray[emitterShapeIndex])
+                if (actualMesh != meshArray[_emitterShapeIndex])
                 {
-                    vfx.SetMesh("Emitter Mesh", meshArray[emitterShapeIndex]);
-                    vfx.SetTexture("Collision SDF", sdfCollisionArray[emitterShapeIndex]);
+                    vfx.SetMesh("Emitter Mesh", meshArray[_emitterShapeIndex]);
+                    vfx.SetTexture("Collision SDF", sdfCollisionArray[_emitterShapeIndex]);
                 }
             }
 
@@ -233,14 +237,14 @@ public class OrbGroup : MonoBehaviour
 
     void UpdatePositions()
 	{
-        if (pattern == null)
+        if (_pattern == null)
             return;
 
-        for(int i = 0; i < visualEffects.Count; i++)
+        for(int i = 0; i < _visualEffects.Count; i++)
 		{
-            if (visualEffects[i].HasVector3("Emitter Position") == true)
+            if (_visualEffects[i].HasVector3("Emitter Position") == true)
             {
-                visualEffects[i].SetVector3("Emitter Position", pattern.GetPosition(i));
+                _visualEffects[i].SetVector3("Emitter Position", _pattern.GetPosition(i));
             }
 		}
 	}
@@ -288,7 +292,7 @@ public class OrbGroup : MonoBehaviour
 
     private void SetEmitterShape()
 	{
-        switch (emitterShapeIndex)
+        switch (_emitterShapeIndex)
         {
             case 0 :
                 emitterShape = EmitterShape.Sphere;
@@ -326,7 +330,7 @@ public class OrbGroup : MonoBehaviour
     // Reset all particle system in this orbgroup
     public void Reinit()
     {
-        foreach (VisualEffect vfx in visualEffects)
+        foreach (VisualEffect vfx in _visualEffects)
         {
             if (vfx == null)
             {
@@ -340,22 +344,22 @@ public class OrbGroup : MonoBehaviour
 
     void AddOrb()
     {
-        if (visualEffects == null)
+        if (_visualEffects == null)
         {
             Debug.LogError("Try to add an Orb in a null list from " + gameObject.name);
             return;
         }
 
         VisualEffect o = Instantiate(orbPrefab).GetComponent<VisualEffect>();
-        o.name = "Orb" + orbGroupId + "_" + visualEffects.Count;
+        o.name = "Orb" + orbGroupId + "_" + _visualEffects.Count;
         o.transform.parent = transform;
-        visualEffects.Add(o);
+        _visualEffects.Add(o);
 
         // Add a dancer in pattern
-        if(pattern != null)
+        if(_pattern != null)
 		{
-            if(pattern.dancerCount < GetOrbCount())
-                pattern.AddDancer();
+            if(_pattern.dancerCount < GetOrbCount())
+                _pattern.AddDancer();
 		}
         else
 		{
@@ -363,16 +367,16 @@ public class OrbGroup : MonoBehaviour
 		}
 
         // Send a message to the manager
-        orbsMngr.GetOnOrbCreated().Invoke();
+        _orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
 
         // Update OrbCount accordingly
-        orbCount = visualEffects.Count;
+        _orbCount = _visualEffects.Count;
     }
 
     void DestroyOrb(int index = -1)
     {
-        if (visualEffects == null)
+        if (_visualEffects == null)
         {
             Debug.LogError("Try to destroy an Orb in a null list from " + gameObject.name);
             return;
@@ -382,37 +386,37 @@ public class OrbGroup : MonoBehaviour
 
         if (index == -1) // Remove last one
 		{
-            orbToBeDestroyed = visualEffects[visualEffects.Count-1];
-            pattern.RemoveDancer();
-            index = visualEffects.Count - 1;
+            orbToBeDestroyed = _visualEffects[_visualEffects.Count-1];
+            _pattern.RemoveDancer();
+            index = _visualEffects.Count - 1;
         }
         else // Remove at index
 		{
-            orbToBeDestroyed = visualEffects[index];
-            pattern.RemoveDancer(index);
+            orbToBeDestroyed = _visualEffects[index];
+            _pattern.RemoveDancer(index);
         }
  
         Destroy(orbToBeDestroyed.gameObject);
-        visualEffects.RemoveAt(index);
+        _visualEffects.RemoveAt(index);
 
         // Update OrbCount accordingly
-        orbCount = visualEffects.Count;
-        orbsMngr.GetOnOrbCreated().Invoke();
+        _orbCount = _visualEffects.Count;
+        _orbsMngr.GetOnOrbCreated().Invoke();
     }
 
     public int GetOrbCount()
 	{
-        return orbCount;
+        return _orbCount;
 	}
 
     public void SetOrbCount(int count)
 	{
-        pattern.UpdateDancerCount(count);
+        _pattern.UpdateDancerCount(count);
 
         // Update list of vfx.
-        if (count > visualEffects.Count)
+        if (count > _visualEffects.Count)
         {
-            int instanceCount = pattern.dancerCount - visualEffects.Count;
+            int instanceCount = _pattern.dancerCount - _visualEffects.Count;
             for (int i = 0; i < instanceCount; i++)
             {
                 AddOrb();
@@ -420,7 +424,7 @@ public class OrbGroup : MonoBehaviour
         }
         else
         {
-            int removeCount = visualEffects.Count - count;
+            int removeCount = _visualEffects.Count - count;
             for (int i = 0; i < removeCount; i++)
             {
                 DestroyOrb();
@@ -430,7 +434,7 @@ public class OrbGroup : MonoBehaviour
 
 	private void OnDestroy()
 	{
-        orbsMngr.balletMngr.RemovePattern(BalletManager.PatternGroup.Orb,orbGroupId);
+        _orbsMngr.balletMngr.RemovePattern(BalletManager.PatternGroup.Orb,orbGroupId);
     }
 
 	#region ManageData
@@ -473,7 +477,7 @@ public class OrbGroup : MonoBehaviour
     {
         orbGroupId = data.orbGroupId;
         name = data.name;
-        orbCount = data.orbCount;
+        _orbCount = data.orbCount;
         rate = data.rate;
         life = data.life;
         color = new Color(data.colorR, data.colorG, data.colorB);
@@ -487,7 +491,7 @@ public class OrbGroup : MonoBehaviour
         staticParticle = data.staticParticle;
         stationaryTransparent = data.stationaryTransparent;
         stationaryMaxSpeed = data.stationaryMaxSpeed;
-        emitterShapeIndex = data.emitterShapeIndex;
+        _emitterShapeIndex = data.emitterShapeIndex;
         emitterPlacementMode = (EmitterPlacementMode)data.emitterPlacementMode;
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
         emitterRotation = new Vector3(data.emitterOrientationX, data.emitterOrientationY, data.emitterOrientationZ);
