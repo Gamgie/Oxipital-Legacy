@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "version": "1.9.15b2",
+    "version": "1.9.15b4",
     "versionNumber": 67855
   },
   "projectSettings": {
@@ -30,7 +30,7 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": false,
+        "value": true,
         "controlAddress": "/editMode"
       },
       {
@@ -70,7 +70,7 @@
               "controlAddress": "/snapGridMode"
             },
             {
-              "value": 10,
+              "value": 5,
               "hexMode": false,
               "controlAddress": "/snapGridSize"
             }
@@ -1475,6 +1475,72 @@
               "parameters": [
                 {
                   "value": [
+                    800.0,
+                    -350.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    75.0,
+                    80.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/forceIntensity/lists/intensity/#8",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": 14,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.3803921639919281,
+                    0.0117647061124444,
+                    0.0313725508749485,
+                    1
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": false
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "Rotary Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 25",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/states/force/processors/forceIntensity/lists/intensity/#7",
+              "controllable": "/states/force/processors/forceIntensity/lists/intensity/#8"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
                     650.0,
                     -350.0
                   ],
@@ -1527,11 +1593,929 @@
                   "enabled": true
                 }
               ],
-              "niceName": "Item 25",
+              "niceName": "Item 146",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/intensity/#7",
               "controllable": "/states/force/processors/forceIntensity/lists/intensity/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    685.0,
+                    -405.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    75.0,
+                    80.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": 12,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "Rotary Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 147",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7",
+              "controllable": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -405.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    75.0,
+                    80.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/radius/lists/radiusVariable/#7",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": 12,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "Rotary Slider",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 148",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/states/force/processors/radius/lists/radiusVariable/#6",
+              "controllable": "/states/force/processors/radius/lists/radiusVariable/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -235.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/forceIntensity/lists/reset/#7",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "Axial",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                },
+                {
+                  "value": 14,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/customImage",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 149",
+              "hideInEditor": true,
+              "type": "DashboardTriggerItem",
+              "ghostAddress": "/states/force/processors/forceIntensity/lists/reset/#7",
+              "controllable": "/states/force/processors/forceIntensity/lists/reset/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -255.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/forceIntensity/lists/inverterToggle/#7",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "Toggle Button",
+                  "controlAddress": "/style"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 150",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/states/force/processors/forceIntensity/lists/inverterToggle/#7",
+              "controllable": "/states/force/processors/forceIntensity/lists/inverterToggle/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -425.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/states/force/processors/forceIntensity/lists/sourceInput/#7",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    1
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": true
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showParentName",
+                  "enabled": true
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLearnButton",
+                  "enabled": true
+                }
+              ],
+              "niceName": "Item 151",
+              "hideInEditor": true,
+              "type": "DashboardTargetParameterItem",
+              "ghostAddress": "/states/force/processors/forceIntensity/lists/sourceInput/#7",
+              "controllable": "/states/force/processors/forceIntensity/lists/sourceInput/#7"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -285.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "Axial",
+                  "controlAddress": "/customText",
+                  "enabled": true
+                },
+                {
+                  "value": true,
+                  "controlAddress": "/readOnly"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 152",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -190.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    0.1333333402872086,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": false
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 153",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    0.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    25.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 154",
+              "hideInEditor": true,
+              "type": "DashboardEnumParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    40.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 155",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    80.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": false,
+                  "controlAddress": "/showLabel"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 156",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    100.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 157",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    130.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 158",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    160.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.2745098173618317,
+                    1.0,
+                    0.0,
+                    0.5490196347236633
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 159",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    190.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 160",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    220.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 161",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    250.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    30.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 162",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    60.0,
+                    22.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Position",
+                  "controlAddress": "/text"
+                }
+              ],
+              "niceName": "Comment 10",
+              "hideInEditor": true,
+              "type": "DashboardCommentItem"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    60.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    101.0,
+                    22.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "Pattern Rotation",
+                  "controlAddress": "/text"
+                }
+              ],
+              "niceName": "Comment 11",
+              "hideInEditor": true,
+              "type": "DashboardCommentItem"
+            },
+            {
+              "parameters": [
+                {
+                  "value": [
+                    610.0,
+                    -20.0
+                  ],
+                  "controlAddress": "/viewUIPosition"
+                },
+                {
+                  "value": [
+                    150.0,
+                    20.0
+                  ],
+                  "controlAddress": "/viewUISize"
+                },
+                {
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount",
+                  "controlAddress": "/target"
+                },
+                {
+                  "value": [
+                    0.8980392217636108,
+                    0.5568627715110779,
+                    0.1490196138620377,
+                    0.5686274766921997
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": "",
+                  "controlAddress": "/toggleImage",
+                  "enabled": false
+                }
+              ],
+              "niceName": "Item 163",
+              "hideInEditor": true,
+              "type": "DashboardParameterItem",
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount"
             },
             {
               "parameters": [
@@ -1807,7 +2791,7 @@
               "parameters": [
                 {
                   "value": [
-                    685.0,
+                    835.0,
                     -405.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -1820,7 +2804,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7",
+                  "value": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#8",
                   "controlAddress": "/target"
                 },
                 {
@@ -1853,7 +2837,7 @@
               "hideInEditor": true,
               "type": "DashboardParameterItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7",
-              "controllable": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#7"
+              "controllable": "/states/force/processors/forceIntensity/lists/sourceMultiplier/#8"
             },
             {
               "parameters": [
@@ -2159,7 +3143,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -405.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -2172,7 +3156,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/radius/lists/radiusVariable/#7",
+                  "value": "/states/force/processors/radius/lists/radiusVariable/#8",
                   "controlAddress": "/target"
                 },
                 {
@@ -2208,8 +3192,8 @@
               "niceName": "Item 60",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/states/force/processors/radius/lists/radiusVariable/#6",
-              "controllable": "/states/force/processors/radius/lists/radiusVariable/#7"
+              "ghostAddress": "/states/force/processors/radius/lists/radiusVariable/#7",
+              "controllable": "/states/force/processors/radius/lists/radiusVariable/#8"
             },
             {
               "parameters": [
@@ -2952,7 +3936,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -235.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -2965,11 +3949,11 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/forceIntensity/lists/reset/#7",
+                  "value": "/states/force/processors/forceIntensity/lists/reset/#8",
                   "controlAddress": "/target"
                 },
                 {
-                  "value": "Axial",
+                  "value": "Spiral",
                   "controlAddress": "/customText",
                   "enabled": true
                 },
@@ -2999,7 +3983,7 @@
               "hideInEditor": true,
               "type": "DashboardTriggerItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/reset/#7",
-              "controllable": "/states/force/processors/forceIntensity/lists/reset/#7"
+              "controllable": "/states/force/processors/forceIntensity/lists/reset/#8"
             },
             {
               "parameters": [
@@ -3199,7 +4183,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -255.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -3212,7 +4196,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/forceIntensity/lists/inverterToggle/#7",
+                  "value": "/states/force/processors/forceIntensity/lists/inverterToggle/#8",
                   "controlAddress": "/target"
                 },
                 {
@@ -3229,7 +4213,7 @@
               "hideInEditor": true,
               "type": "DashboardParameterItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/inverterToggle/#7",
-              "controllable": "/states/force/processors/forceIntensity/lists/inverterToggle/#7"
+              "controllable": "/states/force/processors/forceIntensity/lists/inverterToggle/#8"
             },
             {
               "parameters": [
@@ -3352,7 +4336,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -425.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -3365,7 +4349,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/states/force/processors/forceIntensity/lists/sourceInput/#7",
+                  "value": "/states/force/processors/forceIntensity/lists/sourceInput/#8",
                   "controlAddress": "/target"
                 },
                 {
@@ -3402,7 +4386,7 @@
               "hideInEditor": true,
               "type": "DashboardTargetParameterItem",
               "ghostAddress": "/states/force/processors/forceIntensity/lists/sourceInput/#7",
-              "controllable": "/states/force/processors/forceIntensity/lists/sourceInput/#7"
+              "controllable": "/states/force/processors/forceIntensity/lists/sourceInput/#8"
             },
             {
               "parameters": [
@@ -4238,7 +5222,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -285.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -4251,11 +5235,11 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/intensity",
                   "controlAddress": "/target"
                 },
                 {
-                  "value": "Axial",
+                  "value": "Spiral",
                   "controlAddress": "/customText",
                   "enabled": true
                 },
@@ -4272,8 +5256,8 @@
               "niceName": "Item 8",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/intensity"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/intensity",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/intensity"
             },
             {
               "parameters": [
@@ -4593,7 +5577,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -190.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -4606,7 +5590,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/axis",
                   "controlAddress": "/target"
                 },
                 {
@@ -4646,8 +5630,8 @@
               "niceName": "Item 51",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/axis"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/axis",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/axis"
             },
             {
               "parameters": [
@@ -5032,7 +6016,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     0.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -5045,7 +6029,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternType",
                   "controlAddress": "/target"
                 },
                 {
@@ -5057,8 +6041,8 @@
               "niceName": "Item 65",
               "hideInEditor": true,
               "type": "DashboardEnumParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternType"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternType",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternType"
             },
             {
               "parameters": [
@@ -7092,7 +8076,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     40.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7105,7 +8089,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/position",
                   "controlAddress": "/target"
                 },
                 {
@@ -7135,14 +8119,14 @@
               "niceName": "Item 66",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/position"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/position",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/position"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     80.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7155,7 +8139,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternRotation",
                   "controlAddress": "/target"
                 },
                 {
@@ -7185,14 +8169,14 @@
               "niceName": "Item 68",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternRotation"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternRotation",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternRotation"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     100.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7205,7 +8189,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternSize",
                   "controlAddress": "/target"
                 },
                 {
@@ -7241,14 +8225,14 @@
               "niceName": "Item 69",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/patternSize"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternSize",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/patternSize"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     130.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7261,7 +8245,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/speed",
                   "controlAddress": "/target"
                 },
                 {
@@ -7297,14 +8281,14 @@
               "niceName": "Item 70",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/speed"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/speed",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/speed"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     160.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7317,7 +8301,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/lerpDuration",
                   "controlAddress": "/target"
                 },
                 {
@@ -7353,14 +8337,14 @@
               "niceName": "Item 71",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/lerpDuration"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/lerpDuration",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/lerpDuration"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     190.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7373,7 +8357,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/phase",
                   "controlAddress": "/target"
                 },
                 {
@@ -7409,14 +8393,14 @@
               "niceName": "Item 75",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/phase"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/phase",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/phase"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     220.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7429,7 +8413,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOFrequency",
                   "controlAddress": "/target"
                 },
                 {
@@ -7465,14 +8449,14 @@
               "niceName": "Item 76",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOFrequency"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOFrequency",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOFrequency"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     250.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7485,7 +8469,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOAmplitude",
                   "controlAddress": "/target"
                 },
                 {
@@ -7521,14 +8505,14 @@
               "niceName": "Item 77",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/BalletPatternController/sizeLFOAmplitude"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOAmplitude",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/BalletPatternController/sizeLFOAmplitude"
             },
             {
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     20.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -7553,7 +8537,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     60.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -8298,7 +9282,7 @@
               "parameters": [
                 {
                   "value": [
-                    610.0,
+                    760.0,
                     -20.0
                   ],
                   "controlAddress": "/viewUIPosition"
@@ -8311,7 +9295,7 @@
                   "controlAddress": "/viewUISize"
                 },
                 {
-                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount",
+                  "value": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/forceCount",
                   "controlAddress": "/target"
                 },
                 {
@@ -8337,8 +9321,8 @@
               "niceName": "Item 133",
               "hideInEditor": true,
               "type": "DashboardParameterItem",
-              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount",
-              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Axial/AxialController/forceCount"
+              "ghostAddress": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/forceCount",
+              "controllable": "/modules/oSCQuery_Unity/values/Orbs/Forces/Spiral/SpiralController/forceCount"
             },
             {
               "parameters": [
@@ -8454,12 +9438,11 @@
             }
           ],
           "viewOffset": [
-            8,
-            -20
+            -3,
+            -24
           ],
-          "viewZoom": 1.00390625
-        },
-        "editing": true
+          "viewZoom": 1.0
+        }
       },
       {
         "niceName": "Orb Emitter",
@@ -9446,8 +10429,8 @@
                 },
                 {
                   "value": [
-                    0.09224294126033783,
-                    0.2999066114425659,
+                    0.0002314980520168319,
+                    0.3997488021850586,
                     0.0,
                     1.0
                   ],
@@ -15690,8 +16673,8 @@
             }
           ],
           "viewOffset": [
-            -3,
-            -27
+            -6,
+            -16
           ],
           "viewZoom": 0.9984375238418579
         }
@@ -17452,7 +18435,8 @@
             -24
           ],
           "viewZoom": 0.98828125
-        }
+        },
+        "editing": true
       },
       {
         "niceName": "Post Process",
@@ -19978,19 +20962,126 @@
       "direction": 2,
       "shifters": [
         {
-          "type": 0,
+          "type": 1,
           "width": 1920,
           "height": 989,
-          "currentContent": "Dashboard",
-          "tabs": [
+          "direction": 2,
+          "shifters": [
             {
-              "name": "Dashboard"
+              "type": 1,
+              "width": 1920,
+              "height": 570,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 1,
+                  "width": 307,
+                  "height": 570,
+                  "direction": 2,
+                  "shifters": [
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 292,
+                      "currentContent": "Modules",
+                      "tabs": [
+                        {
+                          "name": "Modules"
+                        }
+                      ]
+                    },
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 272,
+                      "currentContent": "Custom Variables",
+                      "tabs": [
+                        {
+                          "name": "Custom Variables"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 758,
+                  "height": 570,
+                  "currentContent": "State Machine",
+                  "tabs": [
+                    {
+                      "name": "State Machine"
+                    },
+                    {
+                      "name": "Dashboard"
+                    },
+                    {
+                      "name": "Module Router"
+                    },
+                    {
+                      "name": "Morpher"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 843,
+                  "height": 570,
+                  "currentContent": "Inspector",
+                  "tabs": [
+                    {
+                      "name": "Inspector"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "name": "Modules"
-            },
-            {
-              "name": "State Machine"
+              "type": 1,
+              "width": 1920,
+              "height": 412,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 0,
+                  "width": 178,
+                  "height": 412,
+                  "currentContent": "Sequences",
+                  "tabs": [
+                    {
+                      "name": "Sequences"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1256,
+                  "height": 412,
+                  "currentContent": "Sequence Editor",
+                  "tabs": [
+                    {
+                      "name": "Sequence Editor"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 474,
+                  "height": 412,
+                  "currentContent": "Logger",
+                  "tabs": [
+                    {
+                      "name": "Help"
+                    },
+                    {
+                      "name": "Logger"
+                    },
+                    {
+                      "name": "Warnings"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -20023,7 +21114,7 @@
               "controlAddress": "/serverName"
             },
             {
-              "value": true,
+              "value": false,
               "controlAddress": "/isConnected"
             }
           ],
@@ -20067,23 +21158,19 @@
                     "CameraRotate": {
                       "parameters": [
                         {
-                          "value": 0.0,
-                          "controlAddress": "/rotateYAngle"
-                        },
-                        {
-                          "value": 10.07144737243652,
+                          "value": 10.07147,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 17.46402931213379,
+                          "value": 19.82117,
                           "controlAddress": "/radius"
                         },
                         {
-                          "value": 6.822854,
+                          "value": 5.0,
                           "controlAddress": "/resetDuration"
                         },
                         {
-                          "value": 10.86514,
+                          "value": 0.0,
                           "controlAddress": "/moveToDuration"
                         }
                       ],
@@ -20104,6 +21191,11 @@
                     },
                     "CameraSpoutMngr": {
                       "parameters": [
+                        {
+                          "value": 1920,
+                          "hexMode": false,
+                          "controlAddress": "/width"
+                        },
                         {
                           "value": "ARGB32",
                           "controlAddress": "/rtFormat"
@@ -20127,27 +21219,30 @@
               "niceName": "Cameras"
             },
             "Orbs": {
+              "editorIsCollapsed": true,
               "containers": {
                 "Forces": {
+                  "editorIsCollapsed": true,
                   "containers": {
                     "Vortex": {
+                      "editorIsCollapsed": true,
                       "containers": {
                         "VortexController": {
                           "parameters": [
                             {
-                              "value": 0.5733333230018616,
+                              "value": 0.5,
                               "controlAddress": "/innerRadius"
                             },
                             {
-                              "value": true,
-                              "controlAddress": "/clockwise"
+                              "value": 1.0,
+                              "controlAddress": "/cylindricIntensity"
                             },
                             {
-                              "value": 0.3733333349227905,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
-                              "value": 1.525983929634094,
+                              "value": 1.0,
                               "controlAddress": "/radius"
                             },
                             {
@@ -20157,31 +21252,24 @@
                                 0.0
                               ],
                               "controlAddress": "/axis"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/orthoradialIntensity"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/cylindricIntensity"
                             }
                           ],
+                          "editorIsCollapsed": true,
                           "owned": true,
                           "niceName": "VortexController"
                         },
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Point",
+                              "value": "Line",
                               "controlAddress": "/patternType"
                             },
                             {
-                              "value": 3.266667,
+                              "value": 1.0,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 6.266666,
+                              "value": 0.0,
                               "controlAddress": "/lerpDuration"
                             }
                           ],
@@ -20199,18 +21287,6 @@
                         "RadialController": {
                           "parameters": [
                             {
-                              "value": 0.0,
-                              "controlAddress": "/radialFrequency"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/radialSmoothness"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/intensity"
-                            },
-                            {
                               "value": 3.98,
                               "controlAddress": "/radius"
                             }
@@ -20222,15 +21298,19 @@
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Point",
+                              "value": "Line",
                               "controlAddress": "/patternType"
                             },
                             {
-                              "value": 1.8,
+                              "value": 1.0,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 2.14,
+                              "value": 1.0,
+                              "controlAddress": "/speed"
+                            },
+                            {
+                              "value": 0.0,
                               "controlAddress": "/sizeLFOAmplitude"
                             }
                           ],
@@ -20247,6 +21327,10 @@
                       "containers": {
                         "SpiralController": {
                           "parameters": [
+                            {
+                              "value": 0.00002719287,
+                              "controlAddress": "/intensity"
+                            },
                             {
                               "value": [
                                 0.0,
@@ -20281,10 +21365,6 @@
                         "GravityController": {
                           "parameters": [
                             {
-                              "value": 0.0,
-                              "controlAddress": "/radius"
-                            },
-                            {
                               "value": [
                                 0.0,
                                 -1.0,
@@ -20300,19 +21380,23 @@
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Point",
+                              "value": "Line",
                               "controlAddress": "/patternType"
                             },
                             {
                               "value": [
-                                90.0,
+                                0.0,
                                 0.0,
                                 0.0
                               ],
                               "controlAddress": "/patternRotation"
                             },
                             {
-                              "value": 8.4,
+                              "value": 1.0,
+                              "controlAddress": "/patternSize"
+                            },
+                            {
+                              "value": 1.0,
                               "controlAddress": "/speed"
                             }
                           ],
@@ -20330,23 +21414,6 @@
                         "SwirlController": {
                           "parameters": [
                             {
-                              "value": false,
-                              "controlAddress": "/clockwise"
-                            },
-                            {
-                              "value": 1,
-                              "hexMode": false,
-                              "controlAddress": "/forceCount"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/radius"
-                            },
-                            {
                               "value": [
                                 0.0,
                                 1.0,
@@ -20362,27 +21429,31 @@
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Point",
+                              "value": "Line",
                               "controlAddress": "/patternType"
                             },
                             {
                               "value": [
-                                90.0,
+                                0.0,
                                 0.0,
                                 0.0
                               ],
                               "controlAddress": "/patternRotation"
                             },
                             {
-                              "value": 4.8,
+                              "value": 1.0,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 6.8,
+                              "value": 1.0,
+                              "controlAddress": "/speed"
+                            },
+                            {
+                              "value": 0.0,
                               "controlAddress": "/lerpDuration"
                             },
                             {
-                              "value": 0.2133333,
+                              "value": 0.0,
                               "controlAddress": "/sizeLFOFrequency"
                             }
                           ],
@@ -20399,10 +21470,6 @@
                       "containers": {
                         "AxialController": {
                           "parameters": [
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/radius"
-                            },
                             {
                               "value": [
                                 0.0,
@@ -20435,12 +21502,6 @@
                       "editorIsCollapsed": true,
                       "containers": {
                         "TurbulenceController": {
-                          "parameters": [
-                            {
-                              "value": 0.00001417753810528666,
-                              "controlAddress": "/intensity"
-                            }
-                          ],
                           "editorIsCollapsed": true,
                           "owned": true,
                           "niceName": "TurbulenceController"
@@ -20470,15 +21531,15 @@
                               "controlAddress": "/noiseType"
                             },
                             {
-                              "value": 0.2800000011920929,
+                              "value": 0.0,
                               "controlAddress": "/evolutionSpeed"
                             },
                             {
-                              "value": 1.340000033378601,
+                              "value": 1.0,
                               "controlAddress": "/frequency"
                             },
                             {
-                              "value": 0.2133333534002304,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             }
                           ],
@@ -20496,20 +21557,20 @@
                               "value": [
                                 0.0,
                                 0.0,
-                                90.0
+                                0.0
                               ],
                               "controlAddress": "/patternRotation"
                             },
                             {
-                              "value": 6.63788,
+                              "value": 1.0,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 0.3374849,
+                              "value": 1.0,
                               "controlAddress": "/speed"
                             },
                             {
-                              "value": 2.39,
+                              "value": 0.0,
                               "controlAddress": "/sizeLFOAmplitude"
                             }
                           ],
@@ -20540,11 +21601,11 @@
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 57560.52,
+                          "value": 524.0,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 21.79987335205078,
+                          "value": 3.0,
                           "controlAddress": "/life"
                         },
                         {
@@ -20557,27 +21618,36 @@
                           "controlAddress": "/color"
                         },
                         {
-                          "value": 0.3969775,
+                          "value": 6,
+                          "hexMode": false,
+                          "controlAddress": "/colorIntensity"
+                        },
+                        {
+                          "value": 1.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 6.250992,
+                          "value": 11.39999961853027,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 4.461220741271973,
+                          "value": 2.5,
                           "controlAddress": "/drag"
                         },
                         {
-                          "value": 0.205,
+                          "value": 1.0,
                           "controlAddress": "/velocityDrag"
                         },
                         {
-                          "value": 3.585,
+                          "value": 0.0,
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 0.8999999761581421,
+                          "value": false,
+                          "controlAddress": "/stationaryTransparent"
+                        },
+                        {
+                          "value": 0.0,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
@@ -20599,31 +21669,27 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 3.159999847412109,
+                          "value": 2.35,
                           "controlAddress": "/emitterSize"
                         },
                         {
-                          "value": "Point",
+                          "value": false,
+                          "controlAddress": "/emitFromInside"
+                        },
+                        {
+                          "value": "Line",
                           "controlAddress": "/patternType"
                         },
                         {
-                          "value": [
-                            0.0,
-                            0.0,
-                            0.0
-                          ],
-                          "controlAddress": "/patternRotation"
-                        },
-                        {
-                          "value": 3.4,
+                          "value": 1.0,
                           "controlAddress": "/patternSize"
                         },
                         {
-                          "value": 8.699999999999999,
+                          "value": 1.0,
                           "controlAddress": "/speed"
                         },
                         {
-                          "value": 1.966752,
+                          "value": 0.0,
                           "controlAddress": "/lerpDuration"
                         }
                       ],
@@ -20645,35 +21711,62 @@
                           "controlAddress": "/listen"
                         },
                         {
+                          "value": 1,
+                          "hexMode": false,
+                          "controlAddress": "/orbCount"
+                        },
+                        {
                           "value": 0.0,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 18.8876,
+                          "value": 3.0,
                           "controlAddress": "/life"
                         },
                         {
-                          "value": 0.02094983,
+                          "value": [
+                            1.0,
+                            1.0,
+                            0.0,
+                            1.0
+                          ],
+                          "controlAddress": "/color"
+                        },
+                        {
+                          "value": 6,
+                          "hexMode": false,
+                          "controlAddress": "/colorIntensity"
+                        },
+                        {
+                          "value": 1.0,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 13.44893,
+                          "value": 9.9,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 0.8116674,
+                          "value": 2.5,
                           "controlAddress": "/drag"
                         },
                         {
-                          "value": 1.7,
+                          "value": 1.0,
+                          "controlAddress": "/velocityDrag"
+                        },
+                        {
+                          "value": 0.0,
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": 0.6918227,
+                          "value": false,
+                          "controlAddress": "/stationaryTransparent"
+                        },
+                        {
+                          "value": 0.0,
                           "controlAddress": "/stationaryMaxSpeed"
                         },
                         {
-                          "value": "Circle",
+                          "value": "Sphere",
                           "controlAddress": "/emitterShape"
                         },
                         {
@@ -20681,20 +21774,32 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 4.258004,
+                          "value": 1.85,
                           "controlAddress": "/emitterSize"
                         },
                         {
-                          "value": "Point",
+                          "value": "Line",
                           "controlAddress": "/patternType"
                         },
                         {
                           "value": [
-                            90.0,
+                            0.0,
                             0.0,
                             0.0
                           ],
                           "controlAddress": "/patternRotation"
+                        },
+                        {
+                          "value": 1.0,
+                          "controlAddress": "/patternSize"
+                        },
+                        {
+                          "value": 1.0,
+                          "controlAddress": "/speed"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlAddress": "/lerpDuration"
                         }
                       ],
                       "editorIsCollapsed": true,
@@ -20706,6 +21811,13 @@
                   "niceName": "Orb-B"
                 },
                 "OrbsManager": {
+                  "parameters": [
+                    {
+                      "value": 2,
+                      "hexMode": false,
+                      "controlAddress": "/orbGroupCount"
+                    }
+                  ],
                   "editorIsCollapsed": true,
                   "owned": true,
                   "niceName": "OrbsManager"
@@ -20717,7 +21829,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 1000934,
+                      "value": 2512,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -20734,6 +21846,12 @@
               "editorIsCollapsed": true,
               "containers": {
                 "BalletManager": {
+                  "parameters": [
+                    {
+                      "value": false,
+                      "controlAddress": "/showDancers"
+                    }
+                  ],
                   "editorIsCollapsed": true,
                   "owned": true,
                   "niceName": "BalletManager"
@@ -20830,7 +21948,7 @@
                         "fov": {
                           "ACCESS": 3,
                           "VALUE": [
-                            111.6429
+                            10.07147
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -20841,7 +21959,7 @@
                         "radius": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.606897
+                            19.82117
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -20852,7 +21970,7 @@
                         "resetDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            6.822854
+                            5
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -20863,7 +21981,7 @@
                         "moveToDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            10.86514
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -21044,7 +22162,7 @@
                         "width": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1080
+                            1920
                           ],
                           "TYPE": "i",
                           "RANGE": [
@@ -21186,7 +22304,7 @@
                             "cylindricIntensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21262,7 +22380,7 @@
                             "patternType": {
                               "ACCESS": 3,
                               "VALUE": [
-                                "Point"
+                                "Line"
                               ],
                               "TYPE": "s",
                               "RANGE": [
@@ -21307,7 +22425,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                3.266667
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21335,7 +22453,7 @@
                             "lerpDuration": {
                               "ACCESS": 3,
                               "VALUE": [
-                                6.266666
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21588,7 +22706,7 @@
                             "patternType": {
                               "ACCESS": 3,
                               "VALUE": [
-                                "Point"
+                                "Line"
                               ],
                               "TYPE": "s",
                               "RANGE": [
@@ -21633,7 +22751,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                1.8
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21647,7 +22765,7 @@
                             "speed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21703,7 +22821,7 @@
                             "sizeLFOAmplitude": {
                               "ACCESS": 3,
                               "VALUE": [
-                                2.14
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -21829,7 +22947,7 @@
                             "intensity": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0
+                                0.00002719287
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22139,7 +23257,7 @@
                             "patternType": {
                               "ACCESS": 3,
                               "VALUE": [
-                                "Point"
+                                "Line"
                               ],
                               "TYPE": "s",
                               "RANGE": [
@@ -22171,7 +23289,7 @@
                             "patternRotation": {
                               "ACCESS": 3,
                               "VALUE": [
-                                90,
+                                0,
                                 0,
                                 0
                               ],
@@ -22184,7 +23302,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                3
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22198,7 +23316,7 @@
                             "speed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                8.4
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22434,7 +23552,7 @@
                             "patternType": {
                               "ACCESS": 3,
                               "VALUE": [
-                                "Point"
+                                "Line"
                               ],
                               "TYPE": "s",
                               "RANGE": [
@@ -22466,7 +23584,7 @@
                             "patternRotation": {
                               "ACCESS": 3,
                               "VALUE": [
-                                90,
+                                0,
                                 0,
                                 0
                               ],
@@ -22479,7 +23597,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                4.8
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22493,7 +23611,7 @@
                             "speed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                3
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22507,7 +23625,7 @@
                             "lerpDuration": {
                               "ACCESS": 3,
                               "VALUE": [
-                                6.8
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -22535,7 +23653,7 @@
                             "sizeLFOFrequency": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0.2133333
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -23473,7 +24591,7 @@
                               "VALUE": [
                                 0,
                                 0,
-                                90
+                                0
                               ],
                               "TYPE": "fff",
                               "RANGE": [
@@ -23484,7 +24602,7 @@
                             "patternSize": {
                               "ACCESS": 3,
                               "VALUE": [
-                                6.63788
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -23498,7 +24616,7 @@
                             "speed": {
                               "ACCESS": 3,
                               "VALUE": [
-                                0.3374849
+                                1
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -23554,7 +24672,7 @@
                             "sizeLFOAmplitude": {
                               "ACCESS": 3,
                               "VALUE": [
-                                2.39
+                                0
                               ],
                               "TYPE": "f",
                               "RANGE": [
@@ -23671,7 +24789,7 @@
                         "rate": {
                           "ACCESS": 3,
                           "VALUE": [
-                            57560.52
+                            524
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23685,7 +24803,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.799873
+                            3
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23699,7 +24817,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "FFFFFFFF"
+                            "FFFFFF00"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -23710,7 +24828,7 @@
                         "colorIntensity": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4
+                            6
                           ],
                           "TYPE": "i",
                           "RANGE": [
@@ -23721,7 +24839,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.3969775
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23735,7 +24853,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            6.250992
+                            47.4
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23749,7 +24867,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.511221
+                            2.5
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23763,7 +24881,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.205
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23791,7 +24909,7 @@
                         "noisyDragFrequency": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.585
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23816,7 +24934,7 @@
                         "stationaryTransparent": {
                           "ACCESS": 3,
                           "VALUE": [
-                            true
+                            false
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -23881,7 +24999,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.16
+                            2.35
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23892,7 +25010,7 @@
                         "emitFromInside": {
                           "ACCESS": 3,
                           "VALUE": [
-                            true
+                            false
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -23938,7 +25056,7 @@
                         "patternType": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "Point"
+                            "Line"
                           ],
                           "TYPE": "s",
                           "RANGE": [
@@ -23983,7 +25101,7 @@
                         "patternSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            3.4
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -23997,7 +25115,7 @@
                         "speed": {
                           "ACCESS": 3,
                           "VALUE": [
-                            8.699999999999999
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24011,7 +25129,7 @@
                         "lerpDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.966752
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24187,7 +25305,7 @@
                         "life": {
                           "ACCESS": 3,
                           "VALUE": [
-                            18.8876
+                            3
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24201,7 +25319,7 @@
                         "color": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "008CFFFF"
+                            "FFFFFF00"
                           ],
                           "TYPE": "r",
                           "RANGE": [
@@ -24223,7 +25341,7 @@
                         "alpha": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.02094983
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24237,7 +25355,7 @@
                         "size": {
                           "ACCESS": 3,
                           "VALUE": [
-                            13.44893
+                            9.9
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24251,7 +25369,7 @@
                         "drag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.8116674
+                            2.5
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24265,7 +25383,7 @@
                         "velocityDrag": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24293,7 +25411,7 @@
                         "noisyDragFrequency": {
                           "ACCESS": 3,
                           "VALUE": [
-                            1.7
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24318,7 +25436,7 @@
                         "stationaryTransparent": {
                           "ACCESS": 3,
                           "VALUE": [
-                            true
+                            false
                           ],
                           "TYPE": "T",
                           "RANGE": [
@@ -24329,7 +25447,7 @@
                         "stationaryMaxSpeed": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0.6918227
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24343,7 +25461,7 @@
                         "emitterShape": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "Circle"
+                            "Sphere"
                           ],
                           "TYPE": "s",
                           "RANGE": [
@@ -24383,7 +25501,7 @@
                         "emitterSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4.258004
+                            1.85
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24440,7 +25558,7 @@
                         "patternType": {
                           "ACCESS": 3,
                           "VALUE": [
-                            "Point"
+                            "Line"
                           ],
                           "TYPE": "s",
                           "RANGE": [
@@ -24472,7 +25590,7 @@
                         "patternRotation": {
                           "ACCESS": 3,
                           "VALUE": [
-                            90,
+                            0,
                             0,
                             0
                           ],
@@ -24485,7 +25603,7 @@
                         "patternSize": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24499,7 +25617,7 @@
                         "speed": {
                           "ACCESS": 3,
                           "VALUE": [
-                            0
+                            1
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24513,7 +25631,7 @@
                         "lerpDuration": {
                           "ACCESS": 3,
                           "VALUE": [
-                            4
+                            0
                           ],
                           "TYPE": "f",
                           "RANGE": [
@@ -24650,7 +25768,7 @@
                     "orbGroupCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        3
+                        2
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -24681,7 +25799,7 @@
                     "aliveParticleCount": {
                       "ACCESS": 3,
                       "VALUE": [
-                        176444
+                        2525
                       ],
                       "TYPE": "i",
                       "RANGE": [
@@ -24909,10 +26027,6 @@
             {
               "value": "TD OSC Query Server",
               "controlAddress": "/serverName"
-            },
-            {
-              "value": false,
-              "controlAddress": "/isConnected"
             }
           ],
           "containers": {
@@ -33873,7 +34987,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 17.46404075622559,
+                  "value": 19.82118225097656,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 30,
@@ -34578,7 +35692,7 @@
             {
               "parameters": [
                 {
-                  "value": 1000.934020996094,
+                  "value": 2.51200008392334,
                   "minValue": 0.0,
                   "maxValue": 4000.0,
                   "default": 0,
@@ -34837,8 +35951,8 @@
               "parameters": [
                 {
                   "value": [
-                    0.09224294126033783,
-                    0.2999066114425659,
+                    0.0002314980520168319,
+                    0.3997488021850586,
                     0.0,
                     1.0
                   ],
@@ -35456,7 +36570,7 @@
                     "command": {
                       "parameters": [
                         {
-                          "value": "D:/Gamgie/Projets/Oxipital/Unity/HDRP_VFXGraph_Oxipital/_Build/V2/HDRP_VFXGraph.exe",
+                          "value": "D:/Gamgie/Projets/Oxipital/Unity/HDRP_VFXGraph_Oxipital/_Build/V2/Oxipital.exe",
                           "controlAddress": "/target"
                         }
                       ],
@@ -42103,7 +43217,7 @@
             {
               "parameters": [
                 {
-                  "value": 266.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -42212,7 +43326,7 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": 0.3733333349227905,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
@@ -42226,7 +43340,7 @@
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 0.2133333534002304,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0,
@@ -43763,7 +44877,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 110.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -44478,10 +45592,6 @@
                         {
                           "value": 1.0,
                           "controlAddress": "/length"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/position"
                         },
                         {
                           "value": [
@@ -45973,7 +47083,7 @@
             {
               "parameters": [
                 {
-                  "value": 240.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -58593,7 +59703,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 448.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -70263,7 +71373,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 214.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -72050,8 +73160,8 @@
       }
     ],
     "viewOffset": [
-      -722,
-      576
+      -333,
+      601
     ],
     "viewZoom": 0.765625,
     "transitions": {
@@ -72207,8 +73317,8 @@
         }
       ],
       "viewOffset": [
-        -722,
-        576
+        -333,
+        601
       ],
       "viewZoom": 0.765625
     }
