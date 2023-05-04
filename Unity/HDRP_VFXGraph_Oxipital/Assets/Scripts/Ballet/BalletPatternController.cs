@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class BalletPatternController : MonoBehaviour
 {
-    
-
     [Header("Ballet Pattern Parameters")]
-    public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Circle;
+    public BalletPattern.BalletPatternType patternType = BalletPattern.BalletPatternType.Point;
     public Vector3 position; // Position of this pattern
     public Vector3 patternRotation = Vector3.zero; // Rotation in euler angle of this pattern
     [Range(0, 10)]
