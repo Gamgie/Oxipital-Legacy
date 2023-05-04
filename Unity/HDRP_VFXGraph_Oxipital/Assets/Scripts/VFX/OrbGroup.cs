@@ -427,6 +427,9 @@ public class OrbGroup : MonoBehaviour
 
     public void SetOrbCount(int count)
 	{
+        if (count == _orbCount)
+            return;
+
         _pattern.UpdateDancerCount(count);
 
         // Update list of vfx.
