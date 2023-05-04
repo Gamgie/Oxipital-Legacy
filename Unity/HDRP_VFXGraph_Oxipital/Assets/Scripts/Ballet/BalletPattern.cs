@@ -10,7 +10,7 @@ public class BalletPattern : MonoBehaviour
 
     public int id;
     public int dancerCount;
-    public BalletPatternType patternType = BalletPatternType.Circle;
+    public BalletPatternType patternType = BalletPatternType.Point;
     public Vector3 position; // Position of this pattern
     public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
     public float size = 1; // Size of this pattern
@@ -312,20 +312,10 @@ public class BalletPattern : MonoBehaviour
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                           (i * currentSize * Mathf.Sin(2*Mathf.PI * currentSpeed + phase * Mathf.PI * 2) / (dancers.Count - 1)),
+                                           Mathf.Sin(currentSpeed + 2 * Mathf.PI * i / dancerCount + 2 * Mathf.PI * phase) * currentSize /2,
                                            0);
 
             linePositions[i] = transform.TransformPoint(linePositions[i]);
-        }
-
-        // And then offset to center the line on the origin
-        Vector3 firstPoint = linePositions[0];
-        Vector3 lastPoint = linePositions[linePositions.Count-1];
-        Vector3 midPoint = (firstPoint + lastPoint) / 2f;
-
-        for (int i = 0; i < dancers.Count; i++)
-        {
-            linePositions[i] -= midPoint;
         }
     }
 
