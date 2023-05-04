@@ -80,6 +80,10 @@ public class ForceController : MonoBehaviour
         if(pattern != null && forceCount != pattern.dancerCount)
 		{
             pattern.UpdateDancerCount(forceCount);
+
+            if (m_buffer != null)
+                m_buffer.Release();
+
             m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, forceCount, Marshal.SizeOf(typeof(Vector3)));
         }     
 
@@ -88,7 +92,7 @@ public class ForceController : MonoBehaviour
 		{
             List<Vector3> target = GetPositions();
             if(target != null)
-                m_buffer.SetData(GetPositions());
+                m_buffer.SetData(target);
         }
 
         foreach (VisualEffect vfx in m_vfxs)
