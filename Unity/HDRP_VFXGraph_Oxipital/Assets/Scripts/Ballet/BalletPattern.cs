@@ -54,6 +54,8 @@ public class BalletPattern : MonoBehaviour
         linePositions = new List<Vector3>();
         orbitPositions = new List<Vector3>();
         atomPositions = new List<Vector3>();
+        startPositions = new List<Vector3>();
+        targetPositions = new List<Vector3>();
 
         UpdateDancerCount(dancerCount);
         GenerateOrbits();
