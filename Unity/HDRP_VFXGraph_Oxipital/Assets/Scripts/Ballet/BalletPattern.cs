@@ -45,6 +45,7 @@ public class BalletPattern : MonoBehaviour
     private float lerpStartTime;
     private float currentSize; // Actual size after being modified by LFO
     private List<OrbitData> orbitData; // A list of element needed by the orbit & atom pattern
+    private Color dancerColor; // Store the color attribute to the debug dancer game object.
 
     public void Init(BalletManager balletMngr)
     {
@@ -56,6 +57,8 @@ public class BalletPattern : MonoBehaviour
         atomPositions = new List<Vector3>();
         startPositions = new List<Vector3>();
         targetPositions = new List<Vector3>();
+
+        dancerColor = GenerateRandomColor();
 
         UpdateDancerCount(dancerCount);
         GenerateOrbits();
@@ -189,6 +192,9 @@ public class BalletPattern : MonoBehaviour
 	{
         BalletDancer dancer = Instantiate(dancerPrefab) as BalletDancer;
 
+        dancer.SetColor(dancerColor);
+
+
         // Look for the next available ID
         int newID = 0;
         foreach (BalletDancer d in dancers)
@@ -262,7 +268,7 @@ public class BalletPattern : MonoBehaviour
 
         if (dancerToRemove != null)
         {
-            Debug.Log("Dancer " + dancerToRemove.id + " removed from the list and destroyed.");
+            Debug.Log("Dancer " + dancerToRemove.id + " removed from the list and destroyed from pattern " + gameObject.name);
             Destroy(dancerToRemove.gameObject);
 
             cirlePositions.RemoveAt(dancerCount - 1);
@@ -300,13 +306,6 @@ public class BalletPattern : MonoBehaviour
 	{
         if (dancerCount == 0)
             return;
-
-        if(dancerCount == 1)
-		{
-            linePositions[0] = new Vector3(0, currentSize * Mathf.Sin(2 * Mathf.PI * currentSpeed + phase * Mathf.PI * 2),0);
-            linePositions[0] = transform.TransformPoint(linePositions[0]);
-            return;
-        }
 
         // Set points positions
         for (int i = 0; i < dancers.Count; i++)
@@ -473,7 +472,14 @@ public class BalletPattern : MonoBehaviour
             }
         }
     }
+
+    private Color GenerateRandomColor()
+    {
+        return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+    }
 }
+
+#region Data
 [System.Serializable]
 public class OrbitData
 {
@@ -501,3 +507,4 @@ public class BalletPatternData
     public float noiseAmplitude;
     public float noiseSpeed;
 }
+#endregion
