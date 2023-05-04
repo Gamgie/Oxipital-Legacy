@@ -11,6 +11,7 @@ public class ForceController : MonoBehaviour
     
     [Space(10)]
     public float intensity;
+    [Range(0,15)]
     public float radius;
     public Vector3 axis;
 
