@@ -177,7 +177,7 @@ public class OrbGroup : MonoBehaviour
             if (vfx.HasFloat("Emitter Scale") == true)
                 vfx.SetFloat("Emitter Scale", emitterSize);
 
-            if(showMesh)
+            if(_meshRenderer != null && showMesh)
 			{
                 _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
                 _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation) ;
