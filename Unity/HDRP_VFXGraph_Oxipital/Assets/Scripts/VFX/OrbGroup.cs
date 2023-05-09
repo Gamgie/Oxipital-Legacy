@@ -179,13 +179,16 @@ public class OrbGroup : MonoBehaviour
 
             if(_meshRenderer != null && showMesh)
 			{
-                _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
-                _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation) ;
-                _meshRenderer.enabled = true;
-			}
-            else
-			{
-                _meshRenderer.enabled = false;
+                if(showMesh)
+				{
+                    _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
+                    _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation);
+                    _meshRenderer.enabled = true;
+                }
+                else
+                {
+                    _meshRenderer.enabled = false;
+                }
             }
 
             // Check if we need to update mesh in graph
@@ -254,6 +257,11 @@ public class OrbGroup : MonoBehaviour
 	{
         if (_pattern == null)
             return;
+
+        if(_meshRenderer == null)
+		{
+            _meshRenderer = GetComponentInChildren<MeshRenderer>();
+        }
 
         for(int i = 0; i < _visualEffects.Count; i++)
 		{
