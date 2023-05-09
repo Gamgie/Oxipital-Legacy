@@ -147,6 +147,8 @@ public class BalletPattern : MonoBehaviour
         }
 
         // Lerp amount
+        if (lerpDuration == 0)
+            lerpDuration = 0.01f;
         float t = (Time.time - lerpStartTime) / lerpDuration;
         t = lerpCurve.Evaluate(t);
         if(t >= 1f)
