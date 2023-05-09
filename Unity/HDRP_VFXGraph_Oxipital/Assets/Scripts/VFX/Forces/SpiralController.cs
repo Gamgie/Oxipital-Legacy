@@ -8,6 +8,8 @@ public class SpiralController : ForceController
     [Header("Spiral")]
     public float frequency;
 
+    protected readonly int s_BufferID = Shader.PropertyToID("Spiral Graphics Buffer");
+
     // Update is called once per frame
     protected override void Update()
     {
@@ -31,6 +33,10 @@ public class SpiralController : ForceController
             // Frequency
             if (visualEffect.HasFloat(spiral + " Frequency" + m_suffix))
                 visualEffect.SetFloat(spiral + " Frequency" + m_suffix, frequency);
+
+            // Buffer
+            if (visualEffect.HasGraphicsBuffer(s_BufferID))
+                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
         }
     }
 
