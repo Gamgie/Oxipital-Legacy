@@ -9,11 +9,11 @@ public class RadialController : ForceController
     [Range(0, 3)]
     public float radialFrequency;
     [Range(0,1)]
-    public float radialSmoothness;
+    public float radialSmoothness = 1;
     [Range(0, 3)]
     public float sphericalFrequency;
     [Range(0, 1)]
-    public float sphericalSmoothness;
+    public float sphericalSmoothness = 1;
 
     protected readonly int s_BufferID = Shader.PropertyToID("Attractor Graphics Buffer");
 
