@@ -73,7 +73,16 @@ public class OrbGroup : MonoBehaviour
         patternID = _pattern.id;
 
         // Initialize with the first orb
-        SetOrbCount(_orbCount);
+        if(data != null)
+		{
+            SetOrbCount(data.orbCount);
+        }
+        else
+		{
+            SetOrbCount(1);
+            Debug.LogError("No data found while creating " + gameObject.name + ". Initialize orbcount to 1 by default because no loaded data found at startup.");
+		}
+        
 
         // Update shape according to index
         SetEmitterShape();
@@ -436,7 +445,12 @@ public class OrbGroup : MonoBehaviour
     public void SetOrbCount(int count)
 	{
         if (count == _orbCount)
+		{
+            // Update OrbCount to ensure there are diferent.
+            _orbCount = _visualEffects.Count;
             return;
+        }
+            
 
         _pattern.UpdateDancerCount(count);
 
@@ -505,7 +519,6 @@ public class OrbGroup : MonoBehaviour
     {
         orbGroupId = data.orbGroupId;
         name = data.name;
-        _orbCount = data.orbCount;
         rate = data.rate;
         life = data.life;
         color = new Color(data.colorR, data.colorG, data.colorB);
