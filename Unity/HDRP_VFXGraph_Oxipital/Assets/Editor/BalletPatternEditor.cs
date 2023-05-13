@@ -23,6 +23,11 @@ public class BalletPatternEditor : Editor
         }
         GUILayout.EndHorizontal();
 
+        if (GUILayout.Button("Reset Speed"))
+        {
+            balletPattern.ResetSpeed();
+        }
+
         base.DrawDefaultInspector();
     }
 }
