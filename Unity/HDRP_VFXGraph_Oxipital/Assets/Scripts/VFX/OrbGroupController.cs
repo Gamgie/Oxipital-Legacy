@@ -33,12 +33,14 @@ public class OrbGroupController : MonoBehaviour
     public bool staticParticle;
     public bool stationaryTransparent;
     [Range(0,30)]
-    public float stationaryMaxSpeed; // When in stationary, we interpolat alpha according to speed. This the max speed for alpha to reach value 1.
+    public float stationaryMaxSpeed; // When in stationary, we interpolate alpha according to speed. This the max speed for alpha to reach value 1.
 
     [Header("Emitter Parameters")]
     public OrbGroup.EmitterShape emitterShape;
     public OrbGroup.EmitterPlacementMode emitterPlacementMode;
     public float emitterSize;
+    [Range(0,1)]
+    public float emitterSizeOffset; // Percent amount to decrease size for each element of this orb group
     public bool emitFromInside;
     public bool activateCollision;
     public bool showMesh;
@@ -119,6 +121,7 @@ public class OrbGroupController : MonoBehaviour
                 stationaryTransparent = false;
                 stationaryMaxSpeed = 0;
                 emitterSize = 0;
+                emitterSizeOffset = 0;
                 emitFromInside = false;
                 activateCollision = false;
                 showMesh = false;
@@ -168,6 +171,7 @@ public class OrbGroupController : MonoBehaviour
                     emitterShape = oG.emitterShape;
                     emitterPlacementMode = oG.emitterPlacementMode;
                     emitterSize = oG.emitterSize;
+                    emitterSizeOffset = oG.emitterSizeOffset;
                     emitFromInside = oG.emitFromInside;
                     activateCollision = oG.activateCollision;
                     showMesh = oG.showMesh;
@@ -218,6 +222,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.emitterShape = emitterShape;
                     oG.emitterPlacementMode = emitterPlacementMode;
                     oG.emitterSize = emitterSize;
+                    oG.emitterSizeOffset = emitterSizeOffset;
                     oG.emitFromInside = emitFromInside;
                     oG.activateCollision = activateCollision;
                     oG.showMesh = showMesh;

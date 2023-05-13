@@ -47,6 +47,8 @@ public class OrbGroup : MonoBehaviour
     public Vector3 emitterPosition;
     public Vector3 emitterRotation;
     public float emitterSize;
+    [Range(0,1)]
+    public float emitterSizeOffset;
     public Mesh[] meshArray;
     public Texture[] sdfCollisionArray;
     public bool emitFromInside;
@@ -173,24 +175,28 @@ public class OrbGroup : MonoBehaviour
 
     void UpdateEmitter()
     {
+        int i = 0;
         foreach (VisualEffect vfx in _visualEffects)
         {
             // If no emitter mesh in graph then no need to go further
             if (vfx.HasMesh("Emitter Mesh") == false)
                 return;
 
+            // Compute EmitterSize linked to size offset
+            float actualEmitterSize = Math.Max(emitterSize * (1 - i * emitterSizeOffset), 0);
+
             // Update Emitter transform
             if (vfx.HasVector3("Emitter Angles") == true)
                 vfx.SetVector3("Emitter Angles", emitterRotation);
 
             if (vfx.HasFloat("Emitter Scale") == true)
-                vfx.SetFloat("Emitter Scale", emitterSize);
+                vfx.SetFloat("Emitter Scale", actualEmitterSize);
 
             if(_meshRenderer != null && showMesh)
 			{
                 if(showMesh)
 				{
-                    _meshRenderer.transform.localScale = new Vector3(emitterSize, emitterSize, emitterSize);
+                    _meshRenderer.transform.localScale = new Vector3(actualEmitterSize, actualEmitterSize, actualEmitterSize);
                     _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation);
                     _meshRenderer.enabled = true;
                 }
@@ -259,6 +265,7 @@ public class OrbGroup : MonoBehaviour
 
                 vfx.SetInt("Emitter Placement Mode", switchPlacementMode);
             }
+            i++;
         }
     }
 
@@ -508,6 +515,7 @@ public class OrbGroup : MonoBehaviour
         data.emitterOrientationY = emitterRotation.y;
         data.emitterOrientationZ = emitterRotation.z;
         data.emitterSize = emitterSize;
+        data.emitterSizeOffset = emitterSizeOffset;
         data.emitFromInside = emitFromInside;
         data.activateCollision = activateCollision;
         data.showMesh = showMesh;
@@ -537,6 +545,7 @@ public class OrbGroup : MonoBehaviour
         emitterPosition = new Vector3(data.emitterPositionX, data.emitterPositionY, data.emitterPositionZ);
         emitterRotation = new Vector3(data.emitterOrientationX, data.emitterOrientationY, data.emitterOrientationZ);
         emitterSize = data.emitterSize;
+        emitterSizeOffset = data.emitterSizeOffset;
         emitFromInside = data.emitFromInside;
         activateCollision = data.activateCollision;
         showMesh = data.showMesh;
@@ -574,6 +583,7 @@ public class OrbGroupData
     public float emitterOrientationY;
     public float emitterOrientationZ;
     public float emitterSize;
+    public float emitterSizeOffset;
     public bool emitFromInside;
     public bool activateCollision;
     public bool showMesh;
