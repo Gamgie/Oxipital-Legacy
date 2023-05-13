@@ -22,6 +22,7 @@ public class BalletPattern : MonoBehaviour
     [Header("Size LFO")]
     public float sizeLFOFrequency;
     public float sizeLFOAmplitude;
+    public float sizeOffset;
 
     [Header("Circle Parameter")]
     public float verticalOffset;
@@ -159,7 +160,7 @@ public class BalletPattern : MonoBehaviour
         // Apply movement
         for (int i = 0; i < dancers.Count; i++)
 		{
-            if (dancers[i] != null)
+            if (dancers[i] != null && !float.IsNaN(targetPositions[i].x))
 			{
                 if(isLerping)
 				{
@@ -309,12 +310,20 @@ public class BalletPattern : MonoBehaviour
         if (dancerCount == 0)
             return;
 
+        if(dancerCount == 1)
+		{
+            linePositions[0] = Vector3.zero;
+            linePositions[0] = transform.TransformPoint(linePositions[0]);
+            return;
+        }
+
         // Set points positions
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                           Mathf.Sin(currentSpeed + 2 * Mathf.PI * i / dancerCount + 2 * Mathf.PI * phase) * currentSize /2,
-                                           0);
+                                            Mathf.Cos(currentSpeed + Mathf.PI * i / (dancerCount - 1) + 2 * Mathf.PI * phase) * currentSize / 2,
+                                            0);
+
 
             linePositions[i] = transform.TransformPoint(linePositions[i]);
         }
