@@ -60,6 +60,7 @@ public class DataManager : MonoBehaviour
 			OrbGroupControllerData ogcData = new OrbGroupControllerData();
 			ogcData.name = oc.name;
 			ogcData.idControlled = oc.idControlled;
+			ogcData.colorSmooth = oc.colorSmoothSpeed;
 			data.orbGroupControllersData.Add(ogcData);
 		}
 

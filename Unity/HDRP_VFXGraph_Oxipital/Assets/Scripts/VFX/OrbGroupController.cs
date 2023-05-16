@@ -18,6 +18,8 @@ public class OrbGroupController : MonoBehaviour
     [ColorUsage(true, true)]
     public Color color;
     public int colorIntensity;
+    [Range(0, 10)]
+    public float colorSmoothSpeed;
     [Range(0, 1)]
     public float alpha;
     [Range(0, 100)]
@@ -93,6 +95,7 @@ public class OrbGroupController : MonoBehaviour
             if(ogcData.name == this.name)
 			{
                 idControlled = ogcData.idControlled;
+                colorSmoothSpeed = ogcData.colorSmooth;
 			}
 		}
     }
@@ -208,7 +211,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.SetOrbCount(orbCount);
                     oG.rate = rate;
                     oG.life = life;
-                    oG.color = color;
+                    oG.color = Color.Lerp(oG.color, color, colorSmoothSpeed * Time.deltaTime);
                     oG.colorIntensity = colorIntensity;
                     oG.alpha = alpha;
                     oG.size = size;
@@ -270,4 +273,5 @@ public class OrbGroupControllerData
 {
     public int idControlled;
     public string name;
+    public float colorSmooth;
 }
