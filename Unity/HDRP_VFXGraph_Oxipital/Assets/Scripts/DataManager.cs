@@ -8,6 +8,7 @@ public class DataManager : MonoBehaviour
     public OrbsManager orbsMngr;
 	public OrbGroupController[] orbsControllers;
 	public BalletManager balletMngr;
+	public ForceManager forceMngr;
 
 	private string path;
 	private OxipitalData loadedData;
@@ -75,6 +76,13 @@ public class DataManager : MonoBehaviour
 			data.balletMngrData.forcePatternData.Add(pattern.StoreData());
 		}
 
+		// Save Force
+		data.forceControllerData = new List<ForceControllerData>();
+		foreach (ForceController f in forceMngr.Forces)
+		{
+			data.forceControllerData.Add(f.StoreData());
+		}
+
 		// Save to file
 		string orbsData = JsonUtility.ToJson(data);
 		string filepath = path + "/" + fileName + ".json";
@@ -90,4 +98,5 @@ public class OxipitalData
 	public List<OrbGroupData> orbGroupData;
 	public List<OrbGroupControllerData> orbGroupControllersData;
 	public BalletManagerData balletMngrData;
+	public List<ForceControllerData> forceControllerData;
 }

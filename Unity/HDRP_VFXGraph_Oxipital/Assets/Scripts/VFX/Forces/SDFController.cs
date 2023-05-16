@@ -18,28 +18,40 @@ public class SDFController : ForceController
     {
         string sdf = "SDF";
 
-        foreach(VisualEffect vfx in m_vfxs)
+        foreach(VisualEffect vfx in _vfxs)
         {
             // Texture
-            if (vfx.HasTexture(sdf + " Texture" + m_suffix))
-                vfx.SetTexture(sdf + " Texture" + m_suffix, texture);
+            if (vfx.HasTexture(sdf + " Texture" + _suffix))
+                vfx.SetTexture(sdf + " Texture" + _suffix, texture);
 
             // Attraction Speed
-            if (vfx.HasFloat(sdf + " Attraction Speed" + m_suffix))
-                vfx.SetFloat(sdf + " Attraction Speed" + m_suffix, attractionSpeed);
+            if (vfx.HasFloat(sdf + " Attraction Speed" + _suffix))
+                vfx.SetFloat(sdf + " Attraction Speed" + _suffix, attractionSpeed);
 
             // Attraction Force
-            if (vfx.HasFloat(sdf + " Attraction Force" + m_suffix))
-                vfx.SetFloat(sdf + " Attraction Force" + m_suffix, attractionForce);
+            if (vfx.HasFloat(sdf + " Attraction Force" + _suffix))
+                vfx.SetFloat(sdf + " Attraction Force" + _suffix, attractionForce);
 
             // Stick Force
-            if (vfx.HasFloat(sdf + " Stick Force" + m_suffix))
-                vfx.SetFloat(sdf + " Stick Force" + m_suffix, stickForce);
+            if (vfx.HasFloat(sdf + " Stick Force" + _suffix))
+                vfx.SetFloat(sdf + " Stick Force" + _suffix, stickForce);
 
             // Stick Distance
-            if (vfx.HasFloat(sdf + " Stick Distance" + m_suffix))
-                vfx.SetFloat(sdf + " Stick Distance" + m_suffix, stickDistance);
+            if (vfx.HasFloat(sdf + " Stick Distance" + _suffix))
+                vfx.SetFloat(sdf + " Stick Distance" + _suffix, stickDistance);
         }
-    
+    }
+
+    public override ForceControllerData StoreData()
+    {
+        ForceControllerData data = new ForceControllerData();
+        data = base.StoreBaseData();
+
+        return data;
+    }
+
+    public override void LoadData(ForceControllerData data)
+    {
+        base.LoadBaseData(data);
     }
 }

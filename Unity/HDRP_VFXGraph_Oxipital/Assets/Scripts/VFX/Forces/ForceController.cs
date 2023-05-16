@@ -4,8 +4,16 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class ForceController : MonoBehaviour
+public abstract class ForceController : MonoBehaviour
 {
+    public string Key
+	{
+        get
+		{
+            return key;
+		}
+	}
+
     public int forceID = 0;
     public int forceCount = 1;
     
@@ -15,25 +23,28 @@ public class ForceController : MonoBehaviour
     public float radius;
     public Vector3 axis;
 
+    protected string key; // The name of the force
     protected BalletPattern pattern; // Handle positions of the force
-    protected VisualEffect[] m_vfxs;
-    protected string m_suffix = "";
-    protected GraphicsBuffer m_buffer;
+    protected VisualEffect[] _vfxs;
+    protected string _suffix = "";
+    protected GraphicsBuffer _buffer;
+    protected int _bufferID;
     
-    private BalletManager m_balletMngr;
-    private OrbsManager m_orbsMngr;
-    private BalletPatternController m_patternController;
+    private BalletManager _balletMngr;
+    private OrbsManager _orbsMngr;
+    private BalletPatternController _patternController;
 
 
-    private void Start()
+    public void Initiliaze(OrbsManager orbsMngr, BalletManager balletMngr)
     {
-        m_orbsMngr = GameObject.FindGameObjectWithTag("Orb Manager").GetComponent<OrbsManager>();
+        _orbsMngr = orbsMngr;
+        _balletMngr = balletMngr;
 
         // Listen to vfxController to know when we created a new orb.
         // Update our list when it is the case
-        if(m_orbsMngr != null)
+        if (_orbsMngr != null)
 		{
-            m_orbsMngr.GetOnOrbCreated().AddListener(UpdateVfxArray);
+            _orbsMngr.GetOnOrbCreated().AddListener(UpdateVfxArray);
         }
         else
 		{
@@ -43,19 +54,17 @@ public class ForceController : MonoBehaviour
         // Set suffix to handle same multiple force on the same object.
         if (forceID != 0)
         {
-            m_suffix = " " + forceID.ToString();
+            _suffix = " " + forceID.ToString();
         }
 
-        // Get ballet manager reference
-        m_balletMngr = GameObject.FindGameObjectWithTag("Ballet Manager").GetComponent<BalletManager>();
-        if(m_balletMngr != null)
+        if(_balletMngr != null)
 		{
             // Add a pattern to ballet manager
-            pattern = m_balletMngr.AddPattern(BalletManager.PatternGroup.Force);
+            pattern = _balletMngr.AddPattern(BalletManager.PatternGroup.Force);
             if(pattern != null)
 			{
-                m_patternController = this.gameObject.AddComponent<BalletPatternController>();
-                m_patternController.SetPattern(pattern);
+                _patternController = this.gameObject.AddComponent<BalletPatternController>();
+                _patternController.SetPattern(pattern);
 			}
         }
         else
@@ -63,15 +72,16 @@ public class ForceController : MonoBehaviour
             Debug.LogError("Can't find Ballet Manager in " + gameObject.name);
 		}
 
-        if (m_buffer == null)
+        if (_buffer == null)
 		{
-            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 1, Marshal.SizeOf(typeof(Vector3)));
+            _buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 1, Marshal.SizeOf(typeof(Vector3)));
+            _bufferID = Shader.PropertyToID(key + " Graphics Buffer"); ;
         }
     }
 
     protected virtual void Update()
     {
-        if(m_vfxs == null)
+        if(_vfxs == null)
 		{
             UpdateVfxArray();
 		}
@@ -81,36 +91,52 @@ public class ForceController : MonoBehaviour
 		{
             pattern.UpdateDancerCount(forceCount);
 
-            if (m_buffer != null)
-                m_buffer.Release();
+            if (_buffer != null)
+                _buffer.Release();
 
-            m_buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, forceCount, Marshal.SizeOf(typeof(Vector3)));
+            _buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, forceCount, Marshal.SizeOf(typeof(Vector3)));
         }     
 
         // Update positions
-        if (m_buffer != null)
+        if (_buffer != null)
 		{
             List<Vector3> target = GetPositions();
             if(target != null)
-                m_buffer.SetData(target);
+                _buffer.SetData(target);
         }
 
-        foreach (VisualEffect vfx in m_vfxs)
+        foreach (VisualEffect vfx in _vfxs)
         {
             if (vfx == null)
                 UpdateVfxArray();
+
+            // Intensity
+            if (vfx.HasFloat(key + " Intensity" + _suffix))
+                vfx.SetFloat(key + " Intensity" + _suffix, intensity);
+
+            // Radius
+            if (vfx.HasFloat(key + " Radius" + _suffix))
+                vfx.SetFloat(key + " Radius" + _suffix, radius);
+
+            // Axis
+            if (vfx.HasVector3(key + " Axis" + _suffix))
+                vfx.SetVector3(key + " Axis" + _suffix, axis);
+
+            // Buffer
+            if (vfx.HasGraphicsBuffer(_bufferID))
+                vfx.SetGraphicsBuffer(_bufferID, _buffer);
         }
     }
 
     void UpdateVfxArray()
     {
-        if (m_orbsMngr == null)
+        if (_orbsMngr == null)
         {
-            m_vfxs = GetComponentsInChildren<VisualEffect>();
+            _vfxs = GetComponentsInChildren<VisualEffect>();
         }
         else
         {
-            m_vfxs = m_orbsMngr.GetComponentsInChildren<VisualEffect>();
+            _vfxs = _orbsMngr.GetComponentsInChildren<VisualEffect>();
         }
     }
 
@@ -131,7 +157,45 @@ public class ForceController : MonoBehaviour
 
 	private void OnDestroy()
 	{
-        if(m_buffer != null)
-            m_buffer.Release();
+        if(_buffer != null)
+            _buffer.Release();
 	}
+
+    public abstract ForceControllerData StoreData();
+
+    public abstract void LoadData(ForceControllerData data);
+
+    protected ForceControllerData StoreBaseData()
+	{
+        ForceControllerData data = new ForceControllerData();
+
+        data.forceID = forceID;
+        data.key = key;
+        data.forceCount = forceCount;
+        data.intensity = intensity;
+        data.radius = radius;
+        data.axis = axis;
+
+        return data;
+	}
+
+    protected void LoadBaseData(ForceControllerData data)
+    {
+        forceID = data.forceID;
+        forceCount = data.forceCount;
+        intensity = data.intensity;
+        radius = data.radius;
+        axis = data.axis;
+    }
+}
+
+[System.Serializable] 
+public class ForceControllerData
+{
+    public int forceID = 0;
+    public string key = "";
+    public int forceCount = 1;
+    public float intensity;
+    public float radius;
+    public Vector3 axis;
 }

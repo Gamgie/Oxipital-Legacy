@@ -15,44 +15,57 @@ public class RadialController : ForceController
     [Range(0, 1)]
     public float sphericalSmoothness = 1;
 
-    protected readonly int s_BufferID = Shader.PropertyToID("Attractor Graphics Buffer");
+    private void OnEnable()
+    {
+        key = "Attractor";
+    }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        string radial = "Attractor";
 
-        foreach (VisualEffect visualEffect in m_vfxs)
+        foreach (VisualEffect visualEffect in _vfxs)
         {
-            // Intensity
-            if (visualEffect.HasFloat(radial + " Intensity" + m_suffix))
-                visualEffect.SetFloat(radial + " Intensity" + m_suffix, intensity);
-
-            // Radius
-            if (visualEffect.HasFloat(radial + " Radius" + m_suffix))
-                visualEffect.SetFloat(radial + " Radius" + m_suffix, radius);
 
             // Radial Frequency
-            if (visualEffect.HasFloat(radial + " Radial Frequency" + m_suffix))
-                visualEffect.SetFloat(radial + " Radial Frequency" + m_suffix, radialFrequency);
+            if (visualEffect.HasFloat(key + " Radial Frequency" + _suffix))
+                visualEffect.SetFloat(key + " Radial Frequency" + _suffix, radialFrequency);
 
             // Radial Smoothness
-            if (visualEffect.HasFloat(radial + " Radial Smoothness" + m_suffix))
-                visualEffect.SetFloat(radial + " Radial Smoothness" + m_suffix, radialSmoothness);
+            if (visualEffect.HasFloat(key + " Radial Smoothness" + _suffix))
+                visualEffect.SetFloat(key + " Radial Smoothness" + _suffix, radialSmoothness);
 
             // Spherical Frequency
-            if (visualEffect.HasFloat(radial + " Spherical Frequency" + m_suffix))
-                visualEffect.SetFloat(radial + " Spherical Frequency" + m_suffix, sphericalFrequency);
+            if (visualEffect.HasFloat(key + " Spherical Frequency" + _suffix))
+                visualEffect.SetFloat(key + " Spherical Frequency" + _suffix, sphericalFrequency);
 
             // Spherical Smoothness
-            if (visualEffect.HasFloat(radial + " Spherical Smoothness" + m_suffix))
-                visualEffect.SetFloat(radial + " Spherical Smoothness" + m_suffix, sphericalSmoothness);
-            
-            // Buffer
-            if (visualEffect.HasGraphicsBuffer(s_BufferID))
-                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
-
+            if (visualEffect.HasFloat(key + " Spherical Smoothness" + _suffix))
+                visualEffect.SetFloat(key + " Spherical Smoothness" + _suffix, sphericalSmoothness);
         }
+    }
+
+    public override ForceControllerData StoreData()
+    {
+        ForceControllerData data = new ForceControllerData();
+        data = base.StoreBaseData();
+
+        PlayerPrefs.SetFloat(key + " radialFrequency " + forceID, radialFrequency);
+        PlayerPrefs.SetFloat(key + " radialSmoothness " + forceID, radialSmoothness);
+        PlayerPrefs.SetFloat(key + " sphericalFrequency " + forceID, sphericalFrequency);
+        PlayerPrefs.SetFloat(key + " sphericalSmoothness " + forceID, sphericalSmoothness);
+
+        return data;
+    }
+
+    public override void LoadData(ForceControllerData data)
+    {
+        base.LoadBaseData(data);
+
+        radialFrequency = PlayerPrefs.GetFloat(key + " radialFrequency " + forceID, 0f);
+        radialSmoothness = PlayerPrefs.GetFloat(key + " radialSmoothness " + forceID, 1f);
+        sphericalFrequency = PlayerPrefs.GetFloat(key + " sphericalFrequency " + forceID, 0f);
+        sphericalSmoothness = PlayerPrefs.GetFloat(key + " sphericalSmoothness " + forceID, 1f);
     }
 }

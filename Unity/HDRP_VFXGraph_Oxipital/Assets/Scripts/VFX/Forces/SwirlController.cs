@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,41 +13,46 @@ public class SwirlController : ForceController
     [Range(0,1)]
     public float centralVertical;
 
+    private void OnEnable()
+    {
+        key = "Swirl";
+    }
+
+
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        string swirl = "Swirl";
 
-        foreach (VisualEffect visualEffect in m_vfxs)
+        foreach (VisualEffect visualEffect in _vfxs)
         {
-            // Intensity
-            if (visualEffect.HasFloat(swirl + " Intensity" + m_suffix))
-                visualEffect.SetFloat(swirl + " Intensity" + m_suffix, intensity);
-
-            // Axis
-            if (visualEffect.HasVector3(swirl + " Axis" + m_suffix))
-                visualEffect.SetVector3(swirl + " Axis" + m_suffix, axis);
-            
-            // Radius
-            if (visualEffect.HasFloat(swirl + " Radius") == true)
-                visualEffect.SetFloat(swirl + " Radius", radius);
-            
             // Clockwise
-            if (visualEffect.HasBool(swirl + " Rotation Clockwise") == true)
-                visualEffect.SetBool(swirl + " Rotation Clockwise", clockwise);
+            if (visualEffect.HasBool(key + " Rotation Clockwise") == true)
+                visualEffect.SetBool(key + " Rotation Clockwise", clockwise);
 
             // Central Vertical
-            if (visualEffect.HasFloat(swirl + " Central Vertical") == true)
-                visualEffect.SetFloat(swirl + " Central Vertical", centralVertical);
-
-            // Buffer size
-            if (visualEffect.HasInt(swirl + " Buffer Size" + m_suffix))
-                visualEffect.SetInt(swirl + " Buffer Size" + m_suffix, forceCount);
-
-            // Buffer
-            if (visualEffect.HasGraphicsBuffer(s_BufferID))
-                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
+            if (visualEffect.HasFloat(key + " Central Vertical") == true)
+                visualEffect.SetFloat(key + " Central Vertical", centralVertical);
         }
+    }
+
+    public override ForceControllerData StoreData()
+    {
+        ForceControllerData data = new ForceControllerData();
+        data = base.StoreBaseData();
+
+        PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
+        PlayerPrefs.SetFloat(key + " centralVertical " + forceID, centralVertical);
+
+        return data;
+    }
+
+    public override void LoadData(ForceControllerData data)
+    {
+        base.LoadBaseData(data);
+
+        //Vortex Parameters
+        centralVertical = PlayerPrefs.GetFloat(key + " centralVertical " + forceID, 0f);
+        clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " clockwise " + forceID, 1));
     }
 }

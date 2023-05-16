@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,47 +16,58 @@ public class VortexController : ForceController
     [Range(0, 1)]
     public float cylindricIntensity = 1f;
 
-    protected readonly int s_BufferID = Shader.PropertyToID("Vortex Graphics Buffer");
+	private void OnEnable()
+	{
+        key = "Vortex";
+    }
 
-    // Update is called once per frame
-    protected override void Update()
+	// Update is called once per frame
+	protected override void Update()
     {
         base.Update();
-        string vortex = "Vortex";
 
-        foreach (VisualEffect visualEffect in m_vfxs)
+        foreach (VisualEffect visualEffect in _vfxs)
         {
-            // Intensity
-            if (visualEffect.HasFloat(vortex + " Intensity" + m_suffix))
-                visualEffect.SetFloat(vortex + " Intensity" + m_suffix, intensity);
-
             // Orthoradial Intensity
-            if (visualEffect.HasFloat(vortex + " Orthoradial Intensity" + m_suffix))
-                visualEffect.SetFloat(vortex + " Orthoradial Intensity" + m_suffix, orthoradialIntensity);
+            if (visualEffect.HasFloat(key + " Orthoradial Intensity" + _suffix))
+                visualEffect.SetFloat(key + " Orthoradial Intensity" + _suffix, orthoradialIntensity);
 
             // Cylindric Intensity
-            if (visualEffect.HasFloat(vortex + " Cylindric Intensity" + m_suffix))
-                visualEffect.SetFloat(vortex + " Cylindric Intensity" + m_suffix, cylindricIntensity);
-
-            // Radius
-            if (visualEffect.HasFloat(vortex + " Radius" + m_suffix))
-                visualEffect.SetFloat(vortex + " Radius" + m_suffix, radius);
+            if (visualEffect.HasFloat(key + " Cylindric Intensity" + _suffix))
+                visualEffect.SetFloat(key + " Cylindric Intensity" + _suffix, cylindricIntensity);
 
             // Clockwise
-            if (visualEffect.HasBool(vortex + " Clockwise" + m_suffix))
-                visualEffect.SetBool(vortex + " Clockwise" + m_suffix, clockwise);
-
-            // Axis
-            if (visualEffect.HasVector3(vortex + " Axis" + m_suffix))
-                visualEffect.SetVector3(vortex + " Axis" + m_suffix, axis);
+            if (visualEffect.HasBool(key + " Clockwise" + _suffix))
+                visualEffect.SetBool(key + " Clockwise" + _suffix, clockwise);
 
             // Inner Radius
-            if (visualEffect.HasFloat(vortex + " Inner Radius" + m_suffix))
-                visualEffect.SetFloat(vortex + " Inner Radius" + m_suffix, innerRadius);
-
-            // Buffer
-            if (visualEffect.HasGraphicsBuffer(s_BufferID))
-                visualEffect.SetGraphicsBuffer(s_BufferID, m_buffer);
+            if (visualEffect.HasFloat(key + " Inner Radius" + _suffix))
+                visualEffect.SetFloat(key + " Inner Radius" + _suffix, innerRadius);
         }
+    }
+
+    public override ForceControllerData StoreData()
+	{
+        ForceControllerData data = new ForceControllerData();
+        data = base.StoreBaseData();
+
+        // Vortex Param
+        PlayerPrefs.SetFloat(key + " innerRadius " + forceID, innerRadius);
+        PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
+        PlayerPrefs.SetFloat(key + " orthoradialIntensity " + forceID, orthoradialIntensity);
+        PlayerPrefs.SetFloat(key + " cylindricIntensity " + forceID, cylindricIntensity);
+
+        return data;
+    }
+
+    public override void LoadData(ForceControllerData data)
+	{
+        base.LoadBaseData(data);
+
+        //Vortex Parameters
+        innerRadius = PlayerPrefs.GetFloat(key + " innerRadius " + forceID, 0.5f);
+        clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " clockwise " + forceID, 1));
+        orthoradialIntensity = PlayerPrefs.GetFloat(key + " orthoradialIntensity " + forceID, 1f);
+        cylindricIntensity = PlayerPrefs.GetFloat(key + " cylindricIntensity " + forceID, 1f);
     }
 }

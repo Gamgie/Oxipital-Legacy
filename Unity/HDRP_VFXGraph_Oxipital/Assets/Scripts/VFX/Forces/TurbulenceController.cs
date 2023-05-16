@@ -19,20 +19,21 @@ public class TurbulenceController : ForceController
     [Range(0, 1f)]
     public float turbEvolutionSpeed = 1;
 
+    private void OnEnable()
+    {
+        key = "Turb";
+    }
+
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        string turb = "Turb";
 
-        foreach (VisualEffect visualEffect in m_vfxs)
+        foreach (VisualEffect visualEffect in _vfxs)
         {
             // Turb parameter update
-            if (visualEffect.HasFloat(turb + " Intensity") == true)
-                visualEffect.SetFloat(turb + " Intensity", intensity);
-
-            if (visualEffect.HasFloat(turb + " Frequency") == true)
-                visualEffect.SetFloat(turb + " Frequency", turbFrequency);
+            if (visualEffect.HasFloat(key + " Frequency") == true)
+                visualEffect.SetFloat(key + " Frequency", turbFrequency);
 
             if (visualEffect.HasInt("Octave") == true)
                 visualEffect.SetInt("Octave", turbOctave);
@@ -43,11 +44,40 @@ public class TurbulenceController : ForceController
             if (visualEffect.HasFloat("Lacunarity") == true)
                 visualEffect.SetFloat("Lacunarity", turbLacunarity);
 
-            if (visualEffect.HasFloat(turb + " Scale") == true)
-                visualEffect.SetFloat(turb + " Scale", turbScale);
+            if (visualEffect.HasFloat(key + " Scale") == true)
+                visualEffect.SetFloat(key + " Scale", turbScale);
 
-            if (visualEffect.HasFloat(turb + " Evolution Speed") == true)
-                visualEffect.SetFloat(turb + " Evolution Speed", turbEvolutionSpeed);
+            if (visualEffect.HasFloat(key + " Evolution Speed") == true)
+                visualEffect.SetFloat(key + " Evolution Speed", turbEvolutionSpeed);
         }
+    }
+
+    public override ForceControllerData StoreData()
+    {
+        ForceControllerData data = new ForceControllerData();
+        data = base.StoreBaseData();
+
+        // Turbulence Parameters
+        PlayerPrefs.SetFloat(key + " turbFrequency " + forceID, turbFrequency);
+        PlayerPrefs.SetInt(key + " turbOctave " + forceID, turbOctave);
+        PlayerPrefs.SetFloat(key + " turbroughness " + forceID, turbroughness);
+        PlayerPrefs.SetFloat(key + " turbLacunarity " + forceID, turbLacunarity);
+        PlayerPrefs.SetFloat(key + " turbScale " + forceID, turbScale);
+        PlayerPrefs.SetFloat(key + " turbEvolutionSpeed " + forceID, turbEvolutionSpeed);
+
+        return data;
+    }
+
+    public override void LoadData(ForceControllerData data)
+    {
+        base.LoadBaseData(data);
+
+        // Turbulence Parameters
+        turbFrequency =      PlayerPrefs.GetFloat(key + " turbFrequency " + forceID, 1f);
+        turbOctave =         PlayerPrefs.GetInt(key + " turbOctave " + forceID, 1);
+        turbroughness =      PlayerPrefs.GetFloat(key + " turbroughness " + forceID, 0.5f);
+        turbLacunarity =     PlayerPrefs.GetFloat(key + " turbLacunarity " + forceID, 2f);
+        turbScale =          PlayerPrefs.GetFloat(key + " turbScale " + forceID, 1f);
+        turbEvolutionSpeed = PlayerPrefs.GetFloat(key + " turbEvolutionSpeed " + forceID, 1f);
     }
 }
