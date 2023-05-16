@@ -35,6 +35,7 @@ public class ForceManager : MonoBehaviour
 
         OxipitalData data = _dataMngr.LoadData();
 
+        // Initialize each force and load its datas
         foreach (ForceController force in _forces)
 		{
             foreach(ForceControllerData forceData in data.forceControllerData)
