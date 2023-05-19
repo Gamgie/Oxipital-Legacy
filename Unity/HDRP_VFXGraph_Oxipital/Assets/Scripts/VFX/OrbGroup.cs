@@ -192,7 +192,7 @@ public class OrbGroup : MonoBehaviour
             if (vfx.HasFloat("Emitter Scale") == true)
                 vfx.SetFloat("Emitter Scale", actualEmitterSize);
 
-            if(_meshRenderer != null && showMesh)
+            if(_meshRenderer != null)
 			{
                 if(showMesh)
 				{
