@@ -8,7 +8,7 @@ public class AxialController : ForceController
 {
     private void OnEnable()
     {
-        key = "Axis";
+        key = "Axial";
     }
 
     // Update is called once per frame
