@@ -30,7 +30,7 @@
   "dashboardManager": {
     "parameters": [
       {
-        "value": false,
+        "value": true,
         "controlAddress": "/editMode"
       },
       {
@@ -10429,8 +10429,8 @@
                 },
                 {
                   "value": [
-                    0.00235810992307961,
-                    0.3974412083625793,
+                    0.184007853269577,
+                    0.200331911444664,
                     0.0,
                     1.0
                   ],
@@ -16675,21 +16675,61 @@
               "parameters": [
                 {
                   "value": [
-                    -930.0,
-                    350.0
+                    -570.0,
+                    -290.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    40.0
+                    180.0,
+                    20.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-A/OrbGroupController/colorSmoothSpeed",
                   "controlAddress": "/target"
+                },
+                {
+                  "value": 12,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.08235294371843338,
+                    0.4666666686534882,
+                    0.2039215713739395,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.08235294371843338,
+                    0.4666666686534882,
+                    0.2039215713739395,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
                 },
                 {
                   "value": "",
@@ -16707,21 +16747,61 @@
               "parameters": [
                 {
                   "value": [
-                    400.0,
-                    350.0
+                    390.0,
+                    -290.0
                   ],
                   "controlAddress": "/viewUIPosition"
                 },
                 {
                   "value": [
-                    200.0,
-                    40.0
+                    180.0,
+                    20.0
                   ],
                   "controlAddress": "/viewUISize"
                 },
                 {
                   "value": "/modules/oSCQuery_Unity/values/Orbs/Orb-B/OrbGroupController/colorSmoothSpeed",
                   "controlAddress": "/target"
+                },
+                {
+                  "value": 12,
+                  "hexMode": false,
+                  "controlAddress": "/textSize",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.01568627543747425,
+                    0.321568638086319,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/borderColor",
+                  "enabled": true
+                },
+                {
+                  "value": 1.0,
+                  "controlAddress": "/borderWidth"
+                },
+                {
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlAddress": "/backgroundColor",
+                  "enabled": true
+                },
+                {
+                  "value": [
+                    0.01568627543747425,
+                    0.321568638086319,
+                    0.3803921639919281,
+                    1.0
+                  ],
+                  "controlAddress": "/foregroundColor",
+                  "enabled": true
                 },
                 {
                   "value": "",
@@ -16801,10 +16881,10 @@
             }
           ],
           "viewOffset": [
-            5,
-            -17
+            -22,
+            47
           ],
-          "viewZoom": 1.008203148841858
+          "viewZoom": 0.359375
         },
         "editing": true
       },
@@ -21139,7 +21219,7 @@
                   "type": 0,
                   "width": 1173,
                   "height": 570,
-                  "currentContent": "State Machine",
+                  "currentContent": "Dashboard",
                   "tabs": [
                     {
                       "name": "State Machine"
@@ -21246,7 +21326,7 @@
               "controlAddress": "/serverName"
             },
             {
-              "value": true,
+              "value": false,
               "controlAddress": "/isConnected"
             }
           ],
@@ -21290,15 +21370,19 @@
                     "CameraRotate": {
                       "parameters": [
                         {
-                          "value": 0.0,
+                          "value": 3.04999828338623,
                           "controlAddress": "/rotateYSpeed"
                         },
                         {
-                          "value": 53.00004196166992,
+                          "value": 9.399997711181641,
+                          "controlAddress": "/rotateXSpeed"
+                        },
+                        {
+                          "value": 63.5,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 2.162584543228149,
+                          "value": 3.125088214874268,
                           "controlAddress": "/radius"
                         },
                         {
@@ -21306,7 +21390,7 @@
                           "controlAddress": "/resetDuration"
                         },
                         {
-                          "value": 0.0,
+                          "value": 6.452287673950195,
                           "controlAddress": "/moveToDuration"
                         }
                       ],
@@ -21328,12 +21412,7 @@
                     "CameraSpoutMngr": {
                       "parameters": [
                         {
-                          "value": 1080,
-                          "hexMode": false,
-                          "controlAddress": "/width"
-                        },
-                        {
-                          "value": 1080,
+                          "value": 1920,
                           "hexMode": false,
                           "controlAddress": "/height"
                         },
@@ -21360,40 +21439,83 @@
               "niceName": "Cameras"
             },
             "Orbs": {
+              "editorIsCollapsed": true,
               "containers": {
                 "Forces": {
                   "editorIsCollapsed": true,
                   "containers": {
+                    "Turbulence": {
+                      "editorIsCollapsed": true,
+                      "containers": {
+                        "TurbulenceController": {
+                          "parameters": [
+                            {
+                              "value": 0.6999999284744263,
+                              "controlAddress": "/turbFrequency"
+                            },
+                            {
+                              "value": 3,
+                              "hexMode": false,
+                              "controlAddress": "/turbOctave"
+                            },
+                            {
+                              "value": 0.4333333373069763,
+                              "controlAddress": "/turbroughness"
+                            },
+                            {
+                              "value": 0.8600000143051147,
+                              "controlAddress": "/turbEvolutionSpeed"
+                            },
+                            {
+                              "value": 0.000096679024863988,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 15.0,
+                              "controlAddress": "/radius"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "TurbulenceController"
+                        },
+                        "BalletPatternController": {
+                          "parameters": [
+                            {
+                              "value": "Line",
+                              "controlAddress": "/patternType"
+                            },
+                            {
+                              "value": 2.255478,
+                              "controlAddress": "/patternSize"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "BalletPatternController"
+                        }
+                      },
+                      "owned": true,
+                      "niceName": "Turbulence"
+                    },
                     "Vortex": {
                       "editorIsCollapsed": true,
                       "containers": {
                         "VortexController": {
                           "parameters": [
                             {
-                              "value": 0.5,
-                              "controlAddress": "/innerRadius"
+                              "value": 0.00008542888099327599,
+                              "controlAddress": "/intensity"
                             },
                             {
-                              "value": true,
-                              "controlAddress": "/clockwise"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/orthoradialIntensity"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/cylindricIntensity"
-                            },
-                            {
-                              "value": 1.0,
+                              "value": 1.771653532981873,
                               "controlAddress": "/radius"
                             },
                             {
                               "value": [
                                 0.0,
-                                1.0,
-                                0.0
+                                0.0,
+                                1.00000011920929
                               ],
                               "controlAddress": "/axis"
                             }
@@ -21405,32 +21527,24 @@
                         "BalletPatternController": {
                           "parameters": [
                             {
-                              "value": "Line",
+                              "value": "Point",
                               "controlAddress": "/patternType"
                             },
                             {
                               "value": [
                                 0.0,
                                 0.0,
-                                90.0
+                                0.0
                               ],
                               "controlAddress": "/patternRotation"
                             },
                             {
-                              "value": 2.4,
+                              "value": 3.466666221618652,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 2.8,
+                              "value": 1.0,
                               "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sizeLFOFrequency"
                             }
                           ],
                           "editorIsCollapsed": true,
@@ -21441,105 +21555,11 @@
                       "owned": true,
                       "niceName": "Vortex"
                     },
-                    "Attractor": {
-                      "editorIsCollapsed": true,
-                      "containers": {
-                        "RadialController": {
-                          "parameters": [
-                            {
-                              "value": 1.172007083892822,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 2.244094371795654,
-                              "controlAddress": "/radius"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "RadialController"
-                        },
-                        "BalletPatternController": {
-                          "parameters": [
-                            {
-                              "value": "Line",
-                              "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sizeLFOAmplitude"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "BalletPatternController"
-                        }
-                      },
-                      "owned": true,
-                      "niceName": "Attractor"
-                    },
-                    "Spiral": {
-                      "editorIsCollapsed": true,
-                      "containers": {
-                        "SpiralController": {
-                          "parameters": [
-                            {
-                              "value": [
-                                0.0,
-                                -1.0,
-                                0.0
-                              ],
-                              "controlAddress": "/axis"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "SpiralController"
-                        },
-                        "BalletPatternController": {
-                          "parameters": [
-                            {
-                              "value": "Line",
-                              "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "BalletPatternController"
-                        }
-                      },
-                      "owned": true,
-                      "niceName": "Spiral"
-                    },
                     "Gravity": {
                       "editorIsCollapsed": true,
                       "containers": {
                         "GravityController": {
                           "parameters": [
-                            {
-                              "value": 0.3662522435188293,
-                              "controlAddress": "/intensity"
-                            },
                             {
                               "value": 15.0,
                               "controlAddress": "/radius"
@@ -21562,26 +21582,6 @@
                             {
                               "value": "Line",
                               "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                0.0,
-                                0.0
-                              ],
-                              "controlAddress": "/patternRotation"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
                             }
                           ],
                           "editorIsCollapsed": true,
@@ -21591,214 +21591,6 @@
                       },
                       "owned": true,
                       "niceName": "Gravity"
-                    },
-                    "Swirl": {
-                      "editorIsCollapsed": true,
-                      "containers": {
-                        "SwirlController": {
-                          "parameters": [
-                            {
-                              "value": 2,
-                              "hexMode": false,
-                              "controlAddress": "/forceCount"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 0.8267716765403748,
-                              "controlAddress": "/radius"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                0.0,
-                                1.00000011920929
-                              ],
-                              "controlAddress": "/axis"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "SwirlController"
-                        },
-                        "BalletPatternController": {
-                          "parameters": [
-                            {
-                              "value": "Circle",
-                              "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                0.0,
-                                0.0
-                              ],
-                              "controlAddress": "/patternRotation"
-                            },
-                            {
-                              "value": 1.533333301544189,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 2.399999856948853,
-                              "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sizeLFOFrequency"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sizeLFOAmplitude"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "BalletPatternController"
-                        }
-                      },
-                      "owned": true,
-                      "niceName": "Swirl"
-                    },
-                    "Axial": {
-                      "editorIsCollapsed": true,
-                      "containers": {
-                        "AxialController": {
-                          "parameters": [
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 7.559055328369141,
-                              "controlAddress": "/radius"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                1.0,
-                                0.0
-                              ],
-                              "controlAddress": "/axis"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "AxialController"
-                        },
-                        "BalletPatternController": {
-                          "parameters": [
-                            {
-                              "value": "Point",
-                              "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 3.6,
-                              "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 4.8,
-                              "controlAddress": "/lerpDuration"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "BalletPatternController"
-                        }
-                      },
-                      "owned": true,
-                      "niceName": "Axial"
-                    },
-                    "Turbulence": {
-                      "editorIsCollapsed": true,
-                      "containers": {
-                        "TurbulenceController": {
-                          "parameters": [
-                            {
-                              "value": 1.299999952316284,
-                              "controlAddress": "/turbFrequency"
-                            },
-                            {
-                              "value": 0.4333333373069763,
-                              "controlAddress": "/turbroughness"
-                            },
-                            {
-                              "value": 2.0,
-                              "controlAddress": "/turbLacunarity"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/turbScale"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/turbEvolutionSpeed"
-                            },
-                            {
-                              "value": 0.2197513580322266,
-                              "controlAddress": "/intensity"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/radius"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                0.0,
-                                0.0
-                              ],
-                              "controlAddress": "/axis"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "TurbulenceController"
-                        },
-                        "BalletPatternController": {
-                          "parameters": [
-                            {
-                              "value": "Line",
-                              "controlAddress": "/patternType"
-                            },
-                            {
-                              "value": [
-                                0.0,
-                                0.0,
-                                0.0
-                              ],
-                              "controlAddress": "/patternRotation"
-                            },
-                            {
-                              "value": 2.255478,
-                              "controlAddress": "/patternSize"
-                            },
-                            {
-                              "value": 1.0,
-                              "controlAddress": "/speed"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/lerpDuration"
-                            }
-                          ],
-                          "editorIsCollapsed": true,
-                          "owned": true,
-                          "niceName": "BalletPatternController"
-                        }
-                      },
-                      "owned": true,
-                      "niceName": "Turbulence"
                     },
                     "Perlin": {
                       "editorIsCollapsed": true,
@@ -21827,15 +21619,11 @@
                               "controlAddress": "/minRange"
                             },
                             {
-                              "value": 1.0,
-                              "controlAddress": "/maxRange"
-                            },
-                            {
-                              "value": 0.02545428276062012,
+                              "value": 0.0,
                               "controlAddress": "/intensity"
                             },
                             {
-                              "value": 2.125984191894531,
+                              "value": 15.0,
                               "controlAddress": "/radius"
                             }
                           ],
@@ -21850,28 +21638,12 @@
                               "controlAddress": "/patternType"
                             },
                             {
-                              "value": [
-                                0.0,
-                                0.0,
-                                0.0
-                              ],
-                              "controlAddress": "/patternRotation"
-                            },
-                            {
                               "value": 2.133334,
                               "controlAddress": "/patternSize"
                             },
                             {
-                              "value": 0.0,
-                              "controlAddress": "/speed"
-                            },
-                            {
                               "value": 1.866667,
                               "controlAddress": "/lerpDuration"
-                            },
-                            {
-                              "value": 0.0,
-                              "controlAddress": "/sizeLFOAmplitude"
                             }
                           ],
                           "editorIsCollapsed": true,
@@ -21881,6 +21653,183 @@
                       },
                       "owned": true,
                       "niceName": "Perlin"
+                    },
+                    "Attractor": {
+                      "editorIsCollapsed": true,
+                      "containers": {
+                        "RadialController": {
+                          "parameters": [
+                            {
+                              "value": -0.000028278736863285,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 5.314960479736328,
+                              "controlAddress": "/radius"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "RadialController"
+                        },
+                        "BalletPatternController": {
+                          "parameters": [
+                            {
+                              "value": "Line",
+                              "controlAddress": "/patternType"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "BalletPatternController"
+                        }
+                      },
+                      "owned": true,
+                      "niceName": "Attractor"
+                    },
+                    "Spiral": {
+                      "editorIsCollapsed": true,
+                      "containers": {
+                        "SpiralController": {
+                          "parameters": [
+                            {
+                              "value": 0.6000000834465027,
+                              "controlAddress": "/frequency"
+                            },
+                            {
+                              "value": 0.0,
+                              "controlAddress": "/radius"
+                            },
+                            {
+                              "value": [
+                                0.0,
+                                -1.0,
+                                0.0
+                              ],
+                              "controlAddress": "/axis"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "SpiralController"
+                        },
+                        "BalletPatternController": {
+                          "parameters": [
+                            {
+                              "value": "Line",
+                              "controlAddress": "/patternType"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "BalletPatternController"
+                        }
+                      },
+                      "owned": true,
+                      "niceName": "Spiral"
+                    },
+                    "Swirl": {
+                      "editorIsCollapsed": true,
+                      "containers": {
+                        "SwirlController": {
+                          "parameters": [
+                            {
+                              "value": 3,
+                              "hexMode": false,
+                              "controlAddress": "/forceCount"
+                            },
+                            {
+                              "value": 0.00003571665729396,
+                              "controlAddress": "/intensity"
+                            },
+                            {
+                              "value": 0.9448819160461426,
+                              "controlAddress": "/radius"
+                            },
+                            {
+                              "value": [
+                                0.0,
+                                0.0,
+                                1.00000011920929
+                              ],
+                              "controlAddress": "/axis"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "SwirlController"
+                        },
+                        "BalletPatternController": {
+                          "parameters": [
+                            {
+                              "value": "Circle",
+                              "controlAddress": "/patternType"
+                            },
+                            {
+                              "value": 1.666666507720947,
+                              "controlAddress": "/patternSize"
+                            },
+                            {
+                              "value": 4.199999809265137,
+                              "controlAddress": "/speed"
+                            },
+                            {
+                              "value": 2.266666650772095,
+                              "controlAddress": "/lerpDuration"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "BalletPatternController"
+                        }
+                      },
+                      "owned": true,
+                      "niceName": "Swirl"
+                    },
+                    "Axial": {
+                      "editorIsCollapsed": true,
+                      "containers": {
+                        "AxialController": {
+                          "parameters": [
+                            {
+                              "value": 15.0,
+                              "controlAddress": "/radius"
+                            },
+                            {
+                              "value": [
+                                0.0,
+                                1.00000011920929,
+                                1.00000011920929
+                              ],
+                              "controlAddress": "/axis"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "AxialController"
+                        },
+                        "BalletPatternController": {
+                          "parameters": [
+                            {
+                              "value": "Point",
+                              "controlAddress": "/patternType"
+                            },
+                            {
+                              "value": 3.6,
+                              "controlAddress": "/speed"
+                            },
+                            {
+                              "value": 4.8,
+                              "controlAddress": "/lerpDuration"
+                            }
+                          ],
+                          "editorIsCollapsed": true,
+                          "owned": true,
+                          "niceName": "BalletPatternController"
+                        }
+                      },
+                      "owned": true,
+                      "niceName": "Axial"
                     },
                     "ForceManager": {
                       "editorIsCollapsed": true,
@@ -21901,42 +21850,27 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 1,
-                          "hexMode": false,
-                          "controlAddress": "/orbCount"
-                        },
-                        {
-                          "value": 2517.16943359375,
+                          "value": 84631.2421875,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 30.27180671691895,
+                          "value": 20.66714859008789,
                           "controlAddress": "/life"
                         },
                         {
-                          "value": [
-                            1.0,
-                            1.0,
-                            1.0,
-                            1.0
-                          ],
-                          "controlAddress": "/color"
+                          "value": 0.6173076629638672,
+                          "controlAddress": "/colorSmoothSpeed"
                         },
                         {
-                          "value": 6,
-                          "hexMode": false,
-                          "controlAddress": "/colorIntensity"
-                        },
-                        {
-                          "value": 0.41995769739151,
+                          "value": 0.007279044482856989,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 6.247222423553467,
+                          "value": 11.06414699554443,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 2.521737813949585,
+                          "value": 2.12900185585022,
                           "controlAddress": "/drag"
                         },
                         {
@@ -21952,15 +21886,7 @@
                           "controlAddress": "/noisyDragFrequency"
                         },
                         {
-                          "value": false,
-                          "controlAddress": "/stationaryTransparent"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/stationaryMaxSpeed"
-                        },
-                        {
-                          "value": "Circle",
+                          "value": "Sphere",
                           "controlMode": 2,
                           "reference": {
                             "value": "",
@@ -21978,16 +21904,8 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 2.039248704910278,
+                          "value": 3.339248180389404,
                           "controlAddress": "/emitterSize"
-                        },
-                        {
-                          "value": false,
-                          "controlAddress": "/emitFromInside"
-                        },
-                        {
-                          "value": false,
-                          "controlAddress": "/showMesh"
                         },
                         {
                           "value": "Point",
@@ -22002,11 +21920,11 @@
                           "controlAddress": "/patternRotation"
                         },
                         {
-                          "value": 0.8518518209457397,
+                          "value": 2.370370388031006,
                           "controlAddress": "/patternSize"
                         },
                         {
-                          "value": 5.111111164093018,
+                          "value": 0.7777777910232544,
                           "controlAddress": "/speed"
                         },
                         {
@@ -22018,18 +21936,11 @@
                           "controlAddress": "/sizeLFOFrequency"
                         },
                         {
-                          "value": 1.328571438789368,
-                          "controlAddress": "/sizeLFOAmplitude"
-                        },
-                        {
-                          "value": 1.217307686805725,
-                          "controlAddress": "/colorSmoothSpeed"
-                        },
-                        {
                           "value": 0.0,
-                          "controlAddress": "/emitterSizeOffset"
+                          "controlAddress": "/sizeLFOAmplitude"
                         }
                       ],
+                      "editorIsCollapsed": true,
                       "owned": true,
                       "niceName": "OrbGroupController"
                     }
@@ -22038,6 +21949,7 @@
                   "niceName": "Orb-A"
                 },
                 "Orb-B": {
+                  "editorIsCollapsed": true,
                   "containers": {
                     "OrbGroupController": {
                       "parameters": [
@@ -22046,37 +21958,41 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 1,
+                          "value": 0,
                           "hexMode": false,
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 2517.16943359375,
+                          "value": 84631.2421875,
                           "controlAddress": "/rate"
                         },
                         {
-                          "value": 30.27180671691895,
+                          "value": 20.66714859008789,
                           "controlAddress": "/life"
                         },
                         {
                           "value": [
-                            0.0,
-                            0.7803921699523926,
                             1.0,
+                            0.5921568870544434,
+                            0.0,
                             1.0
                           ],
                           "controlAddress": "/color"
                         },
                         {
-                          "value": 0.41995769739151,
+                          "value": 0.5365384817123413,
+                          "controlAddress": "/colorSmoothSpeed"
+                        },
+                        {
+                          "value": 0.007279044482856989,
                           "controlAddress": "/alpha"
                         },
                         {
-                          "value": 6.247222423553467,
+                          "value": 11.06414699554443,
                           "controlAddress": "/size"
                         },
                         {
-                          "value": 2.521737813949585,
+                          "value": 2.12900185585022,
                           "controlAddress": "/drag"
                         },
                         {
@@ -22093,18 +22009,10 @@
                         },
                         {
                           "value": false,
-                          "controlAddress": "/staticParticle"
-                        },
-                        {
-                          "value": false,
                           "controlAddress": "/stationaryTransparent"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/stationaryMaxSpeed"
-                        },
-                        {
-                          "value": "Sphere",
+                          "value": "Merkaba",
                           "controlAddress": "/emitterShape"
                         },
                         {
@@ -22112,15 +22020,11 @@
                           "controlAddress": "/emitterPlacementMode"
                         },
                         {
-                          "value": 0.7577422857284546,
+                          "value": 1.184950113296509,
                           "controlAddress": "/emitterSize"
                         },
                         {
                           "value": true,
-                          "controlAddress": "/activateCollision"
-                        },
-                        {
-                          "value": false,
                           "controlAddress": "/showMesh"
                         },
                         {
@@ -22134,16 +22038,9 @@
                             0.0
                           ],
                           "controlAddress": "/patternRotation"
-                        },
-                        {
-                          "value": 0.009999999776482582,
-                          "controlAddress": "/lerpDuration"
-                        },
-                        {
-                          "value": 1.486538529396057,
-                          "controlAddress": "/colorSmoothSpeed"
                         }
                       ],
+                      "editorIsCollapsed": true,
                       "owned": true,
                       "niceName": "OrbGroupController"
                     }
@@ -22163,7 +22060,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 25588,
+                      "value": 1996681,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -22182,7 +22079,7 @@
                 "BalletManager": {
                   "parameters": [
                     {
-                      "value": false,
+                      "value": true,
                       "controlAddress": "/showDancers"
                     }
                   ],
@@ -26328,7 +26225,7 @@
             }
           }
         },
-        "hasListenExtension": true
+        "hasListenExtension": false
       },
       {
         "niceName": "OSC_TD",
@@ -26380,7 +26277,7 @@
         "values": {
           "parameters": [
             {
-              "value": 0.6603415608406067,
+              "value": 0.1505668610334396,
               "minValue": 0,
               "maxValue": 1,
               "default": 0,
@@ -26410,7 +26307,18 @@
               "shortName": "_Kick"
             },
             {
-              "value": 0.9877519607543945,
+              "controlAddress": "/_kick",
+              "type": "Float",
+              "niceName": "/kick",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_kick"
+            },
+            {
+              "value": 0.7508325576782227,
               "minValue": 0,
               "maxValue": 1,
               "default": 0,
@@ -26425,7 +26333,7 @@
               "shortName": "_Low"
             },
             {
-              "value": 0.07048940658569336,
+              "value": 0.600608766078949,
               "minValue": 0,
               "maxValue": 1,
               "default": 0,
@@ -26534,12 +26442,8 @@
                 "FB_Over": {
                   "parameters": [
                     {
-                      "value": 0.9227272868156433,
+                      "value": 0.949999988079071,
                       "controlAddress": "/Opacity"
-                    },
-                    {
-                      "value": false,
-                      "controlAddress": "/Fbovertoggle"
                     }
                   ],
                   "editorIsCollapsed": true,
@@ -26549,7 +26453,7 @@
                 "FB_Add": {
                   "parameters": [
                     {
-                      "value": 0.9227272272109985,
+                      "value": 0.6090909242630005,
                       "controlAddress": "/Opacityadd"
                     }
                   ],
@@ -26579,7 +26483,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 0.1499999761581421,
+                      "value": 0.2045454084873199,
                       "controlAddress": "/Drywetradialblur"
                     },
                     {
@@ -28559,8 +28463,8 @@
             },
             {
               "value": [
-                "\\\\?\\usb#vid_09e8&pid_0034&mi_00#7&5206b0f&1&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global",
-                "\\\\?\\usb#vid_09e8&pid_0034&mi_00#7&5206b0f&1&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global"
+                "",
+                ""
               ],
               "controlAddress": "/devices"
             }
@@ -28579,14 +28483,9 @@
           "viewZoom": 1.0
         },
         "values": {
-          "editorIsCollapsed": true,
           "containers": {
             "infos": {
               "parameters": [
-                {
-                  "value": false,
-                  "controlAddress": "/oneNoteOn"
-                },
                 {
                   "value": 10,
                   "hexMode": false,
@@ -28615,7 +28514,7 @@
                 "controlChange": {
                   "parameters": [
                     {
-                      "value": 127,
+                      "value": 1,
                       "alwaysNotify": true,
                       "minValue": 0,
                       "maxValue": 127,
@@ -28672,7 +28571,7 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 127,
+                      "value": 1,
                       "alwaysNotify": true,
                       "minValue": 0,
                       "maxValue": 127,
@@ -29067,7 +28966,6 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -29255,7 +29153,6 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -29460,7 +29357,6 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -29563,7 +29459,6 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -29666,7 +29561,6 @@
                       "feedbackOnly": false
                     },
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -29980,7 +29874,6 @@
                 "other": {
                   "parameters": [
                     {
-                      "value": 0,
                       "minValue": 0,
                       "maxValue": 127,
                       "default": 0,
@@ -30255,8 +30148,8 @@
           "parameters": [
             {
               "value": [
-                "\\\\?\\usb#vid_1235&pid_0061&mi_00#7&2b778561&2&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global",
-                "\\\\?\\usb#vid_1235&pid_0061&mi_00#7&2b778561&2&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global"
+                "",
+                ""
               ],
               "controlAddress": "/devices"
             }
@@ -31099,6 +30992,7 @@
               "feedbackOnly": false
             },
             {
+              "value": 127,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31116,7 +31010,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 7,
+              "value": 15,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31152,7 +31046,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 18,
+              "value": 127,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31170,7 +31064,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 19,
+              "value": 45,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31188,7 +31082,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 7,
+              "value": 8,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31206,7 +31100,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 64,
+              "value": 127,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31224,7 +31118,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 12,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31242,7 +31135,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 6,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31277,7 +31169,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 10,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31295,7 +31186,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 26,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31313,7 +31203,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 32,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31331,7 +31220,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31417,7 +31305,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31435,7 +31322,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -31453,7 +31339,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32043,7 +31928,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32201,7 +32085,7 @@
             "infos": {
               "parameters": [
                 {
-                  "value": 44,
+                  "value": 108,
                   "hexMode": false,
                   "controlAddress": "/lastPitch"
                 },
@@ -32233,8 +32117,8 @@
           "parameters": [
             {
               "value": [
-                "\\\\?\\usb#vid_1397&pid_00b3&mi_00#6&329d7d1c&0&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global",
-                "\\\\?\\usb#vid_1397&pid_00b3&mi_00#6&329d7d1c&0&0000#{6994ad04-93ef-11d0-a3cc-00a0c9223196}\\global"
+                "",
+                ""
               ],
               "controlAddress": "/devices"
             }
@@ -32322,7 +32206,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32357,7 +32240,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32375,7 +32257,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32495,7 +32376,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32513,7 +32393,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32531,7 +32410,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32549,7 +32427,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32703,7 +32580,23 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
+              "minValue": 0,
+              "maxValue": 127,
+              "default": 0,
+              "hexMode": false,
+              "channel": 11,
+              "pitchOrNumber": 31,
+              "MIDIType": 0,
+              "controlAddress": "/_11_G0",
+              "type": "MIDI Value",
+              "niceName": "[11] G0",
+              "customizable": false,
+              "removable": true,
+              "description": "Channel 11 : G0",
+              "hideInEditor": false,
+              "feedbackOnly": false
+            },
+            {
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32721,7 +32614,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32756,7 +32648,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 17,
+              "value": 121,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32792,7 +32684,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32810,7 +32701,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 30,
+              "value": 40,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32828,7 +32719,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 67,
+              "value": 61,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32846,7 +32737,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 0,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32864,7 +32754,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 88,
+              "value": 6,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32882,7 +32772,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 74,
+              "value": 60,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32900,7 +32790,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 101,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32953,7 +32842,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 22,
+              "value": 29,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -32971,7 +32860,7 @@
               "feedbackOnly": false
             },
             {
-              "value": 31,
+              "value": 14,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -33060,7 +32949,6 @@
               "feedbackOnly": false
             },
             {
-              "value": 18,
               "minValue": 0,
               "maxValue": 127,
               "default": 0,
@@ -33082,16 +32970,12 @@
             "infos": {
               "parameters": [
                 {
-                  "value": false,
-                  "controlAddress": "/oneNoteOn"
-                },
-                {
                   "value": 11,
                   "hexMode": false,
                   "controlAddress": "/lastChannel"
                 },
                 {
-                  "value": 17,
+                  "value": 16,
                   "hexMode": false,
                   "controlAddress": "/lastPitch"
                 },
@@ -35090,7 +34974,7 @@
               "controlAddress": "/mode"
             },
             {
-              "value": 134.2657718226696,
+              "value": 23.07495016874543,
               "controlAddress": "/bpm"
             },
             {
@@ -35356,7 +35240,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 3.04999828338623,
                   "alwaysNotify": true,
                   "minValue": -10,
                   "maxValue": 10,
@@ -35378,7 +35262,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.0,
+                  "value": 9.399997711181641,
                   "alwaysNotify": true,
                   "minValue": -10,
                   "maxValue": 10,
@@ -35511,7 +35395,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 2.162584543228149,
+                  "value": 3.125088214874268,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 30,
@@ -35555,7 +35439,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.452287077903748,
+                  "value": 6.452287673950195,
                   "alwaysNotify": true,
                   "minValue": 0.1000000014901161,
                   "maxValue": 60,
@@ -35577,7 +35461,7 @@
             {
               "parameters": [
                 {
-                  "value": 53.0,
+                  "value": 63.5,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 180,
@@ -36216,7 +36100,7 @@
             {
               "parameters": [
                 {
-                  "value": 25.58799934387207,
+                  "value": 1996.681030273438,
                   "minValue": 0.0,
                   "maxValue": 4000.0,
                   "default": 0,
@@ -36429,7 +36313,6 @@
             {
               "parameters": [
                 {
-                  "value": 1,
                   "hexMode": false,
                   "controlAddress": "/dashboardIndex",
                   "feedbackOnly": false,
@@ -36476,8 +36359,8 @@
               "parameters": [
                 {
                   "value": [
-                    0.00235810992307961,
-                    0.3974412083625793,
+                    0.184007853269577,
+                    0.200331911444664,
                     0.0,
                     1.0
                   ],
@@ -36648,7 +36531,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.642464816570282,
+                  "value": 0.1058598607778549,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -36669,7 +36552,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.02156779542565346,
+                  "value": 0.5795881748199463,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -36690,7 +36573,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.9999999403953552,
+                  "value": 0.7377184629440308,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -36732,7 +36615,7 @@
             {
               "parameters": [
                 {
-                  "value": 0.8427748084068298,
+                  "value": 0.358318567276001,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -37111,7 +36994,6 @@
                       }
                     ],
                     "niceName": "Consequence 1",
-                    "editorIsCollapsed": true,
                     "type": "Consequence",
                     "commandModule": "generic",
                     "commandPath": "",
@@ -42814,12 +42696,6 @@
               }
             },
             {
-              "parameters": [
-                {
-                  "value": false,
-                  "controlAddress": "/enabled"
-                }
-              ],
               "niceName": "Toggle Metronome",
               "editorIsCollapsed": true,
               "type": "Action",
@@ -42828,7 +42704,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/modules/midiXTouchMini/values/_11_E_1",
+                        "value": "/modules/midiMPD218/values/channel10/notes/f2",
                         "controlAddress": "/inputValue"
                       },
                       {
@@ -42840,6 +42716,10 @@
                     "type": "From Input Value",
                     "comparator": {
                       "parameters": [
+                        {
+                          "value": ">",
+                          "controlAddress": "/comparisonFunction"
+                        },
                         {
                           "value": 0,
                           "hexMode": false,
@@ -43742,7 +43622,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 266.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -43992,24 +43872,6 @@
                       "listSize": 8
                     },
                     {
-                      "parameters": [
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#4"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#5"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#6"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#7"
-                        }
-                      ],
                       "niceName": "Button Booster",
                       "editorIsCollapsed": true,
                       "type": "Float",
@@ -44056,6 +43918,15 @@
                       "listSize": 8
                     },
                     {
+                      "parameters": [
+                        {
+                          "value": true,
+                          "minValue": 0,
+                          "maxValue": 1,
+                          "default": false,
+                          "controlAddress": "/#5"
+                        }
+                      ],
                       "niceName": "Inverter Toggle",
                       "editorIsCollapsed": true,
                       "type": "Boolean",
@@ -44080,7 +43951,7 @@
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 1.0,
+                          "value": -1.0,
                           "controlAddress": "/#5"
                         },
                         {
@@ -44108,7 +43979,7 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/mid",
+                          "value": "/customVariables/customVariables/values/audioReactive/low",
                           "controlAddress": "/#2"
                         },
                         {
@@ -44124,7 +43995,7 @@
                           "controlAddress": "/#5"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/low",
+                          "value": "/customVariables/customVariables/values/audioReactive/mid",
                           "controlAddress": "/#6"
                         },
                         {
@@ -44184,7 +44055,7 @@
                     {
                       "parameters": [
                         {
-                          "value": 0.2362204790115356,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -44198,21 +44069,21 @@
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.3937007784843445,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 1.023622035980225,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 1.25984251499176,
+                          "value": 0.0,
                           "minValue": 0,
                           "maxValue": 5,
                           "default": 0,
@@ -45420,7 +45291,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 84.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -45719,7 +45590,7 @@
                   {
                     "parameters": [
                       {
-                        "value": "/customVariables/customVariables/values/audioReactive/bpm",
+                        "value": "/customVariables/customVariables/values/audioReactive/low",
                         "controlAddress": "/inputValue"
                       }
                     ],
@@ -45791,6 +45662,10 @@
                         {
                           "value": 1.0,
                           "controlAddress": "/length"
+                        },
+                        {
+                          "value": 0.7377184629440308,
+                          "controlAddress": "/position"
                         },
                         {
                           "value": [
@@ -46004,6 +45879,10 @@
                           "controlAddress": "/length"
                         },
                         {
+                          "value": 0.7377184629440308,
+                          "controlAddress": "/position"
+                        },
+                        {
                           "value": [
                             0.0,
                             1.0
@@ -46127,6 +46006,12 @@
               }
             },
             {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
               "niceName": "Input to invert",
               "editorIsCollapsed": true,
               "type": "Action",
@@ -47487,7 +47372,7 @@
             {
               "parameters": [
                 {
-                  "value": 24.0,
+                  "value": 240.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -60089,7 +59974,7 @@
             {
               "parameters": [
                 {
-                  "value": 448.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -71750,7 +71635,7 @@
             {
               "parameters": [
                 {
-                  "value": 214.0,
+                  "value": 24.0,
                   "controlAddress": "/listSize"
                 },
                 {
@@ -71766,7 +71651,7 @@
                   "controlAddress": "/count"
                 },
                 {
-                  "value": 6,
+                  "value": 7,
                   "hexMode": false,
                   "controlAddress": "/previewIndex"
                 }
@@ -72015,7 +71900,7 @@
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": "/customVariables/customVariables/values/audioReactive/low",
+                          "value": "/customVariables/customVariables/values/audioReactive/bpm",
                           "controlAddress": "/#4"
                         },
                         {
@@ -72104,7 +71989,7 @@
                           "controlAddress": "/#3"
                         },
                         {
-                          "value": 0.02941176481544971,
+                          "value": 0.0117647061124444,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": 0.0,
@@ -72140,6 +72025,7 @@
                         }
                       ],
                       "niceName": "Source Multiplier A",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 8
                     },
@@ -72203,45 +72089,27 @@
                         }
                       ],
                       "niceName": "Source Multiplier B",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 8
                     },
                     {
                       "parameters": [
                         {
-                          "value": 0.0,
-                          "controlAddress": "/#1"
-                        },
-                        {
-                          "value": 0.0,
+                          "value": 8.204473884131092e-13,
                           "controlAddress": "/#2"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/#3"
-                        },
-                        {
-                          "value": 0.0,
+                          "value": 0.8679040670394897,
                           "controlAddress": "/#4"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/#5"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#6"
-                        },
-                        {
-                          "value": 0.0,
+                          "value": 0.00175019318703562,
                           "controlAddress": "/#7"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/#8"
                         }
                       ],
                       "niceName": "Source Value A",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 8
                     },
@@ -72253,6 +72121,7 @@
                         }
                       ],
                       "niceName": "Source Value B",
+                      "editorIsCollapsed": true,
                       "type": "Float",
                       "listSize": 8
                     },
@@ -72306,7 +72175,7 @@
                           "controlAddress": "/#1"
                         },
                         {
-                          "value": false,
+                          "value": true,
                           "minValue": 0,
                           "maxValue": 1,
                           "default": false,
@@ -72396,12 +72265,9 @@
                           {
                             "value": true,
                             "controlAddress": "/sendOnInputChangeOnly"
-                          },
-                          {
-                            "value": false,
-                            "controlAddress": "/sendOnOutputChangeOnly"
                           }
-                        ]
+                        ],
+                        "editorIsCollapsed": true
                       },
                       "filters": {
                         "items": [
@@ -72570,14 +72436,7 @@
                             }
                           },
                           {
-                            "parameters": [
-                              {
-                                "value": false,
-                                "controlAddress": "/enabled"
-                              }
-                            ],
                             "niceName": "Smooth",
-                            "editorIsCollapsed": true,
                             "type": "Smooth",
                             "filterParams": {
                               "parameters": [
@@ -72776,14 +72635,7 @@
                             }
                           },
                           {
-                            "parameters": [
-                              {
-                                "value": false,
-                                "controlAddress": "/enabled"
-                              }
-                            ],
                             "niceName": "Smooth",
-                            "editorIsCollapsed": true,
                             "type": "Smooth",
                             "filterParams": {
                               "parameters": [
@@ -72925,6 +72777,10 @@
                             "value": 50,
                             "hexMode": false,
                             "controlAddress": "/updateRate"
+                          },
+                          {
+                            "value": true,
+                            "controlAddress": "/sendOnOutputChangeOnly"
                           }
                         ],
                         "editorIsCollapsed": true
@@ -73041,14 +72897,7 @@
                             }
                           },
                           {
-                            "parameters": [
-                              {
-                                "value": false,
-                                "controlAddress": "/enabled"
-                              }
-                            ],
                             "niceName": "Smooth",
-                            "editorIsCollapsed": true,
                             "type": "Smooth",
                             "filterParams": {
                               "parameters": [
@@ -73336,12 +73185,24 @@
                             "value": 50,
                             "hexMode": false,
                             "controlAddress": "/updateRate"
+                          },
+                          {
+                            "value": true,
+                            "controlAddress": "/sendOnOutputChangeOnly"
                           }
                         ],
                         "editorIsCollapsed": true
                       },
                       "filters": {
                         "items": [
+                          {
+                            "niceName": "One Euro",
+                            "type": "One Euro",
+                            "filterParams": {
+                              "paramLinks": {
+                              }
+                            }
+                          },
                           {
                             "niceName": "Remap",
                             "type": "Remap",
@@ -73364,12 +73225,6 @@
                             }
                           },
                           {
-                            "parameters": [
-                              {
-                                "value": true,
-                                "controlAddress": "/enabled"
-                              }
-                            ],
                             "niceName": "Math",
                             "type": "Math",
                             "filterParams": {
@@ -73388,21 +73243,6 @@
                             },
                             "operationValue": {
                               "controlAddress": "/states/emitter/processors/multiplex/processors/audioReactionA/filters/math/filterParams/value"
-                            }
-                          },
-                          {
-                            "parameters": [
-                              {
-                                "value": false,
-                                "controlAddress": "/enabled"
-                              }
-                            ],
-                            "niceName": "One Euro",
-                            "editorIsCollapsed": true,
-                            "type": "One Euro",
-                            "filterParams": {
-                              "paramLinks": {
-                              }
                             }
                           }
                         ],
@@ -73606,8 +73446,8 @@
       }
     ],
     "viewOffset": [
-      -654,
-      -176
+      -68,
+      560
     ],
     "viewZoom": 0.765625,
     "transitions": {
@@ -73763,8 +73603,8 @@
         }
       ],
       "viewOffset": [
-        -654,
-        -176
+        -68,
+        560
       ],
       "viewZoom": 0.765625
     }
