@@ -27,15 +27,13 @@ public class CameraController : MonoBehaviour
     public float rotateXAngle;
     public float rotateZAngle;
 
-    private CinemachineVirtualCamera virtualCamera;
     private CinemachineTransposer transposer;
     private Camera _cameraFeedback;
     
 
     private void OnEnable()
     {
-        virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        transposer = orbitalCamera.GetCinemachineComponent<CinemachineTransposer>();
         _cameraFeedback = camera.transform.GetChild(0).GetComponent<Camera>();
     }
 
@@ -68,13 +66,7 @@ public class CameraController : MonoBehaviour
 
     void UpdateFOV()
 	{
-        // TODO : update all FOV of all camera
-
-        // Update main camera FOV
-        if (virtualCamera != null)
-        {
-            virtualCamera.m_Lens.FieldOfView = fov;
-        }
+        orbitalCamera.m_Lens.FieldOfView = fov;
 
         // update feedback camera FOV
         if (_cameraFeedback != null)
