@@ -79,6 +79,7 @@ public class CameraController : MonoBehaviour
     {
         rotateYSpeed = 0;
         rotateXSpeed = 0;
+        rotateZSpeed = 0;
         //rotateXAngle = 0;
         //rotateYAngle = 0;
         lookAtTarget.transform.DOMove(Vector3.zero,resetDuration);
