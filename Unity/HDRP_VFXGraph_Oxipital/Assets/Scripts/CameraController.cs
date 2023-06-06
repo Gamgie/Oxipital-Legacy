@@ -6,6 +6,8 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
+    public enum CameraMovementType { Orbital, Spaceship, Freefly }
+
     [Header("General Parameters")]
     public Transform lookAtTarget;
     public new Camera camera;
@@ -13,60 +15,51 @@ public class CameraController : MonoBehaviour
     public Vector3 positionTarget;
     public float followZOffset;
     public float resetDuration;
-    public float moveToDuration;
-    public CinemachineVirtualCamera orbitalCamera;
-    public CinemachineVirtualCamera spaceshipCamera;
-    public CinemachineVirtualCamera freeflyCamera;
+    public CameraMovementType cameraType;
 
-    [Header("Orbital")]
-    public float rotateYSpeed;
-    public float rotateXSpeed;
-    public float rotateZSpeed;
-    public bool controlRotateWithAngle = false;
-    public float rotateYAngle;
-    public float rotateXAngle;
-    public float rotateZAngle;
+    public OrbitalMovement orbitalCamera;
+    public SpaceshipMovement spaceshipCamera;
+    //public CinemachineVirtualCamera freeflyCamera;
 
-    private CinemachineTransposer transposer;
-    private Camera _cameraFeedback;
     
+    private Camera _cameraFeedback;
+    private List<CameraMovement> _cameraList;
+    private CameraMovement _activeCamera;
 
     private void OnEnable()
     {
-        transposer = orbitalCamera.GetCinemachineComponent<CinemachineTransposer>();
         _cameraFeedback = camera.transform.GetChild(0).GetComponent<Camera>();
+
+        _cameraList = new List<CameraMovement>();
+        _cameraList.Add(orbitalCamera);
+        _cameraList.Add(spaceshipCamera);
+
+        foreach (CameraMovement c in _cameraList)
+        {
+            c.Init();
+        }
+
+        SwitchCamera(cameraType);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Rotate target transform according to speed
-        if(controlRotateWithAngle == false)
+        if(_activeCamera != null && cameraType != _activeCamera.type)
+		{
+            SwitchCamera(cameraType);
+		}
+
+        // Update our active camera
+        foreach (CameraMovement c in _cameraList)
         {
-            lookAtTarget.Rotate(rotateXSpeed * Time.deltaTime, rotateYSpeed * Time.deltaTime, rotateZSpeed * Time.deltaTime);
-            rotateXAngle = lookAtTarget.eulerAngles.x;
-            rotateYAngle = lookAtTarget.eulerAngles.y;
-            rotateZAngle = lookAtTarget.eulerAngles.z;
+            if(c != null && c.isActive)
+			{             
+                c.UpdateMovement();
+                c.UpdateZOffset(followZOffset);
+                c.UpdateFOV(fov);
+            }
         }
-        else // We want to control rotation with angle directly
-        {
-            lookAtTarget.transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, rotateZAngle);
-        }
-
-        lookAtTarget.transform.position = positionTarget;
-
-        // Control distance between target and camera
-        if (transposer != null)
-        {
-            transposer.m_FollowOffset = new Vector3(0, 0, -followZOffset);
-        }
-
-        UpdateFOV();
-    }
-
-    void UpdateFOV()
-	{
-        orbitalCamera.m_Lens.FieldOfView = fov;
 
         // update feedback camera FOV
         if (_cameraFeedback != null)
@@ -75,50 +68,35 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    void SwitchCamera(CameraMovementType type)
+	{
+        // Deactivate all cameras
+        foreach(CameraMovement c in _cameraList)
+		{
+            c.isActive = false;
+		}
+
+        // Activate the selected camera
+        switch (type)
+		{
+            case CameraMovementType.Freefly:
+                break;
+            case CameraMovementType.Orbital:
+                _activeCamera = orbitalCamera;
+                _activeCamera.isActive = true;
+                break;
+            case CameraMovementType.Spaceship:
+                break;
+        }
+	}
+
     public void ResetCameraPosition()
     {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        rotateZSpeed = 0;
-        //rotateXAngle = 0;
-        //rotateYAngle = 0;
-        lookAtTarget.transform.DOMove(Vector3.zero,resetDuration);
-        lookAtTarget.transform.DORotate(Vector3.zero, resetDuration);
-    }
-
-    public void TopView()
-    {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        lookAtTarget.transform.DORotate(new Vector3(90,0,0), moveToDuration);
-    }
-
-    public void DownView()
-    {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        lookAtTarget.transform.DORotate(new Vector3(-90, 0, 0), moveToDuration);
-    }
-
-    public void LeftView()
-    {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        lookAtTarget.transform.DORotate(new Vector3(0, 90, 0), moveToDuration);
-    }
-
-    public void RightView()
-    {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        lookAtTarget.transform.DORotate(new Vector3(0, -90, 0), moveToDuration);
-    }
-
-    public void FrontView()
-    {
-        rotateYSpeed = 0;
-        rotateXSpeed = 0;
-        lookAtTarget.transform.DORotate(new Vector3(0, 0, 0), moveToDuration);
+        foreach (CameraMovement c in _cameraList)
+        {
+            if (c.isActive)
+                c.Reset(resetDuration);
+        }
     }
 
 }
