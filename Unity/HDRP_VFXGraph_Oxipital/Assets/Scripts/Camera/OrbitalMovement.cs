@@ -22,9 +22,10 @@ public class OrbitalMovement : CameraMovement
 
 	public override void Init()
 	{
+		base.Init();
 		transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 		type = CameraController.CameraMovementType.Orbital;
-		isActive = false;
+		_isActive = false;
 	}
 
 	public override bool UpdateMovement()
@@ -107,5 +108,15 @@ public class OrbitalMovement : CameraMovement
 		rotateYSpeed = 0;
 		rotateXSpeed = 0;
 		transform.transform.DORotate(new Vector3(0, 0, 0), moveToDuration);
+	}
+
+	public override void SetActive(bool activate)
+	{
+		// no need to update if they are equal
+		if (activate == _isActive)
+			return;
+
+		base.SetActive(activate);
+		_rigidbody.isKinematic = activate;
 	}
 }

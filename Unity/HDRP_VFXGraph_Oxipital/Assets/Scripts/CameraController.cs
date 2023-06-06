@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
         // Update our active camera
         foreach (CameraMovement c in _cameraList)
         {
-            if(c != null && c.isActive)
+            if(c != null && c.IsActive)
 			{             
                 c.UpdateMovement();
                 c.UpdateZOffset(followZOffset);
@@ -73,7 +73,7 @@ public class CameraController : MonoBehaviour
         // Deactivate all cameras
         foreach(CameraMovement c in _cameraList)
 		{
-            c.isActive = false;
+            c.SetActive(false);
 		}
 
         // Activate the selected camera
@@ -83,18 +83,21 @@ public class CameraController : MonoBehaviour
                 break;
             case CameraMovementType.Orbital:
                 _activeCamera = orbitalCamera;
-                _activeCamera.isActive = true;
+
                 break;
             case CameraMovementType.Spaceship:
+                _activeCamera = spaceshipCamera;
                 break;
         }
-	}
+
+        _activeCamera.SetActive(true);
+    }
 
     public void ResetCameraPosition()
     {
         foreach (CameraMovement c in _cameraList)
         {
-            if (c.isActive)
+            if (c.IsActive)
                 c.Reset(resetDuration);
         }
     }

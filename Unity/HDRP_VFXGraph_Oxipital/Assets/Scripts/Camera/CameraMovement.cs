@@ -5,18 +5,25 @@ using Cinemachine;
 
 public abstract class CameraMovement : MonoBehaviour
 {
-	public bool isActive;
+	protected bool _isActive;
 	public CinemachineVirtualCamera virtualCamera;
 	public CameraController.CameraMovementType type;
 
-	public abstract void Init();
+	protected Rigidbody _rigidbody;
+
+	public bool IsActive { get => _isActive; }
+
+	public virtual void Init()
+	{
+		_rigidbody = GetComponent<Rigidbody>();
+	}
 
 	public abstract void Reset(float duration);
 
 	public virtual bool UpdateMovement()
 	{
 		// Do not move our object if we are not the active camera
-		if (!isActive)
+		if (!_isActive)
 			return false;
 
 		return true;
@@ -25,5 +32,19 @@ public abstract class CameraMovement : MonoBehaviour
 	public abstract void UpdateFOV(float fov);
 
 	public abstract void UpdateZOffset(float offset);
+
+	public virtual void SetActive(bool activate)
+	{
+		_isActive = activate;
+
+		if (_isActive)
+		{
+			virtualCamera.Priority = 10;
+		}
+		else
+		{
+			virtualCamera.Priority = 0;
+		}
+	}
 
 }
