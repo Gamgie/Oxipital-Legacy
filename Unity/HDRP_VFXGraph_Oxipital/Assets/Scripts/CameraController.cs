@@ -12,7 +12,6 @@ public class CameraController : MonoBehaviour
     public Transform lookAtTarget;
     public new Camera camera;
     public float fov;
-    public Vector3 positionTarget;
     public float followZOffset;
     public float resetDuration;
     public CameraMovementType cameraType;
