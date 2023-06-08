@@ -61,10 +61,6 @@ public class SpaceshipMovement : CameraMovement
 
 	public override void SetActive(bool activate)
 	{
-		// no need to update if they are equal
-		if (activate == _isActive)
-			return;
-
 		base.SetActive(activate);
 		_rigidbody.isKinematic = !activate;
 	}
