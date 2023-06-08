@@ -21,6 +21,9 @@ public class CameraController : MonoBehaviour
     public SpaceshipMovement spaceshipCamera;
     //public CinemachineVirtualCamera freeflyCamera;
 
+    public bool showXwing;
+    public GameObject xWing;
+
     
     private Camera _cameraFeedback;
     private List<CameraMovement> _cameraList;
@@ -50,25 +53,31 @@ public class CameraController : MonoBehaviour
             SwitchCamera(cameraType);
 		}
 
-        // Update our active camera
-        foreach (CameraMovement c in _cameraList)
-        {
-            if(c != null && c.IsActive)
-			{             
-                c.UpdateMovement();
-                c.UpdateZOffset(followZOffset);
-                c.UpdateFOV(fov);
-            }
-        }
-
         // update feedback camera FOV
         if (_cameraFeedback != null)
         {
             _cameraFeedback.fieldOfView = fov;
         }
+
+        xWing.SetActive(showXwing);
     }
 
-    void SwitchCamera(CameraMovementType type)
+    // Movement need physics so we need to update 
+	private void FixedUpdate()
+	{
+        // Update our active camera
+        foreach (CameraMovement c in _cameraList)
+        {
+            if (c != null && c.IsActive)
+            {
+                c.UpdateMovement();
+                c.UpdateZOffset(followZOffset);
+                c.UpdateFOV(fov);
+            }
+        }
+    }
+
+	void SwitchCamera(CameraMovementType type)
 	{
         // Deactivate all cameras
         foreach(CameraMovement c in _cameraList)
