@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour
 
     public bool showXwing;
     public GameObject xWing;
-
     
     private Camera _cameraFeedback;
     private List<CameraMovement> _cameraList;
