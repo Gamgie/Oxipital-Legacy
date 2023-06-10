@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using DG.Tweening;
+using System;
 
 public class OrbitalMovement : CameraMovement
 {
@@ -110,9 +111,31 @@ public class OrbitalMovement : CameraMovement
 		transform.transform.DORotate(new Vector3(0, 0, 0), moveToDuration);
 	}
 
+	public OrbitalMovementData StoreData()
+	{
+		OrbitalMovementData data = new OrbitalMovementData();
+		data.positionTarget = positionTarget;
+		data.moveToDuration = moveToDuration;
+
+		return data;
+	}
+
+	public void LoadData(OrbitalMovementData data)
+	{
+		positionTarget = data.positionTarget;
+		moveToDuration = data.moveToDuration;
+	}
+
 	public override void SetActive(bool activate)
 	{
 		base.SetActive(activate);
 		_rigidbody.isKinematic = activate;
 	}
+}
+
+[System.Serializable]
+public class OrbitalMovementData
+{
+	public Vector3 positionTarget;
+	public float moveToDuration;
 }

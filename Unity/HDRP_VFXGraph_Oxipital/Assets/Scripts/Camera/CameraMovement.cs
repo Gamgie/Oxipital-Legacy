@@ -46,5 +46,4 @@ public abstract class CameraMovement : MonoBehaviour
 			virtualCamera.Priority = 0;
 		}
 	}
-
 }

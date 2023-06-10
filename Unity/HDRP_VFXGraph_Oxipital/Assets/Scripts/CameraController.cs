@@ -42,6 +42,8 @@ public class CameraController : MonoBehaviour
         }
 
         SwitchCamera(cameraType);
+
+        LoadData();
     }
 
     // Update is called once per frame
@@ -110,4 +112,49 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public CameraControllerData StoreData()
+	{
+        CameraControllerData result = new CameraControllerData();
+
+        result.fov = fov;
+        result.followZOffset = followZOffset;
+        result.resetDuration = resetDuration;
+        result.cameraType = (int)cameraType;
+        result.showXWing = showXwing;
+
+        return result;
+    }
+
+    public void LoadData()
+	{
+        // Find Data manager and load its data.
+        DataManager dataMngr = GameObject.FindGameObjectWithTag("Data Manager").GetComponent<DataManager>();
+        OxipitalData data = dataMngr.LoadData();
+
+        // Update cameraController parameters with this data
+        fov = data.cameraControllerData.fov;
+        followZOffset = data.cameraControllerData.followZOffset;
+        resetDuration = data.cameraControllerData.resetDuration;
+        cameraType = (CameraMovementType) data.cameraControllerData.cameraType;
+        showXwing = data.cameraControllerData.showXWing;
+
+        // Then update each camera parameters
+        spaceshipCamera.LoadData(data.spaceshipMovementData);
+        orbitalCamera.LoadData(data.orbitalMovementData);
+    }
+
+    public List<CameraMovement> GetCameraList()
+	{
+        return _cameraList;
+	}
+}
+
+[System.Serializable]
+public class CameraControllerData
+{
+    public float fov;
+    public float followZOffset;
+    public float resetDuration;
+    public int cameraType;
+    public bool showXWing;
 }

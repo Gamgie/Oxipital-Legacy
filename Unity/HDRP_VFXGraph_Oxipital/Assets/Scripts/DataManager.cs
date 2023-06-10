@@ -13,6 +13,9 @@ public class DataManager : MonoBehaviour
 	private string path;
 	private OxipitalData loadedData;
 
+	[Header("Camera Data")]
+	public CameraController cameraController;
+
 	public OxipitalData LoadData()
 	{
 		if(path == null)
@@ -84,6 +87,28 @@ public class DataManager : MonoBehaviour
 			data.forceControllerData.Add(f.StoreData());
 		}
 
+		// Save CameraController data
+		data.cameraControllerData = cameraController.StoreData();
+
+		// Save CameraMovement data
+		foreach (CameraMovement camMovement in cameraController.GetCameraList())
+		{
+			switch (camMovement.type)
+			{
+				case CameraController.CameraMovementType.Freefly:
+					break;
+				case CameraController.CameraMovementType.Orbital:
+					OrbitalMovement orbitalMovement = (OrbitalMovement) camMovement;
+					data.orbitalMovementData = orbitalMovement.StoreData();
+					break;
+				case CameraController.CameraMovementType.Spaceship:
+					SpaceshipMovement spaceshipMovement = (SpaceshipMovement) camMovement;
+					data.spaceshipMovementData = spaceshipMovement.StoreData();
+					break;
+			}
+		}
+		
+
 		// Save to file
 		string orbsData = JsonUtility.ToJson(data);
 		string filepath = path + "/" + fileName + ".json";
@@ -100,4 +125,7 @@ public class OxipitalData
 	public List<OrbGroupControllerData> orbGroupControllersData;
 	public BalletManagerData balletMngrData;
 	public List<ForceControllerData> forceControllerData;
+	public CameraControllerData cameraControllerData;
+	public OrbitalMovementData orbitalMovementData;
+	public SpaceshipMovementData spaceshipMovementData;
 }

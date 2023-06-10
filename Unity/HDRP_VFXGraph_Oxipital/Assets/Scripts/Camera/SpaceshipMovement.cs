@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,4 +65,33 @@ public class SpaceshipMovement : CameraMovement
 		base.SetActive(activate);
 		_rigidbody.isKinematic = !activate;
 	}
+
+	public SpaceshipMovementData StoreData()
+	{
+		SpaceshipMovementData data = new SpaceshipMovementData();
+
+		data.thrust = thrust;
+		data.yawTorque = yawTorque;
+		data.pitchTorque = pitchTorque;
+		data.rollTorque = rollTorque;
+
+		return data;
+	}
+
+	public void LoadData(SpaceshipMovementData data)
+	{
+		thrust = data.thrust;
+		yawTorque = data.yawTorque;
+		pitchTorque = data.pitchTorque;
+		rollTorque = data.rollTorque;
+	}
+}
+
+[System.Serializable]
+public class SpaceshipMovementData
+{
+	public float thrust;
+	public float yawTorque;
+	public float pitchTorque;
+	public float rollTorque;
 }
