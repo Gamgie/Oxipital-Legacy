@@ -5,17 +5,31 @@ using UnityEngine;
 
 public class SpaceshipMovement : CameraMovement
 {
+	[Range(0, 100)]
 	public float thrust;
+	[Range(-1,1)]
 	public float thrust1D;
 
+	[Range(0, 100)]
 	public float yawTorque;
+	[Range(-1, 1)]
 	public float yaw1D;
 
+	[Range(0, 100)]
 	public float pitchTorque;
+	[Range(-1, 1)]
 	public float pitch1D;
 
+	[Range(0, 100)]
 	public float rollTorque;
+	[Range(-1, 1)]
 	public float roll1D;
+
+	[Header("Physics Parameters")]
+	[Range(0, 5)]
+	public float directionnalDrag;
+	[Range(0, 5)]
+	public float angularDrag;
 
 	public override void Init()
 	{
@@ -41,6 +55,10 @@ public class SpaceshipMovement : CameraMovement
 
 			// Yaw
 			_rigidbody.AddRelativeTorque(Vector3.up * yaw1D * yawTorque * Time.deltaTime);
+
+
+			_rigidbody.drag = directionnalDrag;
+			_rigidbody.angularDrag= angularDrag;
 		}
 
 		return true;
@@ -74,6 +92,8 @@ public class SpaceshipMovement : CameraMovement
 		data.yawTorque = yawTorque;
 		data.pitchTorque = pitchTorque;
 		data.rollTorque = rollTorque;
+		data.directionnalDrag = directionnalDrag;
+		data.angularDrag = angularDrag;
 
 		return data;
 	}
@@ -84,6 +104,8 @@ public class SpaceshipMovement : CameraMovement
 		yawTorque = data.yawTorque;
 		pitchTorque = data.pitchTorque;
 		rollTorque = data.rollTorque;
+		directionnalDrag = data.directionnalDrag;
+		angularDrag = data.angularDrag;
 	}
 }
 
@@ -94,4 +116,6 @@ public class SpaceshipMovementData
 	public float yawTorque;
 	public float pitchTorque;
 	public float rollTorque;
+	public float directionnalDrag;
+	public float angularDrag;
 }
