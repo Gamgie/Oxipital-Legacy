@@ -5,11 +5,23 @@ using UnityEngine;
 
 public class SpaceshipMovement : CameraMovement
 {
+	[Header("Translation")]
 	[Range(0, 100)]
 	public float thrust;
 	[Range(-1,1)]
 	public float thrust1D;
 
+	[Range(0, 100)]
+	public float lateralThrust;
+	[Range(-1, 1)]
+	public float lateralThrust1D;
+
+	[Range(0, 100)]
+	public float verticalThrust;
+	[Range(-1, 1)]
+	public float verticalThrust1D;
+
+	[Header("Rotation")]
 	[Range(0, 100)]
 	public float yawTorque;
 	[Range(-1, 1)]
@@ -46,6 +58,12 @@ public class SpaceshipMovement : CameraMovement
 		{
 			// Thrust
 			_rigidbody.AddRelativeForce(Vector3.forward * thrust * thrust1D * Time.deltaTime, ForceMode.Force);
+
+			// Lateral Thrust
+			_rigidbody.AddRelativeForce(Vector3.right* lateralThrust * lateralThrust1D * Time.deltaTime, ForceMode.Force);
+
+			// Vertical Thrust
+			_rigidbody.AddRelativeForce(Vector3.up * verticalThrust * verticalThrust1D * Time.deltaTime, ForceMode.Force);
 
 			// Roll
 			_rigidbody.AddRelativeTorque(Vector3.back * roll1D * rollTorque * Time.deltaTime);
