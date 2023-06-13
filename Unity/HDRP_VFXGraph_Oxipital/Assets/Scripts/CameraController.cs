@@ -10,11 +10,13 @@ public class CameraController : MonoBehaviour
 
     [Header("General Parameters")]
     public Transform lookAtTarget;
-    public new Camera camera;
+    public Camera camera;
     public float fov;
     public float followZOffset;
     public float resetDuration;
     public CameraMovementType cameraType;
+    [Range(0,20)]
+    public float cameraTransitionDuration;
 
     public OrbitalMovement orbitalCamera;
     public SpaceshipMovement spaceshipCamera;
@@ -26,6 +28,7 @@ public class CameraController : MonoBehaviour
     private Camera _cameraFeedback;
     private List<CameraMovement> _cameraList;
     private CameraMovement _activeCamera;
+    private CinemachineBrain _cinemachineBrain;
 
     private void OnEnable()
     {
@@ -43,6 +46,8 @@ public class CameraController : MonoBehaviour
         SwitchCamera(cameraType);
 
         LoadData();
+
+        _cinemachineBrain = camera.GetComponent<CinemachineBrain>();
     }
 
     // Update is called once per frame
@@ -60,6 +65,10 @@ public class CameraController : MonoBehaviour
         }
 
         xWing.SetActive(showXwing);
+
+        // Update camera transition duration
+        if(_cinemachineBrain != null)
+            _cinemachineBrain.m_DefaultBlend.m_Time = cameraTransitionDuration;
     }
 
     // Movement need physics so we need to update 
@@ -120,6 +129,7 @@ public class CameraController : MonoBehaviour
         result.resetDuration = resetDuration;
         result.cameraType = (int)cameraType;
         result.showXWing = showXwing;
+        result.cameraTransitionDuration = cameraTransitionDuration;
 
         return result;
     }
@@ -136,6 +146,7 @@ public class CameraController : MonoBehaviour
         resetDuration = data.cameraControllerData.resetDuration;
         cameraType = (CameraMovementType) data.cameraControllerData.cameraType;
         showXwing = data.cameraControllerData.showXWing;
+        cameraTransitionDuration = data.cameraControllerData.cameraTransitionDuration;
 
         // Then update each camera parameters
         spaceshipCamera.LoadData(data.spaceshipMovementData);
@@ -156,4 +167,5 @@ public class CameraControllerData
     public float resetDuration;
     public int cameraType;
     public bool showXWing;
+    public float cameraTransitionDuration;
 }
