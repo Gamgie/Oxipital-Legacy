@@ -67,8 +67,8 @@ MonoBehaviour:
       serializedVersion: 2
       x: -3902
       y: 2493
-      width: 765
-      height: 454
+      width: 779
+      height: 493
     contents:
     - model: {fileID: 8926484042661619486}
       id: 0
@@ -98,6 +98,9 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661623601}
+      id: 0
+      isStickyNote: 0
+    - model: {fileID: 8926484042661624478}
       id: 0
       isStickyNote: 0
   - title: Size
@@ -586,7 +589,7 @@ MonoBehaviour:
   - name: Attractor
     collapsed: 1
   - name: Vortex
-    collapsed: 1
+    collapsed: 0
   - name: Turbulence
     collapsed: 1
   - name: Zalem Gravity
@@ -787,6 +790,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624423}
   - {fileID: 8926484042661624430}
   - {fileID: 8926484042661624432}
+  - {fileID: 8926484042661624478}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -955,6 +959,20 @@ MonoBehaviour:
       m_SerializableObject: 0
     min: 0
     max: 1
+    enumValues: []
+    descendantCount: 0
+  - name: Vortex Squared Orthoradial
+    path: Vortex Squared Orthoradial
+    tooltip: 
+    sheetType: m_Bool
+    realType: Boolean
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: False
+    min: -Infinity
+    max: Infinity
     enumValues: []
     descendantCount: 0
   - name: Vortex Intensity Random
@@ -2611,7 +2629,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614786}
   m_ExposedName: LifeTime
   m_Exposed: 1
-  m_Order: 55
+  m_Order: 56
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -3343,7 +3361,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614833}
   m_ExposedName: Alpha
   m_Exposed: 1
-  m_Order: 45
+  m_Order: 46
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -3428,7 +3446,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614886}
   m_ExposedName: Color
   m_Exposed: 1
-  m_Order: 43
+  m_Order: 44
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -3645,7 +3663,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614899}
   m_ExposedName: Size
   m_Exposed: 1
-  m_Order: 47
+  m_Order: 48
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -3789,7 +3807,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614907}
   m_ExposedName: Linear Drag
   m_Exposed: 1
-  m_Order: 48
+  m_Order: 49
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -3871,7 +3889,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614932}
   m_ExposedName: Attractor Radius
   m_Exposed: 1
-  m_Order: 63
+  m_Order: 64
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -4384,7 +4402,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615202}
   m_ExposedName: Vortex Intensity
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 1
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -4464,7 +4482,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615204}
   m_ExposedName: Vortex Axis
   m_Exposed: 1
-  m_Order: 35
+  m_Order: 16
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -4646,7 +4664,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615216}
   m_ExposedName: Vortex Radius
   m_Exposed: 1
-  m_Order: 31
+  m_Order: 12
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -4726,7 +4744,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615743}
   m_ExposedName: Turb Intensity
   m_Exposed: 1
-  m_Order: 85
+  m_Order: 86
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -4806,7 +4824,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615745}
   m_ExposedName: Turb Frequency
   m_Exposed: 1
-  m_Order: 86
+  m_Order: 87
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -4886,7 +4904,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615747}
   m_ExposedName: Octave
   m_Exposed: 1
-  m_Order: 87
+  m_Order: 88
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -4968,7 +4986,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615749}
   m_ExposedName: Roughness
   m_Exposed: 1
-  m_Order: 88
+  m_Order: 89
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -5050,7 +5068,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615751}
   m_ExposedName: Lacunarity
   m_Exposed: 1
-  m_Order: 89
+  m_Order: 90
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -5130,7 +5148,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615815}
   m_ExposedName: Gravity Axis
   m_Exposed: 1
-  m_Order: 32
+  m_Order: 36
   m_Category: Zalem Gravity
   m_Min:
     m_Type:
@@ -5312,7 +5330,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615820}
   m_ExposedName: Gravity Intensity
   m_Exposed: 1
-  m_Order: 26
+  m_Order: 33
   m_Category: Zalem Gravity
   m_Min:
     m_Type:
@@ -5953,7 +5971,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616428}
   m_ExposedName: Velocity Drag
   m_Exposed: 1
-  m_Order: 50
+  m_Order: 51
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -6092,7 +6110,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616656}
   m_ExposedName: Vortex Intensity Random
   m_Exposed: 1
-  m_Order: 28
+  m_Order: 8
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -6174,7 +6192,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617398}
   m_ExposedName: Rate
   m_Exposed: 1
-  m_Order: 57
+  m_Order: 58
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -6254,7 +6272,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617560}
   m_ExposedName: Turb Scale
   m_Exposed: 1
-  m_Order: 90
+  m_Order: 91
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -6499,7 +6517,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617681}
   m_ExposedName: Swirl Intensity
   m_Exposed: 1
-  m_Order: 60
+  m_Order: 61
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -6579,7 +6597,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617683}
   m_ExposedName: Swirl Radius
   m_Exposed: 1
-  m_Order: 64
+  m_Order: 65
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -6659,7 +6677,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617685}
   m_ExposedName: Swirl Axis
   m_Exposed: 1
-  m_Order: 62
+  m_Order: 63
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -7039,7 +7057,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617901}
   m_ExposedName: Axial Intensity
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 13
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -7119,7 +7137,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617903}
   m_ExposedName: Axial Axis
   m_Exposed: 1
-  m_Order: 16
+  m_Order: 25
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -7973,7 +7991,7 @@ MonoBehaviour:
   - {fileID: 8926484042661619715}
   m_ExposedName: SizeOverLifetime
   m_Exposed: 1
-  m_Order: 42
+  m_Order: 43
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -10564,7 +10582,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620115}
   m_ExposedName: Emitter Mesh
   m_Exposed: 1
-  m_Order: 77
+  m_Order: 78
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -11200,7 +11218,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620213}
   m_ExposedName: Emit From Inside
   m_Exposed: 1
-  m_Order: 79
+  m_Order: 80
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -13654,7 +13672,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620552}
   m_ExposedName: Emitter Placement Mode
   m_Exposed: 1
-  m_Order: 78
+  m_Order: 79
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -13734,7 +13752,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620780}
   m_ExposedName: Spiral Intensity
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: Spiral
   m_Min:
     m_Type:
@@ -13814,7 +13832,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620782}
   m_ExposedName: Spiral Axis
   m_Exposed: 1
-  m_Order: 20
+  m_Order: 29
   m_Category: Spiral
   m_Min:
     m_Type:
@@ -13996,7 +14014,7 @@ MonoBehaviour:
   - {fileID: 8926484042661620787}
   m_ExposedName: Spiral Radius
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 22
   m_Category: Spiral
   m_Min:
     m_Type:
@@ -14076,7 +14094,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621479}
   m_ExposedName: Spiral Frequency
   m_Exposed: 1
-  m_Order: 21
+  m_Order: 30
   m_Category: Spiral
   m_Min:
     m_Type:
@@ -14156,7 +14174,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621877}
   m_ExposedName: Emitter Position
   m_Exposed: 1
-  m_Order: 80
+  m_Order: 81
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -14346,7 +14364,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621882}
   m_ExposedName: Emitter Angles
   m_Exposed: 1
-  m_Order: 81
+  m_Order: 82
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -14536,7 +14554,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621887}
   m_ExposedName: Emitter Scale
   m_Exposed: 1
-  m_Order: 82
+  m_Order: 83
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -14624,7 +14642,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621926}
   m_ExposedName: Collision SDF
   m_Exposed: 1
-  m_Order: 84
+  m_Order: 85
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -14704,7 +14722,7 @@ MonoBehaviour:
   - {fileID: 8926484042661621928}
   m_ExposedName: Activate Collision
   m_Exposed: 1
-  m_Order: 83
+  m_Order: 84
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -16071,6 +16089,8 @@ MonoBehaviour:
   - {fileID: 8926484042661622225}
   - {fileID: 8926484042661622226}
   - {fileID: 8926484042661623604}
+  - {fileID: 8926484042661624476}
+  - {fileID: 8926484042661624477}
   m_OutputSlots:
   - {fileID: 8926484042661622227}
   m_Subgraph: {fileID: 5371698745253816930, guid: 08c2910f568f4d140862d6468fdcaa03,
@@ -18081,7 +18101,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622267}
   m_ExposedName: Swirl Rotation Clockwise
   m_Exposed: 1
-  m_Order: 65
+  m_Order: 66
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -21926,7 +21946,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622448}
   m_ExposedName: Emitter Circle
   m_Exposed: 1
-  m_Order: 76
+  m_Order: 77
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -22550,7 +22570,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622466}
   m_ExposedName: Emitter Line
   m_Exposed: 1
-  m_Order: 74
+  m_Order: 75
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -22902,7 +22922,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622477}
   m_ExposedName: isLine
   m_Exposed: 1
-  m_Order: 73
+  m_Order: 74
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -22982,7 +23002,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622479}
   m_ExposedName: isCircle
   m_Exposed: 1
-  m_Order: 75
+  m_Order: 76
   m_Category: Emitter Parameter
   m_Min:
     m_Type:
@@ -23704,7 +23724,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622500}
   m_ExposedName: Static Particle
   m_Exposed: 1
-  m_Order: 40
+  m_Order: 41
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -27477,7 +27497,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622639}
   m_ExposedName: Stationary Transparent
   m_Exposed: 1
-  m_Order: 37
+  m_Order: 39
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -28175,7 +28195,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622712}
   m_ExposedName: Attractor Radial Frequency
   m_Exposed: 1
-  m_Order: 66
+  m_Order: 67
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -28255,7 +28275,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622714}
   m_ExposedName: Attractor Radial Smoothness
   m_Exposed: 1
-  m_Order: 69
+  m_Order: 70
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -28337,7 +28357,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622716}
   m_ExposedName: Attractor Spherical Smoothness
   m_Exposed: 1
-  m_Order: 71
+  m_Order: 72
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -28419,7 +28439,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622718}
   m_ExposedName: Attractor Spherical Frequency
   m_Exposed: 1
-  m_Order: 70
+  m_Order: 71
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -28499,7 +28519,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622727}
   m_ExposedName: Attractor Graphics Buffer
   m_Exposed: 1
-  m_Order: 72
+  m_Order: 73
   m_Category: Attractor
   m_Min:
     m_Type:
@@ -28684,7 +28704,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622895}
   m_ExposedName: Swirl Graphics Buffer
   m_Exposed: 1
-  m_Order: 67
+  m_Order: 68
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -28764,7 +28784,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622899}
   m_ExposedName: Vortex Inner Radius
   m_Exposed: 1
-  m_Order: 33
+  m_Order: 14
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -29119,7 +29139,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622962}
   m_ExposedName: Stationary Max Speed
   m_Exposed: 1
-  m_Order: 34
+  m_Order: 37
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -29405,7 +29425,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622970}
   m_ExposedName: Vortex Graphics Buffer
   m_Exposed: 1
-  m_Order: 38
+  m_Order: 18
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -29485,7 +29505,7 @@ MonoBehaviour:
   - {fileID: 8926484042661622972}
   m_ExposedName: Swirl Central Vertical
   m_Exposed: 1
-  m_Order: 68
+  m_Order: 69
   m_Category: Swirl
   m_Min:
     m_Type:
@@ -29567,7 +29587,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623001}
   m_ExposedName: Turb Evolution Speed
   m_Exposed: 1
-  m_Order: 91
+  m_Order: 92
   m_Category: Turbulence
   m_Min:
     m_Type:
@@ -29647,7 +29667,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623024}
   m_ExposedName: Perlin Intensity
   m_Exposed: 1
-  m_Order: 39
+  m_Order: 40
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -29727,7 +29747,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623026}
   m_ExposedName: Perlin Frequency
   m_Exposed: 1
-  m_Order: 44
+  m_Order: 45
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -29807,7 +29827,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623028}
   m_ExposedName: Perlin Octaves
   m_Exposed: 1
-  m_Order: 49
+  m_Order: 50
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -29889,7 +29909,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623030}
   m_ExposedName: Perlin Roughness
   m_Exposed: 1
-  m_Order: 51
+  m_Order: 52
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -29971,7 +29991,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623032}
   m_ExposedName: Perlin Lacunarity
   m_Exposed: 1
-  m_Order: 52
+  m_Order: 53
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30051,7 +30071,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623034}
   m_ExposedName: Perlin Min Range
   m_Exposed: 1
-  m_Order: 56
+  m_Order: 57
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30133,7 +30153,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623036}
   m_ExposedName: Perlin Max Range
   m_Exposed: 1
-  m_Order: 58
+  m_Order: 59
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30215,7 +30235,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623050}
   m_ExposedName: Perlin Radius
   m_Exposed: 1
-  m_Order: 46
+  m_Order: 47
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30295,7 +30315,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623111}
   m_ExposedName: Perlin Graphics Buffer
   m_Exposed: 1
-  m_Order: 59
+  m_Order: 60
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30375,7 +30395,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623198}
   m_ExposedName: Perlin Noise Type
   m_Exposed: 1
-  m_Order: 61
+  m_Order: 62
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -30455,7 +30475,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623291}
   m_ExposedName: Perlin Evolution Speed
   m_Exposed: 1
-  m_Order: 41
+  m_Order: 42
   m_Category: Perlin
   m_Min:
     m_Type:
@@ -31389,7 +31409,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623376}
   m_ExposedName: Noisy Linear Drag
   m_Exposed: 1
-  m_Order: 53
+  m_Order: 54
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -31606,7 +31626,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623382}
   m_ExposedName: Noisy Linear Drag Frequency
   m_Exposed: 1
-  m_Order: 54
+  m_Order: 55
   m_Category: PS Parameters
   m_Min:
     m_Type:
@@ -31922,7 +31942,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623442}
   m_ExposedName: Gravity Radius
   m_Exposed: 1
-  m_Order: 29
+  m_Order: 35
   m_Category: Zalem Gravity
   m_Min:
     m_Type:
@@ -32002,7 +32022,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623529}
   m_ExposedName: Gravity Graphics Buffer
   m_Exposed: 1
-  m_Order: 36
+  m_Order: 38
   m_Category: Zalem Gravity
   m_Min:
     m_Type:
@@ -32660,7 +32680,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623582}
   m_ExposedName: Vortex Clockwise
   m_Exposed: 1
-  m_Order: 30
+  m_Order: 10
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -32947,7 +32967,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623594}
   m_ExposedName: Axial Graphics Buffer
   m_Exposed: 1
-  m_Order: 27
+  m_Order: 34
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -33027,7 +33047,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623596}
   m_ExposedName: Axial Radius
   m_Exposed: 1
-  m_Order: 23
+  m_Order: 31
   m_Category: Axial Force
   m_Min:
     m_Type:
@@ -33177,7 +33197,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623600}
   m_ExposedName: Vortex Orthoradial Intensity
   m_Exposed: 1
-  m_Order: 22
+  m_Order: 2
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -33259,7 +33279,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623602}
   m_ExposedName: Vortex Cylindric Intensity
   m_Exposed: 1
-  m_Order: 25
+  m_Order: 4
   m_Category: Vortex
   m_Min:
     m_Type:
@@ -33376,7 +33396,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623606}
   m_ExposedName: Spiral Graphics Buffer
   m_Exposed: 1
-  m_Order: 24
+  m_Order: 32
   m_Category: Spiral
   m_Min:
     m_Type:
@@ -35996,7 +36016,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623796}
   m_ExposedName: Tornado Axis
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 5
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36178,7 +36198,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623801}
   m_ExposedName: Tornado Clockwise
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 11
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36258,7 +36278,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623803}
   m_ExposedName: Tornado Intensity
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36338,7 +36358,7 @@ MonoBehaviour:
   - {fileID: 8926484042661623805}
   m_ExposedName: Tornado Position
   m_Exposed: 1
-  m_Order: 19
+  m_Order: 28
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36520,7 +36540,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624021}
   m_ExposedName: Tornado Axial Intensity
   m_Exposed: 1
-  m_Order: 14
+  m_Order: 23
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36602,7 +36622,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624041}
   m_ExposedName: Tornado Ortho Squared Length
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 19
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36692,7 +36712,8 @@ MonoBehaviour:
       m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661624479}
 --- !u!114 &8926484042661624094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36716,7 +36737,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624095}
   m_ExposedName: Tornado Vertical Intensity
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 15
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36798,7 +36819,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624156}
   m_ExposedName: Tornado Ortho Intensity
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 17
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36880,7 +36901,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624166}
   m_ExposedName: Tornado Ortho Inner Radius
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 20
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -36962,7 +36983,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624221}
   m_ExposedName: Tornado Radius
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 9
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -37042,7 +37063,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624393}
   m_ExposedName: Tornado Both Hemisphere
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 21
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -37122,7 +37143,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624422}
   m_ExposedName: Tornado Turbulence Intensity
   m_Exposed: 1
-  m_Order: 15
+  m_Order: 24
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -37204,7 +37225,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624424}
   m_ExposedName: Tornado Turbulence Frequency
   m_Exposed: 1
-  m_Order: 17
+  m_Order: 26
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -37286,7 +37307,7 @@ MonoBehaviour:
   - {fileID: 8926484042661624431}
   m_ExposedName: Tornado Turbulence Evolution
   m_Exposed: 1
-  m_Order: 18
+  m_Order: 27
   m_Category: Tornado
   m_Min:
     m_Type:
@@ -38589,3 +38610,151 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &8926484042661624476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661624476}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661622089}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: Ax
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661624477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661624477}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661622089}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: Az
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661624478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661624479}
+  m_ExposedName: Vortex Squared Orthoradial
+  m_Exposed: 1
+  m_Order: 7
+  m_Category: Vortex
+  m_Min:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_Max:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 0
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661624479}
+      inputSlot: {fileID: 8926484042661624053}
+    position: {x: -3877, y: 2910}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &8926484042661624479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c11ff25089a324daf359f4b0629b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661624479}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661624478}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: False
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661624053}
