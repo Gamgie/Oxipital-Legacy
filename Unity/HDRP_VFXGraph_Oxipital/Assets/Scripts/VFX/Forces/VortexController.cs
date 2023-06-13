@@ -15,6 +15,7 @@ public class VortexController : ForceController
     public float orthoradialIntensity = 1f;
     [Range(0, 1)]
     public float cylindricIntensity = 1f;
+    public bool squaredOrthoradial = true;
 
 	private void OnEnable()
 	{
@@ -40,6 +41,10 @@ public class VortexController : ForceController
             if (visualEffect.HasBool(key + " Clockwise" + _suffix))
                 visualEffect.SetBool(key + " Clockwise" + _suffix, clockwise);
 
+            // Vortex Squared Orthoradial
+            if (visualEffect.HasBool(key + " Squared Orthoradial" + _suffix))
+                visualEffect.SetBool(key + " Squared Orthoradial" + _suffix, clockwise);
+
             // Inner Radius
             if (visualEffect.HasFloat(key + " Inner Radius" + _suffix))
                 visualEffect.SetFloat(key + " Inner Radius" + _suffix, innerRadius);
@@ -54,6 +59,7 @@ public class VortexController : ForceController
         // Vortex Param
         PlayerPrefs.SetFloat(key + " innerRadius " + forceID, innerRadius);
         PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
+        PlayerPrefs.SetInt(key + " Squared Orthoradial " + forceID, Convert.ToInt32(squaredOrthoradial));
         PlayerPrefs.SetFloat(key + " orthoradialIntensity " + forceID, orthoradialIntensity);
         PlayerPrefs.SetFloat(key + " cylindricIntensity " + forceID, cylindricIntensity);
 
@@ -67,6 +73,7 @@ public class VortexController : ForceController
         //Vortex Parameters
         innerRadius = PlayerPrefs.GetFloat(key + " innerRadius " + forceID, 0.5f);
         clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " clockwise " + forceID, 1));
+        squaredOrthoradial = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Squared Orthoradial " + forceID, 1));
         orthoradialIntensity = PlayerPrefs.GetFloat(key + " orthoradialIntensity " + forceID, 1f);
         cylindricIntensity = PlayerPrefs.GetFloat(key + " cylindricIntensity " + forceID, 1f);
     }
