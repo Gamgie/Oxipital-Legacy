@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class SpaceshipMovement : CameraMovement
@@ -43,17 +44,21 @@ public class SpaceshipMovement : CameraMovement
 	[Range(0, 5)]
 	public float angularDrag;
 
+	private CinemachineTransposer _transposer;
+
 	public override void Init()
 	{
 		base.Init();
 		type = CameraController.CameraMovementType.Spaceship;
+
+		_transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 	}
 
 	public override bool UpdateMovement()
 	{
 		if (!base.UpdateMovement())
 			return false;
-
+		
 		if(_rigidbody != null)
 		{
 			// Thrust
@@ -94,9 +99,14 @@ public class SpaceshipMovement : CameraMovement
 
 	public override void UpdateZOffset(float offset)
 	{
+		// Control distance between target and camera
+		if (_transposer != null)
+		{
+			_transposer.m_FollowOffset = new Vector3(0, 0, -offset);
+		}
 	}
 
-	public override void SetActive(bool activate)
+	public override void SetActive(bool activate, float duration = 0)
 	{
 		base.SetActive(activate);
 		_rigidbody.isKinematic = !activate;
@@ -124,6 +134,14 @@ public class SpaceshipMovement : CameraMovement
 		rollTorque = data.rollTorque;
 		directionnalDrag = data.directionnalDrag;
 		angularDrag = data.angularDrag;
+	}
+
+
+	public override void SetCameraTransform(Vector3 position, Quaternion rotation)
+	{
+		_rigidbody.isKinematic = true;
+		_rigidbody.position = position;
+		_rigidbody.rotation = rotation;
 	}
 }
 

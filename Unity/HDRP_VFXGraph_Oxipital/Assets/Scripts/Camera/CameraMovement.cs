@@ -33,7 +33,7 @@ public abstract class CameraMovement : MonoBehaviour
 
 	public abstract void UpdateZOffset(float offset);
 
-	public virtual void SetActive(bool activate)
+	public virtual void SetActive(bool activate, float duration = 0)
 	{
 		_isActive = activate;
 
@@ -46,4 +46,6 @@ public abstract class CameraMovement : MonoBehaviour
 			virtualCamera.Priority = 0;
 		}
 	}
+
+	public abstract void SetCameraTransform(Vector3 position, Quaternion rotation);
 }

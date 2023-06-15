@@ -19,12 +19,13 @@ public class OrbitalMovement : CameraMovement
 	public Vector3 positionTarget;
 	public float moveToDuration;
 
-	private CinemachineTransposer transposer;
+	private CinemachineTransposer _transposer;
+	private Tween _moveTween;
 
 	public override void Init()
 	{
 		base.Init();
-		transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+		_transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 		type = CameraController.CameraMovementType.Orbital;
 		_isActive = false;
 	}
@@ -48,7 +49,8 @@ public class OrbitalMovement : CameraMovement
 			transform.eulerAngles = new Vector3(rotateXAngle, rotateYAngle, rotateZAngle);
 		}
 
-		transform.position = positionTarget;
+		if(!_moveTween.active)
+			transform.position = positionTarget;
 		
 		return true;
 	}
@@ -70,9 +72,9 @@ public class OrbitalMovement : CameraMovement
 	public override void UpdateZOffset(float offset)
 	{
 		// Control distance between target and camera
-		if (transposer != null)
+		if (_transposer != null)
 		{
-			transposer.m_FollowOffset = new Vector3(0, 0, -offset);
+			_transposer.m_FollowOffset = new Vector3(0, 0, -offset);
 		}
 	}
 
@@ -126,10 +128,19 @@ public class OrbitalMovement : CameraMovement
 		moveToDuration = data.moveToDuration;
 	}
 
-	public override void SetActive(bool activate)
+	public override void SetActive(bool activate, float duration = 0)
 	{
 		base.SetActive(activate);
-		_rigidbody.isKinematic = activate;
+		//_rigidbody.isKinematic = activate;
+
+		if(activate)
+			_moveTween = transform.DOMove(positionTarget, duration);
+	}
+
+	public override void SetCameraTransform(Vector3 position, Quaternion rotation)
+	{
+		virtualCamera.transform.position = position;
+		virtualCamera.transform.rotation = rotation;
 	}
 }
 

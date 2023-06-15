@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     [Header("General Parameters")]
     public Transform lookAtTarget;
-    public Camera camera;
+    public new Camera camera;
     public float fov;
     public float followZOffset;
     public float resetDuration;
@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
 
     public OrbitalMovement orbitalCamera;
     public SpaceshipMovement spaceshipCamera;
-    //public CinemachineVirtualCamera freeflyCamera;
 
     public bool showXwing;
     public GameObject xWing;
@@ -88,11 +87,15 @@ public class CameraController : MonoBehaviour
 
 	void SwitchCamera(CameraMovementType type)
 	{
-        // Deactivate all cameras
-        foreach(CameraMovement c in _cameraList)
+        Vector3 cameraPosition = Vector3.zero;
+        Quaternion cameraRotation = Quaternion.identity;
+
+        if (_activeCamera)
 		{
-            c.SetActive(false);
-		}
+            cameraPosition = _activeCamera.virtualCamera.transform.position;
+            cameraRotation = _activeCamera.virtualCamera.transform.rotation;
+            _activeCamera.SetActive(false);
+        }
 
         // Activate the selected camera
         switch (type)
@@ -105,10 +108,11 @@ public class CameraController : MonoBehaviour
                 break;
             case CameraMovementType.Spaceship:
                 _activeCamera = spaceshipCamera;
+                _activeCamera.SetCameraTransform(cameraPosition, cameraRotation);
                 break;
         }
 
-        _activeCamera.SetActive(true);
+        _activeCamera.SetActive(true, cameraTransitionDuration);
     }
 
     public void ResetCameraPosition()
