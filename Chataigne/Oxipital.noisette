@@ -11873,8 +11873,8 @@
                 },
                 {
                   "value": [
-                    0.2118954658508301,
-                    0.1700708866119385,
+                    0.2752034366130829,
+                    0.101375013589859,
                     0.0,
                     1.0
                   ],
@@ -26155,22 +26155,126 @@
       "direction": 2,
       "shifters": [
         {
-          "type": 0,
+          "type": 1,
           "width": 1920,
           "height": 989,
-          "currentContent": "Dashboard",
-          "tabs": [
+          "direction": 2,
+          "shifters": [
             {
-              "name": "Dashboard"
+              "type": 1,
+              "width": 1920,
+              "height": 570,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 1,
+                  "width": 307,
+                  "height": 570,
+                  "direction": 2,
+                  "shifters": [
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 292,
+                      "currentContent": "Modules",
+                      "tabs": [
+                        {
+                          "name": "Modules"
+                        }
+                      ]
+                    },
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 272,
+                      "currentContent": "Custom Variables",
+                      "tabs": [
+                        {
+                          "name": "Custom Variables"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1041,
+                  "height": 570,
+                  "currentContent": "State Machine",
+                  "tabs": [
+                    {
+                      "name": "State Machine"
+                    },
+                    {
+                      "name": "Dashboard"
+                    },
+                    {
+                      "name": "Module Router"
+                    },
+                    {
+                      "name": "Morpher"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 560,
+                  "height": 570,
+                  "currentContent": "Inspector",
+                  "tabs": [
+                    {
+                      "name": "Inspector"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "name": "Modules"
-            },
-            {
-              "name": "Inspector"
-            },
-            {
-              "name": "State Machine"
+              "type": 1,
+              "width": 1920,
+              "height": 412,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 0,
+                  "width": 178,
+                  "height": 412,
+                  "currentContent": "Sequences",
+                  "tabs": [
+                    {
+                      "name": "Sequences"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1256,
+                  "height": 412,
+                  "currentContent": "Sequence Editor",
+                  "tabs": [
+                    {
+                      "name": "Sequence Editor"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 474,
+                  "height": 412,
+                  "currentContent": "Logger",
+                  "tabs": [
+                    {
+                      "name": "Help"
+                    },
+                    {
+                      "name": "Logger"
+                    },
+                    {
+                      "name": "Warnings"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -26201,10 +26305,6 @@
             {
               "value": "Unity-OSCQuery",
               "controlAddress": "/serverName"
-            },
-            {
-              "value": true,
-              "controlAddress": "/isConnected"
             }
           ],
           "containers": {
@@ -26252,16 +26352,6 @@
                     "CameraSpoutMngr": {
                       "parameters": [
                         {
-                          "value": 1920,
-                          "hexMode": false,
-                          "controlAddress": "/width"
-                        },
-                        {
-                          "value": 1080,
-                          "hexMode": false,
-                          "controlAddress": "/height"
-                        },
-                        {
                           "value": "ARGB32",
                           "controlAddress": "/rtFormat"
                         }
@@ -26280,11 +26370,11 @@
                     "CameraController": {
                       "parameters": [
                         {
-                          "value": 36.7000732421875,
+                          "value": 36.69999313354492,
                           "controlAddress": "/fov"
                         },
                         {
-                          "value": 0.0,
+                          "value": 7.660488128662109,
                           "controlAddress": "/followZOffset"
                         },
                         {
@@ -26294,10 +26384,6 @@
                         {
                           "value": "Spaceship",
                           "controlAddress": "/cameraType"
-                        },
-                        {
-                          "value": 10.56667,
-                          "controlAddress": "/cameraTransitionDuration"
                         }
                       ],
                       "editorIsCollapsed": true,
@@ -26314,15 +26400,7 @@
                     "OrbitalMovement": {
                       "parameters": [
                         {
-                          "value": -0.0004570876189973205,
-                          "controlAddress": "/rotateYSpeed"
-                        },
-                        {
-                          "value": -0.0,
-                          "controlAddress": "/rotateXSpeed"
-                        },
-                        {
-                          "value": 24.605,
+                          "value": 24.60499954223633,
                           "controlAddress": "/moveToDuration"
                         },
                         {
@@ -26348,7 +26426,7 @@
                           "controlAddress": "/thrust"
                         },
                         {
-                          "value": 0.01650482416152954,
+                          "value": 0.01278913021087646,
                           "controlAddress": "/thrust1D"
                         },
                         {
@@ -26364,7 +26442,7 @@
                           "controlAddress": "/verticalThrust"
                         },
                         {
-                          "value": 0.0,
+                          "value": 0.03918516635894775,
                           "controlAddress": "/verticalThrust1D"
                         },
                         {
@@ -26372,24 +26450,12 @@
                           "controlAddress": "/yawTorque"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/yaw1D"
-                        },
-                        {
                           "value": 53.33334350585938,
                           "controlAddress": "/pitchTorque"
                         },
                         {
-                          "value": 0.0,
-                          "controlAddress": "/pitch1D"
-                        },
-                        {
                           "value": 50.0,
                           "controlAddress": "/rollTorque"
-                        },
-                        {
-                          "value": 0.0,
-                          "controlAddress": "/roll1D"
                         },
                         {
                           "value": "Spaceship",
@@ -26548,7 +26614,7 @@
                               "controlAddress": "/noiseType"
                             },
                             {
-                              "value": 0.00006586028030142188,
+                              "value": 0.000065860280301421,
                               "controlAddress": "/intensity"
                             }
                           ],
@@ -26599,10 +26665,6 @@
                       "containers": {
                         "SpiralController": {
                           "parameters": [
-                            {
-                              "value": 0.00006850582,
-                              "controlAddress": "/intensity"
-                            },
                             {
                               "value": [
                                 0.0,
@@ -26711,7 +26773,7 @@
                         "TornadoController": {
                           "parameters": [
                             {
-                              "value": 0.00001443075598217547,
+                              "value": 0.000014430755982175,
                               "controlAddress": "/intensity"
                             },
                             {
@@ -26765,12 +26827,12 @@
                           "controlAddress": "/listen"
                         },
                         {
-                          "value": 2,
+                          "value": 3,
                           "hexMode": false,
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 199999.953125,
+                          "value": 200000.0,
                           "controlAddress": "/rate"
                         },
                         {
@@ -26825,15 +26887,7 @@
                         },
                         {
                           "value": false,
-                          "controlAddress": "/emitFromInside"
-                        },
-                        {
-                          "value": false,
                           "controlAddress": "/activateCollision"
-                        },
-                        {
-                          "value": false,
-                          "controlAddress": "/showMesh"
                         },
                         {
                           "value": [
@@ -26846,14 +26900,6 @@
                         {
                           "value": "Point",
                           "controlAddress": "/patternType"
-                        },
-                        {
-                          "value": [
-                            0.0,
-                            0.0,
-                            0.0
-                          ],
-                          "controlAddress": "/patternRotation"
                         },
                         {
                           "value": 1.059999942779541,
@@ -26891,7 +26937,7 @@
                           "controlAddress": "/orbCount"
                         },
                         {
-                          "value": 0.03932037204504013,
+                          "value": 0.0008265373180620372,
                           "controlAddress": "/rate"
                         },
                         {
@@ -26935,10 +26981,6 @@
                           "controlAddress": "/emitterSize"
                         },
                         {
-                          "value": false,
-                          "controlAddress": "/activateCollision"
-                        },
-                        {
                           "value": "Point",
                           "controlAddress": "/patternType"
                         },
@@ -26967,7 +27009,7 @@
                       "controlAddress": "/listen"
                     },
                     {
-                      "value": 2299291,
+                      "value": 2986250,
                       "hexMode": false,
                       "controlAddress": "/aliveParticleCount"
                     }
@@ -31806,7 +31848,7 @@
             }
           }
         },
-        "hasListenExtension": true
+        "hasListenExtension": false
       },
       {
         "niceName": "OSC_TD",
@@ -40575,6 +40617,12 @@
         }
       },
       {
+        "parameters": [
+          {
+            "value": false,
+            "controlAddress": "/enabled"
+          }
+        ],
         "niceName": "Metronome",
         "type": "Metronome",
         "scripts": {
@@ -40680,7 +40728,7 @@
             {
               "parameters": [
                 {
-                  "value": -0.0,
+                  "value": 0.0,
                   "alwaysNotify": true,
                   "minValue": -10,
                   "maxValue": 10,
@@ -40702,7 +40750,7 @@
             {
               "parameters": [
                 {
-                  "value": -0.0,
+                  "value": 0.0,
                   "alwaysNotify": true,
                   "minValue": -10,
                   "maxValue": 10,
@@ -40857,7 +40905,7 @@
                   "controlAddress": "/viewUIPosition"
                 },
                 {
-                  "value": 0.0,
+                  "value": 7.660488128662109,
                   "alwaysNotify": true,
                   "minValue": 0,
                   "maxValue": 30,
@@ -41119,7 +41167,7 @@
             {
               "parameters": [
                 {
-                  "value": 2299.291015625,
+                  "value": 2986.25,
                   "minValue": 0.0,
                   "maxValue": 4000.0,
                   "default": 0,
@@ -41805,8 +41853,8 @@
               "parameters": [
                 {
                   "value": [
-                    0.2118954658508301,
-                    0.1700708866119385,
+                    0.2752034366130829,
+                    0.101375013589859,
                     0.0,
                     1.0
                   ],
@@ -42126,7 +42174,7 @@
             {
               "parameters": [
                 {
-                  "value": 1.0,
+                  "value": 0.0,
                   "minValue": 0,
                   "maxValue": 1,
                   "default": 0,
@@ -45695,7 +45743,8 @@
                     "hexMode": false,
                     "controlAddress": "/updateRate"
                   }
-                ]
+                ],
+                "editorIsCollapsed": true
               },
               "filters": {
                 "items": [
@@ -45797,7 +45846,8 @@
                     "hexMode": false,
                     "controlAddress": "/updateRate"
                   }
-                ]
+                ],
+                "editorIsCollapsed": true
               },
               "filters": {
                 "items": [
@@ -45898,12 +45948,9 @@
                     "value": 50,
                     "hexMode": false,
                     "controlAddress": "/updateRate"
-                  },
-                  {
-                    "value": false,
-                    "controlAddress": "/sendOnOutputChangeOnly"
                   }
-                ]
+                ],
+                "editorIsCollapsed": true
               },
               "filters": {
                 "items": [
@@ -47283,22 +47330,54 @@
                     }
                   },
                   {
-                    "parameters": [
-                      {
-                        "value": "/modules/gamepad/values/buttons/button1",
-                        "controlAddress": "/inputValue"
-                      }
-                    ],
-                    "niceName": "From Input Value 1",
-                    "type": "From Input Value",
-                    "comparator": {
-                      "parameters": [
+                    "niceName": "Group",
+                    "type": "Group",
+                    "manager": {
+                      "items": [
                         {
-                          "value": true,
-                          "controlAddress": "/reference"
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button1",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value 1",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
+                        },
+                        {
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button11",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value 2",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
                         }
                       ],
-                      "hideInEditor": true
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
                     }
                   }
                 ],
@@ -47387,22 +47466,54 @@
                     }
                   },
                   {
-                    "parameters": [
-                      {
-                        "value": "/modules/gamepad/values/buttons/button2",
-                        "controlAddress": "/inputValue"
-                      }
-                    ],
-                    "niceName": "From Input Value 1",
-                    "type": "From Input Value",
-                    "comparator": {
-                      "parameters": [
+                    "niceName": "Group",
+                    "type": "Group",
+                    "manager": {
+                      "items": [
                         {
-                          "value": true,
-                          "controlAddress": "/reference"
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button11",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
+                        },
+                        {
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button2",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value 1",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
                         }
                       ],
-                      "hideInEditor": true
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
                     }
                   }
                 ],
@@ -47496,22 +47607,54 @@
                     }
                   },
                   {
-                    "parameters": [
-                      {
-                        "value": "/modules/gamepad/values/buttons/button3",
-                        "controlAddress": "/inputValue"
-                      }
-                    ],
-                    "niceName": "From Input Value 1",
-                    "type": "From Input Value",
-                    "comparator": {
-                      "parameters": [
+                    "niceName": "From Input Value 2",
+                    "type": "Group",
+                    "manager": {
+                      "items": [
                         {
-                          "value": true,
-                          "controlAddress": "/reference"
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button11",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
+                        },
+                        {
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button3",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value 1",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
                         }
                       ],
-                      "hideInEditor": true
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
                     }
                   }
                 ],
@@ -47605,22 +47748,54 @@
                     }
                   },
                   {
-                    "parameters": [
-                      {
-                        "value": "/modules/gamepad/values/buttons/button4",
-                        "controlAddress": "/inputValue"
-                      }
-                    ],
-                    "niceName": "From Input Value 1",
-                    "type": "From Input Value",
-                    "comparator": {
-                      "parameters": [
+                    "niceName": "Group",
+                    "type": "Group",
+                    "manager": {
+                      "items": [
                         {
-                          "value": true,
-                          "controlAddress": "/reference"
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button11",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
+                        },
+                        {
+                          "parameters": [
+                            {
+                              "value": "/modules/gamepad/values/buttons/button4",
+                              "controlAddress": "/inputValue"
+                            }
+                          ],
+                          "niceName": "From Input Value 1",
+                          "type": "From Input Value",
+                          "comparator": {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlAddress": "/reference"
+                              }
+                            ],
+                            "hideInEditor": true
+                          }
                         }
                       ],
-                      "hideInEditor": true
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
                     }
                   }
                 ],
@@ -50269,15 +50444,6 @@
                       "listSize": 9
                     },
                     {
-                      "parameters": [
-                        {
-                          "value": false,
-                          "minValue": 0,
-                          "maxValue": 1,
-                          "default": false,
-                          "controlAddress": "/#9"
-                        }
-                      ],
                       "niceName": "Inverter Toggle",
                       "editorIsCollapsed": true,
                       "type": "Boolean",
@@ -78700,13 +78866,6 @@
                           "maxValue": 1,
                           "default": false,
                           "controlAddress": "/#6"
-                        },
-                        {
-                          "value": false,
-                          "minValue": 0,
-                          "maxValue": 1,
-                          "default": false,
-                          "controlAddress": "/#7"
                         }
                       ],
                       "niceName": "Activate Link",
@@ -81829,12 +81988,6 @@
               }
             },
             {
-              "parameters": [
-                {
-                  "value": true,
-                  "controlAddress": "/enabled"
-                }
-              ],
               "niceName": "Roll > Unity",
               "editorIsCollapsed": true,
               "type": "Mapping",
@@ -82292,8 +82445,8 @@
       }
     ],
     "viewOffset": [
-      1503,
-      -552
+      18,
+      757
     ],
     "viewZoom": 1.0,
     "transitions": {
@@ -82449,14 +82602,42 @@
         }
       ],
       "viewOffset": [
-        1503,
-        -552
+        18,
+        757
       ],
       "viewZoom": 1.0
     }
   },
   "sequences": {
     "items": [
+      {
+        "parameters": [
+          {
+            "value": "",
+            "controlAddress": "/ltcSyncModule",
+            "enabled": false
+          }
+        ],
+        "niceName": "Orage Int\u00e9rieur",
+        "type": "Sequence",
+        "layers": {
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "cues": {
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "editing": true
+      },
       {
         "parameters": [
           {
@@ -98193,1580 +98374,6 @@
                             }
                           ],
                           "paramLinks": {
-                          }
-                        }
-                      }
-                    ],
-                    "viewOffset": [
-                      0,
-                      0
-                    ],
-                    "viewZoom": 1.0
-                  }
-                }
-              },
-              "type": "Mapping"
-            }
-          ],
-          "viewOffset": [
-            0,
-            0
-          ],
-          "viewZoom": 1.0
-        },
-        "cues": {
-          "hideInEditor": true,
-          "viewOffset": [
-            0,
-            0
-          ],
-          "viewZoom": 1.0
-        }
-      },
-      {
-        "parameters": [
-          {
-            "value": 39.9,
-            "controlAddress": "/totalTime"
-          },
-          {
-            "value": 39.90000152587891,
-            "controlAddress": "/viewEndTime"
-          },
-          {
-            "value": "",
-            "controlAddress": "/ltcSyncModule",
-            "enabled": false
-          }
-        ],
-        "niceName": "Eye",
-        "type": "Sequence",
-        "layers": {
-          "hideInEditor": true,
-          "items": [
-            {
-              "parameters": [
-                {
-                  "value": 60.0,
-                  "controlAddress": "/listSize"
-                }
-              ],
-              "niceName": "Trigger",
-              "type": "Trigger",
-              "triggers": {
-                "hideInEditor": true,
-                "items": [
-                  {
-                    "parameters": [
-                      {
-                        "value": 1.0,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Init",
-                    "editorIsCollapsed": true,
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Life",
-                          "editorIsCollapsed": true,
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Set Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Orb-A/OrbGroupController/life",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 25.0,
-                                "controlAddress": "/value"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Perlin Intensity",
-                          "editorIsCollapsed": true,
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Set Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Perlin/PerlinController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Turb Intensity",
-                          "editorIsCollapsed": true,
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Turbulence/TurbulenceController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 0.0,
-                                "controlAddress": "/time"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Reset EmitterSize B ",
-                          "type": "Consequence",
-                          "commandModule": "customVariables",
-                          "commandPath": "",
-                          "commandType": "Set Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/emitterParameters/emitterSizeB",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Rate B",
-                          "type": "Consequence",
-                          "commandModule": "customVariables",
-                          "commandPath": "",
-                          "commandType": "Set Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/emitterParameters/rateB",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "niceName": "Record",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "parameters": [
-                            {
-                              "value": false,
-                              "controlAddress": "/enabled"
-                            }
-                          ],
-                          "niceName": "Record",
-                          "editorIsCollapsed": true,
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_TD",
-                          "commandPath": "",
-                          "commandType": "Trigger",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/UI/Record/Pulserecord",
-                                "controlAddress": "/target"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "obsWebsocket",
-                          "commandPath": "Record Requests",
-                          "commandType": "StartRecord",
-                          "command": {
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 0.4599999785423279,
-                        "controlAddress": "/time"
-                      },
-                      {
-                        "value": 0.4416666328907013,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Kill All",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "stateMachine",
-                          "commandPath": "Action",
-                          "commandType": "Trigger Action",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/states/unity/processors/killAllParticle",
-                                "controlAddress": "/target"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 1.860000252723694,
-                        "controlAddress": "/time"
-                      },
-                      {
-                        "value": 0.1999999582767487,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Go To Size",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "customVariables",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/emitterParameters/emitterSizeB",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 6.499999046325684,
-                                "controlAddress": "/time"
-                              },
-                              {
-                                "value": 4.119681358337402,
-                                "controlAddress": "/value"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Consequence 1",
-                          "type": "Consequence",
-                          "commandModule": "customVariables",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/emitterParameters/rateB",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 6.499999046325684,
-                                "controlAddress": "/time"
-                              },
-                              {
-                                "value": 13935.6552734375,
-                                "controlAddress": "/value"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 17.26000213623047,
-                        "controlAddress": "/time"
-                      },
-                      {
-                        "value": 0.5333333015441895,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Turbulence",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Turbulence/TurbulenceController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 14.18100833892822,
-                                "controlAddress": "/time"
-                              },
-                              {
-                                "value": 0.6980001926422119,
-                                "controlAddress": "/value"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 23.17999839782715,
-                        "controlAddress": "/time"
-                      },
-                      {
-                        "value": 0.925000011920929,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Perlin",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Perlin/PerlinController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 10.79999256134033,
-                                "controlAddress": "/time"
-                              },
-                              {
-                                "value": 0.05699998885393143,
-                                "controlAddress": "/value"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 35.0,
-                        "controlAddress": "/time"
-                      }
-                    ],
-                    "niceName": "Reset Perlin",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "niceName": "Consequence",
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Perlin/PerlinController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 0.0,
-                                "controlAddress": "/time"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  },
-                  {
-                    "parameters": [
-                      {
-                        "value": 35.04000091552734,
-                        "controlAddress": "/time"
-                      },
-                      {
-                        "value": 0.5833333134651184,
-                        "controlAddress": "/flagY"
-                      }
-                    ],
-                    "niceName": "Stop All",
-                    "type": "TimeTrigger",
-                    "consequences": {
-                      "items": [
-                        {
-                          "parameters": [
-                            {
-                              "value": false,
-                              "controlAddress": "/enabled"
-                            }
-                          ],
-                          "niceName": "Consequence",
-                          "editorIsCollapsed": true,
-                          "type": "Consequence",
-                          "commandModule": "stateMachine",
-                          "commandPath": "Action",
-                          "commandType": "Trigger Action",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/states/initialize/processors/resetForce",
-                                "controlAddress": "/target"
-                              }
-                            ],
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Consequence 2",
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Turbulence/TurbulenceController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 4.099998474121094,
-                                "controlAddress": "/time"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Consequence 3",
-                          "type": "Consequence",
-                          "commandModule": "oSCQuery_Unity",
-                          "commandPath": "",
-                          "commandType": "Go to Value",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/Orbs/Forces/Tornado/TornadoController/intensity",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": "All",
-                                "controlAddress": "/component"
-                              },
-                              {
-                                "value": "Equals",
-                                "controlAddress": "/operator"
-                              },
-                              {
-                                "value": 4.099998474121094,
-                                "controlAddress": "/time"
-                              }
-                            ],
-                            "containers": {
-                              "curve": {
-                                "parameters": [
-                                  {
-                                    "value": 1.0,
-                                    "controlAddress": "/length"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/viewValueRange"
-                                  },
-                                  {
-                                    "value": [
-                                      0.0,
-                                      1.0
-                                    ],
-                                    "controlAddress": "/range",
-                                    "enabled": true
-                                  }
-                                ],
-                                "hideInRemoteControl": false,
-                                "items": [
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key",
-                                    "containers": {
-                                      "easing": {
-                                        "parameters": [
-                                          {
-                                            "value": [
-                                              0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor1"
-                                          },
-                                          {
-                                            "value": [
-                                              -0.300000011920929,
-                                              0.0
-                                            ],
-                                            "controlAddress": "/anchor2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    "type": "Key"
-                                  },
-                                  {
-                                    "parameters": [
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/position"
-                                      },
-                                      {
-                                        "value": 1.0,
-                                        "controlAddress": "/value"
-                                      },
-                                      {
-                                        "value": "Bezier",
-                                        "controlAddress": "/easingType"
-                                      }
-                                    ],
-                                    "niceName": "Key 1",
-                                    "containers": {
-                                      "easing": {
-                                      }
-                                    },
-                                    "type": "Key"
-                                  }
-                                ],
-                                "viewOffset": [
-                                  0,
-                                  0
-                                ],
-                                "viewZoom": 1.0
-                              }
-                            },
-                            "paramLinks": {
-                            }
-                          }
-                        }
-                      ],
-                      "viewOffset": [
-                        0,
-                        0
-                      ],
-                      "viewZoom": 1.0
-                    }
-                  }
-                ],
-                "viewOffset": [
-                  0,
-                  0
-                ],
-                "viewZoom": 1.0
-              }
-            },
-            {
-              "parameters": [
-                {
-                  "value": 120.0,
-                  "controlAddress": "/listSize"
-                },
-                {
-                  "value": 120,
-                  "hexMode": false,
-                  "controlAddress": "/uiHeight"
-                }
-              ],
-              "niceName": "Mapping",
-              "containers": {
-                "automation": {
-                  "parameters": [
-                    {
-                      "value": 39.90000152587891,
-                      "controlAddress": "/length"
-                    },
-                    {
-                      "value": 39.90000152587891,
-                      "controlAddress": "/position"
-                    },
-                    {
-                      "value": [
-                        0.0,
-                        1.0
-                      ],
-                      "controlAddress": "/viewValueRange"
-                    },
-                    {
-                      "value": [
-                        0.0,
-                        1.0
-                      ],
-                      "controlAddress": "/range",
-                      "enabled": true
-                    }
-                  ],
-                  "hideInEditor": true,
-                  "hideInRemoteControl": false,
-                  "items": [
-                    {
-                      "parameters": [
-                        {
-                          "value": 0.7646030187606812,
-                          "controlAddress": "/position"
-                        },
-                        {
-                          "value": "Perlin",
-                          "controlAddress": "/easingType"
-                        }
-                      ],
-                      "niceName": "Key",
-                      "containers": {
-                        "easing": {
-                          "parameters": [
-                            {
-                              "value": [
-                                10.25749778747559,
-                                0.75
-                              ],
-                              "controlAddress": "/taper1"
-                            },
-                            {
-                              "value": [
-                                -8.297163009643555,
-                                -0.05000001192092896
-                              ],
-                              "controlAddress": "/taper2"
-                            }
-                          ]
-                        }
-                      },
-                      "type": "Key"
-                    },
-                    {
-                      "parameters": [
-                        {
-                          "value": 17.35497093200684,
-                          "controlAddress": "/position"
-                        },
-                        {
-                          "value": 0.6833333969116211,
-                          "controlAddress": "/value"
-                        },
-                        {
-                          "value": "Perlin",
-                          "controlAddress": "/easingType"
-                        }
-                      ],
-                      "niceName": "Key 1",
-                      "containers": {
-                        "easing": {
-                          "parameters": [
-                            {
-                              "value": [
-                                2.988643646240234,
-                                -0.7083333730697632
-                              ],
-                              "controlAddress": "/taper1"
-                            },
-                            {
-                              "value": [
-                                -3.53155517578125,
-                                0.01666676998138428
-                              ],
-                              "controlAddress": "/taper2"
-                            },
-                            {
-                              "value": 7.200000286102295,
-                              "controlAddress": "/offset"
-                            }
-                          ]
-                        }
-                      },
-                      "type": "Key"
-                    },
-                    {
-                      "parameters": [
-                        {
-                          "value": 34.27486038208008,
-                          "controlAddress": "/position"
-                        },
-                        {
-                          "value": 0.7083332538604736,
-                          "controlAddress": "/value"
-                        },
-                        {
-                          "value": "Bezier",
-                          "controlAddress": "/easingType"
-                        }
-                      ],
-                      "niceName": "Key 2",
-                      "containers": {
-                        "easing": {
-                        }
-                      },
-                      "type": "Key"
-                    }
-                  ],
-                  "viewOffset": [
-                    0,
-                    0
-                  ],
-                  "viewZoom": 1.0
-                },
-                "recorder": {
-                  "parameters": [
-                    {
-                      "value": "",
-                      "controlAddress": "/inputValue"
-                    }
-                  ],
-                  "editorIsCollapsed": true
-                },
-                "mapping": {
-                  "niceName": "Mapping",
-                  "type": "Mapping",
-                  "im": {
-                    "hideInEditor": true,
-                    "items": [
-                      {
-                        "parameters": [
-                          {
-                            "value": "",
-                            "controlAddress": "/inputValue"
-                          }
-                        ],
-                        "niceName": "Input Value",
-                        "type": "Input Value"
-                      }
-                    ],
-                    "viewOffset": [
-                      0,
-                      0
-                    ],
-                    "viewZoom": 1.0
-                  },
-                  "params": {
-                    "parameters": [
-                      {
-                        "value": 50,
-                        "hexMode": false,
-                        "controlAddress": "/updateRate"
-                      }
-                    ],
-                    "editorIsCollapsed": true
-                  },
-                  "filters": {
-                    "viewOffset": [
-                      0,
-                      0
-                    ],
-                    "viewZoom": 1.0
-                  },
-                  "outputs": {
-                    "items": [
-                      {
-                        "niceName": "MappingOutput",
-                        "type": "BaseItem",
-                        "commandModule": "oSCQuery_Unity",
-                        "commandPath": "",
-                        "commandType": "Set Value",
-                        "command": {
-                          "parameters": [
-                            {
-                              "value": "/Orbs/Forces/Tornado/TornadoController/intensity",
-                              "controlAddress": "/target"
-                            },
-                            {
-                              "value": "All",
-                              "controlAddress": "/component"
-                            },
-                            {
-                              "value": "Equals",
-                              "controlAddress": "/operator"
-                            }
-                          ],
-                          "paramLinks": {
-                            "value": {
-                              "linkType": 1,
-                              "mappingValueIndex": 0
-                            }
                           }
                         }
                       }
