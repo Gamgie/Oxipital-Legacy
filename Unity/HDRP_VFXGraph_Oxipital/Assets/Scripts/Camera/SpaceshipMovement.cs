@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class SpaceshipMovement : CameraMovement
 {
+	[Header("Camera Position")]
+	public bool manualControl;
+	public Vector3 cameraPosition;
+	public Vector3 cameraRotation;
+
 	[Header("Translation")]
 	[Range(0, 100)]
 	public float thrust;
@@ -58,7 +63,15 @@ public class SpaceshipMovement : CameraMovement
 	{
 		if (!base.UpdateMovement())
 			return false;
-		
+
+		// We want to control manually the camera
+		if (manualControl)
+		{
+			_rigidbody.position = cameraPosition;
+			_rigidbody.rotation = Quaternion.Euler(cameraRotation);
+			return true;
+		}
+				
 		if(_rigidbody != null)
 		{
 			// Thrust
@@ -83,6 +96,10 @@ public class SpaceshipMovement : CameraMovement
 			_rigidbody.drag = directionnalDrag;
 			_rigidbody.angularDrag= angularDrag;
 		}
+
+		// Save transform in parameter to use it in chataigne.
+		cameraPosition = transform.position;
+		cameraRotation = transform.rotation.eulerAngles;
 
 		return true;
 	}
@@ -122,6 +139,9 @@ public class SpaceshipMovement : CameraMovement
 		data.rollTorque = rollTorque;
 		data.directionnalDrag = directionnalDrag;
 		data.angularDrag = angularDrag;
+		data.manualControl = manualControl;
+		data.cameraPosition = cameraPosition;
+		data.cameraRotation = cameraRotation;
 
 		return data;
 	}
@@ -154,4 +174,7 @@ public class SpaceshipMovementData
 	public float rollTorque;
 	public float directionnalDrag;
 	public float angularDrag;
+	public bool manualControl;
+	public Vector3 cameraPosition;
+	public Vector3 cameraRotation;
 }
