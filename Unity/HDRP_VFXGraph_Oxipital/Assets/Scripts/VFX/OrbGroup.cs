@@ -367,6 +367,9 @@ public class OrbGroup : MonoBehaviour
             case 9:
                 emitterShape = EmitterShape.Pyramid;
                 break;
+            case 10:
+                emitterShape = EmitterShape.Landscape;
+                break;
         }
     }
 
