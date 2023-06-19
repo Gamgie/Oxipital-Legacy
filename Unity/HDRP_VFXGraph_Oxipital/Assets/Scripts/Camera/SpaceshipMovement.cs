@@ -154,6 +154,8 @@ public class SpaceshipMovement : CameraMovement
 		rollTorque = data.rollTorque;
 		directionnalDrag = data.directionnalDrag;
 		angularDrag = data.angularDrag;
+		cameraPosition = data.cameraPosition;
+		cameraRotation = data.cameraRotation;
 	}
 
 
