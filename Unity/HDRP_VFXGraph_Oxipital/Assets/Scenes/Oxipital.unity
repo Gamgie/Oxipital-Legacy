@@ -475,7 +475,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1726208145}
+  m_TargetTexture: {fileID: 1575199773}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -493,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225356782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.23849}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1092105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1251,6 +1251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 202155335}
   type: 1
+  manualControl: 0
+  cameraPosition: {x: 0, y: 0, z: 0}
+  cameraRotation: {x: 0, y: 0, z: 0}
   thrust: 100
   thrust1D: 0
   lateralThrust: 25
@@ -1486,6 +1489,8 @@ MonoBehaviour:
   cameraTransitionDuration: 8
   orbitalCamera: {fileID: 594180644}
   spaceshipCamera: {fileID: 534914489}
+  cameraNoiseGain: 0
+  cameraNoiseFrequency: 0
   showXwing: 0
   xWing: {fileID: 411918418}
 --- !u!4 &686339400
@@ -1735,7 +1740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0, z: -7.23849}
+  m_FollowOffset: {x: 0, y: 0, z: -0.1092105}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -1920,7 +1925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921774638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.23849}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1092105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2502,7 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 89740.56
+  m_Intensity: 29928.91
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -2624,7 +2629,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 89740.56
+  m_Intensity: 29928.91
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2788,8 +2793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.1
-  m_FrequencyGain: 0.5
+  m_AmplitudeGain: 4.61
+  m_FrequencyGain: 1.58
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &1210460663
 MonoBehaviour:
@@ -2917,7 +2922,7 @@ MonoBehaviour:
   lacunarity: 2
   minRange: -1
   maxRange: 1
---- !u!84 &1726208145
+--- !u!84 &1575199773
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3003,7 +3008,7 @@ MonoBehaviour:
   _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 1726208145}
+  _sourceTexture: {fileID: 1575199773}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
 --- !u!114 &1783646959
 MonoBehaviour:
