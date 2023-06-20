@@ -8,6 +8,7 @@ public abstract class CameraMovement : MonoBehaviour
 	protected bool _isActive;
 	public CinemachineVirtualCamera virtualCamera;
 	public CameraController.CameraMovementType type;
+	protected CinemachineBasicMultiChannelPerlin noise;
 
 	protected Rigidbody _rigidbody;
 
@@ -16,6 +17,7 @@ public abstract class CameraMovement : MonoBehaviour
 	public virtual void Init()
 	{
 		_rigidbody = GetComponent<Rigidbody>();
+		noise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 	}
 
 	public abstract void Reset(float duration);
@@ -48,4 +50,17 @@ public abstract class CameraMovement : MonoBehaviour
 	}
 
 	public abstract void SetCameraTransform(Vector3 position, Quaternion rotation);
+
+	public void UpdateNoiseParameter(float gain, float frequency)
+	{
+		if(noise != null)
+		{
+			noise.m_AmplitudeGain = gain;
+			noise.m_FrequencyGain = frequency;
+		}
+		else
+		{
+			Debug.LogError("Can not find noise component in virtual camera parameter");
+		}
+	}
 }

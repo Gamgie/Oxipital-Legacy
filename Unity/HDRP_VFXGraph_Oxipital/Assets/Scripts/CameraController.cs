@@ -14,13 +14,20 @@ public class CameraController : MonoBehaviour
     public float fov;
     public float followZOffset;
     public float resetDuration;
+
+    [Header("Camera type")]
     public CameraMovementType cameraType;
     [Range(0,20)]
     public float cameraTransitionDuration;
 
     public OrbitalMovement orbitalCamera;
     public SpaceshipMovement spaceshipCamera;
+    [Range(0, 5)]
+    public float cameraNoiseGain;
+    [Range(0, 5)]
+    public float cameraNoiseFrequency;
 
+    [Header("Xwing")]
     public bool showXwing;
     public GameObject xWing;
     
@@ -52,6 +59,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Switch camera type here : orbital or spaceship basically.
         if(_activeCamera != null && cameraType != _activeCamera.type)
 		{
             SwitchCamera(cameraType);
@@ -68,6 +76,12 @@ public class CameraController : MonoBehaviour
         // Update camera transition duration
         if(_cinemachineBrain != null)
             _cinemachineBrain.m_DefaultBlend.m_Time = cameraTransitionDuration;
+
+        // Update noise parameters in all camera
+        foreach(CameraMovement c in _cameraList)
+		{
+            c.UpdateNoiseParameter(cameraNoiseGain, cameraNoiseFrequency);
+		}
     }
 
     // Movement need physics so we need to update 
@@ -134,6 +148,8 @@ public class CameraController : MonoBehaviour
         result.cameraType = (int)cameraType;
         result.showXWing = showXwing;
         result.cameraTransitionDuration = cameraTransitionDuration;
+        result.cameraNoiseGain = cameraNoiseGain;
+        result.cameraNoiseFrequency = cameraNoiseFrequency;
 
         return result;
     }
@@ -151,6 +167,8 @@ public class CameraController : MonoBehaviour
         cameraType = (CameraMovementType) data.cameraControllerData.cameraType;
         showXwing = data.cameraControllerData.showXWing;
         cameraTransitionDuration = data.cameraControllerData.cameraTransitionDuration;
+        cameraNoiseGain = data.cameraControllerData.cameraNoiseGain;
+        cameraNoiseFrequency = data.cameraControllerData.cameraNoiseFrequency;
 
         // Then update each camera parameters
         spaceshipCamera.LoadData(data.spaceshipMovementData);
@@ -172,4 +190,6 @@ public class CameraControllerData
     public int cameraType;
     public bool showXWing;
     public float cameraTransitionDuration;
+    public float cameraNoiseGain;
+    public float cameraNoiseFrequency;
 }
