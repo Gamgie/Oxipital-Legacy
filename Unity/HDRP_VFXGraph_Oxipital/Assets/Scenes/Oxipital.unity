@@ -124,6 +124,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!84 &70745593
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1920
+  m_Height: 1080
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 90
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &132919795
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +301,7 @@ GameObject:
   - component: {fileID: 225356785}
   - component: {fileID: 225356783}
   - component: {fileID: 225356784}
+  - component: {fileID: 225356787}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -465,7 +503,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 50.00008
   orthographic: 0
@@ -475,7 +513,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 675066430}
+  m_TargetTexture: {fileID: 70745593}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -501,6 +539,24 @@ Transform:
   m_Father: {fileID: 2083420221}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225356787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225356782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filepath: D:\Gamgie\Projets\Oxipital\Unity\Screen Capture
+  filename: Oxipital
+  supersize: 5
+  takeScreenshotKeyCode: 13
+  objectToHide:
+  - {fileID: 740355175}
 --- !u!1 &248981329
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +568,6 @@ GameObject:
   - component: {fileID: 248981330}
   - component: {fileID: 248981334}
   - component: {fileID: 248981333}
-  - component: {fileID: 248981331}
   - component: {fileID: 248981335}
   m_Layer: 0
   m_Name: Camera Feedback
@@ -536,22 +591,6 @@ Transform:
   m_Father: {fileID: 225356786}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &248981331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248981329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964c778ccdaa2c640943d807396e7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filepath: D:\Gamgie\Projets\Oxipital\Unity\Screen Capture
-  filename: Oxipital
-  supersize: 5
-  takeScreenshotKeyCode: 0
 --- !u!114 &248981333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f576c694c1f0a784a920cc462b6e8ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateOnBuild: 0
+  activateOnBuild: 1
   activateInEditor: 1
 --- !u!1 &251328721
 GameObject:
@@ -876,6 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394209772}
   - component: {fileID: 394209773}
+  - component: {fileID: 394209774}
   m_Layer: 0
   m_Name: Root Scene
   m_TagString: Data Manager
@@ -921,6 +961,24 @@ MonoBehaviour:
   balletMngr: {fileID: 760171667}
   forceMngr: {fileID: 918722356}
   cameraController: {fileID: 686339399}
+--- !u!114 &394209774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394209771}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebc0249668a1c547a9a91db56e6ab5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 20
+  framerate: 24
+  startTime: 0
+  framecount: 0
+  showTimeCode: 1
+  showFrameNumber: 1
 --- !u!1001 &480437909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1320,6 +1378,7 @@ MonoBehaviour:
   - {fileID: 1088900280}
   - {fileID: 594180641}
   - {fileID: 534914486}
+  - {fileID: 225356782}
   componentFilterMode: 2
   filteredComponentNames:
   - MeshRenderer
@@ -1345,43 +1404,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &675066430
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &686339398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateOnBuild: 1
-  activateInEditor: 0
+  activateInEditor: 1
 --- !u!1 &760171665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,7 +1909,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 50.00008
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -2902,7 +2924,7 @@ MonoBehaviour:
   _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 675066430}
+  _sourceTexture: {fileID: 70745593}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
 --- !u!114 &1783646959
 MonoBehaviour:

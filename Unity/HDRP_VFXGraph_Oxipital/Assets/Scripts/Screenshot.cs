@@ -10,6 +10,7 @@ public class Screenshot : MonoBehaviour
     public string filename;
     public int supersize;
     public KeyCode takeScreenshotKeyCode;
+    public List<GameObject> objectToHide;
 
     private int fileIndex = 0;
 
@@ -35,10 +36,21 @@ public class Screenshot : MonoBehaviour
             fileIndex++;
             newScreenCaptureName = filepath + "\\" + filename + "." + fileIndex + ".png";
         }
-            
+
+        List<GameObject> objectToActivate = new List<GameObject>();
+        foreach(GameObject go in objectToHide)
+		{
+            if(go.activeSelf)
+			{
+                objectToActivate.Add(go);
+                go.SetActive(false);
+			}
+		}
 
         ScreenCapture.CaptureScreenshot(newScreenCaptureName, supersize);
         fileIndex++;
+
+        StartCoroutine(ActivateObjects(objectToActivate));
     }
 
     void FileIndexSetup()
@@ -65,6 +77,16 @@ public class Screenshot : MonoBehaviour
             {
                 Debug.LogError(" \" " + actualFileNumber + " \" is not in a recognizable format.");
             }
+        }
+    }
+
+    IEnumerator ActivateObjects(List<GameObject> goList)
+	{
+        yield return new WaitForSeconds(2);
+
+        foreach (GameObject go in goList)
+        {
+            go.SetActive(true);
         }
     }
 }

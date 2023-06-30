@@ -15,6 +15,7 @@ public class TimecodeDisplay : MonoBehaviour
     public void Start()
     {
         
+
     }
 
     void OnGUI()
