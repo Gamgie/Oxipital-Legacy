@@ -196,7 +196,7 @@ public class OrbGroup : MonoBehaviour
 			{
                 if(showMesh)
 				{
-                    _meshRenderer.transform.localScale = new Vector3(actualEmitterSize, actualEmitterSize, actualEmitterSize);
+                    _meshRenderer.transform.localScale = new Vector3(actualEmitterSize*0.95f, actualEmitterSize * 0.95f, actualEmitterSize * 0.95f);
                     _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation);
                     _meshRenderer.enabled = true;
                 }
