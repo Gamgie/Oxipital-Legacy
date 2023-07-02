@@ -33,15 +33,15 @@ public class TimecodeDisplay : MonoBehaviour
 		{
 			if (showTimeCode)
 			{
-				GUI.Label(new Rect(0, size, size, size), "Frame : " + (((startTime * 50) + Time.frameCount) - 1), style);
+				GUI.Label(new Rect(0, size, size, size), "Frame : " + (((startTime * framerate) + Time.frameCount) - 1), style);
 			}
 			else
 			{
-				GUI.Label(new Rect(0, 0, size, size), "Frame : " + (((startTime * 50) + Time.frameCount) - 1), style);
+				GUI.Label(new Rect(0, 0, size, size), "Frame : " + (((startTime * framerate) + Time.frameCount) - 1), style);
 			}
 		}
 
-		framecount = (int)(startTime * 50) + Time.frameCount - 1;
+		framecount = (int)(startTime * framerate) + Time.frameCount - 1;
 	}
 
 
