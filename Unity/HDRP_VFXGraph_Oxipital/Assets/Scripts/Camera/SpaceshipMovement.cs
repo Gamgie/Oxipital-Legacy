@@ -50,6 +50,7 @@ public class SpaceshipMovement : CameraMovement
 	public float angularDrag;
 
 	private CinemachineTransposer _transposer;
+	private Quaternion _initialRotation;
 
 	public override void Init()
 	{
@@ -57,6 +58,7 @@ public class SpaceshipMovement : CameraMovement
 		type = CameraController.CameraMovementType.Spaceship;
 
 		_transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+		_initialRotation = _rigidbody.rotation;
 	}
 
 	public override bool UpdateMovement()
@@ -67,13 +69,17 @@ public class SpaceshipMovement : CameraMovement
 		// We want to control manually the camera
 		if (manualControl)
 		{
+			_rigidbody.isKinematic = true;
 			_rigidbody.position = cameraPosition;
-			_rigidbody.rotation = Quaternion.Euler(cameraRotation);
+			transform.localEulerAngles = cameraRotation;
+			
 			return true;
 		}
 				
 		if(_rigidbody != null)
 		{
+			_rigidbody.isKinematic = false;
+
 			// Thrust
 			_rigidbody.AddRelativeForce(Vector3.forward * thrust * thrust1D * Time.deltaTime, ForceMode.Force);
 
@@ -95,6 +101,7 @@ public class SpaceshipMovement : CameraMovement
 
 			_rigidbody.drag = directionnalDrag;
 			_rigidbody.angularDrag= angularDrag;
+
 		}
 
 		// Save transform in parameter to use it in chataigne.
@@ -154,6 +161,7 @@ public class SpaceshipMovement : CameraMovement
 		rollTorque = data.rollTorque;
 		directionnalDrag = data.directionnalDrag;
 		angularDrag = data.angularDrag;
+		manualControl = data.manualControl;
 		cameraPosition = data.cameraPosition;
 		cameraRotation = data.cameraRotation;
 	}
