@@ -110,6 +110,9 @@ public abstract class ForceController : MonoBehaviour
             if (vfx == null)
                 UpdateVfxArray();
 
+            if (vfx == null)
+                return;
+
             // Intensity
             if (vfx.HasFloat(key + " Intensity" + _suffix))
                 vfx.SetFloat(key + " Intensity" + _suffix, intensity);
