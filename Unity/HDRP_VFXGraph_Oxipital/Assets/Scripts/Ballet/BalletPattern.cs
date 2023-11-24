@@ -168,7 +168,7 @@ public class BalletPattern : MonoBehaviour
                 }
                 else
 				{
-                    dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, targetPositions[i], 0.1f);
+                    dancers[i].transform.position = Vector3.Lerp(dancers[i].transform.position, targetPositions[i], 0.3f);
                 }
             }
                 
@@ -340,8 +340,8 @@ public class BalletPattern : MonoBehaviour
         {
             if (size != 0)
             {
-                orbitPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
-                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
+                orbitPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed * 10 + i * Mathf.PI * 2f / dancerCount + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed * 10 + i * Mathf.PI * 2f / dancerCount + phase * Mathf.PI * 2) * orbitData[i].radius * currentSize / 2,
                                                 0f);
                 orbitPositions[i] = transform.TransformPoint(orbitPositions[i]);
             }
@@ -367,7 +367,7 @@ public class BalletPattern : MonoBehaviour
             oD.radius = radius;
 
             // Compute speed for this fellow
-            float orbitalSpeed = Random.Range(speed * 0.9f, speed * 1.2f);
+            float orbitalSpeed = Random.Range(0.9f, 1.2f);
             oD.speed = orbitalSpeed;
 
             // Compute angle 
@@ -387,12 +387,12 @@ public class BalletPattern : MonoBehaviour
             GenerateOrbits();
         }
 
-        for (int i = 0; i < dancers.Count; i++)
+        for (int i = 0; i < dancerCount; i++)
         {
             if (size != 0)
             {
-                atomPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
-                                                Mathf.Cos(currentSpeed * orbitData[i].speed + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                atomPositions[i] = new Vector3(Mathf.Sin(currentSpeed * orbitData[i].speed * 10 + i * Mathf.PI * 2f / dancerCount + phase * Mathf.PI * 2) * currentSize / 2,
+                                                Mathf.Cos(currentSpeed * orbitData[i].speed * 10 + i * Mathf.PI * 2f / dancerCount + phase * Mathf.PI * 2) * currentSize / 2,
                                                 0f);
 
                 // Rotate position with angle degree
