@@ -401,23 +401,23 @@ public class OrbGroup : MonoBehaviour
         o.transform.parent = transform;
         _visualEffects.Add(o);
 
-        // Add a dancer in pattern
-        if(_pattern != null)
-		{
-            if(_pattern.dancerCount < GetOrbCount())
-                _pattern.AddDancer();
-		}
-        else
-		{
-            Debug.LogError("No pattern found in " + this.gameObject.name);
-		}
-
         // Send a message to the manager
         _orbsMngr.GetOnOrbCreated().Invoke();
         Debug.Log(name + " / " + o.name + " created.");
 
         // Update OrbCount accordingly
         _orbCount = _visualEffects.Count;
+
+        // Add a dancer in pattern
+        if (_pattern != null)
+        {
+            if (_pattern.dancerCount < GetOrbCount())
+                _pattern.AddDancer();
+        }
+        else
+        {
+            Debug.LogError("No pattern found in " + this.gameObject.name);
+        }
     }
 
     void DestroyOrb(int index = -1)
@@ -465,12 +465,12 @@ public class OrbGroup : MonoBehaviour
         }
             
 
-        _pattern.UpdateDancerCount(count);
+        //_pattern.UpdateDancerCount(count);
 
         // Update list of vfx.
         if (count > _visualEffects.Count)
         {
-            int instanceCount = _pattern.dancerCount - _visualEffects.Count;
+            int instanceCount = count - _visualEffects.Count;
             for (int i = 0; i < instanceCount; i++)
             {
                 AddOrb();
