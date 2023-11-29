@@ -266,6 +266,12 @@ public class OrbGroupController : MonoBehaviour
 
         return result;
 	}
+
+    public void ResetPattern()
+	{
+        BalletPattern balletPattern = balletMngr.GetPattern(BalletManager.PatternGroup.Orb, idControlled);
+        balletPattern.ResetSpeed();
+    }
 }
 
 [System.Serializable]
