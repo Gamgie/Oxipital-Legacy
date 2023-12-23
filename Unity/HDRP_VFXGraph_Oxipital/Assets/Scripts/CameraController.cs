@@ -8,6 +8,8 @@ public class CameraController : MonoBehaviour
 {
     public enum CameraMovementType { Orbital, Spaceship, Freefly }
 
+    public bool renderMainWindow = true;
+
     [Header("General Parameters")]
     public Transform lookAtTarget;
     public new Camera camera;
@@ -69,6 +71,13 @@ public class CameraController : MonoBehaviour
         if (_cameraFeedback != null)
         {
             _cameraFeedback.fieldOfView = fov;
+
+            if(renderMainWindow != _cameraFeedback.enabled)
+			{
+                _cameraFeedback.enabled = renderMainWindow;
+                ToolsManager toolsMngr = GameObject.FindGameObjectWithTag("Tools Manager").GetComponent<ToolsManager>();
+                toolsMngr.activateGraphy = renderMainWindow;
+            }
         }
 
         xWing.SetActive(showXwing);
@@ -142,6 +151,7 @@ public class CameraController : MonoBehaviour
 	{
         CameraControllerData result = new CameraControllerData();
 
+        result.renderMainWindow = renderMainWindow;
         result.fov = fov;
         result.followZOffset = followZOffset;
         result.resetDuration = resetDuration;
@@ -161,6 +171,7 @@ public class CameraController : MonoBehaviour
         OxipitalData data = dataMngr.LoadData();
 
         // Update cameraController parameters with this data
+        renderMainWindow = data.cameraControllerData.renderMainWindow;
         fov = data.cameraControllerData.fov;
         followZOffset = data.cameraControllerData.followZOffset;
         resetDuration = data.cameraControllerData.resetDuration;
@@ -184,6 +195,7 @@ public class CameraController : MonoBehaviour
 [System.Serializable]
 public class CameraControllerData
 {
+    public bool renderMainWindow;
     public float fov;
     public float followZOffset;
     public float resetDuration;
