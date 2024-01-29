@@ -1,4 +1,6 @@
 using UnityEngine;
+using Klak.Syphon;
+using Klak.Spout;
 
 [ExecuteInEditMode]
 public class CameraSpoutMngr : MonoBehaviour
@@ -6,6 +8,7 @@ public class CameraSpoutMngr : MonoBehaviour
 
     #region Public members
     public Klak.Spout.SpoutSender spoutSender;
+    public Klak.Syphon.SyphonServer syphonServer;
     public Camera mainCamera;
     public int width;
     public int height;
@@ -14,12 +17,28 @@ public class CameraSpoutMngr : MonoBehaviour
 
     #region Private members
     RenderTexture m_renderTexture;
-	#endregion
+    #endregion
 
-	private void OnEnable()
-	{
+    private void OnEnable()
+    {
         width = PlayerPrefs.GetInt("SpoutWidth", 1920);
         height = PlayerPrefs.GetInt("SpoutHeight", 1080);
+
+        // Handle multi platform
+        if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        {
+            // Enable syphon
+            syphonServer.enabled = true;
+            // Disable spout
+            spoutSender.enabled = false;
+        }
+        else if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            // Disable syphon
+            syphonServer.enabled = false;
+            // Enable spout
+            spoutSender.enabled = true;
+        }
     }
 
 	// Update is called once per frame
@@ -42,9 +61,20 @@ public class CameraSpoutMngr : MonoBehaviour
             m_renderTexture = new RenderTexture(width, height, 16, rtFormat);
             m_renderTexture.Create();
 
-            // Udate spout and main camera
-            spoutSender.sourceTexture = m_renderTexture;
-            mainCamera.targetTexture = m_renderTexture;
+
+            if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+            {
+                // Update syphon
+                syphonServer.SourceTexture = m_renderTexture;
+                mainCamera.targetTexture = m_renderTexture;
+            }
+            else if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                // Udate spout and main camera
+                spoutSender.sourceTexture = m_renderTexture;
+                mainCamera.targetTexture = m_renderTexture;
+            }
+
 
             // Disable and enable again to re-init spout plugin
             spoutSender.enabled = false;
