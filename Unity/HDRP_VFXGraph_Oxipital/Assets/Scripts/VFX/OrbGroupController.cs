@@ -90,14 +90,21 @@ public class OrbGroupController : MonoBehaviour
         _orbsManager = transform.parent.GetComponent<OrbsManager>();
 
         OxipitalData loadedData = dataMngr.LoadData();
-        foreach(OrbGroupControllerData ogcData in loadedData.orbGroupControllersData)
+        if(loadedData.orbGroupControllersData == null)
 		{
-            if(ogcData.name == this.name)
-			{
-                idControlled = ogcData.idControlled;
-                colorSmoothSpeed = ogcData.colorSmooth;
-			}
+            Debug.LogError("No OrbGroupControllerdata found");
 		}
+        else
+		{
+            foreach (OrbGroupControllerData ogcData in loadedData.orbGroupControllersData)
+            {
+                if (ogcData.name == this.name)
+                {
+                    idControlled = ogcData.idControlled;
+                    colorSmoothSpeed = ogcData.colorSmooth;
+                }
+            }
+        }
     }
 
     // Update is called once per frame

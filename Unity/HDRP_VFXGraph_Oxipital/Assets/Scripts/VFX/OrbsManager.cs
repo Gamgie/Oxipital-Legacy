@@ -87,12 +87,12 @@ public class OrbsManager : MonoBehaviour
             }
         }
     }
-    public void AddOrbGroup(OrbGroupData orbData = null)
+    public OrbGroup AddOrbGroup(OrbGroupData orbData = null)
     {
         if (orbs == null)
         {
             Debug.LogError("Try to add an orb in a null list");
-            return;
+            return null;
         }
 
         OrbGroup o = Instantiate(orbGroupPrefab);
@@ -110,6 +110,8 @@ public class OrbsManager : MonoBehaviour
         o.transform.parent = emitterOrbRoot;
         o.Initialize(this);
         orbs.Add(o);
+
+        return o;
     }
 
 	public BalletPattern GetPattern(int patternID)

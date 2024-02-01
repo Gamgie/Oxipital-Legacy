@@ -38,14 +38,17 @@ public class ForceManager : MonoBehaviour
         // Initialize each force and load its datas
         foreach (ForceController force in _forces)
 		{
-            foreach(ForceControllerData forceData in data.forceControllerData)
+            if(data.forceControllerData != null)
 			{
-                if(force.Key == forceData.key)
-				{
-                    force.LoadData(forceData);
-                    break;
-				}
-			}
+                foreach (ForceControllerData forceData in data.forceControllerData)
+                {
+                    if (force.Key == forceData.key)
+                    {
+                        force.LoadData(forceData);
+                        break;
+                    }
+                }
+            }
 
             force.Initiliaze(_orbsMngr, _balletMngr);
 		}

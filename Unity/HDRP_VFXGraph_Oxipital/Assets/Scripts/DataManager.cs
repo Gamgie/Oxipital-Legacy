@@ -26,11 +26,25 @@ public class DataManager : MonoBehaviour
 		if(loadedData == null)
 		{
 			string filepath = path + "/" + fileName + ".json";
-			string orbsData = System.IO.File.ReadAllText(filepath);
+			try
+			{
+				string orbsData = System.IO.File.ReadAllText(filepath);
 
-			loadedData = JsonUtility.FromJson<OxipitalData>(orbsData);
+				loadedData = JsonUtility.FromJson<OxipitalData>(orbsData);
 
-			Debug.Log("file loaded at " + path + "/" + fileName);
+				Debug.Log("file loaded at " + path + "/" + fileName);
+			}
+			catch(System.Exception e)
+			{
+				// If no json is found, we initialize system
+				// with OrbGroup with one orb in each.
+				loadedData = new OxipitalData();
+
+				orbsMngr.AddOrbGroup().SetOrbCount(1);
+				orbsMngr.AddOrbGroup().SetOrbCount(1);
+
+				SaveData();
+			}
 		}
 
 		return loadedData;
@@ -40,7 +54,7 @@ public class DataManager : MonoBehaviour
 	{
 		if(orbsMngr == null)
 		{
-			Debug.LogError("Can not save file because there is no vfxcontroller found");
+			Debug.LogError("Can not save file because there is no OrbManager found");
 			return;
 		}
 

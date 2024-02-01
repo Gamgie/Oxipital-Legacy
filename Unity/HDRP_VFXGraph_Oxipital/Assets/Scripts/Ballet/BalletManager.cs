@@ -82,23 +82,30 @@ public class BalletManager : MonoBehaviour
             // Check if we have available data for this guy.
             if (data == null)
                 data = dataMngr.LoadData();
+
             if(group == PatternGroup.Orb)
 			{
-                foreach (BalletPatternData patternData in data.balletMngrData.orbsPatternData)
-                {
-                    if (patternData.id == newID)
+                if(data.balletMngrData != null && data.balletMngrData.orbsPatternData != null)
+				{
+                    foreach (BalletPatternData patternData in data.balletMngrData.orbsPatternData)
                     {
-                        pattern.LoadData(patternData);
+                        if (patternData.id == newID)
+                        {
+                            pattern.LoadData(patternData);
+                        }
                     }
                 }
             }
             else if(group == PatternGroup.Force)
 			{
-                foreach (BalletPatternData patternData in data.balletMngrData.forcePatternData)
-                {
-                    if (patternData.id == newID)
+                if(data.balletMngrData != null && data.balletMngrData.forcePatternData != null)
+				{
+                    foreach (BalletPatternData patternData in data.balletMngrData.forcePatternData)
                     {
-                        pattern.LoadData(patternData);
+                        if (patternData.id == newID)
+                        {
+                            pattern.LoadData(patternData);
+                        }
                     }
                 }
             }

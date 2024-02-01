@@ -170,6 +170,11 @@ public class CameraController : MonoBehaviour
         DataManager dataMngr = GameObject.FindGameObjectWithTag("Data Manager").GetComponent<DataManager>();
         OxipitalData data = dataMngr.LoadData();
 
+        if(data.cameraControllerData == null)
+		{
+            return;
+		}
+
         // Update cameraController parameters with this data
         renderMainWindow = data.cameraControllerData.renderMainWindow;
         fov = data.cameraControllerData.fov;
