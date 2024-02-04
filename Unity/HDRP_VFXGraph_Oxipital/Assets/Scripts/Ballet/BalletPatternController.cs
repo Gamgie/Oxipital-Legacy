@@ -23,19 +23,6 @@ public class BalletPatternController : MonoBehaviour
     [Range(0, 3)]
     public float sizeLFOAmplitude;
 
-    [Header("Circle Parameter")]
-    [Range(0, 5)]
-    public float verticalOffset;
-
-    [Header("Position Alteration")]
-    [Range(0, 5)]
-    public float LFOFrequency = 0;
-    public Vector3 LFODirection = Vector3.zero;
-    [Range(0, 3)]
-    public float noiseAmplitude = 0;
-    [Range(0, 10)]
-    public float noiseSpeed = 0;
-
     private BalletPattern m_pattern;
 
     // Update is called once per frame
@@ -52,11 +39,6 @@ public class BalletPatternController : MonoBehaviour
             m_pattern.phase = phase;
             m_pattern.sizeLFOFrequency = sizeLFOFrequency;
             m_pattern.sizeLFOAmplitude = sizeLFOAmplitude;
-            m_pattern.verticalOffset = verticalOffset;
-            m_pattern.LFOFrequency = LFOFrequency;
-            m_pattern.LFODirection = LFODirection;
-            m_pattern.noiseAmplitude = noiseAmplitude;
-            m_pattern.noiseSpeed = noiseSpeed;
         }
 
     }
@@ -76,12 +58,6 @@ public class BalletPatternController : MonoBehaviour
         phase = p.phase;
         sizeLFOFrequency = p.sizeLFOFrequency;
         sizeLFOAmplitude = p.sizeLFOAmplitude;
-        verticalOffset = p.verticalOffset;
-        LFOFrequency = p.LFOFrequency;
-        LFODirection = p.LFODirection;
-        noiseAmplitude = p.noiseAmplitude;
-        noiseSpeed = p.noiseSpeed;
-
     }
 
 }

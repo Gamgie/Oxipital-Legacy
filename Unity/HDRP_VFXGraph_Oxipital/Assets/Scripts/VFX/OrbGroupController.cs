@@ -55,7 +55,7 @@ public class OrbGroupController : MonoBehaviour
     public Vector3 patternRotation = Vector3.zero; // Rotation in euler angle of this pattern
     [Range(0, 10)]
     public float patternSize = 1; // Size of this pattern
-    [Range(0, 30)]
+    [Range(0, 1)]
     public float speed = 1f; // speed of the choreography
     [Range(0, 20)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
@@ -68,18 +68,6 @@ public class OrbGroupController : MonoBehaviour
     [Range(0, 3)]
     public float sizeLFOAmplitude;
 
-    [Header("Circle Parameter")]
-    [Range(0, 5)]
-    public float verticalOffset;
-
-    [Header("Position Alteration")]
-    [Range(0, 5)]
-    public float LFOFrequency = 0;
-    public Vector3 LFODirection = Vector3.zero;
-    [Range(0, 3)]
-    public float noiseAmplitude = 0;
-    [Range(0, 10)]
-    public float noiseSpeed = 0;
 
     private OrbsManager _orbsManager;
     private int _idControlled = -1;
@@ -145,11 +133,6 @@ public class OrbGroupController : MonoBehaviour
                 phase = 0;
                 sizeLFOFrequency = 0;
                 sizeLFOAmplitude = 0;
-                verticalOffset = 0;
-                LFOFrequency = 0;
-                LFODirection = Vector3.zero;
-                noiseAmplitude = 0;
-                noiseSpeed = 0;
 
                 Debug.Log("Cannot control an OrbGroup already controlled");
 
@@ -198,11 +181,6 @@ public class OrbGroupController : MonoBehaviour
                     phase = balletPattern.phase;
                     sizeLFOFrequency = balletPattern.sizeLFOFrequency;
                     sizeLFOAmplitude = balletPattern.sizeLFOAmplitude;
-                    verticalOffset = balletPattern.verticalOffset;
-                    LFOFrequency = balletPattern.LFOFrequency;
-                    LFODirection = balletPattern.LFODirection;
-                    noiseAmplitude = balletPattern.noiseAmplitude;
-                    noiseSpeed = balletPattern.noiseSpeed;
 
                     _idControlled = idControlled;
                 }
@@ -249,11 +227,6 @@ public class OrbGroupController : MonoBehaviour
                     balletPattern.phase = phase;
                     balletPattern.sizeLFOFrequency = sizeLFOFrequency;
                     balletPattern.sizeLFOAmplitude = sizeLFOAmplitude;
-                    balletPattern.verticalOffset = verticalOffset;
-                    balletPattern.LFOFrequency = LFOFrequency;
-                    balletPattern.LFODirection = LFODirection;
-                    balletPattern.noiseAmplitude = noiseAmplitude;
-                    balletPattern.noiseSpeed = noiseSpeed;
                 }
             }
         }

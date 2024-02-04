@@ -13,26 +13,23 @@ public class BalletPattern : MonoBehaviour
     public BalletPatternType patternType = BalletPatternType.Point;
     public Vector3 position; // Position of this pattern
     public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
+    [Range(0,10)]
     public float size = 1; // Size of this pattern
+    [Range(0, 1)]
     public float speed = 1f; // speed of the choreography
+    [Range(0, 10)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
     public AnimationCurve lerpCurve; // Interpolation curve for lerping
+    [Range(0, 1)]
     public float phase; // Rotation phase
 
     [Header("Size LFO")]
+    [Range(0, 10)]
     public float sizeLFOFrequency;
+    [Range(0, 10)]
     public float sizeLFOAmplitude;
-    public float sizeOffset;
 
-    [Header("Circle Parameter")]
-    public float verticalOffset;
-
-    [Header("Position Alteration")]
-    public float LFOFrequency = 0;
-    public Vector3 LFODirection = Vector3.zero;
-    public float noiseAmplitude = 0;
-    public float noiseSpeed = 0;
-
+    [Header("Private members")]
     private List<BalletDancer> dancers; // a list of objects to choreograph
     private List<Vector3> cirlePositions; // Computed position of the circle
     private List<Vector3> linePositions; // Computed position of the line
@@ -321,7 +318,7 @@ public class BalletPattern : MonoBehaviour
         for (int i = 0; i < dancers.Count; i++)
         {
             linePositions[i] = new Vector3(0,
-                                            Mathf.Cos(currentSpeed + Mathf.PI * i / (dancerCount - 1) + 2 * Mathf.PI * phase) * currentSize / 2,
+                                            Mathf.Cos(currentSpeed*2 + Mathf.PI * i / (dancerCount - 1) + 2 * Mathf.PI * phase) * currentSize / 2,
                                             0);
 
 
@@ -425,10 +422,6 @@ public class BalletPattern : MonoBehaviour
         data.phase = phase;
         data.sizeLFOFrequency = sizeLFOFrequency;
         data.sizeLFOAmplitude = sizeLFOAmplitude;
-        data.verticalOffset = verticalOffset;
-        data.LFOFrequency = LFOFrequency;
-        data.noiseAmplitude = noiseAmplitude;
-        data.noiseSpeed = noiseSpeed;
 
         return data;
 	}
@@ -446,10 +439,6 @@ public class BalletPattern : MonoBehaviour
         phase = data.phase;
         sizeLFOFrequency = data.sizeLFOFrequency;
         sizeLFOAmplitude = data.sizeLFOAmplitude;
-        verticalOffset = data.verticalOffset;
-        LFOFrequency = data.LFOFrequency;
-        noiseAmplitude = data.noiseAmplitude;
-        noiseSpeed = data.noiseSpeed;
     }
 
     public Vector3 GetPosition(int idPos)
@@ -513,9 +502,5 @@ public class BalletPatternData
     public float phase;
     public float sizeLFOFrequency;
     public float sizeLFOAmplitude;
-    public float verticalOffset;
-    public float LFOFrequency;
-    public float noiseAmplitude;
-    public float noiseSpeed;
 }
 #endregion
