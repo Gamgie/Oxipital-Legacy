@@ -218,7 +218,7 @@ public class OrbGroupController : MonoBehaviour
                     oG.SetOrbCount(orbCount);
                     oG.rate = rate;
                     oG.life = life;
-                    oG.color = Color.Lerp(oG.color, color, colorSmoothSpeed * Time.deltaTime);
+                    oG.color = Color.Lerp(oG.color, color, colorSmoothSpeed * Time.deltaTime * 0.1f);
                     oG.colorIntensity = colorIntensity;
                     oG.alpha = alpha;
                     oG.size = size;
