@@ -74,7 +74,7 @@ public abstract class ForceController : MonoBehaviour
 
         if (_buffer == null)
 		{
-            _buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, 1, Marshal.SizeOf(typeof(Vector3)));
+            _buffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, forceCount, Marshal.SizeOf(typeof(Vector3)));
             _bufferID = Shader.PropertyToID(key + " Graphics Buffer"); ;
         }
     }
