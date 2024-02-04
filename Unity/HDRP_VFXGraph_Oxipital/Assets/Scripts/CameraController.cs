@@ -75,8 +75,13 @@ public class CameraController : MonoBehaviour
             if(renderMainWindow != _cameraFeedback.enabled)
 			{
                 _cameraFeedback.enabled = renderMainWindow;
-                ToolsManager toolsMngr = GameObject.FindGameObjectWithTag("Tools Manager").GetComponent<ToolsManager>();
-                toolsMngr.activateGraphy = renderMainWindow;
+                GameObject o = GameObject.FindGameObjectWithTag("Tools Manager");
+                if(o != null)
+                {
+                    ToolsManager toolsMngr = o.GetComponent<ToolsManager>();
+                    if (toolsMngr != null)
+                        toolsMngr.activateGraphy = renderMainWindow;
+                }     
             }
         }
 
