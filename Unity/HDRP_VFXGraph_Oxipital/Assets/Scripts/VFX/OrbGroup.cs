@@ -441,8 +441,13 @@ public class OrbGroup : MonoBehaviour
             orbToBeDestroyed = _visualEffects[index];
             _pattern.RemoveDancer(index);
         }
- 
-        Destroy(orbToBeDestroyed.gameObject);
+
+        // Set the particle rate to 0 for the one is about to be destroyed
+        if (orbToBeDestroyed.HasInt("Rate") == true)
+            orbToBeDestroyed.SetInt("Rate", Convert.ToInt32(0));
+
+        // Destroy orb after all particles are dead
+        Destroy(orbToBeDestroyed.gameObject, life);
         _visualEffects.RemoveAt(index);
 
         // Update OrbCount accordingly
