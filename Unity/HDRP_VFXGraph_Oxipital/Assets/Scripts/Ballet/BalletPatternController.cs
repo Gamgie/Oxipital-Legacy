@@ -60,4 +60,9 @@ public class BalletPatternController : MonoBehaviour
         sizeLFOAmplitude = p.sizeLFOAmplitude;
     }
 
+    public void ResetPattern()
+	{
+        m_pattern.ResetSpeed();
+	}
+
 }
