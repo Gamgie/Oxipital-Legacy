@@ -114,7 +114,7 @@ public abstract class ForceController : MonoBehaviour
                 return;
 
             // Intensity
-            if (intensity < 0.001)
+            if (intensity < 0.001 && intensity > -0.001)
                 intensity = 0;
 
             if (vfx.HasFloat(key + " Intensity" + _suffix))
