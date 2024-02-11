@@ -62,8 +62,8 @@ public class OrbGroup : MonoBehaviour
     private OrbsManager _orbsMngr;
     private BalletPattern _pattern;
     private int _orbCount = 0;
-    private MeshRenderer _meshRenderer;
-    private MeshFilter _meshFilter;
+    private MeshRenderer[] _meshRenderer;
+    private MeshFilter[] _meshFilter;
 
     public void Initialize(OrbsManager orbsMngr)
     {
@@ -84,14 +84,10 @@ public class OrbGroup : MonoBehaviour
             SetOrbCount(1);
             Debug.LogError("No data found while creating " + gameObject.name + ". Initialize orbcount to 1 by default because no loaded data found at startup.");
 		}
-        
+
 
         // Update shape according to index
         SetEmitterShape();
-
-        // Get Mesh references
-        _meshFilter = GetComponentInChildren<MeshFilter>();
-        _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -194,15 +190,25 @@ public class OrbGroup : MonoBehaviour
 
             if(_meshRenderer != null)
 			{
-                if(showMesh)
-				{
-                    _meshRenderer.transform.localScale = new Vector3(actualEmitterSize*0.95f, actualEmitterSize * 0.95f, actualEmitterSize * 0.95f);
-                    _meshRenderer.transform.rotation = Quaternion.Euler(emitterRotation);
-                    _meshRenderer.enabled = true;
-                }
-                else
+                foreach (MeshRenderer mr in _meshRenderer)
                 {
-                    _meshRenderer.enabled = false;
+                    if(mr == null)
+					{
+                        _meshRenderer = GetComponentsInChildren<MeshRenderer>();
+                        break;
+					}
+
+                    if (showMesh)
+				    {
+                        mr.transform.localScale = new Vector3(actualEmitterSize * 0.95f, actualEmitterSize * 0.95f, actualEmitterSize * 0.95f);
+                        mr.transform.rotation = Quaternion.Euler(emitterRotation);
+                        mr.enabled = true;
+                    
+                    }
+                    else
+                    {
+                        mr.enabled = false;
+                    }
                 }
             }
 
@@ -237,7 +243,10 @@ public class OrbGroup : MonoBehaviour
                 {
                     vfx.SetMesh("Emitter Mesh", meshArray[_emitterShapeIndex]);
                     vfx.SetTexture("Collision SDF", sdfCollisionArray[_emitterShapeIndex]);
-                    _meshFilter.mesh = meshArray[_emitterShapeIndex];
+                    foreach(MeshFilter mF in _meshFilter)
+					{
+                        mF.mesh = meshArray[_emitterShapeIndex];
+                    }
                 }
             }
 
@@ -276,7 +285,7 @@ public class OrbGroup : MonoBehaviour
 
         if(_meshRenderer == null)
 		{
-            _meshRenderer = GetComponentInChildren<MeshRenderer>();
+            _meshRenderer = GetComponentsInChildren<MeshRenderer>();
         }
 
         for(int i = 0; i < _visualEffects.Count; i++)
@@ -284,7 +293,10 @@ public class OrbGroup : MonoBehaviour
             if (_visualEffects[i].HasVector3("Emitter Position") == true)
             {
                 _visualEffects[i].SetVector3("Emitter Position", _pattern.GetPosition(i));
-                _meshRenderer.transform.position = _pattern.GetPosition(i);
+                if(_meshRenderer[i] != null)
+				{
+                    _meshRenderer[i].transform.position = _pattern.GetPosition(i);
+                }
             }
 		}
 	}
@@ -418,6 +430,10 @@ public class OrbGroup : MonoBehaviour
         {
             Debug.LogError("No pattern found in " + this.gameObject.name);
         }
+
+        // Get Mesh references
+        _meshFilter = GetComponentsInChildren<MeshFilter>();
+        _meshRenderer = GetComponentsInChildren<MeshRenderer>();
     }
 
     void DestroyOrb(int index = -1)
@@ -432,9 +448,9 @@ public class OrbGroup : MonoBehaviour
 
         if (index == -1) // Remove last one
 		{
-            orbToBeDestroyed = _visualEffects[_visualEffects.Count-1];
-            _pattern.RemoveDancer();
             index = _visualEffects.Count - 1;
+            orbToBeDestroyed = _visualEffects[index];
+            _pattern.RemoveDancer();
         }
         else // Remove at index
 		{
@@ -495,6 +511,15 @@ public class OrbGroup : MonoBehaviour
 	{
         _orbsMngr.balletMngr.RemovePattern(BalletManager.PatternGroup.Orb,orbGroupId);
     }
+
+    private void RemoveElement<T>(ref T[] arr, int index)
+	{
+        for(int i = index; i < arr.Length - 1; i++)
+		{
+            arr[i] = arr[i + 1];
+            Array.Resize(ref arr, arr.Length - 1);
+		}
+	}
 
 	#region ManageData
 	public OrbGroupData StoreData()
