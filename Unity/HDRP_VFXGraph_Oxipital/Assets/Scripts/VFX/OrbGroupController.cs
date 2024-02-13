@@ -56,7 +56,7 @@ public class OrbGroupController : MonoBehaviour
     [Range(0, 10)]
     public float patternSize = 1; // Size of this pattern
     [Range(0, 1)]
-    public float speed = 1f; // speed of the choreography
+    public float speed = 1f; // Speed of the choreography
     [Range(0, 20)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
     [Range(0, 1)]
@@ -68,6 +68,7 @@ public class OrbGroupController : MonoBehaviour
     [Range(0, 3)]
     public float sizeLFOAmplitude;
 
+    public List<Vector3> manualPositions; // each Position is controlled Manually
 
     private OrbsManager _orbsManager;
     private int _idControlled = -1;
@@ -75,6 +76,9 @@ public class OrbGroupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Initialize manual positions list
+        manualPositions = new List<Vector3>();
+
         _orbsManager = transform.parent.GetComponent<OrbsManager>();
 
         OxipitalData loadedData = dataMngr.LoadData();
@@ -181,6 +185,7 @@ public class OrbGroupController : MonoBehaviour
                     phase = balletPattern.phase;
                     sizeLFOFrequency = balletPattern.sizeLFOFrequency;
                     sizeLFOAmplitude = balletPattern.sizeLFOAmplitude;
+                    manualPositions = balletPattern.manualPositions;
 
                     _idControlled = idControlled;
                 }
@@ -227,6 +232,7 @@ public class OrbGroupController : MonoBehaviour
                     balletPattern.phase = phase;
                     balletPattern.sizeLFOFrequency = sizeLFOFrequency;
                     balletPattern.sizeLFOAmplitude = sizeLFOAmplitude;
+                    balletPattern.manualPositions = manualPositions;
                 }
             }
         }

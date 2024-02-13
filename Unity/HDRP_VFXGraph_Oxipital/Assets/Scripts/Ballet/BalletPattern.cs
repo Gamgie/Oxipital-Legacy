@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BalletPattern : MonoBehaviour
 {
-    public enum BalletPatternType { Point, Line, Circle, Orbit, Atom }
+    public enum BalletPatternType { Point, Line, Circle, Orbit, Atom, Manual }
 
     public BalletDancer dancerPrefab;
 
@@ -28,6 +28,9 @@ public class BalletPattern : MonoBehaviour
     public float sizeLFOFrequency;
     [Range(0, 10)]
     public float sizeLFOAmplitude;
+
+    [Space(20)]
+    public List<Vector3> manualPositions; // each Position is controlled Manually
 
     [Header("Private members")]
     private List<BalletDancer> dancers; // a list of objects to choreograph
@@ -55,6 +58,11 @@ public class BalletPattern : MonoBehaviour
         atomPositions = new List<Vector3>();
         startPositions = new List<Vector3>();
         targetPositions = new List<Vector3>();
+
+        if(manualPositions == null)
+		{
+            manualPositions = new List<Vector3>();
+        }
 
         dancerColor = GenerateRandomColor();
 
@@ -114,6 +122,9 @@ public class BalletPattern : MonoBehaviour
                 case BalletPatternType.Atom:
                     startPositions = atomPositions;
                     break;
+                case BalletPatternType.Manual:
+                    startPositions = manualPositions;
+                    break;
             }
 
             lastPatternType = patternType;
@@ -141,6 +152,9 @@ public class BalletPattern : MonoBehaviour
                 break;
             case BalletPatternType.Atom:
                 targetPositions = atomPositions;
+                break;
+            case BalletPatternType.Manual:
+                targetPositions = manualPositions;
                 break;
         }
 
@@ -220,6 +234,12 @@ public class BalletPattern : MonoBehaviour
         orbitPositions.Add(new Vector3());
         atomPositions.Add(new Vector3());
 
+        if(manualPositions.Count < dancers.Count)
+		{
+            manualPositions.Add(new Vector3());
+        }
+        
+
         Debug.Log("Dancer " + dancer.id + " created and added to pattern" + id);
 
         // Update dancerCount
@@ -275,6 +295,7 @@ public class BalletPattern : MonoBehaviour
             linePositions.RemoveAt(dancerCount - 1);
             orbitPositions.RemoveAt(dancerCount - 1);
             atomPositions.RemoveAt(dancerCount - 1);
+            manualPositions.RemoveAt(dancerCount - 1);
 
             dancerCount = dancers.Count;
         }
@@ -422,6 +443,7 @@ public class BalletPattern : MonoBehaviour
         data.phase = phase;
         data.sizeLFOFrequency = sizeLFOFrequency;
         data.sizeLFOAmplitude = sizeLFOAmplitude;
+        data.manualPositions = manualPositions;
 
         return data;
 	}
@@ -439,6 +461,26 @@ public class BalletPattern : MonoBehaviour
         phase = data.phase;
         sizeLFOFrequency = data.sizeLFOFrequency;
         sizeLFOAmplitude = data.sizeLFOAmplitude;
+        manualPositions = data.manualPositions;
+
+        // Check manual position size before leaving.
+        // In case of loading not correct data
+        if(manualPositions.Count > dancerCount)
+		{
+            int itemToRemove = manualPositions.Count - dancerCount;
+            for(int i = 0; i < itemToRemove; i++)
+			{
+                manualPositions.RemoveAt(manualPositions.Count - 1);
+            }
+		} 
+        else if (manualPositions.Count < dancerCount)
+        {
+            int itemToadd = dancerCount - manualPositions.Count;
+            for (int i = 0; i < itemToadd; i++)
+            {
+                manualPositions.Add(new Vector3());
+            }
+        }
     }
 
     public Vector3 GetPosition(int idPos)
@@ -502,5 +544,6 @@ public class BalletPatternData
     public float phase;
     public float sizeLFOFrequency;
     public float sizeLFOAmplitude;
+    public List<Vector3> manualPositions;
 }
 #endregion

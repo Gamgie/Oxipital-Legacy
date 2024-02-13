@@ -40,7 +40,7 @@ public abstract class ForceController : MonoBehaviour
         _orbsMngr = orbsMngr;
         _balletMngr = balletMngr;
 
-        // Listen to vfxController to know when we created a new orb.
+        // Listen to orbManager to know when we created a new orb.
         // Update our list when it is the case
         if (_orbsMngr != null)
 		{
