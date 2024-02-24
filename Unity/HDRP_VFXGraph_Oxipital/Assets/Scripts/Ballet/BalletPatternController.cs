@@ -10,7 +10,7 @@ public class BalletPatternController : MonoBehaviour
     public Vector3 patternRotation = Vector3.zero; // Rotation in euler angle of this pattern
     [Range(0, 10)]
     public float patternSize = 1; // Size of this pattern
-    [Range(0, 30)]
+    [Range(0, 2)]
     public float speed = 1f; // speed of the choreography
     [Range(0, 20)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
