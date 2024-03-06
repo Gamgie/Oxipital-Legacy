@@ -101,7 +101,7 @@ public abstract class ForceController : MonoBehaviour
         if (_buffer != null)
 		{
             List<Vector3> target = GetPositions();
-            if(target != null)
+            if(target != null || target.Count != 0)
                 _buffer.SetData(target);
         }
 
