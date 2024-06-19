@@ -15,7 +15,7 @@ public class BalletPattern : MonoBehaviour
     public Vector3 rotation = Vector3.zero; // Rotation in euler angle of this pattern
     [Range(0,10)]
     public float size = 1; // Size of this pattern
-    [Range(0, 1)]
+    [Range(0, 5)]
     public float speed = 1f; // speed of the choreography
     [Range(0, 10)]
     public float lerpDuration = 3f; // Time for moving from a pattern to another
@@ -309,8 +309,8 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed * 5 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
-                                                Mathf.Cos(currentSpeed * 5  + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed * 10 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                                                Mathf.Cos(currentSpeed * 10 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
                                                 0f);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
