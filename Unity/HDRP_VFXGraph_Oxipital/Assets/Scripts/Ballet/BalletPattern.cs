@@ -309,8 +309,8 @@ public class BalletPattern : MonoBehaviour
         {
             if(size != 0)
 			{
-                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed * 5 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
-                                                Mathf.Cos(currentSpeed * 5  + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                cirlePositions[i] = new Vector3(Mathf.Sin(currentSpeed * 10 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
+                                                Mathf.Cos(currentSpeed * 10 + i * Mathf.PI * 2f / dancers.Count + phase * Mathf.PI * 2) * currentSize / 2,
                                                 0f);
                 cirlePositions[i] = transform.TransformPoint(cirlePositions[i]);
             }
