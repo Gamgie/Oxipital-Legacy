@@ -113,6 +113,11 @@ public class OrbitalMovement : CameraMovement
 		transform.transform.DORotate(new Vector3(0, 0, 0), moveToDuration);
 	}
 
+	public void RandomView()
+	{
+		transform.DORotate(new Vector3(UnityEngine.Random.Range(-180, 180), UnityEngine.Random.Range(-180, 180), UnityEngine.Random.Range(-180, 180)), moveToDuration);
+	}
+
 	public OrbitalMovementData StoreData()
 	{
 		OrbitalMovementData data = new OrbitalMovementData();
