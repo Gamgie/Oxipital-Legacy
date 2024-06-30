@@ -245,7 +245,8 @@ public class OrbGroup : MonoBehaviour
                     vfx.SetTexture("Collision SDF", sdfCollisionArray[_emitterShapeIndex]);
                     foreach(MeshFilter mF in _meshFilter)
 					{
-                        mF.mesh = meshArray[_emitterShapeIndex];
+                        if(meshArray[_emitterShapeIndex] != null)
+                            mF.mesh = meshArray[_emitterShapeIndex];
                     }
                 }
             }
