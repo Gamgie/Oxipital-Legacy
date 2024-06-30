@@ -109,7 +109,7 @@ public class DataManager : MonoBehaviour
 		{
 			switch (camMovement.type)
 			{
-				case CameraController.CameraMovementType.Freefly:
+				case CameraController.CameraMovementType.Hands:
 					break;
 				case CameraController.CameraMovementType.Orbital:
 					OrbitalMovement orbitalMovement = (OrbitalMovement) camMovement;

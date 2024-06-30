@@ -6,7 +6,7 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    public enum CameraMovementType { Orbital, Spaceship, Freefly }
+    public enum CameraMovementType { Orbital, Spaceship, Hands }
 
     public bool renderMainWindow = true;
 
@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
 
     public OrbitalMovement orbitalCamera;
     public SpaceshipMovement spaceshipCamera;
+    public HandsMovement handsCamera;
     [Range(0, 5)]
     public float cameraNoiseGain;
     [Range(0, 5)]
@@ -45,6 +46,7 @@ public class CameraController : MonoBehaviour
         _cameraList = new List<CameraMovement>();
         _cameraList.Add(orbitalCamera);
         _cameraList.Add(spaceshipCamera);
+        _cameraList.Add(handsCamera);
 
         foreach (CameraMovement c in _cameraList)
         {
@@ -128,7 +130,8 @@ public class CameraController : MonoBehaviour
         // Activate the selected camera
         switch (type)
 		{
-            case CameraMovementType.Freefly:
+            case CameraMovementType.Hands:
+                _activeCamera = handsCamera;
                 break;
             case CameraMovementType.Orbital:
                 _activeCamera = orbitalCamera;
