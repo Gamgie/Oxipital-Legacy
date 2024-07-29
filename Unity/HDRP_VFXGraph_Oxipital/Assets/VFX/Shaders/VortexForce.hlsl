@@ -13,6 +13,10 @@ float3 VortexForce(in float4x4 parameters, in float3 pos, in float3 axis, in Str
 	bool squaredOrtho = parameters[1][1];
 	float innerRadius = parameters[2][1];
 
+	if (innerRadius == 0)
+    {
+		innerRadius = 0.01;
+	}
 	
 	for (int i = 0; i < centerCount; ++i)
     {
