@@ -38,5 +38,11 @@ float3 ClosestPointOnALine(float3 pos, float3 axis, float3 center)
     return result;
 }
 
+float remapFloat(in float value, in float min1, in float max1, in float min2, in float max2)
+{
+    float outgoing = min2 + (max2 - min2) * ((value - min1) / (max1 - min1));
+
+    return outgoing;
+}
 
 #endif // _VFX_COMMON_H_
