@@ -17,6 +17,11 @@ public class OrbGroupController : MonoBehaviour
     public float life;
     [ColorUsage(true, true)]
     public Color color;
+    [Range(0, 1)]
+    public float colorNoiseAmp;
+    [Range(0, 10)]
+    public float colorNoiseFreq;
+    public bool useColorTexture;
     public int colorIntensity;
     [Range(0, 10)]
     public float colorSmoothSpeed;
@@ -112,6 +117,9 @@ public class OrbGroupController : MonoBehaviour
                 life = 0;
                 orbCount = 0;
                 color = Color.black;
+                colorNoiseAmp = 0;
+                colorNoiseFreq = 0;
+                useColorTexture = false;
                 colorIntensity = 0;
                 alpha = 0;
                 size = 0;
@@ -155,6 +163,9 @@ public class OrbGroupController : MonoBehaviour
                     rate = oG.rate;
                     life = oG.life;
                     color = oG.color;
+                    colorNoiseAmp = oG.colorNoiseAmp;
+                    colorNoiseFreq = oG.colorNoiseFreq;
+                    useColorTexture = oG.useColorTexture;
                     colorIntensity = oG.colorIntensity;
                     alpha = oG.alpha;
                     size = oG.size;
@@ -202,6 +213,9 @@ public class OrbGroupController : MonoBehaviour
                     oG.rate = rate;
                     oG.life = life;
                     oG.color = Color.Lerp(oG.color, color, colorSmoothSpeed * Time.deltaTime * 0.1f);
+                    oG.colorNoiseAmp = colorNoiseAmp;
+                    oG.colorNoiseFreq = colorNoiseFreq;
+                    oG.useColorTexture = useColorTexture;
                     oG.colorIntensity = colorIntensity;
                     oG.alpha = alpha;
                     oG.size = size;

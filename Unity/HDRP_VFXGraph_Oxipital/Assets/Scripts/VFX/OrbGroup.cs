@@ -25,6 +25,10 @@ public class OrbGroup : MonoBehaviour
     public float life;
     [ColorUsage(true, true)]
     public Color color;
+    public float colorNoiseAmp;
+    public float colorNoiseFreq;
+    public bool useColorTexture;
+    public Texture colorTexture;
     public int colorIntensity;
     [Range(0, 1)]
     public float alpha;
@@ -151,6 +155,15 @@ public class OrbGroup : MonoBehaviour
             float factor = Mathf.Pow(2, colorIntensity);
             if (vfx.HasVector4("Color") == true)
                 vfx.SetVector4("Color", new Vector3(color.r * factor, color.g * factor, color.b * factor));
+
+            if (vfx.HasFloat("Color_NoiseAmp") == true)
+                vfx.SetFloat("Color_NoiseAmp", colorNoiseAmp);
+
+            if (vfx.HasFloat("Color_NoiseFreq") == true)
+                vfx.SetFloat("Color_NoiseFreq", colorNoiseFreq);
+
+            if (vfx.HasBool("UseColorTexture") == true)
+                vfx.SetBool("UseColorTexture", useColorTexture);
 
             if (vfx.HasBool("Static Particle") == true)
                 vfx.SetBool("Static Particle", staticParticle);
@@ -533,6 +546,9 @@ public class OrbGroup : MonoBehaviour
         data.colorR = color.r;
         data.colorG = color.g;
         data.colorB = color.b;
+        data.colorNoiseAmp = colorNoiseAmp;
+        data.colorNoiseFreq = colorNoiseFreq;
+        data.useColorTexture = useColorTexture;
         data.colorIntensity = colorIntensity;
         data.alpha = alpha;
         data.size = size;
@@ -567,6 +583,9 @@ public class OrbGroup : MonoBehaviour
         rate = data.rate;
         life = data.life;
         color = new Color(data.colorR, data.colorG, data.colorB);
+        colorNoiseAmp = data.colorNoiseAmp;
+        colorNoiseFreq = data.colorNoiseFreq;
+        useColorTexture = data.useColorTexture;
         colorIntensity = data.colorIntensity;
         alpha = data.alpha;
         size = data.size;
@@ -601,6 +620,10 @@ public class OrbGroupData
     public float colorR;
     public float colorG;
     public float colorB;
+    public float colorNoiseAmp;
+    public float colorNoiseFreq;
+    public float colorNoiseOffset;
+    public bool useColorTexture;
     public int colorIntensity;
     public float alpha;
     public float size;
