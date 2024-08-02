@@ -25,7 +25,7 @@ public class TornadoController : ForceController
     [Header("Turbulence Force")]
     [Range(0, 1)]
     public float turbulenceIntensity;
-    [Range(0, 5)]
+    [Range(0, 10)]
     public float turbulenceFrequency;
     [Range(0, 1)]
     public float turbulenceEvolution;
