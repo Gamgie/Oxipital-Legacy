@@ -87,7 +87,7 @@ public class TornadoController : ForceController
     public override ForceControllerData StoreData()
 	{
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         PlayerPrefs.SetInt(key + " Clockwise " + forceID, Convert.ToInt32(clockwise));
         PlayerPrefs.SetInt(key + " Both Hemisphere " + forceID, Convert.ToInt32(bothHemisphere));

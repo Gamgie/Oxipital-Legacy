@@ -49,7 +49,7 @@ public class RadialController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         PlayerPrefs.SetFloat(key + " radialFrequency " + forceID, radialFrequency);
         PlayerPrefs.SetFloat(key + " radialSmoothness " + forceID, radialSmoothness);

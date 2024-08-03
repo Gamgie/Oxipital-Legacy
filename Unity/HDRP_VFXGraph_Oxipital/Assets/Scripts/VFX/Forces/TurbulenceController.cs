@@ -55,7 +55,7 @@ public class TurbulenceController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         // Turbulence Parameters
         PlayerPrefs.SetFloat(key + " turbFrequency " + forceID, turbFrequency);

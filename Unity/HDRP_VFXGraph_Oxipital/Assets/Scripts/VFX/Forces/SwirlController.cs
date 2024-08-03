@@ -39,7 +39,7 @@ public class SwirlController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
         PlayerPrefs.SetFloat(key + " centralVertical " + forceID, centralVertical);

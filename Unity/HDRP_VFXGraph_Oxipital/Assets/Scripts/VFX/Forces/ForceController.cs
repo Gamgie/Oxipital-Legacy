@@ -171,10 +171,8 @@ public abstract class ForceController : MonoBehaviour
 
     public abstract void LoadData(ForceControllerData data);
 
-    protected ForceControllerData StoreBaseData()
-	{
-        ForceControllerData data = new ForceControllerData();
-
+    protected ForceControllerData StoreBaseData(ForceControllerData data)
+    {
         data.forceID = forceID;
         data.key = key;
         data.forceCount = forceCount;
@@ -204,4 +202,18 @@ public class ForceControllerData
     public float intensity;
     public float radius;
     public Vector3 axis;
+    public List<AdditionalParameters> additionalParameters;
+}
+
+[System.Serializable] 
+public class AdditionalParameters
+{
+    public string key;
+    public float floatParameter;
+
+    public AdditionalParameters(string key, float value)
+    {
+        this.key = key;
+        this.floatParameter = value;
+    }
 }

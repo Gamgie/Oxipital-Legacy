@@ -74,7 +74,7 @@ public class PerlinController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         PlayerPrefs.SetInt(key + " noiseType " + forceID, Convert.ToInt32(noiseType));
         PlayerPrefs.SetFloat(key + " frequency " + forceID, frequency);

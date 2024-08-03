@@ -20,7 +20,7 @@ public class GravityController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         return data;
     }

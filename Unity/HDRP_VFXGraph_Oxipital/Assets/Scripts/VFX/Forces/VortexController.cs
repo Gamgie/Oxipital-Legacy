@@ -54,7 +54,7 @@ public class VortexController : ForceController
     public override ForceControllerData StoreData()
 	{
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         // Vortex Param
         PlayerPrefs.SetFloat(key + " innerRadius " + forceID, innerRadius);

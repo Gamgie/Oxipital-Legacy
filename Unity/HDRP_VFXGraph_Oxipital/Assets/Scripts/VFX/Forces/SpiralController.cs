@@ -39,7 +39,7 @@ public class SpiralController : ForceController
     public override ForceControllerData StoreData()
     {
         ForceControllerData data = new ForceControllerData();
-        data = base.StoreBaseData();
+        base.StoreBaseData(data);
 
         PlayerPrefs.SetFloat(key + " frequency " + forceID, frequency);
         PlayerPrefs.SetFloat(key + " alpha " + forceID, alpha);
