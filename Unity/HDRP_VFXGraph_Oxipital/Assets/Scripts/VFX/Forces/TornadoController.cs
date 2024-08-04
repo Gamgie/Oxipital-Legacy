@@ -134,27 +134,17 @@ public class TornadoController : ForceController
                     axialIntensity = pair.floatParameter;
                     break;
                 case "turbulenceIntensity":
-                    turbulenceIntensity = (int)pair.floatParameter;
+                    turbulenceIntensity = pair.floatParameter;
                     break;
                 case "turbulenceFrequency":
-                    turbulenceFrequency = (int)pair.floatParameter;
+                    turbulenceFrequency = pair.floatParameter;
                     break;
                 case "turbulenceEvolution":
-                    turbulenceEvolution = (int)pair.floatParameter;
+                    turbulenceEvolution = pair.floatParameter;
                     break;
                 default:
                     break;
             }
         }
-        clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Clockwise " + forceID, 1));
-        bothHemisphere = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Both Hemisphere " + forceID, 1));
-        verticalIntensity = PlayerPrefs.GetFloat(key + " Vertical Intensity " + forceID, 0.5f);
-        orthoIntensity = PlayerPrefs.GetFloat(key + " Ortho Intensity " + forceID, 0.5f);
-        orthoSquaredLength = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Ortho Squared Length " + forceID, 1));
-        orthoInnerRadius = PlayerPrefs.GetFloat(key + " Ortho Inner Radius " + forceID, 0.5f);
-        axialIntensity = PlayerPrefs.GetFloat(key + " Axial Intensity " + forceID, 0.5f);
-        turbulenceIntensity = PlayerPrefs.GetFloat(key + " Turbulence Intensity " + forceID, 0.5f);
-        turbulenceFrequency = PlayerPrefs.GetFloat(key + " Turbulence Frequency " + forceID, 0.5f);
-        turbulenceEvolution = PlayerPrefs.GetFloat(key + " Turbulence Evolution " + forceID, 0.5f);
-}
+    }
 }
