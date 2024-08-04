@@ -41,8 +41,9 @@ public class SwirlController : ForceController
         ForceControllerData data = new ForceControllerData();
         base.StoreBaseData(data);
 
-        PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
-        PlayerPrefs.SetFloat(key + " centralVertical " + forceID, centralVertical);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("clockwise", Convert.ToSingle(clockwise)));
+        data.additionalParameters.Add(new AdditionalParameters("centralVertical", centralVertical));
 
         return data;
     }
@@ -52,7 +53,19 @@ public class SwirlController : ForceController
         base.LoadBaseData(data);
 
         //Vortex Parameters
-        centralVertical = PlayerPrefs.GetFloat(key + " centralVertical " + forceID, 0f);
-        clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " clockwise " + forceID, 1));
+        foreach (var pair in data.additionalParameters)
+        {
+            switch (pair.key)
+            {
+                case "centralVertical":
+                    centralVertical = pair.floatParameter;
+                    break;
+                case "evolutionSpeed":
+                    clockwise = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                default:
+                    break;
+            }
+        } 
     }
 }

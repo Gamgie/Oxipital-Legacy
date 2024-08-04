@@ -58,12 +58,13 @@ public class TurbulenceController : ForceController
         base.StoreBaseData(data);
 
         // Turbulence Parameters
-        PlayerPrefs.SetFloat(key + " turbFrequency " + forceID, turbFrequency);
-        PlayerPrefs.SetInt(key + " turbOctave " + forceID, turbOctave);
-        PlayerPrefs.SetFloat(key + " turbroughness " + forceID, turbroughness);
-        PlayerPrefs.SetFloat(key + " turbLacunarity " + forceID, turbLacunarity);
-        PlayerPrefs.SetFloat(key + " turbScale " + forceID, turbScale);
-        PlayerPrefs.SetFloat(key + " turbEvolutionSpeed " + forceID, turbEvolutionSpeed);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("turbFrequency", turbFrequency));
+        data.additionalParameters.Add(new AdditionalParameters("turbOctave", turbOctave));
+        data.additionalParameters.Add(new AdditionalParameters("turbroughness", turbroughness));
+        data.additionalParameters.Add(new AdditionalParameters("turbLacunarity", turbLacunarity));
+        data.additionalParameters.Add(new AdditionalParameters("turbScale", turbScale));
+        data.additionalParameters.Add(new AdditionalParameters("turbEvolutionSpeed", turbEvolutionSpeed));
 
         return data;
     }
@@ -73,11 +74,31 @@ public class TurbulenceController : ForceController
         base.LoadBaseData(data);
 
         // Turbulence Parameters
-        turbFrequency =      PlayerPrefs.GetFloat(key + " turbFrequency " + forceID, 1f);
-        turbOctave =         PlayerPrefs.GetInt(key + " turbOctave " + forceID, 1);
-        turbroughness =      PlayerPrefs.GetFloat(key + " turbroughness " + forceID, 0.5f);
-        turbLacunarity =     PlayerPrefs.GetFloat(key + " turbLacunarity " + forceID, 2f);
-        turbScale =          PlayerPrefs.GetFloat(key + " turbScale " + forceID, 1f);
-        turbEvolutionSpeed = PlayerPrefs.GetFloat(key + " turbEvolutionSpeed " + forceID, 1f);
+        foreach (var pair in data.additionalParameters)
+        {
+            switch (pair.key)
+            {
+                case "turbFrequency":
+                    turbFrequency = pair.floatParameter;
+                    break;
+                case "turbOctave":
+                    turbOctave = (int) pair.floatParameter;
+                    break;
+                case "turbroughness":
+                    turbroughness = pair.floatParameter;
+                    break;
+                case "turbLacunarity":
+                    turbLacunarity = pair.floatParameter;
+                    break;
+                case "turbScale":
+                    turbScale = pair.floatParameter;
+                    break;
+                case "turbEvolutionSpeed":
+                    turbEvolutionSpeed = pair.floatParameter;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

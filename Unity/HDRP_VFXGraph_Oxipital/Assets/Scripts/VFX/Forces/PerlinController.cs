@@ -76,13 +76,15 @@ public class PerlinController : ForceController
         ForceControllerData data = new ForceControllerData();
         base.StoreBaseData(data);
 
-        PlayerPrefs.SetInt(key + " noiseType " + forceID, Convert.ToInt32(noiseType));
-        PlayerPrefs.SetFloat(key + " frequency " + forceID, frequency);
-        PlayerPrefs.SetFloat(key + " roughness " + forceID, roughness);
-        PlayerPrefs.SetFloat(key + " lacunarity " + forceID, lacunarity);
-        PlayerPrefs.SetFloat(key + " minRange " + forceID, minRange);
-        PlayerPrefs.SetFloat(key + " minRange " + forceID, minRange);
-        PlayerPrefs.SetInt(key + " octaves " + forceID, octaves);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("noiseType", Convert.ToInt32(noiseType)));
+        data.additionalParameters.Add(new AdditionalParameters("evolutionSpeed", evolutionSpeed));
+        data.additionalParameters.Add(new AdditionalParameters("frequency", frequency));
+        data.additionalParameters.Add(new AdditionalParameters("roughness", roughness));
+        data.additionalParameters.Add(new AdditionalParameters("lacunarity", lacunarity));
+        data.additionalParameters.Add(new AdditionalParameters("minRange", minRange));
+        data.additionalParameters.Add(new AdditionalParameters("maxRange", maxRange));
+        data.additionalParameters.Add(new AdditionalParameters("octaves", octaves));
 
         return data;
     }
@@ -92,13 +94,37 @@ public class PerlinController : ForceController
         base.LoadBaseData(data);
 
         // Perlin Parameters
-        noiseType = PerlinNoiseType.Perlin;
-        evolutionSpeed = PlayerPrefs.GetFloat(key + " evolutionSpeed " + forceID, 0f);
-        frequency = PlayerPrefs.GetFloat(key + " frequency " + forceID, 1f);
-        octaves = PlayerPrefs.GetInt(key + " octaves " + forceID, 1);
-        roughness = PlayerPrefs.GetFloat(key + " roughness " + forceID, 0.5f);
-        lacunarity = PlayerPrefs.GetFloat(key + " lacunarity " + forceID, 2f);
-        minRange = PlayerPrefs.GetFloat(key + " minRange " + forceID, -1f);
-        maxRange = PlayerPrefs.GetFloat(key + " maxRange " + forceID, 1f);
+        foreach (var pair in data.additionalParameters)
+        {
+            switch(pair.key)
+			{
+                case "noiseType":
+                    noiseType = (PerlinNoiseType) pair.floatParameter;
+                    break;
+                case "evolutionSpeed":
+                    evolutionSpeed = pair.floatParameter;
+                    break;
+                case "frequency":
+                    frequency = pair.floatParameter;
+                    break;
+                case "roughness":
+                    roughness = pair.floatParameter;
+                    break;
+                case "lacunarity":
+                    lacunarity = pair.floatParameter;
+                    break;
+                case "minRange":
+                    minRange = pair.floatParameter;
+                    break;
+                case "maxRange":
+                    maxRange = pair.floatParameter;
+                    break;
+                case "octaves":
+                    octaves = (int) pair.floatParameter;
+                    break;
+                default:
+                    break;
+			}
+        }
     }
 }

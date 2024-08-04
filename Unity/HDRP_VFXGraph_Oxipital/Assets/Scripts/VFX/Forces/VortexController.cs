@@ -57,11 +57,12 @@ public class VortexController : ForceController
         base.StoreBaseData(data);
 
         // Vortex Param
-        PlayerPrefs.SetFloat(key + " innerRadius " + forceID, innerRadius);
-        PlayerPrefs.SetInt(key + " clockwise " + forceID, Convert.ToInt32(clockwise));
-        PlayerPrefs.SetInt(key + " Squared Orthoradial " + forceID, Convert.ToInt32(squaredOrthoradial));
-        PlayerPrefs.SetFloat(key + " orthoradialIntensity " + forceID, orthoradialIntensity);
-        PlayerPrefs.SetFloat(key + " cylindricIntensity " + forceID, cylindricIntensity);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("innerRadius", innerRadius));
+        data.additionalParameters.Add(new AdditionalParameters("clockwise", Convert.ToSingle(clockwise)));
+        data.additionalParameters.Add(new AdditionalParameters("Squared Orthoradial", Convert.ToSingle(squaredOrthoradial)));
+        data.additionalParameters.Add(new AdditionalParameters("orthoradialIntensity", orthoradialIntensity));
+        data.additionalParameters.Add(new AdditionalParameters("cylindricIntensity", cylindricIntensity));
 
         return data;
     }
@@ -71,10 +72,28 @@ public class VortexController : ForceController
         base.LoadBaseData(data);
 
         //Vortex Parameters
-        innerRadius = PlayerPrefs.GetFloat(key + " innerRadius " + forceID, 0.5f);
-        clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " clockwise " + forceID, 1));
-        squaredOrthoradial = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Squared Orthoradial " + forceID, 1));
-        orthoradialIntensity = PlayerPrefs.GetFloat(key + " orthoradialIntensity " + forceID, 1f);
-        cylindricIntensity = PlayerPrefs.GetFloat(key + " cylindricIntensity " + forceID, 1f);
+        foreach (var pair in data.additionalParameters)
+        {
+            switch (pair.key)
+            {
+                case "innerRadius":
+                    innerRadius = pair.floatParameter;
+                    break;
+                case "clockwise":
+                    clockwise = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                case "squaredOrthoradial":
+                    squaredOrthoradial = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                case "orthoradialIntensity":
+                    orthoradialIntensity = pair.floatParameter;
+                    break;
+                case "cylindricIntensity":
+                    cylindricIntensity = pair.floatParameter;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

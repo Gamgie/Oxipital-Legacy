@@ -51,10 +51,11 @@ public class RadialController : ForceController
         ForceControllerData data = new ForceControllerData();
         base.StoreBaseData(data);
 
-        PlayerPrefs.SetFloat(key + " radialFrequency " + forceID, radialFrequency);
-        PlayerPrefs.SetFloat(key + " radialSmoothness " + forceID, radialSmoothness);
-        PlayerPrefs.SetFloat(key + " sphericalFrequency " + forceID, sphericalFrequency);
-        PlayerPrefs.SetFloat(key + " sphericalSmoothness " + forceID, sphericalSmoothness);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("radialFrequency", radialFrequency));
+        data.additionalParameters.Add(new AdditionalParameters("radialSmoothness", radialSmoothness));
+        data.additionalParameters.Add(new AdditionalParameters("sphericalFrequency", sphericalFrequency));
+        data.additionalParameters.Add(new AdditionalParameters("sphericalSmoothness", sphericalSmoothness));
 
         return data;
     }
@@ -63,9 +64,25 @@ public class RadialController : ForceController
     {
         base.LoadBaseData(data);
 
-        radialFrequency = PlayerPrefs.GetFloat(key + " radialFrequency " + forceID, 0f);
-        radialSmoothness = PlayerPrefs.GetFloat(key + " radialSmoothness " + forceID, 1f);
-        sphericalFrequency = PlayerPrefs.GetFloat(key + " sphericalFrequency " + forceID, 0f);
-        sphericalSmoothness = PlayerPrefs.GetFloat(key + " sphericalSmoothness " + forceID, 1f);
+        foreach (var pair in data.additionalParameters)
+        {
+            switch (pair.key)
+            {
+                case "radialFrequency":
+                    radialFrequency = pair.floatParameter;
+                    break;
+                case "radialSmoothness":
+                    radialSmoothness = pair.floatParameter;
+                    break;
+                case "sphericalFrequency":
+                    sphericalFrequency = pair.floatParameter;
+                    break;
+                case "sphericalSmoothness":
+                    sphericalSmoothness = pair.floatParameter;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

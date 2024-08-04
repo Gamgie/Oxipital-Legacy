@@ -89,16 +89,17 @@ public class TornadoController : ForceController
         ForceControllerData data = new ForceControllerData();
         base.StoreBaseData(data);
 
-        PlayerPrefs.SetInt(key + " Clockwise " + forceID, Convert.ToInt32(clockwise));
-        PlayerPrefs.SetInt(key + " Both Hemisphere " + forceID, Convert.ToInt32(bothHemisphere));
-        PlayerPrefs.SetFloat(key + " Vertical Intensity " + forceID, verticalIntensity);
-        PlayerPrefs.SetFloat(key + " Ortho Intensity " + forceID, orthoIntensity);
-        PlayerPrefs.SetInt(key + " Ortho Squared Length " + forceID, Convert.ToInt32(orthoSquaredLength));
-        PlayerPrefs.SetFloat(key + " Ortho Inner Radius " + forceID, orthoInnerRadius);
-        PlayerPrefs.SetFloat(key + " Axial Intensity " + forceID, axialIntensity);
-        PlayerPrefs.SetFloat(key + " Turbulence Intensity " + forceID, turbulenceIntensity);
-        PlayerPrefs.SetFloat(key + " Turbulence Frequency " + forceID, turbulenceFrequency);
-        PlayerPrefs.SetFloat(key + " Turbulence Evolution " + forceID, turbulenceEvolution);
+        data.additionalParameters = new List<AdditionalParameters>();
+        data.additionalParameters.Add(new AdditionalParameters("clockwise", Convert.ToSingle(clockwise)));
+        data.additionalParameters.Add(new AdditionalParameters("bothHemisphere", Convert.ToSingle(bothHemisphere)));
+        data.additionalParameters.Add(new AdditionalParameters("verticalIntensity", verticalIntensity));
+        data.additionalParameters.Add(new AdditionalParameters("orthoIntensity", orthoIntensity));
+        data.additionalParameters.Add(new AdditionalParameters("orthoSquaredLength", Convert.ToSingle(orthoSquaredLength)));
+        data.additionalParameters.Add(new AdditionalParameters("orthoInnerRadius", orthoInnerRadius));
+        data.additionalParameters.Add(new AdditionalParameters("axialIntensity", axialIntensity));
+        data.additionalParameters.Add(new AdditionalParameters("turbulenceIntensity", turbulenceIntensity));
+        data.additionalParameters.Add(new AdditionalParameters("turbulenceFrequency", turbulenceFrequency));
+        data.additionalParameters.Add(new AdditionalParameters("turbulenceEvolution", turbulenceEvolution));
 
         return data;
     }
@@ -107,7 +108,44 @@ public class TornadoController : ForceController
 	{
         base.LoadBaseData(data);
 
-
+        foreach (var pair in data.additionalParameters)
+        {
+            switch (pair.key)
+            {
+                case "clockwise":
+                    clockwise = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                case "bothHemisphere":
+                    bothHemisphere = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                case "verticalIntensity":
+                    verticalIntensity = pair.floatParameter;
+                    break;
+                case "orthoIntensity":
+                    orthoIntensity = pair.floatParameter;
+                    break;
+                case "orthoSquaredLength":
+                    orthoSquaredLength = Convert.ToBoolean(pair.floatParameter);
+                    break;
+                case "orthoInnerRadius":
+                    orthoInnerRadius = pair.floatParameter;
+                    break;
+                case "axialIntensity":
+                    axialIntensity = pair.floatParameter;
+                    break;
+                case "turbulenceIntensity":
+                    turbulenceIntensity = (int)pair.floatParameter;
+                    break;
+                case "turbulenceFrequency":
+                    turbulenceFrequency = (int)pair.floatParameter;
+                    break;
+                case "turbulenceEvolution":
+                    turbulenceEvolution = (int)pair.floatParameter;
+                    break;
+                default:
+                    break;
+            }
+        }
         clockwise = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Clockwise " + forceID, 1));
         bothHemisphere = Convert.ToBoolean(PlayerPrefs.GetInt(key + " Both Hemisphere " + forceID, 1));
         verticalIntensity = PlayerPrefs.GetFloat(key + " Vertical Intensity " + forceID, 0.5f);
