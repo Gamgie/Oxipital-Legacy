@@ -25,8 +25,20 @@ public class OrbGroupController : MonoBehaviour
     public int colorIntensity;
     [Range(0, 10)]
     public float colorSmoothSpeed;
+    [Space(10)]
     [Range(0, 1)]
     public float alpha;
+    [Range(0, 2)]
+    public float alphaNoiseAmplitude = 0;
+    [Range(0, 10)]
+    public float alphaNoiseFrequency = 1;
+    [Range(0, 8)]
+    public int alphaNoiseOctaves = 1;
+    [Range(0, 3)]
+    public float alphaNoiseLacunarity = 2;
+    [Range(0, 1)]
+    public float alphaNoiseRoughness = 0.5f;
+    [Space(10)]
     [Range(0, 100)]
     public float size;
     [Range(0, 10)]
@@ -122,6 +134,11 @@ public class OrbGroupController : MonoBehaviour
                 useColorTexture = false;
                 colorIntensity = 0;
                 alpha = 0;
+                alphaNoiseAmplitude = 0;
+                alphaNoiseFrequency = 0;
+                alphaNoiseOctaves = 0;
+                alphaNoiseLacunarity = 0;
+                alphaNoiseRoughness = 0f;
                 size = 0;
                 drag = 0;
                 velocityDrag = 0;
@@ -169,6 +186,11 @@ public class OrbGroupController : MonoBehaviour
                     colorIntensity = oG.colorIntensity;
                     alpha = oG.alpha;
                     size = oG.size;
+                    alphaNoiseAmplitude = oG.alphaNoiseAmplitude;
+                    alphaNoiseFrequency = oG.alphaNoiseFrequency;
+                    alphaNoiseOctaves = oG.alphaNoiseOctaves;
+                    alphaNoiseLacunarity =oG. alphaNoiseLacunarity;
+                    alphaNoiseRoughness = oG.alphaNoiseRoughness;
                     drag = oG.drag;
                     velocityDrag = oG.velocityDrag;
                     noisyDrag = oG.noisyDrag;
@@ -218,6 +240,11 @@ public class OrbGroupController : MonoBehaviour
                     oG.useColorTexture = useColorTexture;
                     oG.colorIntensity = colorIntensity;
                     oG.alpha = alpha;
+                    oG.alphaNoiseAmplitude = alphaNoiseAmplitude;
+                    oG.alphaNoiseFrequency = alphaNoiseFrequency;
+                    oG.alphaNoiseOctaves = alphaNoiseOctaves;
+                    oG.alphaNoiseLacunarity = alphaNoiseLacunarity;
+                    oG.alphaNoiseRoughness = alphaNoiseRoughness;
                     oG.size = size;
                     oG.drag = drag;
                     oG.velocityDrag = velocityDrag;

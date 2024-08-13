@@ -32,6 +32,11 @@ public class OrbGroup : MonoBehaviour
     public int colorIntensity;
     [Range(0, 1)]
     public float alpha;
+    public float alphaNoiseAmplitude = 0;
+    public float alphaNoiseFrequency = 1;
+    public int alphaNoiseOctaves = 1;
+    public float alphaNoiseLacunarity = 2;
+    public float alphaNoiseRoughness = 0.5f;
     [Range(0, 100)]
     public float size;
     public float drag;
@@ -142,6 +147,18 @@ public class OrbGroup : MonoBehaviour
 
             if (vfx.HasFloat("Alpha") == true)
                 vfx.SetFloat("Alpha", alpha);
+
+            if (vfx.HasFloat("Alpha Noise Amplitude") == true)
+                vfx.SetFloat("Alpha Noise Amplitude", alphaNoiseAmplitude);
+
+            Vector4 alphaParameters = new Vector4();
+            alphaParameters.x = alphaNoiseFrequency;
+            alphaParameters.y = alphaNoiseOctaves;
+            alphaParameters.z = alphaNoiseRoughness;
+            alphaParameters.w = alphaNoiseLacunarity;
+
+            if (vfx.HasVector4("Alpha Noise Parameters") == true)
+                vfx.SetVector4("Alpha Noise Parameters", alphaParameters);
 
             if (vfx.HasFloat("Size") == true)
                 vfx.SetFloat("Size", size);
@@ -551,6 +568,11 @@ public class OrbGroup : MonoBehaviour
         data.useColorTexture = useColorTexture;
         data.colorIntensity = colorIntensity;
         data.alpha = alpha;
+        data.alphaNoiseAmplitude = alphaNoiseAmplitude;
+        data.alphaNoiseFrequency = alphaNoiseFrequency;
+        data.alphaNoiseOctaves = alphaNoiseOctaves;
+        data.alphaNoiseLacunarity = alphaNoiseLacunarity;
+        data.alphaNoiseRoughness = alphaNoiseRoughness;
         data.size = size;
         data.drag = drag;
         data.velocityDrag = velocityDrag;
@@ -588,6 +610,11 @@ public class OrbGroup : MonoBehaviour
         useColorTexture = data.useColorTexture;
         colorIntensity = data.colorIntensity;
         alpha = data.alpha;
+        alphaNoiseAmplitude = data.alphaNoiseAmplitude;
+        alphaNoiseFrequency = data.alphaNoiseFrequency;
+        alphaNoiseOctaves = data.alphaNoiseOctaves;
+        alphaNoiseLacunarity = data.alphaNoiseLacunarity;
+        alphaNoiseRoughness = data.alphaNoiseRoughness;
         size = data.size;
         drag = data.drag;
         noisyDrag = data.noisyDrag;
@@ -626,6 +653,11 @@ public class OrbGroupData
     public bool useColorTexture;
     public int colorIntensity;
     public float alpha;
+    public float alphaNoiseAmplitude;
+    public float alphaNoiseFrequency;
+    public int alphaNoiseOctaves;
+    public float alphaNoiseLacunarity;
+    public float alphaNoiseRoughness;
     public float size;
     public float drag;
     public float velocityDrag;
