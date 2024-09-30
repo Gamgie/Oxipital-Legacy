@@ -1,0 +1,36 @@
+#pragma kernel CSMain
+#define NUM_THREADS 8
+
+float4 _Resolution;
+
+RWStructuredBuffer<float3> _Write;
+StructuredBuffer<float3> _Velocity;
+
+[numthreads(NUM_THREADS,NUM_THREADS,NUM_THREADS)]
+void CSMain (int3 id : SV_DispatchThreadID)
+{
+
+    int idxL = max(0, id.x-1) + id.y*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+    int idxR = min(_Resolution.x-1, id.x+1) + id.y*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+    
+    int idxB = id.x + max(0, id.y-1)*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+    int idxT = id.x + min(_Resolution.y-1, id.y+1)*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+    
+    int idxD = id.x + id.y*_Resolution.x + max(0, id.z-1)*_Resolution.x*_Resolution.y;
+    int idxU = id.x + id.y*_Resolution.x + min(_Resolution.z-1, id.z+1)*_Resolution.x*_Resolution.y;
+
+	float3 L = _Velocity[ idxL ];
+    float3 R = _Velocity[ idxR ];
+    
+    float3 B = _Velocity[ idxB ];
+    float3 T = _Velocity[ idxT ];
+    
+    float3 D = _Velocity[ idxD ];
+    float3 U = _Velocity[ idxU ];
+    
+    float3 vorticity = 0.5 * float3( (( T.z - B.z ) - ( U.y - D.y )) , (( U.x - D.x ) - ( R.z - L.z )) , (( R.y - L.y ) - ( T.x - B.x )) );
+			
+	int idx = id.x + id.y*_Resolution.x + id.z*_Resolution.x*_Resolution.y;
+	
+    _Write[idx] = vorticity;
+}
